@@ -1,0 +1,17 @@
+
+model {
+     for (i in 1:2) {     
+     y[i] ~ dhyper(n[1], m1, N, psi)
+     }
+ 
+  psi <- (p[1] * (1-p[2])) / (p[2] * (1-p[1]))
+  p[2] ~ dunif(0, 1)
+  p[1] ~ dunif(0, 1)
+  N <- n[1] + n[2]
+  
+  m1 <- y[1] + y[2]
+  y[1] ~ dbin(p[1], n[1])
+  y[2] ~ dbin(p[2], n[2])
+  post <- step(p[1] - p[2])
+ }
+
