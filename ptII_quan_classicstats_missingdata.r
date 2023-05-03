@@ -266,13 +266,14 @@ display(iris.lm.NA)
 
 
 ###NOT RUN BELOW THIS POINT
-1- summary(iris.imp.mice.pooled)[,1] / iris.imp.amelia.pooled$q.mi
-1- fe.iris.imp.brms[,1] / summary(iris.imp.mice.pooled)[,1]
-1- fe.iris.imp.brms[,1] / iris.imp.amelia.pooled$q.mi
-1- fe.iris.imp.brms[,1] / iris.imp.mi.fit@coefficients
+# summary(iris.imp.mice.pooled)[,1] / iris.imp.amelia.pooled$q.mi
+# fe.iris.imp.brms[,1] / summary(iris.imp.mice.pooled)[,1]
+# fe.iris.imp.brms[,1] / iris.imp.amelia.pooled$q.mi
+# fe.iris.imp.brms[,1] / iris.imp.mi.fit@coefficients
+#
+##variances
+# summary(iris.imp.mice.pooled)[,2] / iris.imp.amelia.pooled$se.mi
+# fe.iris.imp.brms[,2] / summary(iris.imp.mice.pooled)[,2]
+# fe.iris.imp.brms[,2] / iris.imp.amelia.pooled$se.mi
+# fe.iris.imp.brms[,2] / iris.imp.mi.fit@ses
 
-#variances
-1- summary(iris.imp.mice.pooled)[,2] / iris.imp.amelia.pooled$se.mi
-1- fe.iris.imp.brms[,2] / summary(iris.imp.mice.pooled)[,2]
-1- fe.iris.imp.brms[,2] / iris.imp.amelia.pooled$se.mi
-1- fe.iris.imp.brms[,2] / iris.imp.mi.fit@ses

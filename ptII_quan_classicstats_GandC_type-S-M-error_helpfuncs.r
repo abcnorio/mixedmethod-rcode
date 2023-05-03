@@ -23,7 +23,7 @@
 ###### function incl. plot of effect size d_rep for retrodesign by Gelman and Carlin (2014)
 retrodesign <- function(tes, se, alpha=.05, dfree=Inf, n.sims=10000, seed=9876, graph=FALSE)
 {
- #(C) Gelman and Carlin 2014
+ #after Gelman and Carlin 2014
  #http://www.stat.columbia.edu/~gelman/research/published/retropower_final.pdf
  #p.649
  #exaggeration = typeM

@@ -5,6 +5,7 @@
 # chap. 4 [4.5.5]
 # Stichprobengröße
 
+
 N <- seq(5,1000,10)
 N.l <- length(N)
 set.seed(1234)

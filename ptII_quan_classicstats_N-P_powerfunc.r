@@ -9,6 +9,7 @@
 # load necessary libs
 library(pwr)
 
+
 # power function - different effect sizes
 alpha <- 0.05
 N <- 100

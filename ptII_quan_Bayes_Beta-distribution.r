@@ -18,6 +18,7 @@ source("ptII_quan_Bayes_case_wordcounts-PPC_helpfuncs.r")
 # plot prior-likeli-posterior
 source("ptall_generalfuncs_Bayes_binomial.r")
 
+
 # calculate beta posterior from prior and likelihood
 # in two versions (conjugate case and grid approximation)
 si <- 10

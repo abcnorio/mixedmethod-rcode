@@ -12,8 +12,9 @@ library(LaplacesDemon)
 source("ptall_generalfuncs_Bayes_binomial.r")
 
 
+# R package
 # library(LaplacesDemon)
-# ?LossMatrix
+# LossMatrix
 # Point-estimated loss and state probabilities
 L <- matrix(c(-500,1000,-300,-300), 2, 2)
 rownames(L) <- c("s[1]: !Defaults","s[2]: Defaults")
@@ -22,6 +23,7 @@ L
 p.theta <- matrix(c(0.9, 0.1, 1, 0), 2, 2)
 fit <- LossMatrix(L, p.theta)
 fit
+# notes from the package
 # Before using the ‘LossMatrix’ function, the user should have
 # already considered all possible actions (choices), states of the
 # world (outcomes unknown at the time of decision-making), chosen a
@@ -264,6 +266,4 @@ theta.sd
 theta.summary <- c(theta.map, theta.median, theta.mean, theta.sd, theta.var)
 names(theta.summary) <- c("mode (MAP)","median","mean","sd","var")
 theta.summary
-
-
 

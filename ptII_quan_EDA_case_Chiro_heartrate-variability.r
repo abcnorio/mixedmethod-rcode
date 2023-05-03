@@ -15,6 +15,7 @@ source("ptall_generalfuncs.r")
 source("ptII_quan_EDA_case_Chiro_heartrate-variability_helpfuncs.r")
 
 # load data via stored environment
+# not available online due to being a private data set
 load("HW_FINAL_status-quo-161216_complete-environment.RData")
 
 

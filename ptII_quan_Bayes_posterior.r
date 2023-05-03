@@ -20,7 +20,6 @@ source("ptall_generalfuncs.r")
 # normal with known precision tau
 # POST:
 # mean was estimated from observations with total precision (sum of all individual precisions)
-# τ 0 {\displaystyle \tau _{0}} \tau _{0} and with sample mean μ 0 {\displaystyle \mu _{0}} \mu _{0}
 set.seed(2745)
 samp.n <- 100
 samp <- rnorm(n=samp.n, mean=108, sd=15)
@@ -81,14 +80,6 @@ autocorr.plot(theta.post)
 autocorr.plot(theta.post2)
 autocorr.plot(mcmc.l)
 
-# http://patricklam.org/teaching/convergence_print.pdf
-# The Geweke diagnostic takes two nonoverlapping parts
-# (usually the first 0.1 and last 0.5 proportions) of the Markov chain and
-# compares the means of both parts, using a difference of means test
-# to see if the two parts of the chain are from the same distribution
-# (null hypothesis). The test statistic is a standard Z-score with the
-# standard errors adjusted for autocorrelation.
-
 # Geweke's convergence diagnostic
 geweke.diag(theta.post)
 par(oma=c(2,1,1,1), "cex.axis"=1, bty="l")
@@ -97,22 +88,10 @@ mtext("Geweke plot", outer=TRUE, line=-1, cex=1.5, side=3)
 geweke.diag(mcmc.l)
 geweke.plot(mcmc.l)
 
-# 1. Select a posterior quantile of interest q (for example, the 0.025 quantile).
-# 2. Select an acceptable tolerance r for this quantile (for example, if r= 0.005,
-#    then that means we want to measure the 0.025 quantile with an accuracy of±0.005).
-# 3. Select a probability s, which is the desired probability of being within (q-r, q+r).
-
 # Raftery and Lewis's diagnostic
 raftery.diag(theta.post, q=0.025, r=0.005, s=0.95)
 raftery.diag(mcmc.l, q=0.025, r=0.005, s=0.95)
 
-# The Heidelberg and Welch's diagnostic calculates a test statistic (based on the Cramer-von Mises test statistic) to accept or reject the null hypothesis that the Markov chain is from a stationary distribution.
-# 1. Generate a chain of N iterations and define an α level.
-# 2. Calculate the test statistic on the whole chain. Accept or reject null hypothesis that the chain is from a stationary distribution.
-# 3. If null hypothesis is rejected, discard the first 10% of the chain. Calculate the test statistic and accept or reject null.
-# 4. If null hypothesis is rejected, discard the next 10% and calculate the test statistic.
-# 5. Repeat until null hypothesis is accepted or 50% of the chain is discarded. If test still rejects null hypothesis, then the chain fails the test and needs to be run longer.
-# If the chain passes the first part of the diagnostic, then it takes the part of the chain not discarded from the first part to test the second part. The halfwidth test calculates half the width of the (1 − α )% credible interval around the mean. If the ratio of the halfwidth and the mean is lower than some, then the chain passes the test. Otherwise, the chain must be run out longer.
 heidel.diag(theta.post)
 heidel.diag(mcmc.l)
 autocorr.diag(as.mcmc(theta.post))

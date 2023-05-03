@@ -5,6 +5,7 @@
 # chap. 6 [6.13]
 # Marko Chain Monte Carlo Simulationen — MCMC
 
+
 # HELPER FUNCTIONS
 
 ###### function to calculate pi
@@ -27,3 +28,4 @@ piR <- function(N)
 # piR(1e3)
 ########################## END OF FUNCTION
 
+# inefficient, but works...

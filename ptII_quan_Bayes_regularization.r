@@ -119,9 +119,3 @@ alpha <- 0.05
 2*(1-pnorm(qnorm(1-alpha/2, mean=0, sd=1)))
 qnorm(1-1e-15/2, mean=0, sd=1)
 
-
-
-
-
-
-

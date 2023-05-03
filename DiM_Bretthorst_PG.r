@@ -16,7 +16,7 @@
 # taken code from there to allow calculations based only on summary statistics
 # and not on raw data (see also Bretthorst, 1993, for an example taken from Jaynes)
 
-# R code by Leo G?rtler 2017
+# R code by Leo G 2017
 # first = 2017-04-19
 # last = 2017-27-04
 
@@ -200,14 +200,12 @@ DiM.pg <- function(invtyp=NULL, inputvalues=NULL, print.res=TRUE, dig=4, Nsteps=
 ################################################################################
 # pCSk
 # Compute pCSk = p(C,S|D_1,D_2,I) * p(D_1,D_2|I)
-# According to the formulas given in text (see Appendix C  entitled: "Difference in Two Samples").
+# according to the formulas given in text (see Appendix C  entitled: "Difference in Two Samples").
 
   z <- n * (dsqubar - dbar^2)
   uL <- sqrt(n/2) * (low - dbar)
   uH <- sqrt(n/2) * (high - dbar)
 
-  #????????TODO
-  #sign <- -Sign[uH/uL]
   (uH/uL) > 0
 
   # error function
@@ -258,8 +256,6 @@ DiM.pg <- function(invtyp=NULL, inputvalues=NULL, print.res=TRUE, dig=4, Nsteps=
 ################################################################################
 # pCSbark
 # Compute pCSbark = p(C,Sbar|D_1,D_2,I) * p(D_1,D_2|I)
-# Mathematica does not allow variable definitions containing a character with an overhead bar so we will use Sbar to represent S-with-a-bar 
-# >>> pCS-with-a-bark becomes pCSbark
 
   u1A <- function(A) return( n1/2 * (d1squbar - 2 * A * d1bar + A^2) )
   u2A <- function(A) return( n2/2 * (d2squbar - 2 * A * d2bar + A^2) )
@@ -309,27 +305,10 @@ DiM.pg <- function(invtyp=NULL, inputvalues=NULL, print.res=TRUE, dig=4, Nsteps=
   }
   #call:
   #pCSbark.brob <- pCSbark.hypo.brob(n=n, n1=n1, n2=n2, Rc=Rc, Rsigma=Rsigma, sigma.high=sigma.high, sigma.log=sigma.low, low=low, high=high, Nsteps=Nsteps)  
-  #fnc2.brob(low)
-  #fnc2.brob(high)
-  #pgamma(u1A(A)/sigma.high^2,n1/2, log.p=FALSE)
-  #pgamma(u1A(A)/sigma.low^2,n1/2, log.p=FALSE)
-  #fnc2.brob <- function(A)
-  #{
-  #    log( (2*pi))^(-n/2) +
-  #    ( lgamma(n1/2) ) +
-  #    ( lgamma(n2/2)) -
-  #    log( 16*Rc*log(Rsigma)^2 ) +
-  #    log(u1A(A))*(-n1/2) +
-  #    log(u2A(A))*(-n2/2) +
-  #    log( ( pgamma(u1A(A)/sigma.high^2,n1/2, log.p=FALSE) ) - ( pgamma(u1A(A)/sigma.low^2,n1/2, log.p=FALSE) ) ) +
-  #    log( ( pgamma(u2A(A)/sigma.high^2,n2/2, log.p=FALSE) ) - ( pgamma(u2A(A)/sigma.low^2,n2/2, log.p=FALSE) ) )
-  #}
   
 ################################################################################
 # pCbarSk
 # Compute pCbarSk = p(Cbar,S|D_1,D_2,I) * p(D_1,D_2|I)
-# Mathematica does not allow variable definitions containing a character with an overhead bar so we will use Cbar to represent C-with-a-bar. 
-# >>> pC-with-a-bar-Sk becomes pCbarSk
 
   z1 <- n1 * (d1squbar - d1bar^2)
   u1H <- sqrt(n1/2) * (high - d1bar)
@@ -340,9 +319,6 @@ DiM.pg <- function(invtyp=NULL, inputvalues=NULL, print.res=TRUE, dig=4, Nsteps=
 
   (u1H/u1L) > 0
   (u2H/u2L) > 0
-  #??????
-  #sign1 <- -Sign[u1H/ u1L]
-  #sign2 <- -Sign[u2H/ u2L]
 
 # formula to calculate area below the curve / integral
   pCbarSk.hypo <- function(n, Rc, Rsigma, n1, n2, z1, z2, u1H, u1L, u2H, u2L)
@@ -384,15 +360,9 @@ DiM.pg <- function(invtyp=NULL, inputvalues=NULL, print.res=TRUE, dig=4, Nsteps=
 ################################################################################
 # pCbarSbark
 # Compute pCbarSbark = p(Cbar,Sbar|D_1,D_2,I) * p(D_1,D_2|I)
-# Mathematica does not allow variable definitions containing a character with an overhead bar so we will use CBar/ Sbar to represent
-# C-with-a-bar and S-with-a-bar.
-# >>> pC-with-a-barS-with-a-bark becomes pCbarSbark
 
   (u1H/u1L) > 0
   (u2H/u2L) > 0
-  #??????
-  #sign1 <- -Sign[u1H/ u1L]
-  #sign2 <- -Sign[u2H/ u2L]
 
 # formula to calculate area below the curve / integral
   pCbarSbark.A.hypo <- function(n1, z1, u1H, u1L)
@@ -456,13 +426,6 @@ DiM.pg <- function(invtyp=NULL, inputvalues=NULL, print.res=TRUE, dig=4, Nsteps=
   }
   #call:
   #pCbarSbark.B.brob <- pCbarSbark.B.hypo.brob(n1=n1, z1=z1, u2H=u2H, u2L=u2L, Nsteps=Nsteps)
-
-  # compile pCbarSbark.A and pCbarSbark.B
-  #pCbarSbark <- ( (2*pi)^(-n/2) * pi * pCbarSbark.A * pCbarSbark.B ) / ( 8 * Rc^2 * log(Rsigma)^2 * sqrt(n1*n2) )
-  #
-  # BROB
-  #pCbarSbark.brob <- ( as.brob(2*pi)^(-n/2) * pi * pCbarSbark.A.brob * pCbarSbark.B.brob ) / ( 8 * Rc^2 * log(Rsigma)^2 * sqrt(n1*n2) )
-
 
 ################################################################################
 # compile results
@@ -678,9 +641,8 @@ DiM.extract.limits <- function(DiM.res, scaleL=NULL, scaleH=NULL, low=NULL, high
   delta.sek.l <- length(delta.sek)
   
   #ratio
-  # The upper and lower bounds on the plot can be varied by the user
-  # by setting scaleL and scaleH factors.
-  #use as input values to allow to change them:
+  # upper and lower bounds of the plot can be tweaked with scaleL and scaleH.
+  # use as input values to allow to change them:
   d1std <- DiM.res[["inputvalues"]]$d1std
   d2std <- DiM.res[["inputvalues"]]$d2std  
   r.low <- d1std / (scaleL * d2std)
@@ -797,10 +759,7 @@ DiM.plot.calc.pg <- function(DiM.res, BROB=FALSE, fac.brob=1, cMasses=c(0.89,0.9
   
 ################################################################################
 # p(delta|S,D_1,D_2,I) problem
-# plot The difference in the means (delta)
-
-# This section computes and plots the posterior probability density
-# for the difference in the two means assuming the standard deviations are the same.
+# plot The difference in the means (delta) if sd is the same
 
 # create sequence for values to calculate the posterior probability density(ies)
   delta.low <- low - high
@@ -892,8 +851,7 @@ DiM.plot.calc.pg <- function(DiM.res, BROB=FALSE, fac.brob=1, cMasses=c(0.89,0.9
  
 ################################################################################
 # p(delta|Sbar,D_1,D_2,I) problem
-# This section computes and plots the posterior probability density
-# for the difference in the two means assuming the standard deviations are different.
+# plot the difference in means assuming sds are different.
 
 # TODO tweak range for each plot!
   #redundant, not necessary
@@ -944,7 +902,7 @@ DiM.plot.calc.pg <- function(DiM.res, BROB=FALSE, fac.brob=1, cMasses=c(0.89,0.9
   }
 
 # integrate for each element of delta.sek
-# do it later with sapply
+# TODO: do it with sapply
   cat("Calculate pdel.SbarD1D2I and pdelB...\n")
   pdel.SbarD1D2I <- vector(mode="list",length=delta.sek.l)
   pdel.SbarD1D2I.sum <- 0
@@ -986,16 +944,10 @@ DiM.plot.calc.pg <- function(DiM.res, BROB=FALSE, fac.brob=1, cMasses=c(0.89,0.9
 
 ################################################################################
 # p(delta|D_1,D_2,I) problem
-# This section computes and plots the posterior probability density
-# for the difference in the two means independent of whether the
-# standard deviations are the same. It is a weighted average of
-# p(delta|S,D_1,D_2,I) and p(delta|Sbar,D_1,D_2,I) where the weights
-# are pS and pSbar, the probability that the standard deviations are
-# the same or different, respectively.
-
-  # The code also computes the 95% credible region and the 99.5% credible region.
-  # The latter is used to choose suitable boundaries for plotting purposes so
-  # only the region with significant probability is displayed.
+# plot the difference in means independent of the sds are the same or not
+# THis is a weighted average of p(delta|S,D_1,D_2,I) and p(delta|Sbar,D_1,D_2,I)
+# with weights are pS and pSbar ie. probs of sds are same/ different.
+# It also calcs the CIs.
 
   # to remember - s.a.:
   # p(delta|S,D_1,D_2,I)
@@ -1068,17 +1020,12 @@ DiM.plot.calc.pg <- function(DiM.res, BROB=FALSE, fac.brob=1, cMasses=c(0.89,0.9
   #lines(pdelta.df[,"delta.sek"],pdelta.df[,"pdelA"], col="blue")
   #lines(pdelta.df[,"delta.sek"],pdelta.df[,"pdelB"], col="green")
 
-  # Here we plot p(delta|v,D_1,D_2,I), p(delta|vbar,D_1,D_2,I) and
-  # the weighted average of the two. See plot legend for details.
-  # The peak delta, average delta and upper and lower boundaries
-  # of the 95% credible region are displayed along the top of the plot.
+  # Plot p(delta|v,D_1,D_2,I), p(delta|vbar,D_1,D_2,I) and the weighted average of them
+  # plus CIs.
 
 ################################################################################
 # p(r|C,D_1,D_2,I) problem
-# This section computes and plots the posterior probability density
-# for the ratio of the standard deviations assuming the means are the same.
-# The upper and lower bounds on the plot can be varied by the user
-# by setting scaleL and scaleH factors.
+# Plot the ratio of sds if the means are the same
 
   #use as input values to allow to change them:
   #scaleL <- 30
@@ -1148,7 +1095,6 @@ DiM.plot.calc.pg <- function(DiM.res, BROB=FALSE, fac.brob=1, cMasses=c(0.89,0.9
   
   pr.CD1D2I[[50]]
   pr.CD1D2I.sum
-  #pr.CD1D2I
   #note by LG:
   #first value different to MA:
   #MA: 3.15108e-230
@@ -1181,7 +1127,7 @@ DiM.plot.calc.pg <- function(DiM.res, BROB=FALSE, fac.brob=1, cMasses=c(0.89,0.9
 # This section computes and plots the posterior probability density
 # for the ratio of the standard deviations assuming the means are the different. 
 
-  # redundant, not necessary
+  #redundant, not necessary
   #scaleL <- 30
   #scaleH <- 4
   #r.low <- d1std / (scaleL * d2std)
@@ -1246,7 +1192,7 @@ DiM.plot.calc.pg <- function(DiM.res, BROB=FALSE, fac.brob=1, cMasses=c(0.89,0.9
 
   pr.CbarD1D2I[[50]]
   pr.CbarD1D2I.sum  
-  #pr.CbarD1D2I
+
   #note by LG:
   #first value different to MA:
   #MA: 4.06446e-230
@@ -1276,18 +1222,13 @@ DiM.plot.calc.pg <- function(DiM.res, BROB=FALSE, fac.brob=1, cMasses=c(0.89,0.9
 
 ################################################################################
 # p(r|D_1,D_2,I)
-# This section computes and plots the posterior probability density
-# for the ratio of the standard deviations independent of whether
-# the means are the same.
-# It is a weighted average of p(r|C,D1,D2,I) and p(r|Cbar,D1,D2,I)
-# where the weights are pC and pCbar, the probability that the means
-# are the same or different, respectively.
-# The code also computes the 95% credible region and the 99.9% credible region.
-# The latter is used to choose suitable boundaries for plotting purposes
-# so only the region with significant probability is displayed.
+# This section computes and plots the prob of the ratio of the sds independent
+# of same means or not.
+# THis is a weighted average p(r|C,D1,D2,I) and p(r|Cbar,D1,D2,I)
+# with weights pC and pCbar,
 
   #note by LG:
-  #first (smalles values) are slightly different due to following errors from
+  #first (smallest values) are slightly different due to following errors from
   #above -> prA and prB, not pC and pCbar -> probably due to precision on the
   #not-log scale (ie. not using logs to integrate)
 
@@ -1323,11 +1264,7 @@ DiM.plot.calc.pg <- function(DiM.res, BROB=FALSE, fac.brob=1, cMasses=c(0.89,0.9
   prave.r.delta.cMass1 <- extractcMass.values(prave.df.dframe, cMass=cMasses[1], BROB=BROB)
   prave.r.delta.cMass2 <- extractcMass.values(prave.df.dframe, cMass=cMasses[2], BROB=BROB)
   
-  # Here we plot  p(r|s,D1,D2,I), p(r|sbar,D1,D2,I) and the weighted average
-  # of the two. See plot legend for details.
-  # The peak r, average r and upper and lower boundaries of the 95% credible
-  # region are displayed along the top of the plot.
-
+  # Here we plot  p(r|s,D1,D2,I), p(r|sbar,D1,D2,I) and their weighted average
   head(pdelta.df)
   head(pr.df)
   

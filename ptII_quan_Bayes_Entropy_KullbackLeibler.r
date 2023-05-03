@@ -23,7 +23,6 @@ term <- gl(3,1,6, labels=c("nation","I","we"))
 pres.dat <- data.frame(counts.bk,president,term)
 
 
-
 # table used terms for all
 bush <- pres[,"Bush"]
 kerry <- pres[,"Kerry"]

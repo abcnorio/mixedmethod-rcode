@@ -13,6 +13,7 @@ library(wiqid) # exIC
 # load helper functions
 source("ptII_quan_Bayes_information-criteria_helpfuncs.r")
 
+
 # marginal likelihood
 plik <- function(theta) {
   dbinom(x=40, size=150, prob=theta) * dbeta(x=theta, shape1=3, shape2=1)

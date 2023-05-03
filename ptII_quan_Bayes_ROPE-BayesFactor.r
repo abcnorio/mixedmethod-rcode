@@ -461,7 +461,7 @@ help.search("darwin")
 data(darwin)
 ?darwin
 # Darwin, C.R. 1876. The effects of cross and self fertilisation in the vegetable kingdom. John Murray, London.
-# Charles Darwin(1876) provided data on the difference in the
+# Charles Darwin (1876) provided data on the difference in the
 # heights attained by selfed and crossed mother plants.
 # A data frame with 15 observations on the following variable:
 # ‘difference’ the difference in height in inches between each

@@ -378,7 +378,7 @@ head(mvtnorm:::dmvnorm(xs))
 
 
 
-
+# borrowed and taken from package "rhmc"
 rhmc:::hmc(f=log_posterior,
            init=19,
            numit=1000,

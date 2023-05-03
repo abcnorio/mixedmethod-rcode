@@ -11,30 +11,9 @@ library(arm)
 # load necessary helper functions
 source("ptall_generalfuncs.r")
 
-
 # prepare data
-
-# data German states population statistics
-
-# https://www.destatis.de/DE/ZahlenFakten/LaenderRegionen/Regionales/Gemeindeverzeichnis/Administrativ/Aktuell/02Bundeslaender.html
-# Bundesländer mit Hauptstädten nach Fläche, Bevölkerung und Bevölkerungsdichte am 31.12.2016
-
-# https://www.bundeslaenderdeutschland.de/bundeslaender/flaechen/
-# Größen der Bundesländer von Deutschland
-
-# https://de.statista.com/statistik/daten/studie/76262/umfrage/geburtenziffer---anzahl-der-kinder-pro-frau-2007-und-2008/
-# Zusammengefasste Geburtenziffer - Anzahl der Kinder pro Frau in Deutschland nach Bundesländern (Stand 2016)
-
-# https://www.destatis.de/DE/ZahlenFakten/GesellschaftStaat/Bevoelkerung/Sterbefaelle/Sterbefaelle.html;jsessionid=9E3220C7B29E31E38D3048A9E635382E.InternetLive1
-
-# http://www.gbe-bund.de/oowa921-install/servlet/oowa/aw92/dboowasys921.xwdevkit/xwd_init?gbe.isgbetol/xs_start_neu/&p_aid=3&p_aid=53101642&nummer=5&p_sprache=D&p_indsp=-&p_aid=4179975
-# 2016 -> Bevölkerung im Jahresdurchschnitt. Gliederungsmerkmale: Jahre, Region, Alter, Geschlecht, Nationalität (Grundlage Zensus 2011)
-
-# #https://de.statista.com/statistik/daten/studie/71085/umfrage/verteilung-der-einwohnerzahl-nach-bundeslaendern/
-# Bevölkerung - Einwohnerzahl der Bundesländer in Deutschland am 31. Dezember 2017 (in 1.000)
 einw2017 <- c(17912,12997,11023,7963,6243,4081,4074,3613,2890,2504,2223,2151,1831,1611,994,681)
 
-# http://www.gbe-bund.de/oowa921-install/servlet/oowa/aw92/WS0100/_XWD_FORMPROC?TARGET=&PAGE=_XWD_2&OPINDEX=1&HANDLER=XS_ROTATE_ADVANCED&DATACUBE=_XWD_30&D.000=ACROSS&D.001=DOWN&D.003=PAGE&D.100=DOWN
 bland <- c("Nordrhein-Westfalen","Bayern","Baden-Württemberg","Niedersachsen","Hessen","Sachsen","Rheinland-Pfalz","Berlin","Schlwesig-Holstein","Brandenburg","Sachsen-Anhalt","Thüringen","Hamburg","Mecklenburg-Vorpommern","Saarland","Bremen")
 eastwest <- c("W","W","W","W","W","E","W","B","W","E","E","E","W","E","W","W")
 
@@ -43,7 +22,6 @@ eastwest <- c("W","W","W","W","W","E","W","B","W","E","E","E","W","E","W","W")
 area2016 <- c(34097,70551,35751,47634,21114,18415,19853,891,15799,29485,20446,16172,755,23180,2569,419)
 # population
 einw2016 <- c(17877808,12887133,10915756,7936142,6194630,4083317,4059428,3547431,2870320,2489737,2240861,2164421,1798923,1611518,996124,675121)
-# https://www.destatis.de/DE/ZahlenFakten/LaenderRegionen/Regionales/Gemeindeverzeichnis/Administrativ/Aktuell/02Bundeslaender.html
 # people per km^2
 ppkm2.2016 <- c(524,183,306,167,294,221,205,4012,182,84,109,133,2397,69,388,1617)
 # deaths
@@ -52,7 +30,6 @@ death2016 <- c(202250,129552,106630,92368,64081,53330,45863,34050,33879,30790,31
 births2016 <- c(173274,125686,107479,75215,60731,37940,37518,41086,25420,20934,18092,18475,21480,13442,8215,7136)
 # Nordrhein-Westfalen,Bayern,Baden-Württemberg,Niedersachsen,Hessen,Sachsen,Rheinland-Pfalz,Berlin,Schlwesig-Holstein,Brandenburg,Sachsen-Anhalt,Thüringen,Hamburg,Mecklenburg-Vorpommern,Saarland,Bremen
 # mean age
-# https://www.destatis.de/DE/ZahlenFakten/GesellschaftStaat/Bevoelkerung/_Grafik/Bevoelkerungsstand_Durchschnittsalter_Bundeslaender.png?__blob=poster
 mage2016 <- c(44,43.6,43.3,44.4,43.7,46.7,44.6,42.6,45,46.9,47.5,47,42.1,46.7,46.1,43.6)
 poptab <- data.frame(einw2016,area2016,ppkm2.2016,death2016,births2016,mage2016)
 rownames(poptab) <- bland

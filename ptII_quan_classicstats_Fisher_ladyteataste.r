@@ -6,6 +6,7 @@
 # chap. 4 [4.5.1.1]
 # Vom Tee trinken und Milch erkennen — ein Beispielexperiment nach Fisher
 
+
 # correct classification possibilities for the four "tea first" variants
 # all possible four group variants
 

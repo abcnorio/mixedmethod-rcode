@@ -7,6 +7,7 @@
 
 # HELPER FUNCTIONS
 
+
 ###### function to plot HDI
 plotHDI <- function(dens, prob, quants=NULL, densTF=TRUE, theta=seq(0,1,0.01), fac=0.1, digs=3)
 {

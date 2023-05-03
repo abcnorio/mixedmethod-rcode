@@ -3,8 +3,8 @@
 # paper: G.L. Bretthorst "On the difference of means" (1993)
 # http://bayes.wustl.edu/glb/diff.pdf
 #
-# R code based on Mathematica code by Urban Studer (90's, Z?rich/ CH)
-# R code by Leo G?rtler
+# R code based on Mathematica code by Urban Studer (90's, Zürich/ CH)
+# R code by Leo G
 # first: 12-06-05
 # latest: 21-06-06, 20-04-17, 07-09-20
 
@@ -117,40 +117,6 @@ gamma_inc_gen <- function(a,z0,z1=NA, log=FALSE)
     else return( brob(pgamma(z0,a, lower=FALSE,log=TRUE)) - brob(pgamma(z1,a, lower=FALSE,log=TRUE)) )
   }  
 }
-#
-#a <- 2
-#z0 <- 4
-#z1 <- 5
-#
-##equivalent to Mathematica N[Gamma[z0]]
-##6
-#gamma(z0)
-##log
-#lgamma(z0)
-#exp(lgamma(z0))
-#
-##incomplete
-##equivalent to Mathematica N[Gamma[a,z0]]
-##0.09157819
-#1-pgamma(z0,a)
-#pgamma(z0,a, lower=FALSE)
-#gamma_inc_gen(a,z0)
-#
-##incomplete(log)
-#gamma_inc_gen(a,z0, log=TRUE)
-#exp( gamma_inc_gen(a,z0, log=TRUE) )
-#
-##equivalent to Mathematica N[Gamma[a,z0,z1]] = G[a, z0] - G[a, z1]
-##0.0511505
-#pgamma(z0,a, lower=FALSE) - pgamma(z1,a, lower=FALSE)
-#
-##generalized incomplete
-#gamma_inc_gen(a,z0,z1)
-#
-##generalized incomplete(log)
-#gamma_inc_gen(a,z0,z1)
-#gamma_inc_gen(a,z0,z1, log=TRUE)
-#exp( gamma_inc_gen(a,z0,z1, log=TRUE)@x )  
 
 
 ################################################################################
@@ -200,12 +166,6 @@ DiffinMeans <- function(inval=NULL, out=FALSE, smin=0, BROB=FALSE, Nsteps=100)
   DsD <- (Ni * Dsi + Nii * Dsii) / NN
   ss <- sqrt(NN * (DsD - DD^2) / (NN-1))
   
-  #UMS original Mathematica
-  #If[L < DD,
-  #   (Print["L - Mean_comb < 0 : ",L<DD];
-  #    Print["             (-> '+'-sign between Gamma-fcts o.k.)"]),
-  #   (Print["L - Mean_comb < 0 : ",L<DD];
-  #    Print["             (-> '+'-sign between Gamma-fcts false!)"]) 
   cat("\nL - Mean_comb < 0 : ",L < DD," [comparison L < DD]\n")
   if(L < DD)
   {
@@ -241,7 +201,6 @@ DiffinMeans <- function(inval=NULL, out=FALSE, smin=0, BROB=FALSE, Nsteps=100)
     integpmv.brob <- function(s)
     {
       1 / (as.brob(s)^NN) * exp(as.brob(-dd) / (2 * s^2)) *
-        #  ( pgamma(upnum/(2*s^2),1/2)*gamma(1/2) + pgamma(lownum/(2*s^2),1/2)*gamma(1/2) )
         ( gamma_inc_gen(1/2,0,upnum/(2*s^2),log=TRUE)*sqrt(pi) + gamma_inc_gen(1/2,0,lownum/(2*s^2),log=TRUE)*sqrt(pi) )
     }
     pmv.brob <- simpsonrule.brob(fx=integpmv.brob, sL=sL, sH=sH, Nsteps=Nsteps)
@@ -307,8 +266,6 @@ DiffinMeans <- function(inval=NULL, out=FALSE, smin=0, BROB=FALSE, Nsteps=100)
   {
     integpmvbar <- function(A)
     {
-      # UiA <- Ni*(Dsi-2*Di*A+A^2)/2
-      # UiiA <- Nii*(Dsii-2*Dii*A+A^2)/2
       1/UiA(A)^(Ni/2) *
       1/UiiA(A)^(Nii/2) *
       ( pgamma(UiA(A)/(sH^2),Ni/2)*gamma(Ni/2) - pgamma(UiA(A)/(sL^2),Ni/2)*gamma(Ni/2) ) *
@@ -352,7 +309,6 @@ DiffinMeans <- function(inval=NULL, out=FALSE, smin=0, BROB=FALSE, Nsteps=100)
   #sign: plus if U1H, U1L have different sign
   #same true for U2H, U2L
   
-  #UiA <- function(A) Ni*(Dsi-2*Di*A+A^2)/2
   UiiB <- function(B) Nii*(Dsii-2*Dii*B+B^2)/2
   PMbarVbar.hypo <- function(Dsi,Dsii,sL,sH,H,L,Ni,Nii)
   {
@@ -633,9 +589,6 @@ UMSprint <- function(results, SRIB=NA, dig=6)
   } else
   {
     
-#    pp.un.temp <- results[["pp.un"]]
-#    pp.no.temp <- results[["pp.no"]]
-    
     #convert back
     pp.un.expcheck <- unlist(lapply(pp.un.temp, function(x) exp(x[]@x)))
     pp.no.expcheck <- unlist(lapply(pp.no.temp, function(x) exp(x[]@x)))
@@ -868,5 +821,4 @@ UMSplot <- function(inval, dig=4, pdfout=FALSE, fname="UMSplot.pdf", loga=TRUE, 
 # --------------------------------------------------
 # End: ON THE DIFFERENCE IN MEANS
 # --------------------------------------------------
-
 

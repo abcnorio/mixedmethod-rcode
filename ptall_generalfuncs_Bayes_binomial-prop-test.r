@@ -10,6 +10,7 @@
 # content:
 # helper functions for Bayesian binomial proportion test in various versions
 
+
 ### FUNCTION
 # taken and modified from
 # BayesianFirstAid:::summary.bayes_prop_test

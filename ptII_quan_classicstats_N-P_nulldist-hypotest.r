@@ -161,7 +161,7 @@ z <- ES/SE
 SE <- sigma/sqrt(n)
 
 
-#############
+############# tweaked power.t.test() taken from R
 power.t.testX <- function (n1 = NULL, n2 = NULL, delta = NULL, sd1 = 1, sd2 = NULL, sig.level = 0.05, power = NULL, 
     type = c("two.sample", "one.sample", "paired"), alternative = c("two.sided", 
         "one.sided"), strict = FALSE, tol = .Machine$double.eps^0.25, var.eq = TRUE)

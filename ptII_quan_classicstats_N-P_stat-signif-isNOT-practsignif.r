@@ -12,6 +12,7 @@ library(pwr)
 # load necessary script with general functions
 source("ptall_generalfuncs.r")
 
+
 # define population parameters
 mu1 <- 100
 mu2 <- 104

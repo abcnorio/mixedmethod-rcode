@@ -7,6 +7,7 @@
 
 # HELPER FUNCTIONS
 
+
 ###### function to calculate and plot a function to relate N, pv and d
 # smaller p-values due to increasing sample size
 # and constant effect size

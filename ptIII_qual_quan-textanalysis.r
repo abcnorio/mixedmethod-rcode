@@ -1,3 +1,9 @@
+# file:
+# ptIII_qual_quan-textanalysis.r
+
+# location:
+# chap. 10 [10.1]
+# Fallbeispiel quantitative Textanalyse
 
 
 library("tm")

@@ -5,6 +5,7 @@
 # chap. 4 [4.5.7]
 # Der Ablauf eines statistischen Tests — das Nullritual
 
+
 # null ritual
 # simple and dumb version of NULL ritual
 test.sig.NULLritual <- function(p.value, crit.sig)

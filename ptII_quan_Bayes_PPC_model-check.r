@@ -85,48 +85,9 @@ s.cs
 s.cs/N.cs
 
 
-### NOT RUN - ORIGINAL CODE
 # after https://www.barelysignificant.com/post/ppc/
 # generating nsims new datasets (Yrep)
-Yrep <-
-    sapply(
-        # for each theta
-        1:length(thetas),
-        # generating samples
-        function(i) sample(
-            c(0, 1),
-            # of the same length as y
-            N.cs,#length(y),
-            replace = TRUE,
-            # with prob of presence equals to theta
-            # and prob of absence equals to 1 - theta
-            prob = c(thetas[i], 1 - thetas[i])
-            )
-        )	
-# for each theta = random draw from posterior!!!
-# generating samples via bootstrap (with replacement)
-# of the same length as y
-# with prob of presence equals to theta
-# and prob of absence equals to 1 - theta
-# i.e. prob for each individual random draw from posterior
-#
-# i.e. for each random draw from posterior sample a full set of y with possible values taken from y
-# based on probs according to the random draw from the posterior in question = thetas[i] & 1-thetas[i]
-#
-# sample from possible values 0 and 1 = binomial case (see y)
-# ie. binary outcomes = presence or absence or success and failure etc.
-# ?sample
-# >>> prob: a vector of probability weights for obtaining the elements of the vector being sampled.
-#
-# for each new Y_rep sample, computing the number of switches T_rep, and
-# comparing it to observed number of switches Ty
-# calculate the number of changes = switches from 0 to 1 or 1 to 0
-# #nb_switches)
-#
-### END OF NOT RUN
-
-
-# adopted to our needs...
+# taken and adopted to our needs...
 # draw from posterior to predict
 Yrep <- sapply(1:length(thetas),
                function(i) sample(c(0,1), N.cs, replace=TRUE, prob=c(thetas[i], 1-thetas[i]))
@@ -222,23 +183,4 @@ mean(Trep > Ty)
 # e.g. =0.0079 ~ 0.008 -> ie. "p" << 0.05 / 0.01 etc. if interpreted as a p-value
 # = prob whether observations = y = data are probable
 # under this type of model (= hypothesis) with the parameters chosen
-
-
-# https://www.barelysignificant.com/post/ppc/
-# Which gives the probability of observing this number of switches under our model.
-# What does it mean ? Does it mean that our model is wrong ? Well, not exactly.
-# Models are neither right or wrong (see Crane & Martin, 2018).
-# But our model does not seem to capture the full story,
-# it does not seem to give a good representation of the process that generated our data
-# (which is arguably one of the characteristics that contribute to the soundness of a model).
-
-# More precisely, it misses the point that the probabilities of successive participants
-# being present are not independent. This, in our case, seems to be due to temporal fluctuations
-# of this probability throughout the day. For instance, the probability of a participant being present
-# seems to be the lowest early in the morning or late in the afternoon, as well as between 12am and 2pm.
-# This temporal dependency could be better taken into account by using gaussian process regression models,
-# that generalise the varying effect strategy of multilevel models to continuous variables.
-# In other words, it would allow to take into account that participants coming to the lab at similar hours
-# (e.g., 9am and 9.30am) are more similar (in their probability of being present)
-# than participants coming at very different hours (e.g., 9am and 3pm).
 

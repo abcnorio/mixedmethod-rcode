@@ -7,6 +7,7 @@
 
 # HELPER FUNCTIONS
 
+
 ###### function to plot outlier demo
 plot.outlier <- function(a,b, weg=weg)
 {

@@ -2715,7 +2715,3 @@ sN.ME.post.summary
 # https://www.researchgate.net/publication/233316630_Bayesian_analysis_of_a_22_contingency_table_with_dependent_proportions_and_exact_sample_size
 # https://www.researchgate.net/publication/313543102_Inferences_on_the_Difference_of_Two_Proportions_A_Bayesian_Approach
 
-
- 
- 
- 
