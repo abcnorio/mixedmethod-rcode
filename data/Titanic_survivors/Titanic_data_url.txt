@@ -1,0 +1,12 @@
+# collected and taken from various sources across the internet and compiled manually
+# mostly from R itself, the titanic are part of R
+
+# e.g. examples (sources:)
+# https://rdrr.io/cran/DALEX/man/titanic.html
+# https://search.r-project.org/CRAN/refmans/titanic/html/titanic.html
+# https://cran.r-project.org/web//packages//EIX/vignettes/titanic_data.html
+# https://search.r-project.org/CRAN/refmans/Przewodnik/html/titanic.html
+# https://github.com/nayiyarace/Basic-Exploratory-Data-Analysis-in-R
+
+# the most extensive data set is probably from kaggle:
+# https://www.kaggle.com/c/titanic/data
