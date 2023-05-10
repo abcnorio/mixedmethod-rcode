@@ -78,6 +78,10 @@ Although all R scripts were tested heavily we cannot rule out any possible error
 
 If one finds a bug please contact us with a short and clear example so we can try to reproduce it and fix the error. Important is to understand that sometimes due to demonstration goals the code is not perfect and is revised a few lines later. Those incidents are no bugs but intentional for educational purposes to show that things evolve and do not happen accidentially, but statistical work means (ideally!) slow and steady progress towards a goal that sometimes even changes. In general, the R-code is there for educational purposes and adjusted to the tasks (e.g. data sets) and the specific topics of the book. The R-code does not fulfill the requirements of traditional R-packages like some universal library. Nevertheless, some of the functions may be useful in various changing contexts.
 
+## AQUAD 7 files
+
+One data set (application letter for a place in a drug addiction rehabilitation center) is taken from qualitative data analysis along with the windows binary from [AQUAD 7](https://www.aquad.de), an free and open source QDA software. The folder AQUAD7 contains all working files along with the older AQUAD 7 version that was used for analysis. AQUAD is now on v8.
+
 ## Citation
 
 If you ever refer to any part of the code, please cite it as:
