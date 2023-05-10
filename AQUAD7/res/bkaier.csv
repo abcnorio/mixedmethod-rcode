@@ -1,0 +1,34 @@
+/$Ich-Bezug;/$Ihr-Bezug;/$Einstieg;/$Text;/$Betreff
+Abschluss Grussformel;0;0;0;0;0
+Adresse;0;0;0;0;0
+Anrede;0;0;0;0;0
+Chance;0;1;0;1;0
+Datum;0;0;0;0;0
+hohes Alter;0;1;0;1;0
+Konzept startagain;0;0;1;1;0
+Name eigener;0;0;0;0;0
+Ort Psychiatrie;0;0;0;0;0
+Subject line Betreff;0;0;0;0;1
+Vorstellungsgespräch in sa;0;1;0;1;0
+X-Emo (+);0;1;2;3;0
+X-Emot (-);0;2;0;2;0
+X-Handlungen;3;2;2;6;0
+X-kognitiv;0;3;1;4;0
+X-unpassend;0;1;0;1;0
+Zeit;1;0;0;1;0
+Zukunft in sa;0;0;1;1;0
+[S] - Abwehr Schutz vor Fehlschlag;0;1;0;1;0
+[S] - Ausschlusskriterium;0;1;0;1;0
+[S] - Betonung;0;0;0;0;0
+[S] - Depressivität Hoffnugnslosigkeit;0;1;0;1;0
+[S] - Geborgenheit;0;0;1;1;0
+[S] - Hoffnung;0;1;1;2;0
+[S] - Imagination;0;0;1;1;0
+[S] - Investition;1;0;1;1;0
+[S] - kognitiv;0;1;1;2;0
+[S] - Planung;1;0;0;1;0
+[S] - Präsentation;0;1;0;1;0
+[S] - Vorzeigen von Resultaten;1;0;0;1;0
+[X] - Belehrung;0;1;0;1;0
+[X] - casual;0;0;0;1;0
+[X] - formal;0;0;0;1;1
