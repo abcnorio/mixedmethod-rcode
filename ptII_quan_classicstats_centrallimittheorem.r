@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 #file: ptII_quan_classicstats_centrallimittheorem.r
 #location:
 #Exkurs ? zentraler Grenzwertsatz
@@ -132,23 +155,3 @@ lines(density(zentr),col="darkblue")
 mtext("Simulation Central limit theorem", outer=TRUE, line=-1.7, cex=1.5, side=3)
 mtext(eval(substitute(expression(paste("base: ",chi^2," samples (n=",n,", df=",dfree,")",sep="")),list(dfree=dfree,n=n))), outer=TRUE, line=-3.4, cex=1.2, side=3)
 
-
-
-# simulate
-# one sample
-# sampling distribution of the sum
-# sampling distribution of the mean
-# sampling distribution of variance
-
-###########NOT RUN BELOW THIS POINT
-
-#https://qualityandinnovation.com/2015/03/30/sampling-distributions-and-central-limit-theorem-in-r/
-#http://www.rpubs.com/christopher_castle/137490
-#https://stackoverflow.com/questions/40307510/central-limit-theorem-in-r
-#https://consultglp.com/wp-content/uploads/2016/10/using-r-to-simulate-the-central-limit-theorem.pdf
-#https://www.stat.ubc.ca/~john/305Last0607/lab2sol.pdf
-#http://genomicsclass.github.io/book/pages/clt_in_practice.html
-
-#todo
-#http://adv-r.had.co.nz/Expressions.html
-#https://stackoverflow.com/questions/8452002/plotting-a-grid-behind-data-not-in-front-in-r

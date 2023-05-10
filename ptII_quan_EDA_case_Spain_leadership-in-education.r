@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_EDA_case_Spain_leadership-in-education.r
 
@@ -136,7 +159,6 @@ methods("plot")
 getAnywhere(plot.hclust)
 
 # heatmap
-# https://silico-sciences.com/2016/02/cluster-and-plot-gene-expression-data/
 # library 'heatmap3'
 hc <- hclust(dist(rawd, method="manhattan"),method="ward.D2")
 hr <- hclust(dist(t(rawd), method="manhattan"),method="ward.D2")
@@ -151,7 +173,7 @@ coul <- colorRampPalette(brewer.pal(8, "PiYG"))(25)
 heatmap(rawd, xlab="", ylab="", main="Leadership", col=coul)
 
 
-# not run
+### not run
 # heatmap
 # library 'heatmap.plus'
 heatmap.plus(rawd)
@@ -161,9 +183,7 @@ heatmap.plus(rawd)
 par(mar=c(3,4,2,2))
 levelplot(t(rawd))
 
-#####
-#https://cran.r-project.org/web/packages/corrgram/vignettes/corrgram_examples.html
-#Friendly, Michael. 2002. “Corrgrams: Exploratory Displays for Correlation Matrices.” The American Statistician 56: 316–24. doi:10.1198/000313002533.
+
 
 # library 'corrgram'
 corrgram(t(rawd), order=TRUE,
@@ -203,6 +223,6 @@ corrgram(cor(t(rawd)),
          lower.panel=panel.bar,
          main="Leadership (8 dimensions)"
       	)
-# end of not run
+### end of not run
 
 

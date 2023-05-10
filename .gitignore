@@ -57,6 +57,9 @@ data_not-upload*
 # differential R files (older Versions)
 diff*
 
+# helper functions external
+helper-functions-external*
+
 # aquad 7 and files -> look on aquad.de
 AQUAD7*
 

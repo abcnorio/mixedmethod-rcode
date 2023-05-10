@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_BayesFactors_further-remarks.r
 
@@ -16,10 +39,6 @@ library(brms)
 # https://doingbayesiandataanalysis.blogspot.com/search?q=posterior
 
 # BF and prior probs
-# https://doingbayesiandataanalysis.blogspot.com/2015/12/lessons-from-bayesian-disease-diagnosis_27.html
-# "The moral of the disease-diagnosis example ---that the Bayes factor alone is not appropriate for selecting the model--- applies to model comparison generally. Model comparison should be based on the posterior probabilities of the models"
-# "Applying the Bayes-factor-only decision rule to disease diagnosis would lead us to decide that a person has the disease whenever the diagnostic test is positive because the Bayes factor is 19.4 which is much greater than 3. Using only the Bayes factor for decision making, instead of the posterior probabilities of the models, ignores Bayes' rule and is not Bayesian despite the terminology. A Bayes factor is only Bayesian in the full context of Bayes' rule, which converts prior probabilities to posterior probabilities. "
-# "Setting the prior probabilities equal to each other is an assertion of equality, not an expression of uncertainty; the next section discusses uncertainty. Setting the prior probabilities to 0.50/0.50 should be based on as much prior information as setting the prior probabilities to 0.01/0.99."
 
 # choose not just by usings BF's without the priors, ie. different models = different priors
 # not true: all different models have the same prior probs

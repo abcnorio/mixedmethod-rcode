@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # 2020-20-02
 # file:
 # ptall_generalfuncs.r
@@ -322,10 +345,10 @@ primtab.desc <- function(srctab, primtab, outcome, norownames=FALSE, pr.out=TRUE
 ########################## FUNCTION: distfull
 distfull <- function(dm)
 {
-# (C) http://www.wiwi.uni-bielefeld.de/~frohn/Mitarbeiter/Handl/mvarfunktionen.html
-# (C) http://www.wiwi.uni-bielefeld.de/~frohn/Mitarbeiter/Handl/mvarfunktionen.html
+# http://www.wiwi.uni-bielefeld.de/~frohn/Mitarbeiter/Handl/mvarfunktionen.html
+# http://www.wiwi.uni-bielefeld.de/~frohn/Mitarbeiter/Handl/mvarfunktionen.html
 # dm = distance matrix - output of dist()
-# (C) modified by Leo Gürtler 2013
+# modified by LG 2013
  n <- attr(dm, "Size")
  full <- matrix(0, n, n)
  full[lower.tri(full)] <- dm
@@ -342,8 +365,7 @@ distfull <- function(dm)
 ########################## FUNCTION: optcut
 optcut <- function(pm)
 {
-# (C) Leo Gürtler 2004, 2013
-# license: GPL v3 http://www.gnu.org/licenses/gpl-3.0.en.html
+# first 2004, 2013
 # references: Oldenbürger (1981)
   sp <- sort(pm[lower.tri(pm)])
   spcc <- matrix(nrow=length(sp), ncol=2)
@@ -362,8 +384,7 @@ optcut <- function(pm)
 
 ########################## FUNCTION: makeZO
 makeZO <- function(dm.full, vektorOpt, rigid=TRUE)
-# (C) Leo Gürtler 2004, 2013
-# license: GPL v3 http://www.gnu.org/licenses/gpl-3.0.en.html
+# first 2004, 2013
 # references: Oldenbürger (1981)
 # vektorOpt = output from optcut()
 # dm.full = full distance matrix, output from distfull()

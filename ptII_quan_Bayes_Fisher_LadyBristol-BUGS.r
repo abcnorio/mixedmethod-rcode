@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_Fisher_LadyBristol-BUGS.r
 
@@ -24,11 +47,6 @@ source("ptII_quan_Bayes_Fisher_LadyBristol-BUGS_helpfuncs.r")
 
 
 # Lady Bristol's tea taste
-# https://stats.stackexchange.com/questions/160013/fishers-tea-tasting-binomial-exact-test#160022
-# https://stats.stackexchange.com/questions/136584/on-fishers-exact-test-what-test-would-have-been-appropriate-if-the-lady-hadnt/300830#300830
-# https://www.telegraph.co.uk/comment/10420730/If-statistics-arent-your-cup-of-tea-try-Doctor-Fishers-taste-test.html
-# https://medium.com/humansystemsdata/the-most-famous-tea-party-in-the-history-of-statistics-the-comparison-of-frequentism-and-3994bc16037b
-
 
 # does the order matter?
 # >>> YES, she got all eight right
@@ -98,12 +116,9 @@ OR.2x2(ladybristol.6x8)
 
 
 # Bayes solution - no mcmc, but analytical solution
-
-# http://www.nicebread.de/two-meanings-of-priors-1/
-# http://www.nicebread.de/a-short-taxonomy-of-bayes-factors/
-# http://www.nicebread.de/exploring-the-robustness-of-bayes-factors-a-convenient-plotting-function-2/
+#
 # https://medium.com/humansystemsdata/the-most-famous-tea-party-in-the-history-of-statistics-the-comparison-of-frequentism-and-3994bc16037b
-# https://alexanderetz.com/2015/04/15/understanding-bayes-a-look-at-the-likelihood/
+
 
 # likelihood - data generation process
 # content hypotheses != prior knowledge
@@ -376,28 +391,8 @@ theta.mean/(1-theta.mean)
 # library 'Barnard'
 
 # library 'Exact'
-# real data
-# 6 out of 8 ?
-# https://brainder.org/2015/08/23/the-lady-tasting-tea-and-fishers-exact-test/
-# David Salsburg[5] reports that a colleague of Fisher, H. Fairfield Smith, revealed that in the test,
-# the woman got all eight cups correct.[6] The chance of someone who just guesses getting all correct,
-# assuming she guesses that four had the tea put in first and four the milk, would be only 1 in 70
-# (the combinations of 8 taken 4 at a time). 
-# Box, Joan Fisher (1978). R.A. Fisher, The Life of a Scientist. New York: Wiley. p. 134. ISBN 0-471-09300-9.
-# The binomial test could be considered if the lady did not know in advance that there were 4 cups of each
-# mixture order. Since she knew (so the two margins of the table are fixed), each cup was not independent from
-# each other, and her possible answers had to be constrained by answers previously given. The binomial test
-# assumes independence, thus, is not an option for this analysis.
-
-# https://io9.gizmodo.com/how-a-tea-party-turned-into-a-scientific-legend-1706697488
-# Fisher never revealed what the outcome of the test was. (We don’t even know that he used this exact test.)
-# However, other colleagues who were at one of the most famous tea parties in the history of the world claim
-# that Bristol sorted all of the tea cups correctly. If any io9 reader can tell us how she did it,
-# it would be much appreciated.
-# https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/j.1740-9713.2012.00620.x
-
-# https://www.researchgate.net/profile/Carlos_Pereira7/publication/246125831_Exact_test_for_equality_of_two_proportions_Fisher_Bayes/links/54669a100cf2397f7829ddb1/Exact-test-for-equality-of-two-proportions-Fisher-Bayes.pdf
-
+# real data (!)
+# 6 out of 8 correct
 
 # binomial test
 # model.code(bayes.binom.test(c(39, 25)))
@@ -491,27 +486,6 @@ quantile(posteriors.mat[, "theta[1]"] - posteriors.mat[, "theta[2]"], probs)
 
 # calculation with BUGS
 
-# The Bugs Book examples
-# https://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-the-bugs-book/bugs-book-examples/
-# http://www.di.fc.ul.pt/~jpn/r/bugs/bugs_tutorial.html
-
-# tea taste experiment sensu Bayes-Factor
-
-# http://www.di.fc.ul.pt/~jpn/r/bugs/bugs_tutorial.html
-# OpenBUGS win installation:
-# file:///C:/Program%20Files%20(x86)/OpenBUGS/OpenBUGS323/Manuals/Scripts.html
-# https://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-the-bugs-book/bugs-book-examples/the-bugs-book-examples-chapter-7-7-1-1/
-
-# https://cran.r-project.org/web/packages/BiasedUrn/vignettes/UrnTheory.pdf
-# https://web.wpi.edu/Pubs/E-project/Available/E-project-042811-160119/
-# https://andrewgelman.com/2009/10/13/what_is_the_bay/
-
-# in R with beta func
-# https://stats.stackexchange.com/questions/365789/with-what-probability-one-coin-is-better-than-the-other/365808#365808
-
-# https://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-bugs-resources-online/
-
-
 # library 'BRugs'
 # help.BRugs(browser = getOption("browser"))
 
@@ -532,16 +506,11 @@ list(p=c(0.5, 0.5))
 ")
 
 
-# https://lingpipe-blog.com/2009/10/13/bayesian-counterpart-to-fisher-exact-test-on-contingency-tables/
-
-
-# BUGS models - mostly taken from the BUGS book... (see website)
+# BUGS models - mostly taken from the BUGS book... see website:
+# https://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-the-bugs-book/bugs-book-examples/
 
 # both margins fixed, based on noncentral-hypergeometric distribution
 # ~ exact Fisher test
-
-# p. 50f. http://people.stat.sc.edu/hansont/stat740/jags_user_manual.pdf
-
 
 ### begin model
 # FINAL MODEL!

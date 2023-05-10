@@ -1,3 +1,50 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+# file:
+# ptII_quan_Bayes_case_exp-extra-sensual-perception.rr
+
+# location:
+# chap. 6 [6.7.1.4]
+# Hellsehen — in guter Grund für Nullhypothesentesten?
+
+# load necessary libs
+library(LearnBayes)
+library(HDInterval)
+library(lme4)
+library(arm)
+library(BEST)
+library(BayesFactor)
+library(BayesianFirstAid)
+library(lattice)
+library(brms)
+
+# load helper functions
+source("ptall_generalfuncs.r")
+source("ptall_generalfuncs_Bayes_binomial.r")
+source("ptall_generalfuncs_Bayes_Beta_determine.r")
+
+
+
 ###### function to calculate t-test BayesFactor
 t.test.BF <- function(mean.delta=NA, sigma.delta=NA, n1=NA, n2=NA, mu1=NA, mu2=NA, s1=NA, s2=NA, samp1=NA, samp2=NA, PR=TRUE, digits=3)
 {
@@ -61,29 +108,6 @@ t.test.BF <- function(mean.delta=NA, sigma.delta=NA, n1=NA, n2=NA, mu1=NA, mu2=N
 # call:
 # t.test.BF(mean.delta=2, sigma.delta=6, samp1=hell$subjsicher[hell$treat=="C"], samp2=hell$subjsicher[hell$treat=="T"])
 ########################## END OF FUNCTION
-
-# file:
-# ptII_quan_Bayes_case_exp-extra-sensual-perception.rr
-
-# location:
-# chap. 6 [6.7.1.4]
-# Hellsehen — in guter Grund für Nullhypothesentesten?
-
-# load necessary libs
-library(LearnBayes)
-library(HDInterval)
-library(lme4)
-library(arm)
-library(BEST)
-library(BayesFactor)
-library(BayesianFirstAid)
-library(lattice)
-library(brms)
-
-# load helper functions
-source("ptall_generalfuncs.r")
-source("ptall_generalfuncs_Bayes_binomial.r")
-source("ptall_generalfuncs_Bayes_Beta_determine.r")
 
 
 # pre-requisites - probs and chances
@@ -171,7 +195,6 @@ upn.differ.bp <- t(apply(upn.differ, 1, function(i)
 colnames(upn.differ.bp) <- c("mean(pbl)","mean(pjc)")
 upn.differ.bp
 
-# https://stackoverflow.com/questions/3541713/how-to-plot-two-histograms-together-in-r
 par(oma=c(2,1,1,1), "cex.axis"=1, bty="l")
 hist(upn.differ.bp[,"mean(pbl)"], prob=TRUE, ylim=c(0,8), xlim=c(0,1), pre.plot=grid(), col=scales::alpha("yellowgreen",.5), border="white", xlab="mean of p(Bayes-Laplace) and p(Jeffreys-Carnap)", main="Clairvoyance")
 hist(upn.differ.bp[,"mean(pjc)"], add=T, col=scales::alpha("orange",.5), border="white")
@@ -529,12 +552,10 @@ bf.t <- t.test.BF(mean.delta=mean.delta, sigma.delta=sigma.delta, n1=n1, n2=n2, 
 
 
 # BayesFactor
-#
-# http://bayesfactor.blogspot.com/2015/01/multiple-comparisons-with-bayesfactor-2.html
+
 # Compare the unrestricted “full” model to the null (already done, with anovaBF)
 # Compare the unrestricted “full” model to an order restriction
 # Use the resulting two Bayes factors to compare the null to the order restriction.
-# https://www.sciencedirect.com/science/article/pii/S0167715214001862
 hell$Upn <- factor(hell$Upn)
 hell$treat <- factor(hell$treat)
 str(hell)
@@ -594,7 +615,6 @@ plot(anovabf2)
 
 
 # repeated measures
-# https://cran.r-project.org/web/packages/BayesFactor/vignettes/manual.html#fixed
 hell$trial <- factor(hell$trial)
 summary(aov(subjsicher ~ treat*differ + Error(trial/Upn), data=hell))
 summary(aov(subjsicher ~ treat + Error(trial/Upn), data=hell))

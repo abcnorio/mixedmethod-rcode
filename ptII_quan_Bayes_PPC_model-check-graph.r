@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_PPC_model-check-graph.r
 
@@ -14,13 +37,6 @@ library(BEST)
 
 # load necessary helper functions
 source("ptall_generalfuncs.r")
-
-
-# https://vuorre.netlify.com/post/2017/bayes-factors-with-brms/
-# https://mjskay.github.io/tidybayes/articles/tidy-brms.html
-# https://cran.r-project.org/web/packages/bayesplot/vignettes/graphical-ppcs.html
-# https://www.rensvandeschoot.com/tutorials/brms-priors/
-# color_scheme_set("viridis")
 
 
 # case 1 - linear regression - almost ideal fit
@@ -226,7 +242,7 @@ get_prior(bf(y.alt ~ group, sigma ~ group), data=xymodel)
 # model different sigmas for each group
 get_prior(bf(y.alt ~ group, sigma ~ 0 + group), data=xymodel)
 
-# https://vuorre.netlify.com/post/2017/03/21/bayes-factors-with-brms/
+# https://vuorre.netlify.app/posts/2017-03-21-bayes-factors-with-brms/
 # model the intercept and allow to specify a prior on it
 # the '0 +' takes out the default intercept (= like "-1' in other R models)
 # the reserved term 'intercept' shows you mean the regular/ real intercept
@@ -300,13 +316,7 @@ mcmcs.above
 plot(mcmcs.above, type="l", pre.plot=grid(), col="darkred", bty="n")
 
 
-# https://vuorre.netlify.app/post/2017/01/02/how-to-compare-two-groups-with-robust-bayesian-estimation-using-r-stan-and-brms/#unequal-variances-model
-# The model’s output contains our 4 parameters. Intercept is the mean for group 0, Group 1 is
-# the “effect of group 1”. The sigma_Intercept is the standard deviation of Group 0, sigma_Group
-# is the effect of group 1 on the standard deviation (the SD of Group 1 is sigma_Intercept + sigma_Group).
-# The sigmas are implicitly modeled through a log-link (because they must be positive).
-# To convert them back to the scale of the data, they need to be exponentiated.
-# After taking the exponents of the sigmas, the results look like this:
+# https://vuorre.netlify.app/posts/2017-01-02-how-to-compare-two-groups-with-robust-bayesian-estimation-using-r-stan-and-brms/
 
 # analyses
 
@@ -351,7 +361,6 @@ h2p1 <- plot(h2, ignore_prior=FALSE, theme = theme_get(), plot = F)[[1]] +
 h2p1
 
 
-# https://vuorre.netlify.com/post/2017/03/21/bayes-factors-with-brms/
 hypo1.1 <- c("sigma_Intercept = 0")
 h1.1 <- hypothesis(brm.xymodel.CT.hetv, hypo1.1)
 plot(h1.1, ignore_prior=FALSE)
@@ -380,7 +389,6 @@ get_prior(bf(y.alt ~ group, sigma ~ group), data=xymodel)
 get_prior(bf(y.alt ~ group, sigma ~ 0 + group), data=xymodel)
 # this result in sigma for each group
 # the sigma population-level intercept is dropped
-# see also https://cran.r-project.org/web/packages/brms/brms.pdf
 # "Parameterization of the population-level intercept"
 brm.xymodel.CT.hetv1 <- brm(bf(y.alt ~ group, sigma ~ 0 + group), data=xymodel, family="student",
                                sample_prior=TRUE, save_all_pars=TRUE)
@@ -514,7 +522,6 @@ plot(h2)
 
 
 # manual tests
-# https://vuorre.netlify.app/post/2017/01/02/how-to-compare-two-groups-with-robust-bayesian-estimation-using-r-stan-and-brms/
 # posterior distribution of group effect
 # test posterior
 crit1 <- 5
@@ -531,7 +538,6 @@ t.test(xymodel$y[group == "Treatment"], xymodel$y[group == "Control"], data=xymo
 
 
 # Residualplot
-# https://stackoverflow.com/questions/4357031/qqnorm-and-qqline-in-ggplot2
 resi1 <- residuals(brm.xymodel.CT.nonhetv)[,"Estimate"]
 resi2 <- residuals(brm.xymodel.CT.hetv)[,"Estimate"]
 resi3 <- residuals(brm.xymodel.CT.hetv1)[,"Estimate"]
@@ -543,7 +549,6 @@ qqline(resi2, col="red",lwd=2)
 qqnorm(resi3,main="separate variances for groups", col="blue")
 qqline(resi3, col="red",lwd=2)
 
-# https://mvuorre.github.io/pdf/2018-heino-vuorre-hankonen.pdf
 
 
 # summary models

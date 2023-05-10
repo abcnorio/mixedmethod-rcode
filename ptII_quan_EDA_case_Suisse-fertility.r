@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_EDA_case_Suisse-fertility.r
 
@@ -20,10 +43,7 @@ source("ptII_quan_EDA_case_Suisse-fertility_helpfuncs.r")
 
 
 # Suisse fertility data
-
-# https://rdrr.io/r/datasets/swiss.html
 # Mosteller, F. and Tukey, J. W. (1977) Data Analysis and Regression: A Second Course in Statistics. Addison-Wesley, Reading Mass. 
-# http://oscarperpinan.github.io/R/estadistica.html
 
 # data description
 # 1. Fertility: common standardized fertility measure
@@ -201,6 +221,7 @@ quantile(sigma.hat(swiss2.sim))
 
 # smooth scatterplot
 # library 'fields'
+# function 'fudgeit()' taken from
 # https://stackoverflow.com/questions/14271584/r-legend-for-color-density-scatterplot-produced-using-smoothscatter
 fudgeit <- function(){
   xm <- get('xm', envir = parent.frame(1))

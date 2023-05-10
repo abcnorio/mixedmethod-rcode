@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_case_presidential-debates.r
 
@@ -138,8 +161,6 @@ BFA.mcmcplot.thetas(pres.t2x2.bprop)
 # compare models relative freqs
 # diff crit for ROPE prob. -> ROPE = region of practical equivalence
 # see Kruschke 2011 5% = ROPE[-5,+5]
-# http://www.sumsar.net/blog/2014/06/bayesian-first-aid-prop-test/
-# Using the concept of a region of practical equivalence (ROPE) we can calculate the probability that the difference between the two procedures is small. First we have to decide what would count as a small enough difference to be negligible. I have no strong intuition about what would be a small difference in this particular case, so I’m arbitrarily going to go with 5 percentage points, yielding a ROPE of [-5, 5] percentage points (for more about ROPEs see Kruschke, 2011). To calculate the probability that the difference between the two groups is within the ROPE I’ll extract the MCMC samples generated when the model was fit using as.data.frame and then I’ll use them to calculate the probability “by hand”:
 diff.crit <- 3/100
 theta.prop.within.ROPE <- as.data.frame(pres.2x2.bprop)
 head(theta.prop.within.ROPE)
@@ -2390,7 +2411,7 @@ tail(Xprop.res.nonInf)
 head(Xprop.res)
 tail(Xprop.res)
 
-#https://en.wikipedia.org/wiki/Generalized_hypergeometric_function#Euler's_integral_transform
+# https://en.wikipedia.org/wiki/Generalized_hypergeometric_function#Euler's_integral_transform
 
 plot.bayes.prop.test.Xct(res=Xprop.res[,c(1,2)], si=siNi["si"], Ni=siNi["Ni"], sii=siiNii["si"], Nii=siiNii["Ni"], a1=a1, b1=b1, a2=a2, b2=b2,
                          thetaCs=c(0.3,1.5,1.2), loga=TRUE, drawmcmc=TRUE)
@@ -2706,12 +2727,3 @@ plot.bl.jc(theta, sN.ME.res=sN.ME.res, si=Sii, Ni=Nii, filling=FALSE)
 plot.bl.jc(theta, sN.ME.res=sN.ME.res, si=Sii, Ni=Nii, filling=TRUE)
 sN.ME.post.summary <- sN.post.su(Ni=Nii, si=Sii)
 sN.ME.post.summary
-
-
-# some more infos...
-#
-# https://www.tandfonline.com/doi/abs/10.1080/03610929308831114?journalCode=lsta20
-# https://www.researchgate.net/scientific-contributions/5980810_N_Turkkan
-# https://www.researchgate.net/publication/233316630_Bayesian_analysis_of_a_22_contingency_table_with_dependent_proportions_and_exact_sample_size
-# https://www.researchgate.net/publication/313543102_Inferences_on_the_Difference_of_Two_Proportions_A_Bayesian_Approach
-

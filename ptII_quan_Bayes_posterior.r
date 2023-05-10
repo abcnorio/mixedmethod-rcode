@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_posterior.r
 
@@ -104,7 +127,6 @@ crosscorr.plot(mcmc.l)
 mtext("Cross-Correlation plot", outer=TRUE, line=-1, cex=1.5, side=3)
 effectiveSize(mcmc.l)
 
-# https://stackoverflow.com/questions/18087355/r-coda-the-leading-minor-of-order-3-is-not-positive-definite
 # Gelman and Rubin's convergence diagnostic
 gelman.diag(mcmc.l, multivariate=FALSE)
 gelman.diag(mcmc.l, multivariate=TRUE)

@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_Entropy_KullbackLeibler_helpfuncs.r
 
@@ -12,7 +35,7 @@
 H.counts <- function(counts, type="Jeffreys", priorN=0, ein="log")
 {
   # cell frequency priors
-  # http://www.jmlr.org/papers/volume10/hausser09a/hausser09a.pdf
+  # https://www.jmlr.org/papers/v10/ Hausser & Strimmer 2009
   # type priors
   # = 0 = no prior
   # = 0.5 = Jeffreys 
@@ -51,10 +74,6 @@ H.counts <- function(counts, type="Jeffreys", priorN=0, ein="log")
 KL.counts <- function(counts1, counts2, ein="log")
 {
   # Hausser, J., and K. Strimmer. 2009. Entropy inference and the James-Stein estimator,
-  # with application to nonlinear gene association networks. J. Mach. Learn. Res. 10: 1469-1484. (arXiv:0811.3579)
-  # http://strimmerlab.org/software/entropy/
-  # http://www.jmlr.org/papers/volume10/hausser09a/hausser09a.pdf
-  # http://jmlr.csail.mit.edu/papers/v10/hausser09a.html
   freqs1 <- counts1/sum(counts1)
   freqs2 <- counts2/sum(counts2)
   # expectation of log(freqs1 / freqs2)

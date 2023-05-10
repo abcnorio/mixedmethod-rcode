@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_classicstats_R-index_z-curve.r
 
@@ -137,21 +160,7 @@ pvals <- c(10,9,7,14,14,37,39,96,29,2)/1000
 zzs
 pvals
 
-#https://replicationindex.wordpress.com/2014/12/30/the-test-ofinsufficient-variance-tiva-a-new-tool-for-the-detection-ofquestionable-research-practices/
-# test left tail of the distribution
-# Importantly, chi-square tests are usually used to test whether variance
-# is greater than expected by chance (right tail of the distribution).
-# The reason is that variance is not expected to be less than the variance
-# expected by chance because it is typically assumed that a set of data is
-# unbiased. To obtain a probability of insufficient variance, it is necessary
-# to test the left-tail of the chi-square distribution.  
-
-# probability
-# Thus, there is only a 1 out of 200 probability that a random set of 10 studies
-# would produce a variance as low as Var = .19.
-# In conclusion, insufficient variance in z-scores shows that it is extremely
-# likely that the reported results overestimate the true effect size and
-# replicability of the reported studies. 
+# https://replicationindex.wordpress.com/2014/12/30/the-test-ofinsufficient-variance-tiva-a-new-tool-for-the-detection-ofquestionable-research-practices/
 # see also https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0114255
 # https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0114255#pone.0114255.s002
 

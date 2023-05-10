@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_classicstats_N-P_nulldist-hypotest_helpfuncs.r
 
@@ -187,14 +210,12 @@ plot.ab.err <- function(n1=NA, n2=NA, mu1=NA, sigma1=NA, sigma2=NA, delta=NA, al
   stop("...works only for 'n'ormal- or 't'-distributions")
  }
 
- #combined df's (Welch?)
- #http://www.ncss.com/wp-content/themes/ncss/pdf/Procedures/PASS/Two-Sample_T-Tests_Allowing_Unequal_Variance-Enter_Difference.pdf
- #t-case
+ # combined df's (Welch?)
+ # t case
  dfree <- (sigma1^2/n1 + sigma2^2/n2)^2 / ( 1/(n1-1)*(sigma1^2/n1)^2 + 1/(n2-1)*(sigma2^2/n2)^2 )
  
  ncp <- delta / sqrt(sigma1^2/n1 + sigma2^2/n2)
 
- #https://en.wikipedia.org/wiki/Noncentral_t-distribution
  stopifnot(dfree > 2)
  ncp.mean <- ncp*sqrt(dfree/2) * exp( lgamma((dfree-1)/2) - lgamma(dfree/2) )
  ncp.sigma <- dfree*(1+ncp^2)/(dfree-2) - (ncp^2*dfree/2) * exp( lgamma((dfree-1)/2) - lgamma(dfree/2) )^2

@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_MH-Gibbs_example_helpfuncs.r
 
@@ -65,7 +88,7 @@ mu.sigma2.post <- function(y, mu.prior, sigma2.prior, sigma2.pop=NA, n=NA)
   if(is.na(sigma2.pop)) sigma2.pop <- var(y)
   mu.data <- mean(y)
   mu.post <- ( mu.prior/sigma2.prior + (n*mu.data/sigma2.pop) ) / ((1/sigma2.prior) + (n/sigma2.pop))
-  # CHECK.... https://de.slideshare.net/BayesLaplace1/bayesian-statistics-using-r-intro -> slide 36 (error!)
+  # see https://de.slideshare.net/BayesLaplace1/bayesian-statistics-using-r-intro -> slide 36 (error!)
   sigma2.post <- 1/ ( (1/sigma2.prior) + (n/sigma2.pop) )
   sigma.post <- sqrt(sigma2.post)
   tau <- 1/sigma2.post
@@ -94,7 +117,10 @@ mu.sigma2.post <- function(y, mu.prior, sigma2.prior, sigma2.pop=NA, n=NA)
 
 
 ###### function to perform Gibbs sampling with thinning...
+# see very short implementation
 # https://stats.stackexchange.com/questions/266665/gibbs-sampler-examples-in-r
+
+############################### FUNCTION gibbs sampler
 gibbs <- function(daten, tau1=1, nsim=1e+3, seed=1, thin=1e+3)
 {
   set.seed(seed)
@@ -126,47 +152,10 @@ gibbs <- function(daten, tau1=1, nsim=1e+3, seed=1, thin=1e+3)
   { 
     for(j in 2:thin)
     {
-      
-      # https://stats.stackexchange.com/questions/266665/gibbs-sampler-examples-in-r
-      # mu = pop mean
-      # tau = 1/variance population = pop precision
-      # n = sample size
-      # ybar = sample mean
-      # s^2 = sample variance
-      # p(mu|tau,data) ~ N(ybar, 1/(n*tau)
-      # p(tau|mu,data) ~ Ga(n/2, 2/ ((n-1)*s^2 + n*(mu.ybar)^2))
-       
-      # mu[j] <- rnorm( n=1, mean=mu.data, sd=sqrt(1 / (n*tau[j-1])) )
-      # tau[j] <- rgamma( n=1, shape=n/2, scale=2/ ( (n-1)*sigma2.pop + n*(mu[j]-mu.data)^2 ) )
-      
-      # http://galton.uchicago.edu/~eichler/stat24600/Handouts/s09.pdf
-      # mu_t+1 ~ N(ybar, (n*tau_t)^-1)
-      # tau_t+1 ~ Ga(n/2, 1/2sum_i=1:n(y_i-mu_t+1)^2)
-      # sigma2_t+1 = 1/tau_t+1
-      
+          
       mu[j] <- rnorm(n=1, mean=mu.data, sd=sqrt(1/(taus[j-1]*n)))
       taus[j] <- rgamma(n=1, shape=n/2, scale=sum((y-mu[j])^2)/2)
-      
-      # https://www4.stat.ncsu.edu/~reich/ABA/code/
-      # https://www4.stat.ncsu.edu/~reich/ABA/code/NN2
-      # Y_i|mu,sigma2 ~ N(mu, sigma2)
-      # goal: estimate joint dist of (mu,sigma2)
-      # mu ~ N(mu_prior, sigma2_prior)
-      # sigma2 ~ InvGa(a,b)
-      
-      # a = prior a <- 0.01
-      # b = prior b <- 0.01
-      # mu.prior <- 0
-      # sigma2.prior <- 1000
-      
-      # A <- sum(y)/sigma2.pop + mu.prior/sigma2.prior
-      # B <- n/sigma2.pop + 1/sigma2.prior
-      # mu[j] <- rnorm(n=1, mean=A/B, sd=1/sqrt(B))
-      
-      # A <- n/2 + a
-      # B <- sum((y-mu.data)^2) / 2 + b
-      # tau[j] <- rgamma(n=1, shape=A, scale=B)
-      # sigma2.keep[j] <- 1/tau[j]
+
     }
     outv[i,"mu"] <- mu[j]
     outv[i,"tau"] <- taus[j]
@@ -235,12 +224,6 @@ plot.mcmc.parts <- function(mus, taus, part=1:100, rylim=c(-1,1))
 
 
 # Metropolis example
-
-# https://stats.stackexchange.com/questions/232824/bayesian-updating-with-conjugate-priors-using-the-closed-form-expressions
-# First of all, the formulas are defined in terms of variance, not standard deviations.
-# Second, the variance of the posterior is not a variance of your data but variance of estimated parameter μ.
-# As you can see from the description ("Normal with known variance σ2"), this is formula for estimating μ when σ2 is known.
-# The prior parameters μ0 and σ20 are parameters of distribution of μ, hence the assumed model is
 
 ############################# FUNCTION
 # normal posterior predictive distribution

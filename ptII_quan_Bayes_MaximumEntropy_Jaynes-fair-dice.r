@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice.r
 
@@ -16,14 +39,6 @@ source("ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice_helpfuncs.r")
 
 # http://bjlkeng.github.io/posts/maximum-entropy-distributions/
 # http://bjlkeng.github.io/posts/lagrange-multipliers/
-# Eh voila! The usual (non-intuitive) definition of entropy we all know and love.
-# Note: When any of the probabilities are pi=0, you replace 0log(0) with 0, which
-# is consistent with the limit as p approaches to 0 from the right.
-# Entropy, then, is the average amount of information or surprise for an event in
-# a probability distribution. Going back to our example above, when transmitting only "A"s,
-# the information transmitted is 0 (because P("A")=1
-# and 0 for other letters), so the entropy is naturally 0. When transmitting English text,
-# the entropy will be the average entropy using letter frequencies [1].
 
 p <- 0.5
 log2(1/p)
@@ -62,48 +77,6 @@ plot(ps, H(ps),#-ps*log2(ps)-(1-ps)*log2(1-ps),
 plot(ps, -ps*log2(ps)-(1-ps)*log2(1-ps),
      col="violetred3", type="l", pre.plot=grid(), bg="darkred",
      main="Shannon entropy", bty="n", xlab="p", ylab="H(p)")		 	 
-
-
-# So given no information about a discrete distribution,
-# the maximal entropy distribution is just a uniform distribution.
-# This matches with Laplace's principle of indifference which states
-# that given mutually exclusive and exhaustive indistinguishable possibilities,
-# each possibility should be assigned equal probability of 1n.
-# from numpy import exp
-# from scipy.optimize import newton
-#
-# a, b, B = 1, 6, 4.5
-#
-## Equation 15
-#def z(lamb):
-#  return 1. / sum(exp(-k*lamb) for k in range(a, b + 1))
-#
-## Equation 16
-#def f(lamb, B=B):
-#  y = sum(k * exp(-k*lamb) for k in range(a, b + 1))
-#return y * z(lamb) - B
-#
-## Equation 17
-#def p(k, lamb):
-#  return z(lamb) * exp(-k * lamb)
-#
-#lamb = newton(f, x0=0.5)
-#print("Lambda = %.4f" % lamb)
-#for k in range(a, b + 1):
-#  print("p_%d = %.4f" % (k, p(k, lamb)))
-#
-# Output:
-#   Lambda = -0.3710
-#   p_1 = 0.0544
-#   p_2 = 0.0788
-#   p_3 = 0.1142
-#   p_4 = 0.1654
-#   p_5 = 0.2398
-#   p_6 = 0.3475
-################################
-
-# critics on Jaynes and alternate...
-# https://arxiv.org/pdf/1408.6803.pdf
 
 
 

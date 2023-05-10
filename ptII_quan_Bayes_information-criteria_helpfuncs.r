@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_information-criteria_helpfuncs.r
 
@@ -32,7 +55,7 @@ exIC <- function(model, alpha=0.05, digits=4, k=2, pr.out=TRUE, CHECK=FALSE, NOT
     nobs <- nobs(model) #dim(model@frame)[1]
     # number of parameters
     fixef.anz <- dim(model.matrix(model))[2]
-    # https://stackoverflow.com/questions/30896540/extract-raw-model-matrix-of-random-effects-from-lmer-objects-lme4-r
+    # extract raw matrix from lmer object
     ranef.anz <- dim(do.call(cbind,getME(model,"mmList")))[2]
     if(modelclass == "lmerMod")
     {
@@ -68,10 +91,10 @@ exIC <- function(model, alpha=0.05, digits=4, k=2, pr.out=TRUE, CHECK=FALSE, NOT
   BIC <- BIC(model)
  
   # AICv2 <- extractAIC(model)
-  # https://en.wikipedia.org/wiki/Akaike_information_criterion
+  # Akaike IC
   AICc <- AIC + (2*k^2 + 2*k) / (nobs - k -1)
   #AICcc <- AIC(model)
-  # https://en.wikipedia.org/wiki/Hannan-Quinn_information_criterion
+  # Hannan-Quinn IC
   HQC <- -2*lLH[1] + 2*k*log(log(nobs))
  
   PearsonChi2 <- sum(resid(model,"pearson")^2)

@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_EDA_case_Titanic_death-and-dying.r
 
@@ -708,7 +731,6 @@ structable(sex ~ pclass + age.bin.1)
 
 
 # beware of the base rates ...
-# http://www.clayford.net/statistics/tag/simpsons-paradox/
 # Simpson Paradox
 prop.table(table(sex,age.bin.1))
 prop.table(table(sex,age.bin.1),m=1)
@@ -763,7 +785,8 @@ xxx
 data.frame(survival.ratio=(xxx[,2]/xxx[,1]))
 
 
-# fare#https://titanicfacts.net/life-on-the-titanic/
+# fare
+# https://titanicfacts.net/life-on-the-titanic/
 # $150 – the average cost of a First Class berth on the Titanic (£30); a First Class parlour suite on the other hand cost $4,350 (£875).
 # $60 – the average cost of a Standard Class berth (£12).
 # $15-$40 – the average cost of a Third class berth (£3-£8).
@@ -780,7 +803,6 @@ data.frame(survival.ratio=(xxx[,2]/xxx[,1]))
 
 
 # graphical analyses
-# https://stackoverflow.com/questions/8452002/plotting-a-grid-behind-data-not-in-front-in-r
 fac <- 1.05
 fare.dens <- density(fare.p, na.rm=TRUE)
 hist(fare.p, col="steelblue", border="white", prob=TRUE, main="Titanic (fare)", panel.first=grid(), ylim=range(fare.dens$y)*fac, breaks="FD")
@@ -796,8 +818,6 @@ hist.titanic(daten=fare.p, TITLE="Titanic dataset", SUB="fare (separated by surv
 hist.titanic(daten=fare.p[fare.p <150], TITLE="Titanic dataset", SUB="fare (separated by surviving status)", xaxtext="fare.p (0 < fare < 150)")
 hist.titanic(daten=fare.p[fare.p <100], TITLE="Titanic dataset", SUB="fare (separated by surviving status)", xaxtext="fare.p (0 < fare < 100)")
 
-# mosaic: titanic berkely
-# https://www.stat.auckland.ac.nz/~ihaka/120/Lectures/lecture17.pdf
  
 # mosaicplot survivor and gender and class
 TITLE <- c("Titanic and surviving...")
@@ -887,10 +907,6 @@ cotabplot(stab)
 
 mosaic(~ pclass + sex.FM + survived, data=mastertable, pop=FALSE)
 
-# http://carme2011.agrocampus-ouest.fr/slides/Friendly_Turner_Firth_Zeileis.pdf
-# https://cran.r-project.org/web/packages/vcd/vignettes/strucplot.pdf
-# http://datavis.ca/courses/VCD/vcd3-2x2.pdf
-# http://datavis.ca/courses/VCD/vcd-tutorial.pdf
 
 # colors and numbers/ freqs in cells
 tab.struct0 <- structable(survived ~ pclass + sex + child)
@@ -999,18 +1015,9 @@ structable(survived ~ pclass + sex.FM + child.AC, data=mastertable)
 # summary( loglm(~ (pclass * child * sex.FM) + survived * (pclass + child * sex.FM), data=(mastertable+0.5)))
 # summary( loglm(~ (pclass * child * sex.FM) + survived * pclass + survived * child * sex.FM, data=(mastertable+0.5)))
 
-# https://cran.r-project.org/web/packages/vcd/vignettes/strucplot.pdf
-# dark blue cells = effect positiv (>0), red = negative (<0)
-# -> significance, ie. observed vs. expected freqs deviance under a log-linear model
-# area of tiles ~ observed frequencies
-
-# mosaic plot
-# area of each tile for the table cells is proportional to its frequency given the dimensions of previous splits.
-# shading of residuals = reflecting lack of fit
 
 fourfold(table(sex,survived, pclass, child), mfrow=c(3,3), col="darkred")
 
-# http://datavis.ca/courses/VCD/vcd3-2x2.pdf
 # Survival on the Titanic:  2201 passengers, classified by Class, Gender, Age, survived.
 # Data from: Mersey (1912), Report on the loss of the “Titanic” S.S. Dawson (1995)
 
@@ -1058,7 +1065,7 @@ barplot(table(sex, survived))
 
 # with best prediction according to different predictors of the tree forrest (rpart)
 # Large families not good for Survival jasonm
-# https://www.kaggleusercontent.com/kf/109040/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..stYun0XEzhQ8IV1WEZ5_yw.jkZ4Oe-waV-QVa1nNOGRiUL56QzEJ0DpArW8qBU-60EAcvg4ZBuuPP-W_b-nbSDgdpeOxrbDW4ACOxWJnD0FW287NaxsJyBjWH86EXlUm4qPQ1USvRitodmc7HT2McuHXSDlebOjfppfYLWIhfoWhGXmxiAV0QUGg4jNkxOpHQQ.DHQgGAhH7au7lB1JBuPtnA/output.html
+ https://www.kaggleusercontent.com/kf/109040/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..stYun0XEzhQ8IV1WEZ5_yw.jkZ4Oe-waV-QVa1nNOGRiUL56QzEJ0DpArW8qBU-60EAcvg4ZBuuPP-W_b-nbSDgdpeOxrbDW4ACOxWJnD0FW287NaxsJyBjWH86EXlUm4qPQ1USvRitodmc7HT2McuHXSDlebOjfppfYLWIhfoWhGXmxiAV0QUGg4jNkxOpHQQ.DHQgGAhH7au7lB1JBuPtnA/output.html
 # formula 	measured accuracy
 # 1. Survived ~ Age + Sex 	0.845
 # 2. Survived ~ Age + Sex + Pclass 	0.838
@@ -1090,7 +1097,7 @@ famsize.index <- paste(as.character(famsize.adj),lastname,sep=":")
 # famID.tab
 # head(famID.tab)
 # sum(famID.tab$famID.DROP == FALSE)
-#wrongly classified
+# wrongly classified
 # famID.nam2del <- famID.tab[famID.tab$Freq <= 2,]
 # #correctedfamID
 # famID.cc <- famID
@@ -1133,11 +1140,6 @@ arm:::display(lm(age ~ survived))
 arm:::display(lm(fare.p ~ survived[fare > 0]))
 
 
-# https://stackoverflow.com/questions/29837257/how-to-change-color-palette-of-mosaic-plot
-# mosaic(mat, shade=T, colorize = T, gp = gpar(fill=matrix(c("red","blue","light green", "green", "black","red","brown","white","blue"), 3, 3)))
-# colour ramp
-# https://stackoverflow.com/a/6320940/1502898
-
 
 # correlations
 nk <- 2
@@ -1171,13 +1173,6 @@ prop.table(table(sex))
 # 2 https://www.kaggle.com/patkakou/titanic-challenge-r/notebook
 # 2 https://www.kaggle.com/abinavramesh/titanic-analysis-no-extra-features/notebook
 #
-# Trevor Stephens:
-# Well that’s not very clean, the proportion table command by default takes each entry
-# in the table and divides by the total number of passengers. What we want to see is
-# the row-wise proportion, ie, the proportion of each sex that survived, as separate groups.
-# So we need to tell the command to give us proportions in the 1st dimension which stands for
-# the rows (using “2” instead would give you column proportions):
-#
 # BUT:
 # http://www.clayford.net/statistics/tag/simpsons-paradox/
 
@@ -1207,13 +1202,6 @@ sum(is.na(age))/length(age)*100
 # unique values for each variable
 apply(t.src, 2, function(i) length(unique(i)))
 
-# http://www.cyclismo.org/tutorial/R/intermediatePlotting.html
- x = rexp(20,rate=4)
- hist(x,ylim=c(0,18),prob=TRUE, main="This Are An Histogram",xlab="X")
- boxplot(x,at=16,horizontal=TRUE,add=TRUE)
- rug(x,side=1)
- d = density(x)
- points(d,type='l',col=3)
 
 # normal plot
 #library(car)

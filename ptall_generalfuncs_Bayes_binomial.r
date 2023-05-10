@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # 2020-10-16
 # file:
 # ptall_generalfuncs_Bayes_binomial.r
@@ -86,7 +109,7 @@ plot.bl.jc <- function(theta, sN.ME.res, si, Ni, dig=2, filling=FALSE, cols=NULL
                         list(mean.BL=mean.BL, mean.JC=mean.JC))), 4, line=1, cex=0.8)
   
   #new plot - new legend... below the first one
-  #http://dr-k-lo.blogspot.de/2014/03/the-simplest-way-to-plot-legend-outside.html  
+  # http://dr-k-lo.blogspot.de/2014/03/the-simplest-way-to-plot-legend-outside.html  
   par(fig = c(0, 1, 0, 1), oma = c(0, 0, 0, 0), mar = c(0, 0, 0, 0), new = TRUE)
   plot(0, 0, type = "n", bty = "n", xaxt = "n", yaxt = "n")
   legend("bottom",legend=c("Bayes-Laplace","Jeffreys-Carnap"),
@@ -350,9 +373,9 @@ return(ab.post)
 # names(beta.sum) <- c("a", "b", "mode","mean","sd","var")
 ## attr(beta.sum, "type") <- c("summary") 
 #return(beta.sum)
-##https://lingpipe-blog.com/2009/09/23/bayesian-estimators-for-the-beta-binomial-model-of-batting-ability/
+## https://lingpipe-blog.com/2009/09/23/bayesian-estimators-for-the-beta-binomial-model-of-batting-ability/
 ##?map mode <-  (si + a - 1) / (Ni + a + b - 2)
-##http://www.cs.cmu.edu/~aarti/Class/10701/slides/Lecture3.pdf
+## http://www.cs.cmu.edu/~aarti/Class/10701/slides/Lecture3.pdf
 ##MAP/MODE <- (a.prior + si - 1) / (a.prior + si + (Ni - si) + b.prior - 2)
 #}
 ##beta.summary(a=2, b=4)
@@ -372,9 +395,9 @@ beta.summary <- function(a, b)
  names(beta.sum) <- c("a", "b", "mode","mean","sd","var")
 # attr(beta.sum, "type") <- c("summary") 
 return(beta.sum)
-#https://lingpipe-blog.com/2009/09/23/bayesian-estimators-for-the-beta-binomial-model-of-batting-ability/
+# https://lingpipe-blog.com/2009/09/23/bayesian-estimators-for-the-beta-binomial-model-of-batting-ability/
 #?map mode <-  (si + a - 1) / (Ni + a + b - 2)
-#http://www.cs.cmu.edu/~aarti/Class/10701/slides/Lecture3.pdf
+# http://www.cs.cmu.edu/~aarti/Class/10701/slides/Lecture3.pdf
 #MAP/MODE <- (a.prior + si - 1) / (a.prior + si + (Ni - si) + b.prior - 2)
 }
 # call:
@@ -919,7 +942,6 @@ beta.triplot2 <- function(si, Ni, v, steps=1000, fac=1.15, multiplot=FALSE, rn="
     mtext(eval(substitute(expression(paste("BL (mean) = ",mean.BL,"  |  JC (mean) = ",mean.JC)),
                           list(mean.BL=mean.BL, mean.JC=mean.JC))), 4, line=1, cex=0.8)
     #new plot - new legend... below the first one
-    #http://dr-k-lo.blogspot.de/2014/03/the-simplest-way-to-plot-legend-outside.html  
     par(fig = c(0, 1, 0, 1), oma = c(0, 0, 0, 0), mar = c(0, 0, 0, 0), new = TRUE)
     plot(0, 0, type = "n", bty = "n", xaxt = "n", yaxt = "n")
     legend("bottom",legend=c("prior","likelihood","posterior"),

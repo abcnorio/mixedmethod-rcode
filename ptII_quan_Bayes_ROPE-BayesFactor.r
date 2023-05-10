@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_ROPE-BayesFactor.r
 
@@ -461,11 +484,6 @@ help.search("darwin")
 data(darwin)
 ?darwin
 # Darwin, C.R. 1876. The effects of cross and self fertilisation in the vegetable kingdom. John Murray, London.
-# Charles Darwin (1876) provided data on the difference in the
-# heights attained by selfed and crossed mother plants.
-# A data frame with 15 observations on the following variable:
-# ‘difference’ the difference in height in inches between each
-# paired pair of offspring of a selfed and a crossed mother plant
 darwin
 
 # from R-package 'evidence'

@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_MaximumEntropy.r
 
@@ -144,10 +167,10 @@ log2(6)/log2(2)
 
 
 # dice problem
-# https://mathoverflow.net/questions/116667/whats-the-maximum-entropy-probability-distribution-given-bounds-a-b-and-mean
-# https://arxiv.org/pdf/1408.6803.pdf
+# van Enk (2014) https://arxiv.org/pdf/1408.6803.pdf
+# original ET Jaynes (1962)
 # http://strangebeautiful.com/other-texts/jaynes-brandeis62-info-theory-sm.pdf
-# http://www.stats.org.uk/bayesian/Mohammad-Djafari2002.pdf
+
 
 # simulate two dices
 set.seed(83345)

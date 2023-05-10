@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_classicstats_N-P_confint.r
 
@@ -41,8 +64,8 @@ ci.diff.in.means(n1=n1, xbar1=xbar1, sd1=sd1, n2=n2, xbar2=xbar2, sd2=sd2, equal
 9.109996/8.022219
 
 
-#just check for known values
-#https://onlinecourses.science.psu.edu/stat414/node/203
+#just check for known values, taken from
+# https://onlinecourses.science.psu.edu/stat414/node/203
 #n1 <- 10
 #n2 <- 10
 #xbar1 <- 10.26

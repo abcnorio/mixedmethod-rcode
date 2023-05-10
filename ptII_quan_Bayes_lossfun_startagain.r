@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_lossfun_startagain.r
 
@@ -23,12 +46,7 @@ L
 p.theta <- matrix(c(0.9, 0.1, 1, 0), 2, 2)
 fit <- LossMatrix(L, p.theta)
 fit
-# notes from the package
-# Before using the ‘LossMatrix’ function, the user should have
-# already considered all possible actions (choices), states of the
-# world (outcomes unknown at the time of decision-making), chosen a
-# loss function L(theta, alpha), estimated loss, and elicited prior
-# probabilities p(theta | x).
+# see notes from the package
 
 
 # success rates start again 1992-2017

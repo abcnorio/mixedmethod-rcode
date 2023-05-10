@@ -1,9 +1,32 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_EDA_case-German-states-population.r
 
 # location:
 # chap. 5 [5.5.1]
-# Die Population im Bundesländervergleich
+# population comparison of German states
 
 # load necessary libs
 library(arm)
@@ -46,7 +69,6 @@ poptab
 poptab[order(poptab$birth),]
 
 # barplot
-# https://stackoverflow.com/questions/10286473/rotating-x-axis-labels-in-r-for-barplot
 par(mar=c(7,4,2,2)+0.2)
 bpl <- barplot(einw2017, col=rainbow(length(einw2017)), border="blue", main="Population German Federal Lands", xlab="")
 text(bpl, par("usr")[3], srt=60, adj=1, xpd=TRUE, labels=bland, cex=0.65)

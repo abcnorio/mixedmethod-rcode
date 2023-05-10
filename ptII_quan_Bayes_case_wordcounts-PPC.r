@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_case_wordcounts-PPC.r
 
@@ -193,10 +216,8 @@ mcmc_acf(mcmc.red, lags=10)
 # https://cran.r-project.org/web/packages/bayesplot/vignettes/visual-mcmc-diagnostics.html
 
 # without sigma and nu
-# https://arxiv.org/abs/1709.01449
-# https://arxiv.org/pdf/1709.01449.pdf p.6
+# https://arxiv.org/abs/1709.01449 p.6
 # Visualization in Bayesian workflow Jonah Gabry, Daniel Simpson, Aki Vehtari, Michael Betancourt, Andrew Gelman 
-
 
 
 # not run  (outtake of full process)
@@ -592,9 +613,6 @@ plotPost(Y_rep.s, credMass=0.87, showMode=TRUE, compVal=compval, ROPE=c(4.9,5.5)
 # Kruschke Code
 # Exercise 18.3 (p. 513) 
 # http://doingbayesiandataanalysis.blogspot.com/2011/04/anova-with-non-homogeneous-variances.html
-# Question: Is it statistically acceptable to run the non-homogeneous ANOVA on data that follow non-normal distributions?
-# If so, how do you change the code to run such tests? Specifically, I am interested in analyzing data that are gamma distributed. 
-# Answer: Yes, it's easy. In the code ANOVAonewayNonhomogvarJagSTZ.R, change this
 
 for ( i in 1:Ntotal ) {
   y[i] ~ dnorm( mu[i] , tau[x[i]] )
@@ -734,7 +752,7 @@ table(diss[,c("school","stype","schooltype")])
 
 # categorical covariates in JAGS
 # http://www.mikemeredith.net/blog/2017/Categories_in_JAGS.htm
-# Bayesian ANOVA: Powerful inference with within-group sample size of 1
+# Bayesian ANOVA
 # http://www.petrkeil.com/?p=2819
 
 diss.res01 <- brm(W.noSC ~ age + schooltype * sex, data=diss, family=gaussian(), save_all_pars=TRUE)

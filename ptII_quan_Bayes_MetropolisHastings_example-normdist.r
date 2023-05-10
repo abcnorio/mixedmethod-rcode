@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_MetropolisHastings_example-normdist.r
 
@@ -24,7 +47,6 @@ source("ptII_quan_Bayes_MH-Gibbs_example_helpfuncs.r")
 
 # abstract R code
 # https://m-clark.github.io/bayesian-basics/issues.html
-# p.8 https://www.statistics.com/papers/LESSON1_Notes_MCMC.pdf
 
 seed <- 1
 set.seed(seed)
@@ -35,9 +57,8 @@ set.seed(seed)
 # OR USE
 
 # empirical data
-# http://www2.stat.duke.edu/~rcs46/lecturesModernBayes/601-module9-metropolis/metropolis.pdf p.10
-# https://www.statisticshowto.datasciencecentral.com/metropolis-hastings-algorithm/
-# data from Hoff, 2009
+# http://www2.stat.duke.edu/~rcs46/lecturesModernBayes/601-module9-metropolis/metropolis.pdf
+# slide 11, data from Hoff, 2009
 y <- c(9.37, 10.18, 9.16, 11.60, 10.33)
 summary(y)
 # analytical solution
@@ -85,7 +106,7 @@ mu <- 20        # mu prior
 # n <- 30       # sample size
 s2 <- sd(y)     # variance likelihood
 t2 <- 1/1e2     # variance prior tau^2
-s2.prop <- 2	  # variance of random draw = candidate = thetaST(ar)
+s2.prop <- 2	# variance of random draw = candidate = thetaST(ar)
 
 
 # normal distribution is a conjugate prior
@@ -233,11 +254,6 @@ acf(theta.mcmc, col="violetred3", bty="n", pre.plot=grid())
 
 ### NOT RUN Metropolis example
 
-#https://stats.stackexchange.com/questions/232824/bayesian-updating-with-conjugate-priors-using-the-closed-form-expressions
-#First of all, the formulas are defined in terms of variance, not standard deviations.
-#Second, the variance of the posterior is not a variance of your data but variance of estimated parameter μ.
-#As you can see from the description ("Normal with known variance σ2"), this is formula for estimating μ when σ2 is known. The prior parameters μ0 and σ20 are parameters of distribution of μ, hence the assumed model is
-
 ############################# FUNCTION
 #normal posterior predictive distribution
 norm.pred.post <- function(n, mu.post, sigma2.post, sigma2.data)
@@ -310,7 +326,7 @@ return(outv)
 
 #Metropolis Hastings example
 
-#data from Hoff (xxxx)
+#data from Hoff (2009)
 y <- c(9.37,10.18,9.16,11.60,10.33)
 mu.prior <- 5
 sigma2.prior <- 10

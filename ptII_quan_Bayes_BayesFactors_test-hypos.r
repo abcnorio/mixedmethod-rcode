@@ -1,3 +1,26 @@
+###
+### R-code supplement
+### to the book
+###
+### "Subjektive Ansichten und objektive Betrachtungen"
+###
+### written by Gürtler & Huber (2023)
+###
+### All R-code is published under the GPL v3 license:
+###
+### https://www.gnu.org/licenses/gpl-3.0.en.html
+###
+### except for 'borrowed' code - see links and references.
+### For this R-code the original license of the respective
+### authors is valid.
+###
+### R-code published on
+###
+### https://osdn.net/projects/mixedmethod-rcode
+### https://github.com/abcnorio/mixedmethod-rcode
+
+
+
 # file:
 # ptII_quan_Bayes_BayesFactors_test-hypos.r
 
@@ -15,49 +38,6 @@ library(brms)
 
 # load necessary libraries
 source("ptall_generalfuncs.r")
-
-
-# Lindleys Paradox
-# https://www.aarondefazio.com/adefazio-bayesfactor-guide.pdf
-# p.3
-# "The key issue is the handling of small-effects. As n increases and s^2 stays fixed, a fixed
-# t-value of say 2 represents a smaller and smaller measured effect, namely:
-
-# xbar propr to 2/sqrt(n)
-
-# Detecting small effects requires a large sample size, and the Bayesian t-test greatly prefers the null hypothesis
-# over that of a small effect. This is usually described positively as a Occam’s razor effect, but it does have real
-# consequences when we are attempting to find true small effects. Essentially, the BF test will require much more
-# data pick up a small effect then a corresponding frequentist test. Often, this is viewed from the opposite side; that
-# frequentist tests too easily reject the null hypothesis for large sample sizes. This is more of an issue when testing
-# more complex models such as linear regressions with multiple coefficients. Unless the data was actually generated
-# from a linear equation with Gaussian noise, large samples will inevitably reject simple null models.  This is in
-# contrast on simple point null hypothesis testing, where we can appeal to asymptotic normality."
-
-# Consequences for Lindley’s paradox
-# As discussed above, when restricting ourselves to well behaved proper priors, “Lindley’s paradox” as such can not
-# be rectified by a careful choice of a proper prior on the alternative hypothesis. When one takes a step back and
-# considers the consequences of this, Lindley’s paradox becomes much clearer, as a statement about objective priors
-# rather than BF tests in general.
-# The central idea is this: It requires a lot of evidence to detect small effects when you use vague priors. The
-# idea of running a long experiment when you use a vague prior is nonsensical from an experimental design point of
-# view: large amounts of data are useful for picking up small effects, and if you expect such a small effect you should
-# encode this sensibly in your prior. The default Cauchy prior used in the BF t-test essentially says that you expect
-# a 50% chance that the absolute effect size (Cohen’s d)islargerthan1, which is a completely implausible in many
-# settings. For instance, if you are trying to optimize conversion rates on a website with say a 10% base conversion
-# rate, an effect size of “1” is a 4x increase in sales! Some software defaults to 0.707 instead of 1 for the Cauchy scale
-# parameter, but the effect is largely the same
-
-# Experimental design considerations are important in the choice of a prior, and the Bayesian justification of
-# the Bayes factor depends on our priors being reasonable. The choice of using a particular BF test is not a full
-# experimental design, just as for a frequentist it is not sufficient to just decide on particular test without regard
-# to the eventual sample size. It is necessary to examine other properties of the test, so determine if it will behave
-# reasonably in the experimental setting in which we will apply it. So in effect, Lindley’s paradox is just the statement
-# that a poorly designed Bayesian experiment won’t agree with a less poorly designed frequentist experiment.
-# Put another way, if the Bayes factor is comparing two hypothesis, both of which are unlikely under the data,
-# you won’t get reasonable results. You can’t identify this from examining the Bayes factor, you have to look at the
-# experiment holistically. The extreme case of this is when neither hypothesis includes the true value of theta. In such
-# cases, the BF will generally not converge to any particular value, and may show strong evidence in either direction.
 
 
 # Lindleys Paradox
