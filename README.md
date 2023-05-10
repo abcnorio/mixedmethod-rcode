@@ -2,7 +2,11 @@
 
 ## Overview
 
-The book itself is about mixed methodology especially if it comes to data analysis. The R-Code is licensed under GNU GPL v3 and although the book is written in German (original language), the R-code can be used without any German language skills. The notes and comments in the code are written in English.
+The book itself is about mixed methodology especially if it comes to data analysis. Although the book is written in German (original language), the R-code can be used without any German language skills. The notes and comments in the code are written in English. The code is not organized as a R-package and that's not the intention here. However, some functions may be useful for this or that purpose. Comments here and there in the code should help to understand the main aim if the book is neither available or cannot be understood.
+
+## License
+
+The R-code is licensed under GNU GPL v3. Please feel free to use, modify or share the code if it is helpful for you.
 
 ## Filenames
 
@@ -50,7 +54,7 @@ Place datasets in the main folder to use them along with the scripts.
 
 ## External data sets
 
-Some data sets used are taken directly from R like the 'bupa' data set or the one from Annette Dobson (1990) about plan weight data, the famous 'iris' data set, etc. (see book for further references). Other set like 'crime data' are from external sources (e.g. UCLA) and others are not published due to a missing license to do so (e.g. data about the chiropractice research study or about women in parliament from ML Krook 2010).
+Some data sets used are taken directly from R like the 'bupa' data set or the one from Annette Dobson (1990) about plan weight data, the famous 'iris' data set, etc. (see book for further references). Other set like 'crime data' are from external sources (e.g. UCLA) and others are not published due to a missing license required for public access (e.g. data about the chiropractice research study or about women in parliament from ML Krook 2010).
 
 ## External R-code
 
@@ -58,9 +62,20 @@ Some R-code was not taken from R packages but various locations on the net. From
 
 - **bayesian2beta.r** (from: Sverdlov O, Ryeznik Y, Wu S.2015.  Exact Bayesian Inference Comparing Binomial Proportions, With Application to Proof-of-Concept Clinical Trials. *Therapeutic Innovation & Regulatory Science*, *49*(1), p.163-174.)
 - **DBDA2E-utilities.R** and **Jags-Ymet-XmetMulti-Mrobust.R** (from: Kruschke, J. 2014. *Doing Bayesian Data Analysis. 2nd ed.* Academic Press.)
-- and some other R-packages (modified) to meet our needs here or to add functions if they went missing from one R version to the next one.
+- Some other R-packages are modified to meet our needs here or to add functions if they went missing from one R version to the next one (e.g. code from heatmap.plus or sjstats).
+- Some code (e.g. from Bolstad) was slightly changed due to bugs in the original code at that time. That may be different now.
 
-The corresponding *.r file points contains URL where to download the R script. Just place it in the main folder.
+The corresponding *.r file points contains the URL where to download the R script. Just place it in the main folder.
+
+From time to time some code is put in sections like
+
+```
+### not run
+...
+### end of not run
+```
+
+Such code is optional or sometimes not fully related to the book or just gives another (maybe even redundant) perspective.
 
 ## R version
 
@@ -80,7 +95,7 @@ If one finds a bug please contact us with a short and clear example so we can tr
 
 ## AQUAD 7 files
 
-One data set (application letter for a place in a drug addiction rehabilitation center) is taken from qualitative data analysis along with the windows binary from [AQUAD 7](https://www.aquad.de), an free and open source QDA software. The folder AQUAD7 contains all working files along with the older AQUAD 7 version that was used for analysis. AQUAD is now on v8.
+One data set (application letter for a place in a drug addiction rehabilitation center) is taken from qualitative data analysis along with the windows binary from [AQUAD 7](https://www.aquad.de), a free and open source QDA software. The folder AQUAD7 contains all working files along with the older AQUAD 7 version that was used for analysis. AQUAD is now on v8.
 
 ## Citation
 
