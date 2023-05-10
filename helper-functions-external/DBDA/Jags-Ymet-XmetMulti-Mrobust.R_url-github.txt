@@ -1,7 +1,0 @@
-#book
-https://sites.google.com/site/doingbayesiandataanalysis/
-
-#author's page
-http://www.indiana.edu/~kruschke/
-
-https://raw.githubusercontent.com/boboppie/kruschke-doing_bayesian_data_analysis/master/2e/Jags-Ymet-XmetMulti-Mrobust.R
