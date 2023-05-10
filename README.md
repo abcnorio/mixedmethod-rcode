@@ -46,18 +46,21 @@ Due to legal and licence issues not all data sets discussed in the book can be p
 - **Titanic_survivors** = well-known data of the sinking of the Titanic and its survivors resp. their characteristics
 - **wikipedia_presidential-heights** = data from wikipedia about the relationship of body height of US presidential candidates and later winners (presidents)
 
+Place datasets in the main folder to use them along with the scripts.
+
 ## External data sets
 
 Some data sets used are taken directly from R like the 'bupa' data set or the one from Annette Dobson (1990) about plan weight data, the famous 'iris' data set, etc. (see book for further references). Other set like 'crime data' are from external sources (e.g. UCLA) and others are not published due to a missing license to do so (e.g. data about the chiropractice research study or about women in parliament from ML Krook 2010).
 
 ## External R-code
 
-Some R-code was not taken from R packages but various locations on the net. From that selection some scripts were also tweaked to fit to our needs here. Mostly, those scripts are:
+Some R-code was not taken from R packages but various locations on the net. From that selection some scripts were also tweaked to fit to our needs here. Mostly, those scripts are from:
 
 - **bayesian2beta.r** (from: Sverdlov O, Ryeznik Y, Wu S.2015.  Exact Bayesian Inference Comparing Binomial Proportions, With Application to Proof-of-Concept Clinical Trials. *Therapeutic Innovation & Regulatory Science*, *49*(1), p.163-174.)
 - **DBDA2E-utilities.R** and **Jags-Ymet-XmetMulti-Mrobust.R** (from: Kruschke, J. 2014. *Doing Bayesian Data Analysis. 2nd ed.* Academic Press.)
+- and some other R-packages (modified) to meet our needs here or to add functions if they went missing from one R version to the next one.
 
-The corresponding *.r file points out the URL where to download the R script.
+The corresponding *.r file points contains URL where to download the R script. Just place it in the main folder.
 
 ## R version
 
@@ -79,5 +82,5 @@ If one finds a bug please contact us with a short and clear example so we can tr
 
 If you ever refer to any part of the code, please cite it as:
 
-Gürtler, Leo (2023). R-code supplement for Gürtler & Huber (2023). Subjektive Betrachtungen und objektive Ansichten. Qual, Quan und Logik. R-code published on [Github](https://github.com/projects/mixedmethod-rcode) and [OSDN](https://osdn.net/projects/mixedmethod-rcode).
+Gürtler, Leo (2023). R-code supplement for Gürtler & Huber (2023). *Subjektive Betrachtungen und objektive Ansichten. Qual, Quan und Logik.* R-code published on [Github](https://github.com/abcnorio/mixedmethod-rcode) and [OSDN](https://osdn.net/projects/mixedmethod-rcode).
 

@@ -56,6 +56,7 @@ data_not-upload*
 
 # differential R files (older Versions)
 diff*
+diffinmeans*
 
 # helper functions external
 helper-functions-external*
@@ -65,3 +66,6 @@ AQUAD7*
 
 # R files not to be uploaded
 check-http.R
+
+# all files that end with
+*~
