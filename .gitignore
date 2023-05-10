@@ -63,3 +63,5 @@ helper-functions-external*
 # aquad 7 and files -> look on aquad.de
 AQUAD7*
 
+# R files not to be uploaded
+check-http.R
