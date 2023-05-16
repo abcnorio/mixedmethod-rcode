@@ -144,7 +144,7 @@ iris.lm.NA.res/summary(iris.imp.mice.pooled)[,c("estimate","std.error","statisti
 
 
 # via Amelia
-# https://www.r-bloggers.com/how-to-perform-a-logistic-regression-in-r/
+
 missmap(iris.NA.c)
 iris.ame <- amelia(iris.NA)
 str(iris.ame)
@@ -174,7 +174,7 @@ iris.lm.NA.res[,c(1,2)]/iris.imp.amelia.pooled.tab
 
 # Bayes
 # library 'brms'
-# https://cran.r-project.org/web/packages/brms/vignettes/brms_missings.html
+
 #
 # gives out warnings with Rhats >1 (we just ignore that...)
 # in reality one should consider better priors, more iterations, etc.
@@ -197,7 +197,7 @@ iris.imp.brmsfit <- brm_multiple(Sepal.Length ~ Sepal.Width + Petal.Width + Peta
 iris.imp.brmsfit
 plot(iris.imp.brmsfit, pars="^b")
 round(iris.imp.brmsfit$rhats, 2)
-# https://stackoverflow.com/questions/46985425/is-it-possible-to-plot-the-coefficients-from-multiple-brms-models-on-a-single-gr
+
 # plot all, see link above
 marginal_effects(iris.imp.brmsfit)
 

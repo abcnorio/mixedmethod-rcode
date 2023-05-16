@@ -113,8 +113,8 @@ seed <- 112
 set.seed(seed)
 
 # Gibbs sampling for mu and TAU (inverse variance)
-# https://www4.stat.ncsu.edu/~reich/ABA/code/NN2
-# https://stats.stackexchange.com/questions/12232/calculating-the-parameters-of-a-beta-distribution-using-the-mean-and-variance
+
+
 
 # sample statistics
 n <- 30

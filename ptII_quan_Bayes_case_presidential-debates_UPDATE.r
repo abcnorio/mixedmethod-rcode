@@ -668,9 +668,9 @@ pROPE.equal / h.res.inv
 
 
 ###### decision rule Bayesian A/B Testing after Chris Stucchio
-# https://www.chrisstucchio.com/blog/2014/bayesian_ab_decision_rule.html
-# https://www.chrisstucchio.com/blog/2014/bayesian_asymptotics.html
-# http://www.evanmiller.org/bayesian-ab-testing.html#binary_ab_derivation
+
+
+
 
 # [theta2 - theta1] < crit (Test)
 credMass <- 0.99
@@ -1362,7 +1362,7 @@ plot.bayes.prop.test.Xct(res=Xprop.res, a1=a1, b1=b1, a2=a2, b2=b2,
 
 
 ################ NOT RUN
-# https://stackoverflow.com/questions/17258787/formatting-of-persp3d-plot
+
 library(rgl)
 color <- rgb(85, 141, 85, maxColorValue=255)
 nbcol = 100
@@ -2183,7 +2183,7 @@ simpsonrule.brob.1 <- function(fx, sL, sH, Nsteps=100, numer=TRUE, pr.out=FALSE,
 ############# FUNCTION
 simpsonrule.brob <- function(fx, sL, sH, Nsteps=100)
 {
-  #taken from sintegral from Bolstad2
+  # taken from sintegral from Bolstad2
   sek <- seq(sL,sH,length=Nsteps)
   l.intv <- 2*Nsteps+1
   intv.x <- approx(sek,sek,n=l.intv)$x
@@ -2411,7 +2411,7 @@ tail(Xprop.res.nonInf)
 head(Xprop.res)
 tail(Xprop.res)
 
-# https://en.wikipedia.org/wiki/Generalized_hypergeometric_function#Euler's_integral_transform
+
 
 plot.bayes.prop.test.Xct(res=Xprop.res[,c(1,2)], si=siNi["si"], Ni=siNi["Ni"], sii=siiNii["si"], Nii=siiNii["Ni"], a1=a1, b1=b1, a2=a2, b2=b2,
                          thetaCs=c(0.3,1.5,1.2), loga=TRUE, drawmcmc=TRUE)
@@ -2569,7 +2569,7 @@ bayes.prop.BForce(diffcompare="bigger", thetaCs=c(0.03,1.5,1.5))
 
 
 ### Bayes Factor
-# https://richarddmorey.github.io/BayesFactor/#ctables
+
 
 # example presidential debates
 # posterior beta-values

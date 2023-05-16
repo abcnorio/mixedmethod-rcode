@@ -39,14 +39,13 @@ source("ptall_generalfuncs.r")
 source("ptII_quan_Bayes_MH-Gibbs_example_helpfuncs.r")
 
 
-# taken from http://www2.stat.duke.edu/~rcs46/lecturesModernBayes/601-module6-markov/metropolisNormal.R
-
-
 # MCMC - Metropolis Hastings algorithm
 # scenario: conjugate Normal-Normal model with a known variance situation.
 
-# abstract R code
-# https://m-clark.github.io/bayesian-basics/issues.html
+# values taken from http://www2.stat.duke.edu/~rcs46/lecturesModernBayes/601-module6-markov/metropolisNormal.R
+
+# see abstract R code
+
 
 seed <- 1
 set.seed(seed)
@@ -57,7 +56,7 @@ set.seed(seed)
 # OR USE
 
 # empirical data
-# http://www2.stat.duke.edu/~rcs46/lecturesModernBayes/601-module9-metropolis/metropolis.pdf
+
 # slide 11, data from Hoff, 2009
 y <- c(9.37, 10.18, 9.16, 11.60, 10.33)
 summary(y)

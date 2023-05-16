@@ -300,7 +300,7 @@ dfm(tokens_lookup(corps3, dict.obj, valuetype="glob", verbose=TRUE))
 
 # collocations
 #library(quanteda)
-# https://www.cspoerlein.com/files/textanalyse.html
+
 # define stop words language specific
 swGerman <- stopwords("german")
 ngram <-function(txt, nofngram=2, ntop=10, REMsw=TRUE, wlistrem=swGerman)

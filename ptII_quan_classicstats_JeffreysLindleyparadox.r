@@ -36,7 +36,7 @@ source("ptall_generalfuncs_brob-integral.r")
 
 
 # NOT RUN EXTERNAL SOURCE
-# https://www.casact.org/education/annual/2011/handouts/C9-Schmid.pdf
+
 # fair coin uniform priori
 # Frank Schmid, NCCI, 2011
 
@@ -77,7 +77,7 @@ binom.test(L,N,p=prob, alternative="two.sided")
 
 
 # Wikipedia data
-# https://en.wikipedia.org/wiki/Lindley%27s_paradox#Numerical_example
+
 # observed data
 gb <- c(boys=49581, girls=48870)
 gb

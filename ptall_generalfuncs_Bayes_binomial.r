@@ -109,7 +109,7 @@ plot.bl.jc <- function(theta, sN.ME.res, si, Ni, dig=2, filling=FALSE, cols=NULL
                         list(mean.BL=mean.BL, mean.JC=mean.JC))), 4, line=1, cex=0.8)
   
   #new plot - new legend... below the first one
-  # http://dr-k-lo.blogspot.de/2014/03/the-simplest-way-to-plot-legend-outside.html  
+
   par(fig = c(0, 1, 0, 1), oma = c(0, 0, 0, 0), mar = c(0, 0, 0, 0), new = TRUE)
   plot(0, 0, type = "n", bty = "n", xaxt = "n", yaxt = "n")
   legend("bottom",legend=c("Bayes-Laplace","Jeffreys-Carnap"),
@@ -299,7 +299,7 @@ sN.sum.plot <- function(tab, rn=NULL, TITLE="", xlab="", type="l")
 ########################## END OF FUNCTION
 
 # obscure analytics & Co.
-# http://www.obscureanalytics.com/2012/07/04/to-the-basics-bayesian-inference-on-a-binomial-proportion/
+
 
 # theta.prior = m = probability/ mean of beta distribution
 # nprior = n = sample size prior
@@ -373,9 +373,9 @@ return(ab.post)
 # names(beta.sum) <- c("a", "b", "mode","mean","sd","var")
 ## attr(beta.sum, "type") <- c("summary") 
 #return(beta.sum)
-## https://lingpipe-blog.com/2009/09/23/bayesian-estimators-for-the-beta-binomial-model-of-batting-ability/
+
 ##?map mode <-  (si + a - 1) / (Ni + a + b - 2)
-## http://www.cs.cmu.edu/~aarti/Class/10701/slides/Lecture3.pdf
+
 ##MAP/MODE <- (a.prior + si - 1) / (a.prior + si + (Ni - si) + b.prior - 2)
 #}
 ##beta.summary(a=2, b=4)
@@ -395,9 +395,9 @@ beta.summary <- function(a, b)
  names(beta.sum) <- c("a", "b", "mode","mean","sd","var")
 # attr(beta.sum, "type") <- c("summary") 
 return(beta.sum)
-# https://lingpipe-blog.com/2009/09/23/bayesian-estimators-for-the-beta-binomial-model-of-batting-ability/
+
 #?map mode <-  (si + a - 1) / (Ni + a + b - 2)
-# http://www.cs.cmu.edu/~aarti/Class/10701/slides/Lecture3.pdf
+
 #MAP/MODE <- (a.prior + si - 1) / (a.prior + si + (Ni - si) + b.prior - 2)
 }
 # call:
@@ -679,7 +679,7 @@ beta.triplot <- function(si, Ni, v, steps=1000, fac=1.15,
   mtext(eval(substitute(expression(paste("BL (mean) = ",mean.BL,"%  |  JC (mean) = ",mean.JC,"%")),
   list(mean.BL=mean.BL, mean.JC=mean.JC))), 4, line=1, cex=0.8)
 # new plot - new legend... below the first one
-# http://dr-k-lo.blogspot.de/2014/03/the-simplest-way-to-plot-legend-outside.html  
+
   par(fig = c(0, 1, 0, 1), oma = c(0, 0, 0, 0), mar = c(0, 0, 0, 0), new = TRUE)
   plot(0, 0, type = "n", bty = "n", xaxt = "n", yaxt = "n")
   legend("bottom",legend=c("Prior","Likelihood","Posterior"),
@@ -706,7 +706,7 @@ beta.triplot <- function(si, Ni, v, steps=1000, fac=1.15,
 
 ###### function taken and modified from
 # BayesianFirstAid:::summary.bayes_prop_test
-# https://github.com/rasmusab/bayesian_first_aid
+
 BFA.summary.bayes_prop_test <- function(object, diff.crit=0.05, dig=3, groupn=NULL, ...)
 {
   s <- round(object$stats, 3) 
@@ -812,7 +812,7 @@ BFA.mcmcplot.thetas <- function(mcmc.obj, dig=2, pr.theta=TRUE, ellips=FALSE, hp
        list(m.theta1=round(m.theta1,dig),m.theta2=round(m.theta2,dig),sd.theta1=round(sd.theta1,dig),sd.theta2=round(sd.theta2,dig)))),
        4, line=1, cex=0.9, col="black")
  
-# https://www.r-bloggers.com/how-to-summarize-a-2d-posterior-using-a-highest-density-ellipse/
+
  if(ellips & hpdi.region)
  {
   cat("\nDo not print ellipsis and hpdi regions in one print... standard = hpdi region\n")

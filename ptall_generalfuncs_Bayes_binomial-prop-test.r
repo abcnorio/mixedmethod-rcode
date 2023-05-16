@@ -37,7 +37,7 @@
 ### FUNCTION
 # taken and modified from
 # BayesianFirstAid:::summary.bayes_prop_test
-# https://github.com/rasmusab/bayesian_first_aid
+
 BFA.summary.bayes_prop_test <- function(object, diff.crit=0.05, dig=3, groupn=NULL, datfn=NULL, ...)
 {
   require(BayesianFirstAid)
@@ -146,7 +146,7 @@ BFA.mcmcplot.thetas <- function(mcmc.obj, dig=2, pr.theta=TRUE, ellips=FALSE, hp
                         list(m.theta1=round(m.theta1,dig),m.theta2=round(m.theta2,dig),sd.theta1=round(sd.theta1,dig),sd.theta2=round(sd.theta2,dig)))),
         4, line=1, cex=0.9, col="black")
   
-  # https://www.r-bloggers.com/how-to-summarize-a-2d-posterior-using-a-highest-density-ellipse/
+
   if(ellips & hpdi.region)
   {
     cat("\nDo not print ellipsis and hpdi regions in one print... standard = hpdi region\n")
@@ -433,14 +433,14 @@ bayes.prop.grid <- function(a1=a1, b1=b1, a2=a2, b2=b2, int.width=1e-3, start.se
 
 ###### function to calculate closed form Bayesian A/B Testing after Evan Miller
 ### closed form exact solution (Evan Miller)
-# http://www.evanmiller.org/bayesian-ab-testing.html#binary_ab_derivation
+
 
 h <- function(a1, b1, a2, b2, loga=FALSE)
 {
   # PR(p_B=GR2 > P_A=GR1)
   
   ### closed form exact solution (Evan Miller)
-  # http://www.evanmiller.org/bayesian-ab-testing.html#binary_ab_derivation
+
   # formula 6
   
   # important: if loga=TRUE
@@ -483,9 +483,9 @@ h <- function(a1, b1, a2, b2, loga=FALSE)
 # after the closed form Bayesian A/B Testing after Evan Miller
 bayes.prop.loss <- function(a1, b1, a2, b2, crit=0.05, loga=TRUE, pr.out=TRUE)
 {
-  # https://www.chrisstucchio.com/blog/2014/bayesian_ab_decision_rule.html
-  # https://www.chrisstucchio.com/blog/2014/bayesian_asymptotics.html
-  # http://www.evanmiller.org/bayesian-ab-testing.html#binary_ab_derivation
+
+
+
   
   if(!loga)
   {  
@@ -917,12 +917,12 @@ return(res)
 ### AND SUMMARIZE AND PLOT
 
 # Euler integral
-# https://homepage.tudelft.nl/11r49/documents/wi4006/hyper.pdf
+
 # Rec > Reb > 0
 
 # Euler transformation
-# https://mathworld.wolfram.com/EulerTransform.html
-# https://mathworld.wolfram.com/EulersHypergeometricTransformations.html
+
+
 #f15.3.1(2,1,2,-1/2) -2/3
 
 #hypergeo.brob(a=2, b=1, c=2, z=-1/2, numer=FALSE)
@@ -1860,7 +1860,7 @@ plot.bayes.prop.test.Xct <- function(res.Xct, a1=102, b1=108, a2=132, b2=121,
   }
   
   # new plot - new legend... below the first one
-  # http://dr-k-lo.blogspot.de/2014/03/the-simplest-way-to-plot-legend-outside.html  
+
   par(fig=c(0,1,0,1), oma=c(0,0,0,0), mar=c(0,0,0,0), new=TRUE)
   plot(0, 0, type="n", bty="n", xaxt="n", yaxt="n")			  
   if(drawmcmc)

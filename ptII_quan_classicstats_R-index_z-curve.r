@@ -61,7 +61,7 @@ r.indx.dats2.res
 
 # manual
 # Bem data from Schimmack
-# https://replicationindex.wordpress.com/2016/01/31/a-revised-introduction-to-the-r-index/
+
 
 # Bem proposes 80% Power in advance
 # sample sizes
@@ -150,7 +150,7 @@ pnorm(qnorm(1-alpha/2)) #cum prob at 1-alpha/2 (two sided test) quantile
 
 # test of insufficient variance (TIVA)
 # source:
-# https://replicationindex.wordpress.com/2014/12/30/the-test-of-insufficient-variance-tiva-a-new-tool-for-the-detection-of-questionable-research-practices/
+
 
 # Bem study
 # 9 out of 10 studies significant at p < 0.05 one-tailed
@@ -160,16 +160,16 @@ pvals <- c(10,9,7,14,14,37,39,96,29,2)/1000
 zzs
 pvals
 
-# https://replicationindex.wordpress.com/2014/12/30/the-test-ofinsufficient-variance-tiva-a-new-tool-for-the-detection-ofquestionable-research-practices/
+
 # see also https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0114255
-# https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0114255#pone.0114255.s002
+
 
 # chisquare value with k-1 df
 TIVA(z.scores=zzs, type.test="oneway")
 TIVA(pvals=pvals, type.test="oneway")
 
 
-# https://replicationindex.com/2014/12/30/the-test-of-insufficient-variance-tiva-a-new-tool-for-the-detection-of-questionable-research-practices/
+
 # Vohs et al. 2006
 pvals1 <- c(26,50,46,39,21,40,26,23,6)/1000
 zzs1 <- c(223,196,199,206,230,206,223,228,273)/100 #no.5 = 299 (Schimmack, probably wrong!)

@@ -39,7 +39,7 @@ library(agridat)
 source("ptall_generalfuncs.r")
 
 
-# https://en.wikipedia.org/wiki/Conjugate_prior
+
 # normal with known precision tau
 # POST:
 # mean was estimated from observations with total precision (sum of all individual precisions)
@@ -78,7 +78,7 @@ hdi(theta.post, credMass=0.87)
 # combine two MCMC chains lists
 mcmc.l <- mcmc.list(as.mcmc(theta.post),as.mcmc(theta.post2))
 
-# https://github.com/florianhartig/LearningBayes/blob/master/CommentedCode/02-Samplers/MCMC/Convergence.md
+
 # no run
 # plot(mcmc.l)
 par(oma=c(2,1,1,1), "cex.axis"=1, bty="l")

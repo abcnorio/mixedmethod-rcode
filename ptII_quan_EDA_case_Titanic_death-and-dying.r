@@ -49,22 +49,22 @@ source("ptII_quan_EDA_case_Titanic_death-and-dying_helpfuncs.r")
 
 # sources about the Titanic and associated information
 # passenger list
-# https://titanicfacts.net/titanic-passenger-list/
+
 #
-# https://www.historyonthenet.com/r-m-s-titanic/
-# https://www.historyonthenet.com/wp-content/uploads/2014/08/MGY_Cutaway2.JPG
-# https://en.wikipedia.org/wiki/RMS_Titanic
-# http://www.ultimatetitanic.com/design/
-# https://i.pinimg.com/originals/a1/03/ba/a103ba89965693be01953404d4b582df.jpg
 
-# https://www.google.com/search?q=titanic+layout+ship&client=firefox-b&prmd=ivns&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiZrYDypcXdAhXDIcAKHXNZA8EQ_AUIBQ
 
-# https://www.youtube.com/watch?v=FSGeskFzE0s
-# https://www.youtube.com/watch?v=c5cFoRLeVZw
+
+
+
+
+
+
+
+
 
 # sinking in real time
-# https://www.youtube.com/watch?v=rs9w5bgtJC8
-# https://www.youtube.com/watch?v=nI8WvWI0_5s
+
+
 
 
 # explanations data kaggle.com/c/titanic/data
@@ -99,18 +99,18 @@ source("ptII_quan_EDA_case_Titanic_death-and-dying_helpfuncs.r")
 # Child = daughter, son, stepdaughter, stepson
 # Some children travelled only with a nanny, therefore parch=0 for them.
 
-# https://en.wikipedia.org/wiki/File:Titanic_casualties.svg
+
 
 # crew
-# https://en.wikipedia.org/wiki/Crew_of_the_RMS_Titanic
 
-# https://www.encyclopedia-titanica.org/?q=1
-# https://titanicfacts.net/titanic-orchestra/
+
+
+
 
 # fare for each class
-# http://titanicdatabase.wikia.com/wiki/Passengers_of_the_RMS_Titanic
 
-# https://titanicfacts.net/titanic-crew/
+
+
 
 # dataset from R
 ?Titanic
@@ -377,7 +377,7 @@ describes(fare.p)
 quantile(fare.p,probs=seq(0,1,.1),na.rm=T)
 
 
-# https://www.kaggle.com/rahulpalnitkar/titanic-eda-with-basic-predictive-modelling/notebook
+
 # bins: 0 - 0.7854 - 10.5 - 21.679 - 39.688 - 512.329
 maxx <- max(fare, na.rm=TRUE)
 fare.bin.1 <- factor(.bincode(fare, breaks=c(0,1,8,12,30,maxx), right=TRUE, include.lowest=TRUE))
@@ -786,13 +786,13 @@ data.frame(survival.ratio=(xxx[,2]/xxx[,1]))
 
 
 # fare
-# https://titanicfacts.net/life-on-the-titanic/
+
 # $150 – the average cost of a First Class berth on the Titanic (£30); a First Class parlour suite on the other hand cost $4,350 (£875).
 # $60 – the average cost of a Standard Class berth (£12).
 # $15-$40 – the average cost of a Third class berth (£3-£8).
 
-# https://www.quora.com/What-were-the-ticket-prices-to-board-the-Titanic
-# https://www.quora.com/topic/RMS-Titanic-ship
+
+
 #    First Class (parlor suite) — £870/$4,350 ($50,000 today).
 #    First Class (berth)— £30/$150 ($1724 today).
 #    Second Class — £12/$60 ($690 today).
@@ -937,25 +937,25 @@ labeling_cells(text=tab.prop.sex)(tab.struct2)
 # paranoid
 
 # original
-# http://www.titanicinquiry.org/BOTInq/BOTReport/botRep01.php
-# http://www.titanicinquiry.org/BOTInq/BOTReport/botRepSaved.php
-# https://www.encyclopedia-titanica.org/titanic-survivors/
-# http://www.icyousee.org/titanic.html
+
+
+
+
 
 # simpsons paradox
-# http://www.anesi.com/titanic.htm
 
-# http://www.icyousee.org/titanic.html#analysis -> dataset?
+
+
 # facts on historical context! e.g. child depended on class 1st class 14 yrs=child, different class -> adult
 # facts on behavior of people while boarding or not!
 
 # dataset
-# http://campus.lakeforest.edu/frank/pages/bio150_datasets.html
-# http://campus.lakeforest.edu/frank/FILES/MLFfiles/Bio150/Titanic/TitanicV3_DataOnly.xlsx.zip
-# http://campus.lakeforest.edu/frank/FILES/MLFfiles/Bio150/Titanic/TitanicMETA.pdf
+
+
+
 # Frank Harrel
 
-# http://www.public.iastate.edu/~hofmann/data/titanic.html
+
 
 # NAs
 # Hmisc http://campus.lakeforest.edu/frank/FILES/MLFfiles/Bio150/Titanic/TitanicMETA.pdf
@@ -1174,7 +1174,7 @@ prop.table(table(sex))
 # 2 https://www.kaggle.com/abinavramesh/titanic-analysis-no-extra-features/notebook
 #
 # BUT:
-# http://www.clayford.net/statistics/tag/simpsons-paradox/
+
 
 prop.table(table(sex, survived))
 prop.table(table(sex, survived),m=1)

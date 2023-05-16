@@ -27,7 +27,7 @@ source("DiM_Bretthorst_UMS.r")
 ################################################################################
 # On the difference in means
 # paper: G.L. Bretthorst "On the difference of means" (1993)
-# http://bayes.wustl.edu/glb/diff.pdf
+
 #
 # R code based on Mathematica code by Urban Studer (90's, Zürich/ CH)
 

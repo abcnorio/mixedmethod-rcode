@@ -32,7 +32,7 @@
 
 ###### function from package heatmap.plus not available in R 4
 # taken from https://github.com/cran/heatmap.plus
-# https://github.com/cran/heatmap.plus/blob/master/R/heatmap.plus.R
+
 
 heatmap.plus <- function (x, Rowv = NULL, Colv = if (symm) "Rowv" else NULL, 
             distfun = dist, hclustfun = hclust, reorderfun = function(d, w) reorder(d, w),

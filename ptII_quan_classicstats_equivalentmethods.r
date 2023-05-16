@@ -135,12 +135,12 @@ plot(BA.paired)
 
 # Pitman-Morgan Test
 # manual Pitman-Morgan Test
-# https://link.springer.com/article/10.1186/s40488-015-0030-z
+
 Var.test(x,y,paired=TRUE)
 
 
 # manual Pitman-Morgan Test
-# https://link.springer.com/article/10.1186/s40488-015-0030-z
+
 N <- (length(x))
 r.xy <- cor((x+y),(x-y))
 r.xy
@@ -287,7 +287,7 @@ plot(BA.paired)
 
 # Pitman-Morgan Test
 # manual Pitman-Morgan Test
-# https://link.springer.com/article/10.1186/s40488-015-0030-z
+
 Var.test(bland.altman.PEFR[,1], bland.altman.PEFR[,3],paired=TRUE)
 
 # see above

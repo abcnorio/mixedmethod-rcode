@@ -123,7 +123,7 @@ plotAreaInROPE(mudiff, credMass=prob, compVal=1.2, maxROPEradius=1, main=express
 mtext("Area in ROPE - varying radius", outer=TRUE, line=0, cex=1.5, side=3)
 
 
-# https://en.wikipedia.org/wiki/Conjugate_prior
+
 # normal with known precision tau
 # POST:
 # mean was estimated from observations with total precision (sum of all individual precisions) τ 0 {\displaystyle \tau _{0}} \tau _{0} and with sample mean μ 0 {\displaystyle \mu _{0}} \mu _{0}

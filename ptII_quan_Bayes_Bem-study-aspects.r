@@ -80,7 +80,7 @@ p.lottery/p.USA
 
 
 # Bem study
-# https://pdfs.semanticscholar.org/79ec/e4f787af713d82924e41d8c17ab130f4b22d.pdf
+
 # N
 N.female <- c(107,69,57,63,87,140,64,64)
 N.male <- c(43,31,43,37,63,60,36,36)

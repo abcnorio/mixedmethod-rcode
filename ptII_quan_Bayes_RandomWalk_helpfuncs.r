@@ -62,7 +62,7 @@ randomwalk <- function(nsim=1000, seed=NA, p=c(0.5,0.5,0.5), disti=c(10,10,10), 
   {
     if(D == 3)
     {
-      # taken from ?persp
+      #
       nrz <- nrow(walk)
       ncz <- ncol(walk)
 	    jet.colors <- colorRampPalette( c("blue", "green") )

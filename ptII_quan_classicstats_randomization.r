@@ -79,8 +79,8 @@ prop.table(table(rnd4.s))
 
 
 # library 'randomzr'
-# https://declaredesign.org/r/randomizr/
-# https://declaredesign.org/r/randomizr/articles/randomizr_vignette.html
+
+
 
 #library(randomizr)
 # full randomization according to probs / percentages

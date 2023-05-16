@@ -22,7 +22,7 @@
 
 
 # source
-# https://en.wikipedia.org/wiki/Lindley%27s_paradox
+
 
 gb <- c(boys=49581, girls=48870)
 n <- sum(gb)

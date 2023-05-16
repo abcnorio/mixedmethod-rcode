@@ -28,14 +28,14 @@ source("DiM_Bretthorst_PG.r")
 ################################################################################
 
 # original Mathematica code by Phil Gregory
-# http://www.phas.ubc.ca/~gregory/gregory.html
+
 # Ch. 9: Bayesian analysis of two independent samples
 # Introduction
 # This is a Mathematica implementation of the probability calculations discussed in the book in the section entitled,     
 # "Bayesian Comparison of Two Samples?". 
 #
 # based on a paper from G.L. Bretthorst (1993) "on the difference of means"
-# http://bayes.wustl.edu/glb/diff.pdf
+
 #
 # see also Mathematica code by UM Studer (1996 + 1998) on the same problem (paper)
 # taken code from there to allow calculations based only on summary statistics

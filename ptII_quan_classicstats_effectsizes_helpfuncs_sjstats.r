@@ -58,8 +58,8 @@ odds_to_rr <- function (fit)
 }
 
 # from previous sjstats
-# taken from
-# https://rdrr.io/cran/sjstats/src/R/helpfunctions.R#sym-is_merMod
+#
+
 get_glm_family <- function(fit) {
   c.f <- class(fit)
   
@@ -83,8 +83,8 @@ get_glm_family <- function(fit) {
 
 
 # from previous sjstats
-# taken from
-# https://rdrr.io/cran/sjstats/src/R/helpfunctions.R#sym-is_merMod
+# 
+
 is_merMod <- function(fit) {
   inherits(fit, c("lmerMod", "glmerMod", "nlmerMod", "merModLmerTest"))
 }

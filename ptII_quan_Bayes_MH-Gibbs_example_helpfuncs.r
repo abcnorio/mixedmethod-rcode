@@ -118,7 +118,7 @@ mu.sigma2.post <- function(y, mu.prior, sigma2.prior, sigma2.pop=NA, n=NA)
 
 ###### function to perform Gibbs sampling with thinning...
 # see very short implementation
-# https://stats.stackexchange.com/questions/266665/gibbs-sampler-examples-in-r
+
 
 ############################### FUNCTION gibbs sampler
 gibbs <- function(daten, tau1=1, nsim=1e+3, seed=1, thin=1e+3)

@@ -192,7 +192,7 @@ gelman.plot(mcmc.red)
 color_scheme_set("pink")
 mcmc_parcoord(mcmc.red, pars=colnames(mcmc.red[[1]]))
 mcmc_parcoord(mcmc.red, pars=colnames(mcmc.red[[1]])[-c(9)])
-# https://mc-stan.org/bayesplot/reference/MCMC-parcoord.html
+
 color_scheme_set("brightblue")
 # scale before
 mcmc_parcoord(mcmc.red, pars=colnames(mcmc.red[[1]]), transform = function(x) {(x - mean(x)) / sd(x)})
@@ -213,10 +213,10 @@ mcmc_trace(mcmc.red)
 mcmc_acf(mcmc.red, lags=10)
 
 
-# https://cran.r-project.org/web/packages/bayesplot/vignettes/visual-mcmc-diagnostics.html
+
 
 # without sigma and nu
-# https://arxiv.org/abs/1709.01449 p.6
+
 # Visualization in Bayesian workflow Jonah Gabry, Daniel Simpson, Aki Vehtari, Michael Betancourt, Andrew Gelman 
 
 
@@ -332,7 +332,7 @@ mean(Y_rep-muPred)/sd(Y_rep)
 # full process to perform a PPC based on full cases or category of cases (those sampled)
 # Bootstrap approach
 
-# http://doingbayesiandataanalysis.blogspot.com/2017/06/posterior-distribution-of-predictions.html
+
 
 # convert to matrix and extract betas
 # posterior
@@ -436,7 +436,7 @@ legend("bottom", legend=c("empirical","ppc"), lty=1, lwd=2, xpd=TRUE, horiz=TRUE
 
 
 
-# https://m-clark.github.io/bayesian-basics/model-exploration.html#model-checking
+
 
 summaryInfo <- smryMCMC2( mcmc.dm1 )
 summaryInfo
@@ -612,7 +612,7 @@ plotPost(Y_rep.s, credMass=0.87, showMode=TRUE, compVal=compval, ROPE=c(4.9,5.5)
 # exercise KRUSCHKE
 # Kruschke Code
 # Exercise 18.3 (p. 513) 
-# http://doingbayesiandataanalysis.blogspot.com/2011/04/anova-with-non-homogeneous-variances.html
+
 
 for ( i in 1:Ntotal ) {
   y[i] ~ dnorm( mu[i] , tau[x[i]] )
@@ -632,7 +632,7 @@ for ( i in 1:Ntotal ) {
 # Therefore, in the dataList, use the original data y, not standardized data. And, after JAGS/BUGS has generated an MCMC chain,
 # do not convert back from standardized to original scale, because the data weren't standardized in the first place.
 
-# https://people.ucsc.edu/~abrsvn/bayes_winbugs_jags_2.r
+
 
 # If we re-run the model and monitor the residuals (as we did for the homosced. t-test), we can confirm heteroscedasticity:
 
@@ -751,9 +751,9 @@ table(diss[,c("school","stype","schooltype")])
 
 
 # categorical covariates in JAGS
-# http://www.mikemeredith.net/blog/2017/Categories_in_JAGS.htm
+
 # Bayesian ANOVA
-# http://www.petrkeil.com/?p=2819
+
 
 diss.res01 <- brm(W.noSC ~ age + schooltype * sex, data=diss, family=gaussian(), save_all_pars=TRUE)
 diss.res0 <- brm(log(W.noSC) ~ age + schooltype * sex, data=diss, family=gaussian(), save_all_pars=TRUE)
@@ -1046,7 +1046,7 @@ bayesplot:::ppc_dens_overlay(diss.model[,"W.noSC.log"], yrep.diss.t11)
 
 
 
-# https://stackoverflow.com/questions/37768534/logistic-regression-with-categorical-predictors-using-jags
+
 # *** t11
 diss.model <- with(diss, model.matrix(W.noSC.log ~ age.log + age.cat1 + stype + sex))
 diss.model <- with(diss, model.matrix(W.noSC.log ~ age.log + age.cat + stype + sex))

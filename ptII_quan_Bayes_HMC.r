@@ -92,7 +92,7 @@ for(i in 1:nchains) res.arr[,i,] <- t(as.matrix(hmc.res.arr.red[[i]][[1]]))
 
 library(bayesplot)
 # plot posteriors and chains
-# https://cran.r-project.org/web/packages/bayesplot/vignettes/plotting-mcmc-draws.html
+
 color_scheme_set("mix-blue-pink")
 bayesplot:::mcmc_trace(res.arr, pars=c("theta"))
 bayesplot:::mcmc_hist_by_chain(res.arr, pars=c("theta"))
@@ -314,7 +314,7 @@ bivarnorm(mu1=1,mu2=2)
 
 
 ##################
-# https://jonnylaw.rocks/posts/2019-02-11-metropolis_r/
+
 
 xs <- bivarnorm.res
 dim(xs)
@@ -457,7 +457,7 @@ g_linear_posterior(theta.init,y,X) #res = 5 values = 5 parameters (=length(theta
 ########################
 # R.M. Neal MCMC Handbook
 # basic model taken from here:
-# http://www.mcmchandbook.net/HandbookChapter5.pdf
+
 # p.125
 
 HMC2 <- function (U, grad_U, epsilon, L, current_q, ...) 
@@ -524,7 +524,7 @@ for (i in 1:n_samples) {
 
 #############################################################
 # Kevin Shoemaker MH & MCMC
-# https://kevintshoemaker.github.io/NRES-746/LECTURE7.html  
+
 
 library(mvtnorm)
 seed <- 9988776
@@ -820,7 +820,7 @@ HMC_2D_sample(n=1000, U=U, U_gradient=grad_U, step=0.1, L=11, start=c(0,0))
 
 ############################
 # HMC
-# https://blogs.rstudio.com/ai/posts/2019-10-03-intro-to-hmc/
+
 # with Neal's code (s.a.) and modifications/ comments
 # good to lean the basic principle
 
@@ -907,7 +907,7 @@ plot(postQ)
 
 
 ############### BOOK CODE
-# https://ssl2.cms.fu-berlin.de/ewi-psy/einrichtungen/arbeitsbereiche/computational_cogni_neurosc/PMFN/10-Gaussian-distributions.pdf
+
 
 # bivariate probability density function
 
@@ -1247,7 +1247,7 @@ bivarnormdist.HMC.sim <- function(U, grad_U,
 }
 ############
 
-# https://stackoverflow.com/questions/14989179/r-creating-an-array-of-matrices#14989341
+
 #k = 2; n=3; m = 4
 #array(NA, c(n,m,k))
 
@@ -1270,7 +1270,7 @@ NA.rowIDs.l <- length(NA.rowIDs)
 NA.rowIDs.l
 NA.rowIDs.diffs <- NA.rowIDs[2:NA.rowIDs.l]-NA.rowIDs[1:(NA.rowIDs.l-1)]
 
-# https://cran.r-project.org/web/packages/unikn/vignettes/colors.html
+
 library(unikn)
 hist(NA.rowIDs.diffs, col=usecol(pal_bordeaux, n=6), main="Samples between NAs (= non-acceptance)", prob=TRUE, xlab="samples", ylab="prob")
 lines(density(NA.rowIDs.diffs), col="blue", lwd=2)
@@ -1377,7 +1377,7 @@ apply(do.call("rbind", OUTmcmc.nonas.onlyqs),2,quantile, probs=quans)
 
 library(bayesplot)
 # plot posteriors and chains
-# https://cran.r-project.org/web/packages/bayesplot/vignettes/plotting-mcmc-draws.html
+
 
 # trace plot
 color_scheme_set("mix-blue-pink")
@@ -1555,7 +1555,7 @@ crosscorr.plot(OUTmcmc.list)
 
 # plot bivariate normal dist plot with ellipses
 # draw ellipses
-# https://stats.stackexchange.com/questions/24380/how-to-get-ellipse-region-from-bivariate-normal-distributed-data
+
 library(mixtools)
 
 # take on MCMC chain
@@ -1748,8 +1748,8 @@ abline(h=rho, col="darkgreen", lty=2)
 # plot MCMCs - mean per chain and per variable and overall
 fac <- 1
 # define colors
-# https://github.com/EmilHvitfeldt/r-color-palettes
-# https://r-graphics.org/recipe-colors-palette-discrete
+
+
 library(RColorBrewer)
 colos <- brewer.pal(nchains,"Oranges")
 
@@ -1889,7 +1889,7 @@ lines(outtake["start"]:outtake["end"],
 
 # main title
 # outer margins
-# https://www.r-bloggers.com/2016/03/mastering-r-plot-part-3-outer-margins/
+
 mtext("HMC simulation (bivariate normal distribution)", side=3, line=1.2, cex=2, outer=TRUE)
 subtitletext <- paste("nsamp=",nsamp," | chains=",nchains," | epsilon=",step," | L=",L,sep="")
 subtitletext
@@ -2412,7 +2412,7 @@ lines(outtake["start"]:outtake["end"],
 
 # main title
 # outer margins
-# https://www.r-bloggers.com/2016/03/mastering-r-plot-part-3-outer-margins/
+
 mtext("MH simulation (bivariate normal distribution)", side=3, line=1.2, cex=2, outer=TRUE)
 subtitletext <- paste("nsamp=",nsamp," | chains=",nchains,sep="")
 subtitletext

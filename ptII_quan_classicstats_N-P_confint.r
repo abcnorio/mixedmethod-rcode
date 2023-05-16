@@ -64,7 +64,7 @@ ci.diff.in.means(n1=n1, xbar1=xbar1, sd1=sd1, n2=n2, xbar2=xbar2, sd2=sd2, equal
 9.109996/8.022219
 
 
-#just check for known values, taken from
+# just check for known values, originally taken from
 # https://onlinecourses.science.psu.edu/stat414/node/203
 #n1 <- 10
 #n2 <- 10

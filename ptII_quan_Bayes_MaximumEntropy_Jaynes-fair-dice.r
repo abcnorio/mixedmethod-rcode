@@ -37,8 +37,8 @@ source("ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice_helpfuncs.r")
 
 # side infos
 
-# http://bjlkeng.github.io/posts/maximum-entropy-distributions/
-# http://bjlkeng.github.io/posts/lagrange-multipliers/
+
+
 
 p <- 0.5
 log2(1/p)

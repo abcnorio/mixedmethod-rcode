@@ -71,7 +71,7 @@ fit1lm
 
 
 # simr
-# https://github.com/pitakakariki/simr/issues/96
+
 # on missing fixed effects, test argument, along argument, etc.
 m0 <- lmer(nachw ~ poly(zeitn,2) + gru + (1|subject) + (1|grpzugeh), data=daten.i)
 m1 <- lmer(nachw ~ poly(zeitn,2) + gru + (zeitn-1|subject) + (1|grpzugeh), data=daten.i)

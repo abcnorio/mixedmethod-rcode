@@ -31,23 +31,23 @@
 # HELPER FUNCTIONS
 
 # based on R-Code and ideas from
-# http://andrewgelman.com/2014/11/17/power-06-looks-like-get-used/
+
 
 # Gelman und Tuerlinckx (2000)
-# http://www.stat.columbia.edu/~gelman/research/published/francis8.pdf
+
 
 # Gelman und Carlin (2014)
-# http://www.stat.columbia.edu/~gelman/research/published/PPS551642_REV2.pdf
+
 
 # Alexander Etz 2015-05-21 [blog]
-# https://alexanderetz.com/2015/05/21/type-s-and-type-m-errors/
+
 
 
 ###### function incl. plot of effect size d_rep for retrodesign by Gelman and Carlin (2014)
 retrodesign <- function(tes, se, alpha=.05, dfree=Inf, n.sims=10000, seed=9876, graph=FALSE)
 {
  # after Gelman and Carlin 2014
- # http://www.stat.columbia.edu/~gelman/research/published/retropower_final.pdf
+
  #p.649
  #exaggeration = typeM
  #changes to original version from Gelman & Carlin paper:
@@ -146,8 +146,8 @@ return(typsm.res)
 plot.typ.sm <- function(typsm.res.ref=NA, range.dist=NA, mw=0, emp.mw=NA, tes=NA, se=NA, digits=2, crit.alpha=0.05)
 {
 #inspiration
-# http://andrewgelman.com/2014/11/17/power-06-looks-like-get-used/
-# https://alexanderetz.com/2015/05/21/type-s-and-type-m-errors/
+
+
 
  typeS <- typsm.res.ref[["typeS"]]
  exagg <- typsm.res.ref[["exaggeration"]]

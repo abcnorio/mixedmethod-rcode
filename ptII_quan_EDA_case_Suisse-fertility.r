@@ -221,18 +221,20 @@ quantile(sigma.hat(swiss2.sim))
 
 # smooth scatterplot
 # library 'fields'
-# function 'fudgeit()' taken from
+# function 'fudgeit()' originally borrowed and taken from
 # https://stackoverflow.com/questions/14271584/r-legend-for-color-density-scatterplot-produced-using-smoothscatter
-fudgeit <- function(){
-  xm <- get('xm', envir = parent.frame(1))
-  ym <- get('ym', envir = parent.frame(1))
-  z  <- get('dens', envir = parent.frame(1))
+fudgeit.alt <- function(cramp=256)
+{
+  require(fields)
+  xm <- get('xm', envir=parent.frame(1))
+  ym <- get('ym', envir=parent.frame(1))
+  z  <- get('dens', envir=parent.frame(1))
   colramp <- get('colramp', parent.frame(1))
-  fields::image.plot(xm,ym,z, col = colramp(256), legend.only = T, add =F)
+  fields::image.plot(xm,ym,z, col=colramp(cramp), legend.only=TRUE, add=FALSE)
 }
 
 par(mar=c(5,4,4,6) + .1)
-with(swiss, smoothScatter(Fertility, Catholic, nrpoints=0, postPlotHook=fudgeit, colramp=colorRampPalette(c("white", "darkorange"))))
+with(swiss, smoothScatter(Fertility, Catholic, nrpoints=0, postPlotHook=fudgeit.alt, colramp=colorRampPalette(c("white", "darkorange"))))
 title("")
 SUB <- "Fertility vs. Catholic index"
 mtext(TITLE, 3, line=2, cex=1.5)

@@ -24,7 +24,7 @@
 ################################################################################
 # On the difference in means
 # paper: G.L. Bretthorst "On the difference of means" (1993)
-# http://bayes.wustl.edu/glb/diff.pdf
+
 #
 # R code based on Mathematica code by Urban Studer (90's, Zürich/ CH)
 # R code by Leo G
@@ -84,7 +84,7 @@ SucRatesIntBounds <- function(Si, Ni, Sii, Nii, smin, snames=c("sample1","sample
 #DEV BROB
 simpsonrule.brob <- function(fx, sL, sH, Nsteps=100)
 {
-  #taken from sintegral from Bolstad2
+  # taken from sintegral from Bolstad2
   sek <- seq(sL,sH,length=Nsteps)
   l.intv <- 2*Nsteps+1
   intv.x <- approx(sek,sek,n=l.intv)$x

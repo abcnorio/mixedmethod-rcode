@@ -345,8 +345,8 @@ primtab.desc <- function(srctab, primtab, outcome, norownames=FALSE, pr.out=TRUE
 ########################## FUNCTION: distfull
 distfull <- function(dm)
 {
-# http://www.wiwi.uni-bielefeld.de/~frohn/Mitarbeiter/Handl/mvarfunktionen.html
-# http://www.wiwi.uni-bielefeld.de/~frohn/Mitarbeiter/Handl/mvarfunktionen.html
+
+
 # dm = distance matrix - output of dist()
 # modified by LG 2013
  n <- attr(dm, "Size")

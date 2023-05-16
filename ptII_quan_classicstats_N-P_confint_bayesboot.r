@@ -141,7 +141,7 @@ plot(b.tv.res)
 boot.ci(b.tv.res, conf=c(0.5,0.89,0.95),type = c("norm", "basic", "perc", "bca"))
 
 # bayesboot t-value
-# https://github.com/rasmusab/bayesboot
+
 set.seed(seed)
 bb.mean1 <- bayesboot(samp1, mean, R=repli)
 bb.mean2 <- bayesboot(samp2, mean, R=repli)

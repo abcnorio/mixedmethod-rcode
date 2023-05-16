@@ -102,7 +102,7 @@ fig
 
 
 # with contours
-# https://plotly.com/r/3d-surface-plots/
+
 fig <- plot_ly(z = ~h.sek) %>% add_surface(
   contours = list(
     z = list(

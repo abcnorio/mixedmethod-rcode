@@ -68,8 +68,8 @@ mwmed.sim.plot(res.3,mu=mu)
 
 
 # functions to plot psi functions
-# https://en.wikipedia.org/wiki/Robust_statistics
-# https://de.wikipedia.org/wiki/Datei:Mest_weightfunc.jpg
+
+
 andrewswave <- function(sek, a=1.34*pi)
 {
   sek.abs <- abs(sek)
@@ -96,7 +96,7 @@ mtext(expression(paste("Various weighting functions",sep="")), outer=TRUE, line=
 
 # Crime data
 # explanations
-# https://stats.idre.ucla.edu/r/dae/robust-regression/
+
 # read from the net
 # crimedata <- read.dta("https://stats.idre.ucla.edu/stat/data/crime.dta")
 # write.table(crimedata, file="crimedata.tab", sep="\t", row.names=FALSE, col.names=TRUE)

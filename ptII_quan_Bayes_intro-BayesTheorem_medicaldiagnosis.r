@@ -86,7 +86,7 @@ diff.fac
 
 # data given
 population <- 81390400
-# https://de.wikipedia.org/wiki/AIDS#Deutschland
+
 AIDS.pos.abs <- 84700
 prevalence <- AIDS.pos.abs/population
 healthy <- 1-prevalence
@@ -114,7 +114,7 @@ BT.res.aids["p(A|B)"] * prevalence
 
 
 # cancer example
-# https://nats-www.informatik.uni-hamburg.de/pub/Datamining/VeranstaltungsThemen/BayesKlassifikatoren.pdf
+
 
 # data given
 prevalence <- 6/1000

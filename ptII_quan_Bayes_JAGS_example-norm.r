@@ -39,9 +39,9 @@ source("ptall_generalfuncs.r")
 
 
 # MCMC via JAGS -> determine mu and s2
-# https://www4.stat.ncsu.edu/~reich/ABA/code/NNJAGS
+
 # see also
-# http://www.johnmyleswhite.com/notebook/2010/08/20/using-jags-in-r-with-the-rjags-package/
+
 
 # create artificial data
 # n.emp <- 30

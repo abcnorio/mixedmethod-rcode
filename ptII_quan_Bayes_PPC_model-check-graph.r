@@ -242,7 +242,7 @@ get_prior(bf(y.alt ~ group, sigma ~ group), data=xymodel)
 # model different sigmas for each group
 get_prior(bf(y.alt ~ group, sigma ~ 0 + group), data=xymodel)
 
-# https://vuorre.netlify.app/posts/2017-03-21-bayes-factors-with-brms/
+
 # model the intercept and allow to specify a prior on it
 # the '0 +' takes out the default intercept (= like "-1' in other R models)
 # the reserved term 'intercept' shows you mean the regular/ real intercept
@@ -316,7 +316,7 @@ mcmcs.above
 plot(mcmcs.above, type="l", pre.plot=grid(), col="darkred", bty="n")
 
 
-# https://vuorre.netlify.app/posts/2017-01-02-how-to-compare-two-groups-with-robust-bayesian-estimation-using-r-stan-and-brms/
+
 
 # analyses
 

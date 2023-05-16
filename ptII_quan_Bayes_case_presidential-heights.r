@@ -441,9 +441,9 @@ print(as.brob(10)^(1:3100))
 
 # bayesboot
 
-# https://cran.r-project.org/web/packages/bayesboot/readme/README.html
+
 # Rubin, D. B. (1981). The Bayesian bootstrap. The annals of statistics, 9(1), 130–134. link to paper
-# https://projecteuclid.org/euclid.aos/1176345338
+
 
 # library(bayesboot)
 
@@ -491,7 +491,7 @@ mean(pres.Bboot.O[,1])
 mean(c(pres.Bboot.W[,1] > 175.9, TRUE, FALSE))
 mean(c(pres.Bboot.O[,1] > 175.9, TRUE, FALSE))
 
-# https://en.wikipedia.org/wiki/List_of_average_human_height_worldwide
+
 # US
 p1 <- mean(pres.Bboot.W[,1] > 176.4) #2011-2014
 p2 <- mean(pres.Bboot.O[,1] > 176.4) #2011-2014
@@ -603,7 +603,7 @@ all.equal(prob.diff, prob.diff.O)
 
 
 # height ratio
-# http://www.nicebread.de/a-compendium-of-clean-graphs-in-r/
+
 # Presidential data up to and including 2008; data from Stulp et al. 2013
 
 # cases ie. elections

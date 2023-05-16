@@ -48,7 +48,7 @@ table(iris$Species)
 
 
 # plot
-# https://warwick.ac.uk/fac/sci/moac/people/students/peter_cock/r/iris_plots/
+
 # no color
 pairs(iris[1:4], main="Iris data set (from Edgar Anderson)", pch=21, bg="olivedrab")
 # from ?pairs
@@ -189,7 +189,7 @@ pred.iris.tab <- data.frame(pred.iris.tab, comp.iris, comp.irisW)
 bgcolo <- c("orange", "green3", "steelblue","red")[as.factor(pred.iris.tab$comp.irisW)]
 bocolo <- c("yellow", "yellow", "yellow","blue")[as.factor(pred.iris.tab$comp.irisW)]
 
-# https://stackoverflow.com/questions/14948852/how-to-use-the-pairs-function-combined-with-layout-in-r#14948888
+
 pairs(pred.iris$x, pch=21, cex=1.7, col=bocolo, bg=bgcolo, oma=c(4,4,8,13), main="")
 par(xpd=TRUE)
 legend(0.87, 0.59, as.vector(levels(comp.fac)),   #0.78,0.7 -> depends on device?

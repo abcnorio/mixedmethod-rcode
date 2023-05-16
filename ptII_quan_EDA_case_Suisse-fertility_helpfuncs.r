@@ -32,7 +32,7 @@
 
 
 ###### function to plot two variables along with a continous index
-# https://stackoverflow.com/questions/13355176/gradient-legend-in-base
+
 scaplot.cont <- function(x,y, TITLE="", SUB="", xtext="", ytext="", legendTITLE="", fac=1.1)
 {
  xlim <- range(x)

@@ -100,24 +100,24 @@ OR.2x2(ladybristol.6x8)
 
 
 # further readings
-# https://books.google.de/books?id=2tpGDgAAQBAJ&pg=PT96&lpg=PT96&dq=bayes+lady+tea&source=bl&ots=wNgTOhxdEU&sig=BTGLGaAYXWFPfwvewFfiro-UfQs&hl=de&sa=X&ved=2ahUKEwibsNWf1KTeAhUJDewKHYHRDUk4ChDoATAHegQIABAB#v=onepage&q=bayes%20lady%20tea&f=false
+
 
 # max Bayes Factor
-# https://alexanderetz.com/2016/06/19/understanding-bayes-how-to-cheat-to-get-the-maximum-bayes-factor-for-a-given-p-value/
-# http://www2.stat.duke.edu/courses/Spring07/sta215/lec/BvP/BergSell1987.pdf
 
-# https://alexanderetz.com/2015/07/25/understanding-bayes-updating-priors-via-the-likelihood/
-# https://alexanderetz.com/2015/08/09/understanding-bayes-visualization-of-bf/
+
+
+
+
 
 # Bayes binomial test
-# http://pcl.missouri.edu/bf-binomial
+
 
 
 
 
 # Bayes solution - no mcmc, but analytical solution
 #
-# https://medium.com/humansystemsdata/the-most-famous-tea-party-in-the-history-of-statistics-the-comparison-of-frequentism-and-3994bc16037b
+
 
 
 # likelihood - data generation process
@@ -244,7 +244,7 @@ BF.prior.skeptic*LR.FM
 
 # However, with increasing evidence the absolute difference between both observers
 # will decrease more and more.
-# https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1740-9713.2012.00620.x
+
 
 
 # all in one
@@ -507,7 +507,7 @@ list(p=c(0.5, 0.5))
 
 
 # BUGS models - mostly taken from the BUGS book... see website:
-# https://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-the-bugs-book/bugs-book-examples/
+
 
 # both margins fixed, based on noncentral-hypergeometric distribution
 # ~ exact Fisher test

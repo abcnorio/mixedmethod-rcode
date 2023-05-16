@@ -109,9 +109,8 @@ s.cs/N.cs
 
 
 # after https://www.barelysignificant.com/post/ppc/
-# generating nsims new datasets (Yrep)
-# taken and adopted to our needs...
-# draw from posterior to predict
+# create vis simulation new dataset Yrep
+# we draw from posterior to create predict
 Yrep <- sapply(1:length(thetas),
                function(i) sample(c(0,1), N.cs, replace=TRUE, prob=c(thetas[i], 1-thetas[i]))
               )

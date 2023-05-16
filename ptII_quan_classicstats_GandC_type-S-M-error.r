@@ -30,16 +30,16 @@
 
 
 # based on R-Code and ideas from
-# http://andrewgelman.com/2014/11/17/power-06-looks-like-get-used/
+
 
 # Gelman und Tuerlinckx (2000)
-# http://www.stat.columbia.edu/~gelman/research/published/francis8.pdf
+
 
 # Gelman und Carlin (2014)
-# http://www.stat.columbia.edu/~gelman/research/published/PPS551642_REV2.pdf
+
 
 # Alexander Etz 2015-05-21 [blog]
-# https://alexanderetz.com/2015/05/21/type-s-and-type-m-errors/
+
 
 #load necessary libs
 library(Hmisc)

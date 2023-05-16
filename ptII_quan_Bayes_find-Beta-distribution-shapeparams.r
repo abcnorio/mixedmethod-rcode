@@ -37,7 +37,7 @@ source("ptall_generalfuncs_Bayes_Beta_determine.r")
 
 
 # call original code from website - slow...
-# https://a-little-book-of-r-for-bayesian-statistics.readthedocs.io/en/latest/src/bayesianstats.html
+
 quantile1 <- list(p=0.5, x=0.85)    # we believe the median of the prior is 0.85
 quantile2 <- list(p=0.99999,x=0.95) # we believe the 99.999th percentile of the prior is 0.95
 quantile3 <- list(p=0.00001,x=0.60) # we believe the 0.001st percentile of the prior is 0.60
@@ -121,7 +121,7 @@ mtext(paste("Theory: a = ",a," | b = ",b," | No jitter (left), some jitter (righ
 
 # not run below this point
 # ... just to compare with the script from
-# http://a-little-book-of-r-for-bayesian-statistics.readthedocs.io/en/latest/src/bayesianstats.html
+
 
 # compare to original function from website above called 'findBeta()'
 

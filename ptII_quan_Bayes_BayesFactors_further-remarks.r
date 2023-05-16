@@ -35,8 +35,8 @@ library(brms)
 # KRUSCHKE
 
 # BF mean and ES different
-# https://doingbayesiandataanalysis.blogspot.com/2015/04/bayes-factors-for-tests-of-mean-and.html
-# https://doingbayesiandataanalysis.blogspot.com/search?q=posterior
+
+
 
 # BF and prior probs
 

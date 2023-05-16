@@ -166,32 +166,43 @@ MAP <- function(theta, dens)
 
 
 ###### function to collect steps to run a BUGs model from R with BRugs
-run.model <- function(model, samples, dats=list(), chainLength=1e+5, burnin=0.10, 
-                      init.func=NULL, numChains=3, thin=1)
+# taken and adopted from
+# http://www.di.fc.ul.pt/~jpn/r/bugs/bugs_tutorial.html  
+run.model <- function(model, samps, dats=list(), chainL=1e+5, burning=0.10, 
+                      initfun=NULL, numC=3, thin=1)
 {
-  # taken and adopted from
-  # http://www.di.fc.ul.pt/~jpn/r/bugs/bugs_tutorial.html  
-  writeLines(model, con="model.txt")  # write the model string to a file
-  writeLines(dats, con="data.txt")	  # write the data to a file
-  modelCheck("model.txt")             # send the model to BUGS, which checks the model syntax
-  modelData(fileName="data.txt")      # load data before compilation
-  # if (length(data)>0)               # if there's any data available...
-  #    modelData(bugsData(data))      # ... BRugs puts it into a file and ships it to BUGS
-  modelCompile(numChains=numChains)   # BRugs command tells BUGS to compile the model
+  # cL = chainLength
+  # thin = thinning
+  # burning = burn in steps
+  # samps = samples
   
-  if (is.null(init.func)) {
-    modelGenInits()                   # BRugs command tells BUGS to randomly initialize a chain
+  writeLines(model, con="model.txt")
+  writeLines(dats, con="data.txt")
+  modelCheck("model.txt")
+  modelData(fileName="data.txt")
+  modelCompile(numChains=numC)
+  
+  if( is.null(initfun) )
+  {
+	# randomly inititalize model generation
+    modelGenInits()
   } else {
-    for (chain in 1:n.chains) {       # otherwise use user's init data
-      modelInits(bugsInits(init.func))
+    for(chain in 1:n.chains)
+	{
+	  # use user data als initial starting point
+      modelInits(bugsInits(initfun))
     }
   }
   
-  modelUpdate(chainLength*burnin)     # Burn-in period to be discarded
-  samplesSet(samples)                 # BRugs tells BUGS to keep a record of the sampled values
-  samplesSetThin(thin)                # Set thinning
-  modelUpdate(chainLength)            # BRugs command tells BUGS to randomly initialize a chain
-	                  								  # thin = 1 = k = samples used of every k_th iteration for inference
+  # drop burn ins
+  modelUpdate(chainL * burning)
+  # keep record
+  samplesSet(samps)
+  # thinning
+  samplesSetThin(thin)
+  # randomly initialize a chain
+  modelUpdate(chainL)
+  # thin = 1 = k = samples used of every k_th iteration for inference
 }
 # call:
 # run.model(model=modelstrng, samples=c("post","y","p","n"), dats=dats)

@@ -109,7 +109,7 @@ legend("bottom", legend=c("normal","cauchy","uniform"), col=c("violetred3","stee
 
 
 # no flat priors!
-# http://mc-stan.org/rstanarm/articles/priors.html
+
 lim <- 1500  
 theta <- seq(-lim,lim,0.1)
 mu <- 0

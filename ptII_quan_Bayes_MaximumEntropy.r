@@ -35,7 +35,7 @@ source("ptII_quan_Bayes_MaximumEntropy_helpfuncs.r")
 
 # How does Boltzmann and Shannon entropy looks like?
 # information content = surprisal
-# https://en.wikipedia.org/wiki/Entropy_(information_theory)
+
 # that's identical
 # -log2 p(event) = log(1/ p(event))
 ps <- seq(0,1,.01)
@@ -169,7 +169,7 @@ log2(6)/log2(2)
 # dice problem
 # van Enk (2014) https://arxiv.org/pdf/1408.6803.pdf
 # original ET Jaynes (1962)
-# http://strangebeautiful.com/other-texts/jaynes-brandeis62-info-theory-sm.pdf
+
 
 
 # simulate two dices

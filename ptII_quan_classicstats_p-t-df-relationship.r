@@ -70,7 +70,7 @@ mtext(paste("t-values (t = ",tvalue,") are held constant",sep=""), 3, outer=TRUE
 
 
 # post hoc power via simulation
-# https://www.researchgate.net/post/How_to_calculate_the_Statistical_Power_of_a_nonparametric_test_the_probability_of_making_Type_II_error
+
 # bootstrap parametric model post hoc power
 #
 # t-test

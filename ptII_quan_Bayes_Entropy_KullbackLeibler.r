@@ -56,7 +56,7 @@ counts.all
 
 
 # Shannon entropy
-# https://www.youtube.com/watch?v=IPkRVpXtbdY
+
 
 Hc.all <- H.counts(counts=counts.all)#pres.dat[,"counts.bk"])
 Hc.bush <- H.counts(counts=bush)

@@ -35,7 +35,7 @@
 H.counts <- function(counts, type="Jeffreys", priorN=0, ein="log")
 {
   # cell frequency priors
-  # https://www.jmlr.org/papers/v10/ Hausser & Strimmer 2009
+
   # type priors
   # = 0 = no prior
   # = 0.5 = Jeffreys 

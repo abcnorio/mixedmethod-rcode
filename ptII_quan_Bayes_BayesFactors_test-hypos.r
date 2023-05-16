@@ -389,7 +389,7 @@ plot(marginal_effects(brm.p1.0), points=TRUE)
 loo(brm6, brm.p1.0, reloo=TRUE)
 
 # interaction plots
-# https://bookdown.org/rdpeng/exdata/plotting-and-color-in-r.html
+
 colos <- colorRampPalette(c("blue","darkred"))
 colos(6)
 with(count.age, interaction.plot(sex, stype,Freq.age.cat, legend=TRUE, col=colos(2)))
