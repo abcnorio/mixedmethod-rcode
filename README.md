@@ -1,4 +1,4 @@
-﻿# R-Code used in the book "Subjektive Betrachtungen und objektive Ansichten. Qual, Quan und Logik" written by Gürtler & Huber (2023).
+﻿# R code used in the book "Subjektive Betrachtungen und objektive Ansichten. Qual, Quan und Logik" written by Gürtler & Huber (2023).
 
 ## Overview
 
@@ -6,7 +6,7 @@ The book itself is about mixed methodology especially if it comes to data analys
 
 ## License
 
-The R-code is licensed under GNU GPL v3. Please feel free to use, modify or share the code if it is helpful for you.
+The R code is licensed under [**GNU GPL v3**](https://www.gnu.org/licenses/gpl-3.0.en.html). Please feel free to use, modify or share the code if it is helpful for you.
 
 ## Background
 
@@ -26,7 +26,7 @@ This means taking the example filenames above and breaking them down to its part
 - **Bayes** = Bayesian statistics
 - **BayesFactors** = subtopic
 - **dependence-on-N-sim** = topic discussed, here the dependence of the Bayes Factor from the sample size N by using simulation to demonstrate this relationship
-- **helpfuncs** [optional] = general term used for functions used in the scripts (in most cases the non-helpfuncs.r files do not contain any R-functions)
+- **helpfuncs** [optional] = general term used for functions used in the scripts (in most cases the non-helpfuncs.r files do not contain any R functions)
 - **ptall_generalfuncs** = collection of functions of general usage and not (just) data set specific
 
 Some rare files do not follow that filename pattern:
@@ -62,8 +62,8 @@ Due to legal and licence issues not all data sets discussed in the book can be p
 - **LG** = data from a research study about the usage of word counts and a small experiment about clairvoyance to demonstrate something that does not show any kind of effect
 - **school_success** = logical table about school success (fictional data just for demonstration)
 - **Spain-edu** = data from a Spanish research study on leadership in education
-- **startagain_appl-letter-addiction** = application letter for a place in drug therapy rehabilitation written from detox in psychiatry (originally sent via fax)
-- **startagain_successrates** = success rates to pass through a drug rehabilitation program in the Suisse drug therapy center 'start again' between 1992-2017
+- **startagain_appl-letter-addiction** = application letter for a place in drug therapy rehabilitation written from detox in psychiatry (originally sent via fax, names and places are fully anonymized)
+- **startagain_successrates** = success rates to pass through a drug rehabilitation program in the Suisse drug therapy center *start again* between 1992-2017
 - **Titanic_survivors** = well-known data of the sinking of the Titanic and its survivors resp. their characteristics
 - **wikipedia_presidential-heights** = data from wikipedia about the relationship of body height of US presidential candidates and later winners (presidents)
 
@@ -71,22 +71,19 @@ Place datasets in the main folder to use them along with the scripts.
 
 ## External data sets
 
-Some data sets used are taken directly from R like the 'bupa' data set or the one from Annette Dobson (1990) about plan weight data, the famous 'iris' data set, etc. (see book for further references). Other set like 'crime data' are from external sources (e.g. UCLA) and others are not published due to a missing license required for public access (e.g. data about the chiropractice research study or about women in parliament from ML Krook 2010).
+Some data sets used are taken directly from R like the **bupa** data set or the one from Annette Dobson (1990) about **plant weight data**, the famous **iris** data set, etc. (see book for further references). Other set like **crime data** are from external sources (e.g. UCLA) and others are not published due to a missing license required for public access (e.g. data about the **chiropractice research study** or about **women in parliament** from ML Krook 2010).
 
-## External R-code
+## External R code
 
-Some R-code was not taken from R packages but various locations on the net. From that selection some scripts were also tweaked to fit to our needs here. Mostly, those scripts are from:
+Some R code was not taken from R packages but various locations on the net. From that selection some scripts were also tweaked to fit to our needs here. Mostly, those scripts are from:
 
 - **bayesian2beta.r** (from: Sverdlov O, Ryeznik Y, Wu S.2015.  Exact Bayesian Inference Comparing Binomial Proportions, With Application to Proof-of-Concept Clinical Trials. *Therapeutic Innovation & Regulatory Science*, *49*(1), p.163-174.)
 - **DBDA2E-utilities.R** and **Jags-Ymet-XmetMulti-Mrobust.R** (from: Kruschke, J. 2014. *Doing Bayesian Data Analysis. 2nd ed.* Academic Press.)
 
-The corresponding *.r file points contains the URL where to download the R script. Just place it in the main folder.
-
-- **COLLECTION_alpha-sorted.zip** contains as a text file the various internet links that inspired the R code or from where we took (parts of) R functions.
-This covers:
+The corresponding *.r file contains the URL where to download the R script. Download and just place them in the main folder. External R code is used in the following way:as (parts of) R functions:
 - R packages and R functions that are modified to meet our needs here (e.g. some functions went missing from one R version to the next one like code from   [**heatmap.plus**](https://github.com/cran/heatmap.plus), [**sjstats**](https://github.com/strengejacke/sjstats), [**rhmc**](https://github.com/cran/rhmc), ...).
-- Some R code (e.g. from Bolstad) was slightly changed due to bugs in the original code at that time. That may be different now.
-- Then there is a lot of R code found on forums, tutorials, etc. to enhance the graphical output or solve this or that problem. The relevant pages are cited in the code as a reference in case of further interest.
+- Some R code (e.g. from **Bolstad**) was slightly changed due to bugs in the original code at that time. That may be different now.
+- Then there is a lot of R code found on forums, tutorials, etc. to enhance the graphical output or solve this or that problem.
 - Some other code just follows papers and can be seen as an implementation of algorithms (e.g. about p-hacking, z-curves, etc.). This is referenced en detail in the book itself.
 
 From time to time some code is put in sections like
@@ -105,7 +102,7 @@ All R scripts were written and tested under R v3. "In theory" they should run wi
 
 ## R libraries
 
-Many scripts require external R packages and external libraries. Sometimes they require especially under Linux some compilation of libraries. Such compilations under Linux should be done directly by running R from the commandline and not via using some GUI like rstudio, because experience shows that the compilation tends to break and fail if such a GUI is used. Compilation directly via R on the commandline works pretty well, and afterwards the GUI can be used again. Under windows, most libraries do not require any compilation. If those compiled packages should be made available to all local users, start R as root and install then packages.
+Many scripts require external R packages and external libraries. Sometimes they require especially under Linux some compilation of libraries. Such compilations under Linux should be done directly by running R from the commandline and not via using some GUI like RStudio, because experience shows that the compilation tends to break and fails if such a GUI is used. Compilation directly via R on the commandline works pretty well, and afterwards the GUI can be used again. Under windows, most libraries do not require any compilation. If those compiled packages should be made available to all local users, start R as root and install then packages.
 
 ## Disclaimer
 
