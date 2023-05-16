@@ -1,4 +1,4 @@
-###
+### (C) 2005-2023 by Leo Guertler 
 ### R-code supplement
 ### to the book
 ###
