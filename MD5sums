@@ -1,3 +1,4 @@
+781c09551f60f8ff99c811e1aa820831 -tree --full-tree -r --name-only HEAD
 69b34fb7016c496582c9566de1c14434 .gitignore
 f2d3442586a5ac968c9678610cbaacf1 ADDON_Lindley-Paradox.r
 763a0e7d0e7500c86e292deb23a8bfe3 AQUAD7/aquad7.ini
