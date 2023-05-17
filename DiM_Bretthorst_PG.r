@@ -1092,7 +1092,7 @@ DiM.plot.calc.pg <- function(DiM.res, BROB=FALSE, fac.brob=1, cMasses=c(0.89,0.9
     ( errf.brob(ERR=XH(sigma=sigma)) - errf.brob(ERR=XL(sigma=sigma)) )
   }  
   
-  # integrate for each element of r.sek 
+  # integrate for each element of r.sek
   r.sek <- seq(r.low,r.high,r.delta / fac.brob)
   r.sek.l <- length(r.sek)
   
@@ -1337,7 +1337,7 @@ DiM.plot.pg <- function(DiM.plotvalues.res, cols=NULL, fac=1.05, lwd=2, alphav=0
     }  
     head(pr.df)
     pr.df.minusInf
-    cat("\nIn table 'pr.df' (ratios) are values of '-Inf' - those will be replaced for the graphical output be the minimum value of those vectors\n")
+    cat("\nIn table 'pr.df' (ratios) are values of '-Inf' - those will be replaced for the graphical output by the minimum value of those vectors\n")
     cat("Remember: exp(-Inf) = 0\n\n")
   }
   #if(BROB) pr.df[INFid] <- -Inf

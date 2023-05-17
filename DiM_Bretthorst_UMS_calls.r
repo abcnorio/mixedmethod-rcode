@@ -52,7 +52,7 @@ res.SIB.NRFtotal
 DiM.res.NRF <- DiffinMeans(inval=res.SIB.NRFtotal, out=FALSE)
 str(DiM.res.NRF)
 UMSprint(results=DiM.res.NRFtotal)
-#WATCH THE PLOT - BECOMES OVIOUS (ie. the result), but should work nevertheless
+#WATCH THE PLOT - BECOMES OBVIOUS (ie. the result), but should work nevertheless
 UMSplot(inval=res.SIB.NRFtotal,pdfout=FALSE)
 
 res.SIB.NRFmf <- SucRatesIntBounds(Si=20, Ni=47, Sii=13, Nii=28, smin=0, snames=c("male","female"))

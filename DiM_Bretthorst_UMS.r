@@ -574,7 +574,7 @@ UMSprint <- function(results, SRIB=NA, dig=6)
   BROB <- results[["BROB"]]
   consts <- results[["consts"]]
   
-  if(!is.na(SRIB) && attr(SRIB,"typ") == "SRIB") srib.base <- TRUE else srib.base <- FALSE
+  if(!any(is.na(SRIB)) && attr(SRIB,"typ") == "SRIB") srib.base <- TRUE else srib.base <- FALSE
 
   pp.un.temp <- results[["pp.un"]]
   pp.no.temp <- results[["pp.no"]]

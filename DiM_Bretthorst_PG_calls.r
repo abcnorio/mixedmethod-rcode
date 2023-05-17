@@ -86,6 +86,7 @@ DiM.plot.pg(dim.res.calc, filling=FALSE, BROB=FALSE)
 inputvalues <- list(snames=c("Jaynes.1","Jaynes.2"), si=6.48, Ni=4, sii=7.48, Nii=9, Di=50, Dii=42, L=34, H=58, sL=3, sH=10, ndelta=1000, nr=1000)
 inputvalues <- ums2pg(inputvalues)
 inputvalues
+###FIX IT
 dim.res <- DiM.pg(invtyp="ums", inputvalues=inputvalues, print.res=TRUE)
 
 
@@ -93,23 +94,29 @@ dim.res <- DiM.pg(invtyp="ums", inputvalues=inputvalues, print.res=TRUE)
 #works
 res.SIB <- SucRatesIntBounds(Si=11, Ni=15, Sii=10, Nii=16, smin=0, snames=c("voluntary","non-voluntary"))
 res.SIB
+#
 DIM.pg.res <- DiM.pg(invtyp="ums", inputvalues=res.SIB, print.res=TRUE, BROB=FALSE)
 DIM.pg.res
 DiM.res <- DIM.pg.res
 DiM.print.pg(DIM.pg.res)
-DiM.plotvalues.res.nonbrob <- DiM.plot.calc.pg(DIM.pg.res, BROB=FALSE)
+# ratio of SD requires input values scaleL (low) and scaleH (high), otherwise the script breaks
+DiM.plotvalues.res.nonbrob <- DiM.plot.calc.pg(DIM.pg.res, scaleL=2, scaleH=8, BROB=FALSE)
 DiM.plot.pg(DiM.plotvalues.res.nonbrob, filling=TRUE, BROB=FALSE)
+
 #as brob
 DIM.pg.res <- DiM.pg(invtyp="ums", inputvalues=res.SIB, print.res=TRUE, BROB=TRUE)
 DIM.pg.res
 DiM.print.pg(DIM.pg.res)
-DiM.plotvalues.res.nonbrob.brob <- DiM.plot.calc.pg(DIM.pg.res, BROB=TRUE)
+DiM.plotvalues.res.nonbrob.brob <- DiM.plot.calc.pg(DIM.pg.res, scaleL=2, scaleH=8, BROB=TRUE)
 DiM.plot.pg(DiM.plotvalues.res.nonbrob.brob, filling=TRUE, BROB=TRUE)
 
 
 #normally does not work
 res.SIB.NRFtotal <- SucRatesIntBounds(Si=(20+13), Ni=(47+28), Sii=(338 %/% 4), Nii=338, smin=0, snames=c("male","female"))
 res.SIB.NRFtotal
+# results in INF values in integrals - script breaks without BROB
+DIM.pg.res.brob <- DiM.pg(invtyp="ums", inputvalues=res.SIB.NRFtotal, print.res=TRUE, BROB=FALSE)
+# works with BROB
 DIM.pg.res.brob <- DiM.pg(invtyp="ums", inputvalues=res.SIB.NRFtotal, print.res=TRUE, BROB=TRUE)
 DiM.print.pg(DIM.pg.res.brob)
 #try several limits...
@@ -117,7 +124,7 @@ DiM.extract.limits(DIM.pg.res.brob, scaleL=10, scaleH=1, change=FALSE)
 DiM.extract.limits(DIM.pg.res.brob, scaleL=10, scaleH=2, change=FALSE)
 DiM.extract.limits(DIM.pg.res.brob, scaleL=5, scaleH=2, change=FALSE)
 DiM.extract.limits(DIM.pg.res.brob, scaleL=100, scaleH=4, change=FALSE)
-#aplly new limits
+#apply new limits
 DiM.newlimits <- DiM.extract.limits(DIM.pg.res.brob, scaleL=10, scaleH=1, change=TRUE)
 DiM.newlimits <- DiM.extract.limits(DIM.pg.res.brob, scaleL=100, scaleH=4, change=TRUE)
 #check
