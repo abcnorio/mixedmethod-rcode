@@ -1,0 +1,107 @@
+[33mcommit 1c2c646218d456dd43b5fedfec0a786e66eca969[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: abcnorio <leog@anicca-vijja.de>
+Date:   Wed May 17 14:17:16 2023 +0200
+
+    added notes about scaleL/scaleH (PG) and some notes in UMS
+
+[1mdiff --git a/DiM_Bretthorst_PG.r b/DiM_Bretthorst_PG.r[m
+[1mindex 6071894..48a4eb5 100644[m
+[1m--- a/DiM_Bretthorst_PG.r[m
+[1m+++ b/DiM_Bretthorst_PG.r[m
+[36m@@ -1092,7 +1092,7 @@[m [mDiM.plot.calc.pg <- function(DiM.res, BROB=FALSE, fac.brob=1, cMasses=c(0.89,0.9[m
+     ( errf.brob(ERR=XH(sigma=sigma)) - errf.brob(ERR=XL(sigma=sigma)) )[m
+   }  [m
+   [m
+[31m-  # integrate for each element of r.sek [m
+[32m+[m[32m  # integrate for each element of r.sek[m
+   r.sek <- seq(r.low,r.high,r.delta / fac.brob)[m
+   r.sek.l <- length(r.sek)[m
+   [m
+[36m@@ -1337,7 +1337,7 @@[m [mDiM.plot.pg <- function(DiM.plotvalues.res, cols=NULL, fac=1.05, lwd=2, alphav=0[m
+     }  [m
+     head(pr.df)[m
+     pr.df.minusInf[m
+[31m-    cat("\nIn table 'pr.df' (ratios) are values of '-Inf' - those will be replaced for the graphical output be the minimum value of those vectors\n")[m
+[32m+[m[32m    cat("\nIn table 'pr.df' (ratios) are values of '-Inf' - those will be replaced for the graphical output by the minimum value of those vectors\n")[m
+     cat("Remember: exp(-Inf) = 0\n\n")[m
+   }[m
+   #if(BROB) pr.df[INFid] <- -Inf[m
+[1mdiff --git a/DiM_Bretthorst_PG_calls.r b/DiM_Bretthorst_PG_calls.r[m
+[1mindex 7716892..936220d 100644[m
+[1m--- a/DiM_Bretthorst_PG_calls.r[m
+[1m+++ b/DiM_Bretthorst_PG_calls.r[m
+[36m@@ -86,6 +86,7 @@[m [mDiM.plot.pg(dim.res.calc, filling=FALSE, BROB=FALSE)[m
+ inputvalues <- list(snames=c("Jaynes.1","Jaynes.2"), si=6.48, Ni=4, sii=7.48, Nii=9, Di=50, Dii=42, L=34, H=58, sL=3, sH=10, ndelta=1000, nr=1000)[m
+ inputvalues <- ums2pg(inputvalues)[m
+ inputvalues[m
+[32m+[m[32m###FIX IT[m
+ dim.res <- DiM.pg(invtyp="ums", inputvalues=inputvalues, print.res=TRUE)[m
+ [m
+ [m
+[36m@@ -93,23 +94,29 @@[m [mdim.res <- DiM.pg(invtyp="ums", inputvalues=inputvalues, print.res=TRUE)[m
+ #works[m
+ res.SIB <- SucRatesIntBounds(Si=11, Ni=15, Sii=10, Nii=16, smin=0, snames=c("voluntary","non-voluntary"))[m
+ res.SIB[m
+[32m+[m[32m#[m
+ DIM.pg.res <- DiM.pg(invtyp="ums", inputvalues=res.SIB, print.res=TRUE, BROB=FALSE)[m
+ DIM.pg.res[m
+ DiM.res <- DIM.pg.res[m
+ DiM.print.pg(DIM.pg.res)[m
+[31m-DiM.plotvalues.res.nonbrob <- DiM.plot.calc.pg(DIM.pg.res, BROB=FALSE)[m
+[32m+[m[32m# ratio of SD requires input values scaleL (low) and scaleH (high), otherwise the script breaks[m
+[32m+[m[32mDiM.plotvalues.res.nonbrob <- DiM.plot.calc.pg(DIM.pg.res, scaleL=2, scaleH=8, BROB=FALSE)[m
+ DiM.plot.pg(DiM.plotvalues.res.nonbrob, filling=TRUE, BROB=FALSE)[m
+[32m+[m
+ #as brob[m
+ DIM.pg.res <- DiM.pg(invtyp="ums", inputvalues=res.SIB, print.res=TRUE, BROB=TRUE)[m
+ DIM.pg.res[m
+ DiM.print.pg(DIM.pg.res)[m
+[31m-DiM.plotvalues.res.nonbrob.brob <- DiM.plot.calc.pg(DIM.pg.res, BROB=TRUE)[m
+[32m+[m[32mDiM.plotvalues.res.nonbrob.brob <- DiM.plot.calc.pg(DIM.pg.res, scaleL=2, scaleH=8, BROB=TRUE)[m
+ DiM.plot.pg(DiM.plotvalues.res.nonbrob.brob, filling=TRUE, BROB=TRUE)[m
+ [m
+ [m
+ #normally does not work[m
+ res.SIB.NRFtotal <- SucRatesIntBounds(Si=(20+13), Ni=(47+28), Sii=(338 %/% 4), Nii=338, smin=0, snames=c("male","female"))[m
+ res.SIB.NRFtotal[m
+[32m+[m[32m# results in INF values in integrals - script breaks without BROB[m
+[32m+[m[32mDIM.pg.res.brob <- DiM.pg(invtyp="ums", inputvalues=res.SIB.NRFtotal, print.res=TRUE, BROB=FALSE)[m
+[32m+[m[32m# works with BROB[m
+ DIM.pg.res.brob <- DiM.pg(invtyp="ums", inputvalues=res.SIB.NRFtotal, print.res=TRUE, BROB=TRUE)[m
+ DiM.print.pg(DIM.pg.res.brob)[m
+ #try several limits...[m
+[36m@@ -117,7 +124,7 @@[m [mDiM.extract.limits(DIM.pg.res.brob, scaleL=10, scaleH=1, change=FALSE)[m
+ DiM.extract.limits(DIM.pg.res.brob, scaleL=10, scaleH=2, change=FALSE)[m
+ DiM.extract.limits(DIM.pg.res.brob, scaleL=5, scaleH=2, change=FALSE)[m
+ DiM.extract.limits(DIM.pg.res.brob, scaleL=100, scaleH=4, change=FALSE)[m
+[31m-#aplly new limits[m
+[32m+[m[32m#apply new limits[m
+ DiM.newlimits <- DiM.extract.limits(DIM.pg.res.brob, scaleL=10, scaleH=1, change=TRUE)[m
+ DiM.newlimits <- DiM.extract.limits(DIM.pg.res.brob, scaleL=100, scaleH=4, change=TRUE)[m
+ #check[m
+[1mdiff --git a/DiM_Bretthorst_UMS.r b/DiM_Bretthorst_UMS.r[m
+[1mindex 617031c..74ce9fd 100644[m
+[1m--- a/DiM_Bretthorst_UMS.r[m
+[1m+++ b/DiM_Bretthorst_UMS.r[m
+[36m@@ -574,7 +574,7 @@[m [mUMSprint <- function(results, SRIB=NA, dig=6)[m
+   BROB <- results[["BROB"]][m
+   consts <- results[["consts"]][m
+   [m
+[31m-  if(!is.na(SRIB) && attr(SRIB,"typ") == "SRIB") srib.base <- TRUE else srib.base <- FALSE[m
+[32m+[m[32m  if(!any(is.na(SRIB)) && attr(SRIB,"typ") == "SRIB") srib.base <- TRUE else srib.base <- FALSE[m
+ [m
+   pp.un.temp <- results[["pp.un"]][m
+   pp.no.temp <- results[["pp.no"]][m
+[1mdiff --git a/DiM_Bretthorst_UMS_calls.r b/DiM_Bretthorst_UMS_calls.r[m
+[1mindex 42d67f0..21a22df 100644[m
+[1m--- a/DiM_Bretthorst_UMS_calls.r[m
+[1m+++ b/DiM_Bretthorst_UMS_calls.r[m
+[36m@@ -52,7 +52,7 @@[m [mres.SIB.NRFtotal[m
+ DiM.res.NRF <- DiffinMeans(inval=res.SIB.NRFtotal, out=FALSE)[m
+ str(DiM.res.NRF)[m
+ UMSprint(results=DiM.res.NRFtotal)[m
+[31m-#WATCH THE PLOT - BECOMES OVIOUS (ie. the result), but should work nevertheless[m
+[32m+[m[32m#WATCH THE PLOT - BECOMES OBVIOUS (ie. the result), but should work nevertheless[m
+ UMSplot(inval=res.SIB.NRFtotal,pdfout=FALSE)[m
+ [m
+ res.SIB.NRFmf <- SucRatesIntBounds(Si=20, Ni=47, Sii=13, Nii=28, smin=0, snames=c("male","female"))[m
