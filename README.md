@@ -101,7 +101,11 @@ Although all R scripts were tested heavily we cannot rule out any possible error
 
 ## Errors in the R code
 
-If one finds a bug please contact us with a short and clear example so we can try to reproduce it and fix the error. Important is to understand that sometimes due to demonstration goals the code is not perfect and is revised a few lines later. Those incidents are no bugs but intentional for educational purposes to show that things evolve and do not happen accidentially, but statistical work means (ideally!) slow and steady progress towards a goal that sometimes even changes. In general, the R code is there for educational purposes and adjusted to the tasks (e.g. data sets) and the specific topics of the book. The R code does not fulfill the requirements of traditional R packages like some universal library. Nevertheless, some of the functions may be useful in various changing contexts.
+If one finds a bug please contact us with a short and clear example so we can try to reproduce it and fix the error.
+
+## Usage of the R code
+
+Important is to understand that sometimes due to demonstration goals the code is not perfect and is revised a few lines later. Those incidents are no bugs but intentional for educational purposes to show that things evolve and do not happen accidentially, but statistical work means (ideally!) slow and steady progress towards a goal that sometimes even changes. In general, the R code is adjusted to the tasks (e.g. data sets) and the specific topics of the book. It's not a R package - the R code does not fulfill the requirements of traditional R packages like being useful as anuniversal library. Nevertheless, some of the functions may be helpful in various changing contexts.
 
 ## AQUAD 7 files
 
