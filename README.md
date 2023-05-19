@@ -12,6 +12,10 @@ The R code is licensed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.e
 
 The book itself is about mixed methodology (quantitative, qualitative, boolean logic) and will be published in 2023 freely on some open library platform.
 
+## Run the R code
+
+Use a GUI like RStudio, R Commander, JGR, Emacs with ESS, Deducer, Eclipse StatET, RKWard, Rattle or Tinn-R. Use what suits you.
+
 ## Filenames
 
 The files work in the following manner so that most files are directly related to a chapter of the book and a specific task or data set:
