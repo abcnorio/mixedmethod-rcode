@@ -36,19 +36,6 @@ Some rare files do not follow that filename pattern:
 - **DiM_Bretthorst_UMS.r** = the same as above but an implementation of the original Mathematica code written by UM Studer in the 1990's (context: evaluation research study of the Suisse drug therapy center 'start again')
 - **ladyfisher_genfunc_bayesT.r**  = solution to the 'Lady tea experiment' (that gave rise to the exact Fisher test) by using the Bayes Theorem
 - **model.txt** = Lady Bristol BUGS model to reproduce the exact Fisher test based on the original data from the 'Lady tea experiment' (with fixed margin totals for rows and cols)
-- **brob.integral.r** = th folder **brob.integral** contains functions to integrate real large numbers beyond R's normal capabilities using the R package [**Brobdingnag**](https://github.com/RobinHankin/Brobdingnag). Normal R functions were used and adopted to work with Brobdingnag numbers. This is useful if someone tries to integrate e.g. Gamma or other functions that easily reach values beyond normal tolerance ie. near zero or up to infinite. R's tolerance is
-
-```
-> 10^(307:309)
-[1] 1e+307 1e+308    Inf
-> 10^(-323:-324)
-[1] 9.881313e-324  0.000000e+00
-```
-
-Here the functions are used to calculate proper integrals for **DiM_Bretthorst_UMS.r** and **DiM_Bretthorst_PG.r**. Otherwise the valid method would fail because of Gamma functions that temporarily create too large numbers. Implemented methods are
-
-- sintegral (Simpson) from R package **Bolstad**
-- romberg, cotes, integral (ie. Kronrod, Clenshaw, Simpson), quadgk, simpadpt, quadinf, quad, trapz, and associated helper functions - all from R package  [**pracma**](https://github.com/cran/pracma)
 
 ## Links in the R code
 
