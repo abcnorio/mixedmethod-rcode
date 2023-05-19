@@ -6,7 +6,7 @@ The book itself is about mixed methodology especially if it comes to data analys
 
 ## License
 
-The R code is licensed under [**GNU GPL v3**](https://www.gnu.org/licenses/gpl-3.0.en.html). Please feel free to use, modify or share the code if it is helpful for you.
+The R code is licensed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html). Please feel free to use, modify or share the code if it is helpful for you.
 
 ## Background
 
@@ -67,9 +67,9 @@ Some R code was not taken from R packages but various locations on the net. From
 - **bayesian2beta.r** (from: Sverdlov O, Ryeznik Y, Wu S.2015.  Exact Bayesian Inference Comparing Binomial Proportions, With Application to Proof-of-Concept Clinical Trials. *Therapeutic Innovation & Regulatory Science*, *49*(1), p.163-174.)
 - **DBDA2E-utilities.R** and **Jags-Ymet-XmetMulti-Mrobust.R** (from: Kruschke, J. 2014. *Doing Bayesian Data Analysis. 2nd ed.* Academic Press.)
 
-The corresponding *.r file contains the URL where to download the R script. Download and just place them in the main folder. External R code is used in the following way:as (parts of) R functions:
-- R packages and R functions that are modified to meet our needs here (e.g. some functions went missing from one R version to the next one like code from   [**heatmap.plus**](https://github.com/cran/heatmap.plus), [**sjstats**](https://github.com/strengejacke/sjstats), [**rhmc**](https://github.com/cran/rhmc), ...).
-- Some R code (e.g. from **Bolstad**) was slightly changed due to bugs in the original code at that time. That may be different now.
+The corresponding *.r file contains the URL where to download the R script. Download and just place them in the main folder. External R code is used in the following way as (parts of) R functions:
+- R packages and R functions that are modified to meet our needs here (e.g. some functions went missing from one R version to the next one like code from   [heatmap.plus](https://github.com/cran/heatmap.plus), [sjstats](https://github.com/strengejacke/sjstats), [rhmc](https://github.com/cran/rhmc), ...).
+- Some R code (e.g. from [Bolstad](https://github.com/cran/Bolstad)) was slightly changed due to bugs in the original code at that time. That may be different now.
 - Then there is a lot of R code found on forums, tutorials, etc. to enhance the graphical output or solve this or that problem.
 - Some other code just follows papers and can be seen as an implementation of algorithms (e.g. about p-hacking, z-curves, etc.). This is referenced en detail in the book itself.
 
@@ -93,11 +93,11 @@ Many scripts require external R packages and external libraries. Sometimes they 
 
 ## Disclaimer
 
-Although all R scripts were tested heavily we cannot rule out any possible errors. So we do not guarantee anything but to advice that users should use their common sense whether a result makes sense and is done properly or not. All R scripts are simple and pure text files. Still, usage is always at one's own risk.
+Although all R scripts were tested heavily we cannot rule out any possible errors. So we do not guarantee anything but to advice that users should use their common sense whether a result makes sense and is done properly or not. Some R code and examples make only sense in combination with the book, because the few notes in the code are not sufficient. All R scripts are simple and pure text files. Still, usage is always at one's own risk. R code is provided "as is".
 
 ## Errors in the R code
 
-If one finds a bug please contact us with a short and clear example so we can try to reproduce it and fix the error. Important is to understand that sometimes due to demonstration goals the code is not perfect and is revised a few lines later. Those incidents are no bugs but intentional for educational purposes to show that things evolve and do not happen accidentially, but statistical work means (ideally!) slow and steady progress towards a goal that sometimes even changes. In general, the R code is there for educational purposes and adjusted to the tasks (e.g. data sets) and the specific topics of the book. The R code does not fulfill the requirements of traditional R packages like some universal library. Nevertheless, some of the functions may be useful in various changing contexts. R code is provided "as is".
+If one finds a bug please contact us with a short and clear example so we can try to reproduce it and fix the error. Important is to understand that sometimes due to demonstration goals the code is not perfect and is revised a few lines later. Those incidents are no bugs but intentional for educational purposes to show that things evolve and do not happen accidentially, but statistical work means (ideally!) slow and steady progress towards a goal that sometimes even changes. In general, the R code is there for educational purposes and adjusted to the tasks (e.g. data sets) and the specific topics of the book. The R code does not fulfill the requirements of traditional R packages like some universal library. Nevertheless, some of the functions may be useful in various changing contexts.
 
 ## AQUAD 7 files
 
