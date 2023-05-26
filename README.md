@@ -16,16 +16,16 @@ Use a GUI like RStudio, R Commander, JGR, Emacs with ESS, Deducer, Eclipse StatE
 
 The files work in the following manner so that most files are directly related to a chapter of the book and a specific task or data set:
 
-`ptII_quan_Bayes_BayesFactors_dependence-on-N-sim.r`
-`ptII_quan_Bayes_BayesFactors_dependence-on-N-sim_helpfuncs.r`
+- `ptII_quan_Bayes_BayesFactors_dependence-on-N-sim.r`
+- `ptII_quan_Bayes_BayesFactors_dependence-on-N-sim_helpfuncs.r`
 
 This means taking the example filenames above and breaking them down to its parts, e.g.:
 
 | Filename part | Description |
 | --- | --- |
 | `pt II` | part II [possible values: `part all`, `I`, `II`, `III`, `IV`, `V`] |
-| `quan` | quantitative [possible values: `generalfuncs`, `scientifictheory`, `quantitative`, `qualitative]` |
-| `Bayes` | Bayesian statistics [possible values: `classicstats`, `EDA`, `code-paradigm`, `quan-textanalysis`, `Boole`, `mixed` |
+| `quan` | quantitative [possible values: `generalfuncs`, `scientifictheory`, `quantitative`, `qualitative`] |
+| `Bayes` | Bayesian statistics [possible values: `classicstats`, `EDA`, `code-paradigm`, `quan-textanalysis`, `Boole`, `mixed`] |
 | `BayesFactors` | subtopic [various topics possible] |
 | `dependence-on-N-sim` | topic discussed, here the dependence of the Bayes Factor from the sample size N by using simulation to demonstrate this relationship |
 | `helpfuncs` [optional] | general term used for functions used in the scripts (in most cases the non-helpfuncs.r files do not contain any R functions) |
@@ -36,8 +36,8 @@ Some rare files do not follow that filename pattern:
 | Scriptname | Description |
 | --- | --- |
 | `ADDON_Lindley-Paradox.r` | small addon to the Lindley-Paradox
-| `DiM_Bretthorst_PG.r` | implementation of the paper "Difference in means" from GL Bretthorst 1993 (an analytical Bayesian solution to the Behrens-Fisher problem) -> this R script is a conversion of the original Mathematica script written and published by Gregory 2005 ("Bayesian logical data analysis for the physical sciences")
-| `DiM_Bretthorst_UMS.r` | the same as above but an implementation of the original Mathematica code written by UM Studer in the 1990's (context: evaluation research study of the Suisse drug therapy center 'start again')
+| `DiM_Bretthorst_PG.r` | R implementation of the paper "Difference in means" from GL Bretthorst 1993 (an analytical Bayesian solution to the Behrens-Fisher problem) modelled after Gregory 2005
+| `DiM_Bretthorst_UMS.r` | same as above but an implementation ater UM Studer (1998)
 | `ladyfisher_genfunc_bayesT.r` | solution to the 'Lady tea experiment' (that gave rise to the exact Fisher test) by using the Bayes Theorem
 | `model.txt` | Lady Bristol BUGS model to reproduce the exact Fisher test based on the original data from the 'Lady tea experiment' (with fixed margin totals for rows and cols)
 
@@ -69,14 +69,12 @@ Some data sets used are taken directly from R like the **bupa** data set or the 
 ## External R code
 
 Some R code was not taken from R packages but various locations on the net. From that selection some scripts were also tweaked to fit to our needs here. Mostly, those scripts are from:
+- `bayesian2beta.r` (from: Sverdlov O, Ryeznik Y, Wu S.2015.  Exact Bayesian Inference Comparing Binomial Proportions, With Application to Proof-of-Concept Clinical Trials. *Therapeutic Innovation & Regulatory Science*, *49*(1), p.163-174.)
+- `DBDA2E-utilities.R` and `Jags-Ymet-XmetMulti-Mrobust.R` (from: Kruschke, J. 2014. *Doing Bayesian Data Analysis. 2nd ed.* Academic Press.)
 
-| bayesian2beta.r** (from: Sverdlov O, Ryeznik Y, Wu S.2015.  Exact Bayesian Inference Comparing Binomial Proportions, With Application to Proof-of-Concept Clinical Trials. *Therapeutic Innovation & Regulatory Science*, *49*(1), p.163-174.)
-| DBDA2E-utilities.R** and **Jags-Ymet-XmetMulti-Mrobust.R** (from: Kruschke, J. 2014. *Doing Bayesian Data Analysis. 2nd ed.* Academic Press.)
-
-The corresponding *.r file contains the URL where to download the R script. Download and just place them in the main folder. External R code is used in the following way as (parts of) R functions:
+The corresponding `*.r` file contains the URL where to download the R script. Download and just place them in the main folder. External R code is used in the following way as (parts of) R functions:
 - R packages and R functions that are modified to meet our needs here (e.g. some functions went missing from one R version to the next one like code from   [heatmap.plus](https://github.com/cran/heatmap.plus), [sjstats](https://github.com/strengejacke/sjstats), [rhmc](https://github.com/cran/rhmc), ...).
 - Some R code (e.g. from [Bolstad](https://github.com/cran/Bolstad)) was slightly changed due to bugs in the original code at that time. That may be different now.
-- Then there is a lot of R code found on forums, tutorials, etc. to enhance the graphical output or solve this or that problem.
 - Some other code just follows papers and can be seen as an implementation of algorithms (e.g. about p-hacking, z-curves, etc.). This is referenced en detail in the book itself.
 
 From time to time some code is put in sections like
@@ -87,7 +85,7 @@ From time to time some code is put in sections like
 ### end of not run
 ```
 
-Such code is optional or sometimes not fully related to the book or just gives another (maybe even redundant) perspective.
+Such R code is optional or sometimes not fully related to the book or just gives another (maybe even redundant) perspective.
 
 ## R version
 
@@ -113,6 +111,10 @@ One data set (application letter for a place in a drug addiction rehabilitation 
 
 The R code is licensed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html). Please feel free to use, modify or share the code if it is helpful for you.
 The functions taken from other packages have their own license. Details can be found in the license file.
+The AQUAD7 binary `aquad7_170117.exe` has the Copyright by GL Huber (2017). The more resent version of AQUAD8 can be found freely on the [AQUAD 8](https://www.aqua.de) webpage.
+
+## References
+
 
 ## Citation
 
@@ -122,4 +124,4 @@ Gürtler, Leo (2023). R code supplement for Gürtler & Huber (2023). *Subjektive
 
 ## Disclaimer
 
-Although all R scripts were tested heavily we cannot rule out any possible errors. So we do not guarantee anything but to advice that users should use their common sense whether a result makes sense and is done properly or not. Some R code and examples make only sense in combination with the book, because the few notes in the code are not sufficient. However, it is provided "as is". Use common sense to compare results with expectations. NO WARRANTY of any kind is involved here. There is no guarantee that the software is free of error or consistent with any standards or even meets your requirements. Do not use the software or rely on it to solve problems if incorrect results may lead to hurting or injurying living beings of any kind or if it can lead to loss of property or any other possible damage. If you use the software in such a manner, you are on your own and it is your own risk.
+Although all R scripts were tested heavily we cannot rule out any possible errors. So we do not guarantee anything but to advice that users should use their common sense whether a result makes sense and is done properly or not. Some R code and examples make only sense in combination with the book, because the few notes in the code are not sufficient. However, it is provided "as is". Use common sense to compare results with expectations. NO WARRANTY of any kind is involved here. There is no guarantee that the software is free of error or consistent with any standards or even meets your requirements. Do not use the software or rely on it to solve problems if incorrect results may lead to hurting or injurying living beings of any kind or if it can lead to loss of property or any other possible damage to the world. If you use the software in such a manner, you are on your own and it is your own risk.
