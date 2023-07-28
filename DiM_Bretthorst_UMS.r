@@ -20,6 +20,10 @@
 ### https://github.com/abcnorio/mixedmethod-rcode
 
 
+### NOTE !!!
+#
+# An enhanced and more recent version of "The difference in means" can be found on https://github.com/abcnorio/diffinmeans
+
 
 ################################################################################
 # On the difference in means

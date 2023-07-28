@@ -36,10 +36,210 @@ Some rare files do not follow that filename pattern:
 | Scriptname | Description |
 | --- | --- |
 | `ADDON_Lindley-Paradox.r` | small addon to the Lindley-Paradox
+| `ADDON_ladyfisher_genfunc_bayesT.r` | solution to the 'Lady tea experiment' (that gave rise to the exact Fisher test) by using the Bayes Theorem
 | `DiM_Bretthorst_PG.r` | R implementation of the paper "Difference in means" from GL Bretthorst 1993 (an analytical Bayesian solution to the Behrens-Fisher problem) modelled after Gregory 2005
 | `DiM_Bretthorst_UMS.r` | same as above but an implementation ater UM Studer (1998)
-| `ladyfisher_genfunc_bayesT.r` | solution to the 'Lady tea experiment' (that gave rise to the exact Fisher test) by using the Bayes Theorem
 | `model.txt` | Lady Bristol BUGS model to reproduce the exact Fisher test based on the original data from the 'Lady tea experiment' (with fixed margin totals for rows and cols)
+
+
+The following table contains condensed information about each script.
+
+<details>
+
+<summary>Click here to see the table</summary>
+
+| Scriptname | Description |
+| --- | --- |
+| **all parts** | general functions |
+| ptall_generalfuncs.r |  |
+| ptall_generalfuncs_Bayes_Beta_determine.r |  |
+| ptall_generalfuncs_Bayes_binomial.r |  |
+| ptall_generalfuncs_Bayes_binomial-prop-test.r |  |
+| ptall_generalfuncs_brob-integral.r |  |
+| **Part I** | Scientific Theory |
+| ptI_sciencetheory_logic.r |  |
+| **Part II** | Classical Statistics |
+| | **Central limit theorem** |
+| ptII_quan_classicstats_centrallimittheorem.r |  |
+| ptII_quan_classicstats_centrallimittheorem_helpfuncs.r |  |
+| | **Power** |
+| ptII_quan_classicstats_dealingwithpower.r |  |
+| | **Effect sizes** |
+| ptII_quan_classicstats_effectsizes.r |  |
+| ptII_quan_classicstats_effectsizes_helpfuncs.r |  |
+| ptII_quan_classicstats_effectsizes_helpfuncs_sjstats.r |  |
+| | **Never one method to rule them all** |
+| ptII_quan_classicstats_equivalentmethods.r |  |
+| ptII_quan_classicstats_equivalentmethods_helpfuncs.r |  |
+| | **Fisher** |
+| ptII_quan_classicstats_Fisher_ladyteataste.r |  |
+| | **type S and M error** |
+| ptII_quan_classicstats_GandC_type-S-M-error.r |  |
+| ptII_quan_classicstats_GandC_type-S-M-error_helpfuncs.r |  |
+| | **Jefferys-Lindley Paradox** |
+| ptII_quan_classicstats_JeffreysLindleyparadox.r |  |
+| | **Missing Data (NA)** |
+| ptII_quan_classicstats_missingdata.r |  |
+| | **Distributions** |
+| ptII_quan_classicstats_normaldist_residuals.r |  |
+| ptII_quan_classicstats_normal-vs-t.r |  |
+| | **Neyman-Pearson Confidence Intervals** |
+| ptII_quan_classicstats_N-P_confint.r |  |
+| ptII_quan_classicstats_N-P_confint_bayesboot.r |  |
+| ptII_quan_classicstats_N-P_confint_errorbars.r |  |
+| ptII_quan_classicstats_N-P_confint_helpfuncs.r |  |
+| ptII_quan_classicstats_N-P_confint_p-t-value.r |  |
+| ptII_quan_classicstats_N-P_confint_p-t-value_helpfuncs.r |  |
+| ptII_quan_classicstats_N-P_confint-errorbars_helpfuncs.r |  |
+| | **Simulating data (empirical example)** |
+| ptII_quan_classicstats_N-P_example-soccer-sim.r |  |
+| ptII_quan_classicstats_N-P_example-soccer-sim_helpfuncs.r |  |
+| | **Null Hypothesis Significance Testing** |
+**| ptII_quan_classicstats_NHST_nulldist.r |  |
+| ptII_quan_classicstats_N-P_nulldist-hypotest.r |  |
+| ptII_quan_classicstats_N-P_nulldist-hypotest_helpfuncs.r |  |
+**| ptII_quan_classicstats_nullritual.r |  |
+| | **Neyman-Pearson** |
+| ptII_quan_classicstats_N-P_powerfunc.r |  |
+| ptII_quan_classicstats_N-P_SE-N-dep.r |  |
+| ptII_quan_classicstats_N-P_simulation.r |  |
+| ptII_quan_classicstats_N-P_stat-signif-isNOT-practsignif.r |  |
+| | **Outliers** |
+| ptII_quan_classicstats_outliers-and-influentialpoints.r |  |
+| ptII_quan_classicstats_outliers-and-influentialpoints_helpfuncs.r |  |
+| | **p-values and p-hacking** |
+| ptII_quan_classicstats_p-hacking-sim.r |  |
+| ptII_quan_classicstats_p-hacking-sim_helpfuncs.r |  |
+| ptII_quan_classicstats_p-t-df-relationship.r |  |
+| ptII_quan_classicstats_pvalue-as-base.r |  |
+| | **Randomization** |
+| ptII_quan_classicstats_randomization.r |  |
+| | **R-Index and z-curves** |
+| ptII_quan_classicstats_R-index_z-curve.r |  |
+| ptII_quan_classicstats_R-index_z-curve_helpfuncs.r |  |
+| | **Simpson paradox** |
+| ptII_quan_classicstats_Simpsonparadox.r |  |
+| ptII_quan_classicstats_Simpsonparadox_helpfuncs.r |  |
+| | **Variances** |
+| ptII_quan_classicstats_varianceestimation.r |  |
+| ptII_quan_classicstats_varianceestimation_helpfuncs.r |  |
+| ptII_quan_classicstats_variancehomogeneity.r |  |
+| | |
+| **Part II** | Exploratory Data Analysis (EDA) |
+| | **Basics and robust methods** |
+| ptII_quan_EDA_intro_overviewrobust.r |  |
+| ptII_quan_EDA_intro_overviewrobust_helpfuncs.r |  |
+| | **Empirical examples** |
+| ptII_quan_EDA_case_Anderson_iris-species-in-biology.r |  |
+| ptII_quan_EDA_case_Chiro_heartrate-variability.r |  |
+| ptII_quan_EDA_case_Chiro_heartrate-variability_helpfuncs.r |  |
+| ptII_quan_EDA_case_German-states-population.r |  |
+| ptII_quan_EDA_case_Spain_leadership-in-education.r |  |
+| ptII_quan_EDA_case_Spain_leadership-in-education_helpfuncs.r |  |
+| ptII_quan_EDA_case_Suisse-fertility.r |  |
+| ptII_quan_EDA_case_Suisse-fertility_helpfuncs.r |  |
+| ptII_quan_EDA_case_Titanic_death-and-dying.r |  |
+| ptII_quan_EDA_case_Titanic_death-and-dying_helpfuncs.r |  |
+| | **Simulating pi** |
+| ptII_quan_simulate-pi.r |  |
+| ptII_quan_simulate-pi_helpfuncs.r |  |
+| **Part II** | Bayesian Statistics |
+| | **Bayes Factors** |
+| ptII_quan_Bayes_BayesFactors_dependence-on-N-sim.r |  |
+| ptII_quan_Bayes_BayesFactors_dependence-on-N-sim_helpfuncs.r |  |
+| ptII_quan_Bayes_BayesFactors_further-remarks.r |  |
+| ptII_quan_Bayes_BayesFactors_test-hypos.r |  |
+| | **Reflections on the Be studym** |
+| ptII_quan_Bayes_Bem-study-aspects.r |  |
+| | **Beta distribution** |
+| ptII_quan_Bayes_Beta-distribution.r |  |
+**| ptII_quan_Bayes_find-Beta-distribution-shapeparams.r |  |
+| | **Empirical examples** |
+| ptII_quan_Bayes_case_exp-extra-sensual-perception.r |  |
+| ptII_quan_Bayes_case_presidential-debates_UPDATE.r |  |
+| ptII_quan_Bayes_case_presidential-heights.r |  |
+| ptII_quan_Bayes_case_presidential-heights_helpfuncs.r |  |
+| ptII_quan_Bayes_case_startagain-successrates.r |  |
+| ptII_quan_Bayes_case_startagain-successrates-longterm.r |  |
+| ptII_quan_Bayes_case_wordcounts-PPC.r |  |
+| ptII_quan_Bayes_case_wordcounts-PPC_helpfuncs.r |  |
+| | **Entropy** |
+| ptII_quan_Bayes_Entropy_KullbackLeibler.r |  |
+| ptII_quan_Bayes_Entropy_KullbackLeibler_helpfuncs.r |  |
+| | **Lady Bristol tea experiment** |
+| ptII_quan_Bayes_Fisher_LadyBristol-Beta-disttribution.r |  |
+| ptII_quan_Bayes_Fisher_LadyBristol-BUGS.r |  |
+| ptII_quan_Bayes_Fisher_LadyBristol-BUGS_helpfuncs.r |  |
+| | **Gamma Distribution** |
+| ptII_quan_Bayes_Gamma-distribution.r |  |
+| | **Markov Chain Monte Carlo (MCMC) examples** |
+**| ptII_quan_Bayes_MC-simulation_binom-norm.r |  |
+**| ptII_quan_Bayes_MetropolisHastings_example-normdist.r |  |
+**| ptII_quan_Bayes_MH-Gibbs_example_helpfuncs.r |  |
+| ptII_quan_Bayes_GibbsSampling_example-normdist.r |  |
+**| ptII_quan_Bayes_JAGS_example-norm.r |  |
+**| ptII_quan_Bayes_HMC.r |  |
+**| ptII_quan_Bayes_HMC_helpfuncs.r |  |
+| | **Highest Density Interval (HDI)** |
+| ptII_quan_Bayes_HDI.r |  |
+| ptII_quan_Bayes_HDI_helpfuncs.r |  |
+| | **Information criteria** |
+| ptII_quan_Bayes_information-criteria.r |  |
+| ptII_quan_Bayes_information-criteria_helpfuncs.r |  |
+| | **Bayes Theorem (general)** |
+| ptII_quan_Bayes_intro-BayesTheorem_covid19-test.r |  |
+| ptII_quan_Bayes_intro-BayesTheorem_medicaldiagnosis.r |  |
+| ptII_quan_Bayes_intro-BayesTheorem_medicaldiagnosis_helpfuncs.r |  |
+| ptII_quan_Bayes_intro-BayesTheorem_tea.r |  |
+| | **Loss functions** |
+| ptII_quan_Bayes_lossfun_startagain.r |  |
+| | **Maximum Entropy** |
+| ptII_quan_Bayes_MaximumEntropy.r |  |
+| ptII_quan_Bayes_MaximumEntropy_helpfuncs.r |  |
+| ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice.r |  |
+| ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice_helpfuncs.r |  |
+| | **Over- and underfitting** |
+| ptII_quan_Bayes_over-and-underfitting.r |  |
+| | **posterior** |
+| ptII_quan_Bayes_posterior.r |  |
+| | **Posterior Predictive Checks** |
+| ptII_quan_Bayes_PPC_model-check.r |  |
+| ptII_quan_Bayes_PPC_model-check_helpfuncs.r |  |
+| ptII_quan_Bayes_PPC_model-check-graph.r |  |
+| | **Relationship of prior, likelihood, and posterior** |
+| ptII_quan_Bayes_Prior-Likeli-Post_relationship.r |  |
+| | **Local minima** |
+| ptII_quan_Bayes_problem-local-minima.r |  |
+| | **Random Walk** |
+| ptII_quan_Bayes_RandomWalk.r |  |
+| ptII_quan_Bayes_RandomWalk_helpfuncs.r |  |
+| | **Regularization** |
+| ptII_quan_Bayes_regularization.r |  |
+| | **Region of practical equivalence (ROPE)** |
+| ptII_quan_Bayes_ROPE-BayesFactor.r |  |
+| ptII_quan_Bayes_ROPE-BayesFactor_helpfuncs.r |  |
+| | **Estimation mean** |
+| ptII_quan_Bayes_simple-estimation-mean-post.r |  |
+| ptII_quan_Bayes_simple-estimation-mean-post_helpfuncs.r |  |
+| | **Simulating pi** |
+| ptII_quan_Bayes_simulate-pi.r |  |
+| ptII_quan_Bayes_simulate-pi_helpfuncs.r |  |
+| **Part III** | Qualitative Data Analysis |
+| | **Text Analysis and coding paradigm** |
+| ptIII_qual_code-paradigm_table-analysis.r |  |
+| ptIII_qual_quan-textanalysis.r |  |
+| **Part IV** | Mixed Methods |
+| | **Boolean algebra and Qualitative Comparative Analysis (QCA)** |
+| ptIV_qual_Boole_basics.r |  |
+| ptIV_qual_Boole_case_Krook_women-in-parliament.r |  |
+| ptIV_qual_Boole_case_school-success.r |  |
+| ptIV_qual_Boole_case_Titanic_death-and-dying.r |  |
+| ptIV_qual_Boole_fuzzy-logic.r |  |
+| ptIV_qual_Boole_logical-minimization.r |  |
+| | **Something different** |
+| ptV_mixed_prime-numbers.r |  |
+
+>/details>
 
 ## Links in the R code
 
@@ -101,7 +301,7 @@ If one finds a bug please contact us with a short and clear example so we can tr
 
 ## Usage of the R code
 
-Important is to understand that sometimes due to demonstration goals the code is not perfect and is revised a few lines later. Those incidents are no bugs but intentional for educational purposes to show that things evolve and do not happen accidentially, but statistical work means (ideally!) slow and steady progress towards a goal that sometimes even changes. In general, the R code is adjusted to the tasks (e.g. data sets) and the specific topics of the book. It's not a R package - the R code does not fulfill the requirements of traditional R packages like being useful as anuniversal library. Nevertheless, some of the functions may be helpful in various changing contexts.
+Important is to understand that sometimes due to demonstration goals the code is not perfect and is revised a few lines later. Those incidents are no bugs but intentional for educational purposes to show that things evolve and do not happen accidentially, but statistical work means (ideally!) slow and steady progress towards a goal that sometimes even changes. In general, the R code is adjusted to the tasks (e.g. data sets) and the specific topics of the book. It's not an R package - the R code does not fulfill the requirements of traditional R packages like being useful as a universal library. Nevertheless, some of the functions may be helpful in various changing contexts and can be used independently from the book, the datasets, etc.
 
 ## AQUAD 7 files
 
@@ -111,7 +311,7 @@ One data set (application letter for a place in a drug addiction rehabilitation 
 
 The R code is licensed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html). Please feel free to use, modify or share the code if it is helpful for you.
 The functions taken from other packages have their own license. Details can be found in the license file.
-The AQUAD7 binary `aquad7_170117.exe` has the Copyright by GL Huber (2017). The more resent version of AQUAD8 can be found freely on the [AQUAD 8](https://www.aqua.de) webpage.
+The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more resent version of AQUAD8 can be found freely on the [AQUAD 8](https://www.aqua.de) webpage.
 
 ## References
 
@@ -124,4 +324,5 @@ Gürtler, Leo (2023). R code supplement for Gürtler & Huber (2023). *Subjektive
 
 ## Disclaimer
 
-Although all R scripts were tested heavily we cannot rule out any possible errors. So we do not guarantee anything but to advice that users should use their common sense whether a result makes sense and is done properly or not. Some R code and examples make only sense in combination with the book, because the few notes in the code are not sufficient. However, it is provided "as is". Use common sense to compare results with expectations. NO WARRANTY of any kind is involved here. There is no guarantee that the software is free of error or consistent with any standards or even meets your requirements. Do not use the software or rely on it to solve problems if incorrect results may lead to hurting or injurying living beings of any kind or if it can lead to loss of property or any other possible damage to the world. If you use the software in such a manner, you are on your own and it is your own risk.
+Although all R scripts were tested heavily we cannot rule out any possible errors. So we do not guarantee anything but to advice that users should use their intelligence and experience whether a result makes sense and is done properly or not. Some R code and examples make only sense in combination with the book, because the few notes in the code are not sufficient. However, it is provided "as is".
+Use common sense to compare results with expectations. NO WARRANTY of any kind is involved here. There is no guarantee that the software is free of error or consistent with any standards or even meets your requirements. Do not use the software or rely on it to solve problems if incorrect results may lead to hurting or injurying living beings of any kind or if it can lead to loss of property or any other possible damage to the world. If you use the software in such a manner, you are on your own and it is your own risk.
