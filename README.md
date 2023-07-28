@@ -46,77 +46,77 @@ The following table contains condensed information about each script.
 
 <details>
 
-<summary>Click here to see the table</summary>
+<summary>Click here to see the table with a short description of the R code scripts</summary>
 
 | Scriptname | Description |
 | --- | --- |
 | **all parts** | general functions |
-| ptall_generalfuncs.r |  |
-| ptall_generalfuncs_Bayes_Beta_determine.r |  |
-| ptall_generalfuncs_Bayes_binomial.r |  |
-| ptall_generalfuncs_Bayes_binomial-prop-test.r |  |
-| ptall_generalfuncs_brob-integral.r |  |
+| ptall_generalfuncs.r | cohensd, descriptive statistics, fivenum with labels, convert aquad style to truth tables and v.v., print prime implicants from QCA object, full distance matrix, optimal cut through a proximity matrix and plot it, plot prototype in 2d+3d, plot eigenvalues (MDS), correlation and p-values |
+| ptall_generalfuncs_Bayes_Beta_determine.r | determine and plot beta distribution values from three points via optimization |
+| ptall_generalfuncs_Bayes_binomial.r | calculate, summarize, and plot prior from successes/ failures, convert to beta disztribution values and v.v., update binomial, prior, beta (posterior) and plot, tweaked bayes.prop.test summary from BAyesianFirstAid  and plot theta_diff|
+| ptall_generalfuncs_Bayes_binomial-prop-test.r | Bayesian proportion test: summary, MCMC plot, simulation from posterior, grid approximation via brute force, exact (binomial difference) tests (Evan Miller, Chris Stucchio, the approach by Sverdlov, Ryeznik, Wu (2015) in a tweaked form to work with log values or brob objects and plot results, numerical integration (Simpson rule) for brob objects, brute force comparison of rbetas vs. dbetas and plot |
+| ptall_generalfuncs_brob-integral.r | useful functions for brob objects, convert a list to vector, scalarproduct, numerical integration (Simpson rule) |
 | **Part I** | Scientific Theory |
-| ptI_sciencetheory_logic.r |  |
+| ptI_sciencetheory_logic.r | simple T/F statements |
 | **Part II** | Classical Statistics |
 | | **Central limit theorem** |
-| ptII_quan_classicstats_centrallimittheorem.r |  |
-| ptII_quan_classicstats_centrallimittheorem_helpfuncs.r |  |
+| ptII_quan_classicstats_centrallimittheorem.r | simulate central limit theorem, varying conditions |
+| ptII_quan_classicstats_centrallimittheorem_helpfuncs.r | basic functions to simulate CLT |
 | | **Power** |
-| ptII_quan_classicstats_dealingwithpower.r |  |
+| ptII_quan_classicstats_dealingwithpower.r | calculate, simulate, and plot power under varying models |
 | | **Effect sizes** |
-| ptII_quan_classicstats_effectsizes.r |  |
-| ptII_quan_classicstats_effectsizes_helpfuncs.r |  |
-| ptII_quan_classicstats_effectsizes_helpfuncs_sjstats.r |  |
+| ptII_quan_classicstats_effectsizes.r | relate N, p-value, Cohens' d + odds ratio and risk ratio |
+| ptII_quan_classicstats_effectsizes_helpfuncs.r | function to relate N, p-value, and d |
+| ptII_quan_classicstats_effectsizes_helpfuncs_sjstats.r | taken and twekaed from sjtats as it disappeared from the package, convert odds ratio to risk ratio |
 | | **Never one method to rule them all** |
-| ptII_quan_classicstats_equivalentmethods.r |  |
-| ptII_quan_classicstats_equivalentmethods_helpfuncs.r |  |
+| ptII_quan_classicstats_equivalentmethods.r | comparison with Bland-Altman stats + plot (mean-diff plot), TOST from package TOSTER, Pitman-Morgan Test, tests from package BayesFactor, BEST, paper by GL Bretthorst (1993) 'On the difference in mean', using original data from Bland-Altman |
+| ptII_quan_classicstats_equivalentmethods_helpfuncs.r | mean-difference plot after Tukey (equals Bland-Altman plot) |
 | | **Fisher** |
-| ptII_quan_classicstats_Fisher_ladyteataste.r |  |
+| ptII_quan_classicstats_Fisher_ladyteataste.r | Lady Bristol tea taste experiment by Fisher using his methods using hypergeometric distribution, fisher.test, and manual calculation using factorials |
 | | **type S and M error** |
-| ptII_quan_classicstats_GandC_type-S-M-error.r |  |
-| ptII_quan_classicstats_GandC_type-S-M-error_helpfuncs.r |  |
+| ptII_quan_classicstats_GandC_type-S-M-error.r | reproduce Gelman & Carlin (2014), retrodesign power analysis |
+| ptII_quan_classicstats_GandC_type-S-M-error_helpfuncs.r | plot effect size + power for retrodesign after Gelman & Carlin (2014), plot sample distribution under H_0 and hypothesis of true effect size |
 | | **Jefferys-Lindley Paradox** |
-| ptII_quan_classicstats_JeffreysLindleyparadox.r |  |
+| ptII_quan_classicstats_JeffreysLindleyparadox.r | Jeffrey's-Lindley's paradox with examples |
 | | **Missing Data (NA)** |
-| ptII_quan_classicstats_missingdata.r |  |
+| ptII_quan_classicstats_missingdata.r | handling missing data and associated changes with and without imputation methods, comparison of methods of imputation with each other and with brms (Bayesian) |
 | | **Distributions** |
-| ptII_quan_classicstats_normaldist_residuals.r |  |
-| ptII_quan_classicstats_normal-vs-t.r |  |
+| ptII_quan_classicstats_normal-vs-t.r | relationship of normal and t distribution |
+| ptII_quan_classicstats_normaldist_residuals.r | investigation of residuals from linear models (normality, skewness, kurtosis and against larger sample sizes |
 | | **Neyman-Pearson Confidence Intervals** |
-| ptII_quan_classicstats_N-P_confint.r |  |
-| ptII_quan_classicstats_N-P_confint_bayesboot.r |  |
-| ptII_quan_classicstats_N-P_confint_errorbars.r |  |
-| ptII_quan_classicstats_N-P_confint_helpfuncs.r |  |
-| ptII_quan_classicstats_N-P_confint_p-t-value.r |  |
-| ptII_quan_classicstats_N-P_confint_p-t-value_helpfuncs.r |  |
-| ptII_quan_classicstats_N-P_confint-errorbars_helpfuncs.r |  |
+| ptII_quan_classicstats_N-P_confint.r | working and simulating confidence intervals |
+| ptII_quan_classicstats_N-P_confint_helpfuncs.r | calculate CI for mean, difference in means, plot CI |
+| ptII_quan_classicstats_N-P_confint_bayesboot.r | bootstrap CIs and other statistics via simulation, simulate difference in means, use Bayesian bootstrap |
+| ptII_quan_classicstats_N-P_confint_errorbars.r | CI evolution with varying sample sizes |
+| ptII_quan_classicstats_N-P_confint-errorbars_helpfuncs.r | change of CIs along with error bars, calculate covered CIs |
+| ptII_quan_classicstats_N-P_confint_p-t-value.r | simulate t-test with p and t values |
+| ptII_quan_classicstats_N-P_confint_p-t-value_helpfuncs.r | simulate t tests, compare Cohen's d,  |
 | | **Simulating data (empirical example)** |
-| ptII_quan_classicstats_N-P_example-soccer-sim.r |  |
-| ptII_quan_classicstats_N-P_example-soccer-sim_helpfuncs.r |  |
+| ptII_quan_classicstats_N-P_example-soccer-sim.r | simulate an empirical real run of how to get all cards of a soccer card album |
+| ptII_quan_classicstats_N-P_example-soccer-sim_helpfuncs.r | simulate how many cards are still to go using chance and not commone sense like card exchange, etc. |
 | | **Null Hypothesis Significance Testing** |
-**| ptII_quan_classicstats_NHST_nulldist.r |  |
-| ptII_quan_classicstats_N-P_nulldist-hypotest.r |  |
-| ptII_quan_classicstats_N-P_nulldist-hypotest_helpfuncs.r |  |
-**| ptII_quan_classicstats_nullritual.r |  |
+**| ptII_quan_classicstats_NHST_nulldist.r | plot NHST decision making using acceptance, rejection regions, alpha and beta error rate |
+| ptII_quan_classicstats_N-P_nulldist-hypotest.r | plot H_0/ H_1 one and two sided |
+| ptII_quan_classicstats_N-P_nulldist-hypotest_helpfuncs.r | functions to plot H_0/ H_1 with alternative ie. two-sided, less, greater, plot alpha and beta error rate for t-distributed densities |
+**| ptII_quan_classicstats_nullritual.r | all the nonsense around the Null ritual procedure |
 | | **Neyman-Pearson** |
-| ptII_quan_classicstats_N-P_powerfunc.r |  |
-| ptII_quan_classicstats_N-P_SE-N-dep.r |  |
-| ptII_quan_classicstats_N-P_simulation.r |  |
-| ptII_quan_classicstats_N-P_stat-signif-isNOT-practsignif.r |  |
+| ptII_quan_classicstats_N-P_powerfunc.r | calculate and plot power vs. effect sizes in accordance to different hypotheses |
+| ptII_quan_classicstats_N-P_SE-N-dep.r | dependence of sample size characteristics via simulated data (N, SE, t value, Cohen's d, ...) |
+| ptII_quan_classicstats_N-P_simulation.r | simulation 'difference in means' via replicate |
+| ptII_quan_classicstats_N-P_stat-signif-isNOT-practsignif.r | different views on sample differences if population parameters are known |
 | | **Outliers** |
-| ptII_quan_classicstats_outliers-and-influentialpoints.r |  |
-| ptII_quan_classicstats_outliers-and-influentialpoints_helpfuncs.r |  |
+| ptII_quan_classicstats_outliers-and-influentialpoints.r | impact and consequences of influential points and outliers, calculate linear model, t test, outlier test, correlation test, leverage plots |
+| ptII_quan_classicstats_outliers-and-influentialpoints_helpfuncs.r | function to plot outlier (with, without) via regression lines |
 | | **p-values and p-hacking** |
-| ptII_quan_classicstats_p-hacking-sim.r |  |
-| ptII_quan_classicstats_p-hacking-sim_helpfuncs.r |  |
-| ptII_quan_classicstats_p-t-df-relationship.r |  |
-| ptII_quan_classicstats_pvalue-as-base.r |  |
+| ptII_quan_classicstats_p-hacking-sim.r | simulate p hacking with varying sample sizes for standard alpha error rate, comparison with a priori power analysis, and plot results |
+| ptII_quan_classicstats_p-hacking-sim_helpfuncs.r | function to simulate linear model with sim from arm as well as p hacking |
+| ptII_quan_classicstats_p-t-df-relationship.r | relationship of N, t, and p, simulate with same seed, growing sample sizes, and constant t value, post-hoc power simulation |
+| ptII_quan_classicstats_pvalue-as-base.r | differences of normal vs. mixed normal distribution in accordance to plot and statistics, simulation H_0 |
 | | **Randomization** |
-| ptII_quan_classicstats_randomization.r |  |
+| ptII_quan_classicstats_randomization.r | apply different randomization strategies to create samples |
 | | **R-Index and z-curves** |
-| ptII_quan_classicstats_R-index_z-curve.r |  |
-| ptII_quan_classicstats_R-index_z-curve_helpfuncs.r |  |
+| ptII_quan_classicstats_R-index_z-curve.r | apply R-Index and TIVA e.g. on Bem's study and calculate z-curve |
+| ptII_quan_classicstats_R-index_z-curve_helpfuncs.r | function to calculate R-Index, p-values for R-Index, Test of Insufficient Variance (TIVA) after Schimmack and colleagues |
 | | **Simpson paradox** |
 | ptII_quan_classicstats_Simpsonparadox.r |  |
 | ptII_quan_classicstats_Simpsonparadox_helpfuncs.r |  |
@@ -125,24 +125,24 @@ The following table contains condensed information about each script.
 | ptII_quan_classicstats_varianceestimation_helpfuncs.r |  |
 | ptII_quan_classicstats_variancehomogeneity.r |  |
 | | |
-| **Part II** | Exploratory Data Analysis (EDA) |
+| **Part II** | Exploratory Data Analysis (EDA) sensu JW Tukey |
 | | **Basics and robust methods** |
 | ptII_quan_EDA_intro_overviewrobust.r |  |
 | ptII_quan_EDA_intro_overviewrobust_helpfuncs.r |  |
 | | **Empirical examples** |
-| ptII_quan_EDA_case_Anderson_iris-species-in-biology.r |  |
-| ptII_quan_EDA_case_Chiro_heartrate-variability.r |  |
+| ptII_quan_EDA_case_Anderson_iris-species-in-biology.r | famous iris data |
+| ptII_quan_EDA_case_Chiro_heartrate-variability.r | experiment in chiropractice about heart rate variability using linear models without any significance test, learning from sample size characteristics |
 | ptII_quan_EDA_case_Chiro_heartrate-variability_helpfuncs.r |  |
-| ptII_quan_EDA_case_German-states-population.r |  |
+| ptII_quan_EDA_case_German-states-population.r | conversion to log values lead to straight lines using a real life example |
 | ptII_quan_EDA_case_Spain_leadership-in-education.r |  |
 | ptII_quan_EDA_case_Spain_leadership-in-education_helpfuncs.r |  |
 | ptII_quan_EDA_case_Suisse-fertility.r |  |
 | ptII_quan_EDA_case_Suisse-fertility_helpfuncs.r |  |
-| ptII_quan_EDA_case_Titanic_death-and-dying.r |  |
+| ptII_quan_EDA_case_Titanic_death-and-dying.r | only descriptive statistics and tables to investigate the survivors' characteristics of the Titanic |
 | ptII_quan_EDA_case_Titanic_death-and-dying_helpfuncs.r |  |
 | | **Simulating pi** |
-| ptII_quan_simulate-pi.r |  |
-| ptII_quan_simulate-pi_helpfuncs.r |  |
+| ptII_quan_simulate-pi.r | apply pi simulation for variying sample sizes |
+| ptII_quan_simulate-pi_helpfuncs.r | function to simulate pi (inefficient, but works) |
 | **Part II** | Bayesian Statistics |
 | | **Bayes Factors** |
 | ptII_quan_Bayes_BayesFactors_dependence-on-N-sim.r |  |
