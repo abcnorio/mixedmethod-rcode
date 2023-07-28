@@ -239,7 +239,7 @@ The following table contains condensed information about each script.
 | | **Something different** |
 | ptV_mixed_prime-numbers.r |  |
 
->/details>
+</details>
 
 ## Links in the R code
 
