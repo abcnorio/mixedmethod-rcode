@@ -118,12 +118,12 @@ The following table contains condensed information about each script.
 | ptII_quan_classicstats_R-index_z-curve.r | apply R-Index and TIVA e.g. on Bem's study and calculate z-curve |
 | ptII_quan_classicstats_R-index_z-curve_helpfuncs.r | function to calculate R-Index, p-values for R-Index, Test of Insufficient Variance (TIVA) after Schimmack and colleagues |
 | | **Simpson paradox** |
-| ptII_quan_classicstats_Simpsonparadox.r |  |
-| ptII_quan_classicstats_Simpsonparadox_helpfuncs.r |  |
+| ptII_quan_classicstats_Simpsonparadox.r | investigate Simpson Paradox with UCB admission data set using plots, tables, corrected base rates, and glmer model, simulate Simpson Paradox data and detect subgroups with 'Simpsons' from package Simpsons |
+| ptII_quan_classicstats_Simpsonparadox_helpfuncs.r | function to plot two groups to detect Simpson Paradox |
 | | **Variances** |
-| ptII_quan_classicstats_varianceestimation.r |  |
-| ptII_quan_classicstats_varianceestimation_helpfuncs.r |  |
-| ptII_quan_classicstats_variancehomogeneity.r |  |
+| ptII_quan_classicstats_varianceestimation.r | apply function to calculate variance estimation |
+| ptII_quan_classicstats_varianceestimation_helpfuncs.r | function to calculate variance estimation if sigma is known or unknown and plot it |
+| ptII_quan_classicstats_variancehomogeneity.r | determine variance homogeneity via various tests (LEvene, Breusch-Pagan, non-constant error variance, Cook and Weisberg, Koenker's studentized version of test statistic) |
 | | |
 | **Part II** | Exploratory Data Analysis (EDA) sensu JW Tukey |
 | | **Basics and robust methods** |
