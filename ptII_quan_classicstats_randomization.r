@@ -148,7 +148,7 @@ dim(cr.all.seq@M)
 
 
 
-###### function to probabilies of sequences
+###### function probabilies of sequences
 seqAprobs <- function(seque)
 {
  seqscollapse <- apply(getRandList(seque),1,function(x) paste(x,collapse=""))

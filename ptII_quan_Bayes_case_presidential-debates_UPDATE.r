@@ -1972,7 +1972,7 @@ multiple.RD <- multipletables(data=withdrawal, measure="RD",
 #print(multiple.RD.table)
 #print(multiple.RD.table, type="html")
 
-############# from tolerance
+############# from package tolerance
 F1 <- function (a, b, b.prime, c, x, y, ...) 
 {
   A1.simple <- function(u, a, b, b.prime, c, x, y) {
@@ -1991,8 +1991,8 @@ F1 <- function (...)#(a, b, b.prime, c, x, y, ...)
       (1 - u * y)^(-b.prime)
   }
   gamma(c)/(gamma(a) * gamma(c - a)) * as.numeric(integrate(A1.simple, 
-                                                            0, 1, a = a, b = b, b.prime = b.prime, c = c, x = x, 
-                                                            y = y, ...)$value)
+                                       0, 1, a = a, b = b, b.prime = b.prime, c = c, x = x, 
+                                       y = y, ...)$value)
 }
 ###
 F1.tw <- function (a, b, b.prime, c, x, y, ...) 

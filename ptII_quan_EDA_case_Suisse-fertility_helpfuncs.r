@@ -31,7 +31,7 @@
 # HELPFER FUNCTIONS
 
 
-###### function to plot two variables along with a continous index
+###### function to plot two variables along with a continuous index
 
 scaplot.cont <- function(x,y, TITLE="", SUB="", xtext="", ytext="", legendTITLE="", fac=1.1)
 {

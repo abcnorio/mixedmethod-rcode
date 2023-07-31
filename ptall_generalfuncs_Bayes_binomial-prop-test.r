@@ -519,7 +519,7 @@ bayes.prop.loss <- function(a1, b1, a2, b2, crit=0.05, loga=TRUE, pr.out=TRUE)
 ### FOLLOWING FUNCTIONS ARE REPROGRAMMED BUT IN PRINCIPLE TAKEN FROM
 # Sverdlov, Ryeznik, Wu (2015)
 
-### FUNCTION - old and do not user it anymore
+### FUNCTION - old and do not use it anymore
 pdf.theta.diff.old <- function(theta, a1, b1, a2, b2, loga=FALSE)
 {
   # pdf of theta difference = theta_2 - theta_1 < crit

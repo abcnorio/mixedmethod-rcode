@@ -76,7 +76,7 @@ binom.test(L,N,p=prob, alternative="two.sided")
 # END NOT RUN EXTERNAL SOURCE
 
 
-# Wikipedia data
+# data taken from Wikipedia entry about Jeffrey's-Lindley's paradox
 
 # observed data
 gb <- c(boys=49581, girls=48870)

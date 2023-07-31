@@ -263,14 +263,14 @@ apply(minbfs, 2, function(i) i[1]/i[6])
 1/(apply(minbfs, 2, function(i) i[1]/i[6]))
 
 
-# simulate depence of p-values and N (sample size)
+# simulate dependence of p-values and N (sample size)
 pes <- pvsN.sim()
 pes
 log(pes)
 
 
 # plot cauchy for ES
-# see Wagenmakers et al. (2011) do and critized by Schimmack (2015) on his blog
+# see how Wagenmakers et al. (2011) do it - critized by Schimmack (2015) on his blog
 sek <- seq(-4,4,0.01)
 par(oma=c(2,1,1,1), "cex.axis"=1, bty="l")
 plot(sek, dcauchy(sek,scale=sqrt(2)/2), type="l", bty="n", col="darkred", pre.plot=grid(),

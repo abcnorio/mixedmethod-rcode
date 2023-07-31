@@ -506,8 +506,8 @@ list(p=c(0.5, 0.5))
 ")
 
 
-# BUGS models - mostly taken from the BUGS book... see website:
-
+# BUGS models - mostly taken from the BUGS book... see website for more models:
+# https://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-the-bugs-book/bugs-book-examples/
 
 # both margins fixed, based on noncentral-hypergeometric distribution
 # ~ exact Fisher test

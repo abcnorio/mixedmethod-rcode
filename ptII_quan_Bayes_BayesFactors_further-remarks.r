@@ -49,7 +49,7 @@ library(brms)
 # low prior probs even with high BF's is still a low posterior prob!!!
 # BF = change in opinion by seeing the data does not mean it is for real!
 
-# lesson learned: if doing random screening or testing, it is not ok to use only the BF alon to interpret results
+# lesson learned: if doing random screening or testing, it is not ok to use only the BF alone to interpret results
 # of the diagnostic test. The prior probs must be included, and the decision should be made based on posterior probs.
 
 # M = Model
@@ -80,7 +80,7 @@ p_test.negative_nodisease <- 1-p_test.positive_nodisease	#p(D=0|M=2)
 # posterior odds
 # p(M=1|D=1)/p(M=2|D=1) =  p(D=1|M=1)/p(D=1|M=2) * p(M=1)/p(M=2)
 
-# detection vs false alarm
+# detection vs. false alarm
 post_detvsfa <- p_test.positive_disease/p_test.positive_nodisease * p_disease/p_nodisease
 BF_detvsfa <- p_test.positive_disease/p_test.positive_nodisease
 prior.detvsfa <- p_disease/p_nodisease

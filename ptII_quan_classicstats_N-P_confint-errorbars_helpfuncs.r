@@ -31,7 +31,7 @@
 # HELPER FUNCTIONS
 
 
-###### function to calculate how confidence intervals evolve with errorbars
+###### function to calculate how confidence intervals evolve with error bars
 CI.evolve <- function(N=NA, trials=NA, pop.mean=NA, pop.sd=NA, graph=TRUE, prob=0.95, seed=9876, digits=2)
 {
  #digits = ... after comma

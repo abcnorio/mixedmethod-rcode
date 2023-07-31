@@ -95,11 +95,14 @@ par(oma=c(2,1,1,1), "cex.axis"=1, bty="l")
 persp3D(x=sek, y=sek, z=h.sek, phi=55, theta=50)
 mtext(expression(paste("Himmelblaus' function (local minima)")),outer=TRUE,line=-2,cex=1.5, side=3)
 
+
+
+## NOT RUN
+
 #library(plotly)
 fig <- plot_ly(z=~h.sek)
 fig <- fig %>% add_surface()
 fig
-
 
 # with contours
 

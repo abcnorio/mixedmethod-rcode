@@ -36,8 +36,8 @@ library(Bolstad)
 ###### function to plot mean posterior along with prior and likelihood
 plot.mean.post <- function(res=NULL, TITLE="Bayes mean estimation", SUB="prior, likelihood, posterior",
                            xtext=expression(mu), ytext=expression(probability(mu)), colo=c("olivedrab","violetred3","blue"),
-				               xlim=NULL, ylim=NULL, scalelikeli=TRUE, scaleprior=TRUE,
-        				       add=FALSE, refacX=FALSE, refacY=TRUE, fac=1.2)
+				                   xlim=NULL, ylim=NULL, scalelikeli=TRUE, scaleprior=TRUE,
+            				       add=FALSE, refacX=FALSE, refacY=TRUE, fac=1.2)
 {
  stopifnot(attr(res, "class") == "Bolstad")
  

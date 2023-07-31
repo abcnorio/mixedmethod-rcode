@@ -34,7 +34,7 @@ source("ptII_quan_Bayes_MaximumEntropy_helpfuncs.r")
 
 
 # How does Boltzmann and Shannon entropy looks like?
-# information content = surprisal
+# information content = surprise
 
 # that's identical
 # -log2 p(event) = log(1/ p(event))

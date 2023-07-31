@@ -69,3 +69,6 @@ check-http.R
 
 # all files that end with
 *~
+
+# all in BP
+SCRIPTS/
