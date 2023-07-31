@@ -41,7 +41,6 @@ library(HDInterval)
 library(BayesFactor)
 
 # load functions
-source("ptall_generalfuncs_Bayes_binomial.r")
 source("ptall_generalfuncs_Bayes_binomial-prop-test.r")
 # requires windows
 # source("ptall_generalfuncs_appell.r")

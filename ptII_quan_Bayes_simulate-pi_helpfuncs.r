@@ -22,7 +22,7 @@
 
 
 # file:
-# ptII_quan_simulate-pi_helpfuncs.r
+# ptII_quan_Bayes_simulate-pi_helpfuncs.r
 
 # location:
 # chap. 6 [6.13]

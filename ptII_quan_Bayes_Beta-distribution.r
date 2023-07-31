@@ -39,7 +39,7 @@ source("DBDA2E-utilities.R")
 # adopted from Kruschke DBDA
 source("ptII_quan_Bayes_case_wordcounts-PPC_helpfuncs.r")
 # plot prior-likeli-posterior
-source("ptall_generalfuncs_Bayes_binomial.r")
+source("ptall_generalfuncs_Bayes_binomial-prop-test.r")
 
 
 # calculate beta posterior from prior and likelihood

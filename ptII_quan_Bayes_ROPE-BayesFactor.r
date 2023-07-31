@@ -38,7 +38,7 @@ library(coda)
 
 # load helper functions
 source("ptall_generalfuncs.r")
-source("ptall_generalfuncs_Bayes_binomial.r")
+source("ptall_generalfuncs_Bayes_binomial-prop-test.r")
 source("ptII_quan_Bayes_ROPE-BayesFactor_helpfuncs.r")
 
 

@@ -22,7 +22,7 @@
 
 
 # file:
-# ptII_quan_simulate-pi.r
+# ptII_quan_Bayes_simulate-pi.r
 
 # location:
 # chap. 6 [6.13]
@@ -32,7 +32,7 @@
 library(plotrix)
 
 # load necessary helper functions
-source("ptII_quan_simulate-pi_helpfuncs.r")
+source("ptII_quan_Bayes_simulate-pi_helpfuncs.r")
 
 
 seed <- 5

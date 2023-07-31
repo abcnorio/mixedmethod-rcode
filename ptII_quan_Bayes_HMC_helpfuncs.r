@@ -25,8 +25,8 @@
 # ptII_quan_Bayes_HMC_helpfuncs.r
 
 # location:
-# chap. 10 [10.1]
-# Fallbeispiel quantitative Textanalyse
+# chap. 6 [6.13.2.3.1]
+# Hamilton Monte Carlo im R
 
 # HELPER FUNCTIONS
 

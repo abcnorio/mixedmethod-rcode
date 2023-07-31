@@ -32,16 +32,13 @@
 
 # load helper functions
 source("ptall_generalfuncs.r")
-source("ptall_generalfuncs_Bayes_binomial.r")
+source("ptall_generalfuncs_Bayes_binomial-prop-test.r")
 
 
 # show Bayes Factor, precision, prior - likelihood - posterior along s/N and beta posterior
 #... just create entries for the variables... that's it (here...)
 BF.prec.sim <- function(a=2,b=4,s=7,n=24, theta.null=0.5)
-{
-  # requires
-  # source("ptall_generalfuncs_Bayes_binomial.r")
-  
+{  
   # BF with poor precision
   # Kruschke p.347
   # p.270

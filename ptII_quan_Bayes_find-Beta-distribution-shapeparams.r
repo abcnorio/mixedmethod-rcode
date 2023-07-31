@@ -36,8 +36,8 @@ library(rriskDistributions)
 source("ptall_generalfuncs_Bayes_Beta_determine.r")
 
 
-# call original code from website - slow...
-
+# call original code findBeta() from website - slow...
+# https://a-little-book-of-r-for-bayesian-statistics.readthedocs.io/en/latest/src/bayesianstats.html 
 quantile1 <- list(p=0.5, x=0.85)    # we believe the median of the prior is 0.85
 quantile2 <- list(p=0.99999,x=0.95) # we believe the 99.999th percentile of the prior is 0.95
 quantile3 <- list(p=0.00001,x=0.60) # we believe the 0.001st percentile of the prior is 0.60
