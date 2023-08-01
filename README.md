@@ -512,7 +512,8 @@ XXX
 | ptIV_qual_Boole_case_school-success.r | artificial data set to demonstrate QCA for negative and positive outcome |
 | ptIV_qual_Boole_fuzzy-logic.r | simple plot to demonstrate what fuzzy logic is |
 | **Part V** | **Mixed Methods** |
-| ptV_mixed_prime-numbers.r | one-liner to get prime numbers using Euclidean mod division\nTEXT |
+| ptV_mixed_prime-numbers.r | one-liner to get prime numbers using Euclidean mod division
+TEXT |
 
 </details>
 
