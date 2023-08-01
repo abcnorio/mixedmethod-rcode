@@ -2,7 +2,7 @@
 
 ## Resources and languages
 
-The Spanish version of the book is titled "XXX". Both books can be obtained freely from XXX. A Spanish version of this README.md can be found in [README-spa.md](./README-spa.md).
+The German version of the book is titled "Subjektive Betrachtungen und objektive Ansichten. Qual, Quan und Logik". Both books can be obtained freely from XXX. An English version of this README.md can be found in [README.md](./README.md).
 
 ## Overview
 

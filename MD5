@@ -32,9 +32,10 @@ d654782d54da9bbf8e15daf34f69052f EXT_DBDA2E-utilities.R
 5a8c67527ad3af967034deb03eb40388 EXT_Jags-Ymet-XmetMulti-Mrobust.R
 8b568a0d747370f4e4a23e5211c9bbe2 EXT_bayesian2beta.r
 ae555f0ae590ba4f1c2f7ba1aa6df7a6 LICENSE
-89a7dc94bc9dc616cff67afbde4228e7 MD5
+4459c867de2c63253c3e5bac8aefeb00 MD5
 2baf0c179e277b222054c362669e8ee6 R-libraries
-abd6be4204f2b80a59f5d97e6af98f13 README.md
+f22a06617a44b638f1586e1adde722e2 README-spa.md
+68120f59276ebf4ed21d8586922109f9 README.md
 cca6be20dc9032cdc3c53ced1d415ca0 check-http.r
 0bd733665f649bdd52e44490f7324a69 data/AAH/AAH_data_url.txt
 8504a4e8e5c29bd75ae74721bedc6ac8 data/AAH/AAH_nachw_Habil.tab
