@@ -207,7 +207,7 @@ The following table contains condensed information about each script using some 
 
 <summary>Click here to see the table with a short description of the R code scripts</summary>
 
-| Script filename | Chapter | Chapter no. | Content |
+| Script filename | Chapter | Chapter no. | `Content                   ` |
 | --- | -- | -- | -------------- |
 | ADDON_ladyfisher_genfunc_bayesT.r |  |  |  |
 | ADDON_Lindley-Paradox.r |  |  |  |
