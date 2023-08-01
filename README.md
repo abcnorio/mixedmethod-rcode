@@ -1,8 +1,8 @@
-﻿# R code used in the book "Subjektive Betrachtungen und objektive Ansichten. Qual, Quan und Logik" written by Gürtler & Huber (2023).
+﻿# R code supplement to the book "Subjektive Betrachtungen und objektive Ansichten. Qual, Quan und Logik" written by Gürtler & Huber (2023)
 
-## Languages
+## Resources and languages
 
-A Spanish version of this README.md can be found at XXX.
+The Spanish version of the book is titled "XXX". Both books can be obtained freely from XXX. A Spanish version of this README.md can be found in [README-spa.md](./README-spa.md).
 
 ## Overview
 
@@ -39,8 +39,6 @@ Some rare files do not follow that filename pattern:
 
 | Scriptname | Description |
 | --- | --- |
-| `ADDON_Lindley-Paradox.r` | small addon to the Lindley-Paradox |
-| `ADDON_ladyfisher_genfunc_bayesT.r` | solution to the 'Lady tea experiment' (that gave rise to the exact Fisher test) by using the Bayes Theorem |
 | `DiM_Bretthorst_PG.r` | R implementation of the paper "Difference in means" from GL Bretthorst 1993 (an analytical Bayesian solution to the Behrens-Fisher problem) modelled after Gregory 2005 |
 | `DiM_Bretthorst_UMS.r` | same as above but an implementation ater UM Studer (1998) |
 | `model.txt` | Lady Bristol BUGS model to reproduce the exact Fisher test based on the original data from the 'Lady tea experiment' (with fixed margin totals for rows and cols) |
@@ -55,8 +53,6 @@ To facilitate the relationship of R script file and book chapter, the following 
 
 | Scriptname | Chap | SubChap | Chapter title (German) |
 | --- | --- | --- | --- |
-| ADDON_ladyfisher_genfunc_bayesT.r |  |  |  |
-| ADDON_Lindley-Paradox.r |  |  |  |
 | DiM_Bretthorst_PG_calls.r | - | - | - |
 | DiM_Bretthorst_PG.r | - | - | general functions for various scripts |
 | DiM_Bretthorst_UMS_calls.r | - | - | - |
@@ -215,9 +211,7 @@ The following table contains condensed information about each script using some 
 <summary>Click here to see the table with a short description of the R code scripts</summary>
 
 | Scriptname | Chap | SubChap | Content |
-| --- | --- | --- |------------------------------------------------------------------------------------------------------|
-| ADDON_ladyfisher_genfunc_bayesT.r |  |  | |
-| ADDON_Lindley-Paradox.r |  |  |  |
+| --- | --- | --- | --- |
 | DiM_Bretthorst_PG.r | - | - | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after P Gregiory (2005) |
 | DiM_Bretthorst_PG_calls.r | - | - | example calls |
 | DiM_Bretthorst_UMS.r | - | - | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after UM Studer (1998) |
