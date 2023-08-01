@@ -25,7 +25,7 @@
 # ptII_quan_EDA_intro_overviewrobust.r
 
 # location:
-# chap. 5 [5.2], [5.3]
+# chap. 5 [5.2.-5.3.]
 # Typische Verfahren der EDA in R
 # Robuste Datenanalysen als Teil der EDA
 

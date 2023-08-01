@@ -21,9 +21,12 @@
 
 
 
-#file: ptII_quan_classicstats_N-P_nulldist-hypotest.r
-#location:
-#Die Vollkostenrechnung
+# file:
+# ptII_quan_classicstats_N-P_nulldist-hypotest.r
+
+# location:
+# chap. 4 [4.5.2.5]
+# Die Vollkostenrechnung
 
 #load necessary libs
 library(pwr)

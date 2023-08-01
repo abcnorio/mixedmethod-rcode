@@ -20,7 +20,14 @@
 ### https://github.com/abcnorio/mixedmethod-rcode
 
 
+# file:
+# ptV_mixed_prime-numbers.r
 
+# location:
+# chap. 13 [13.3.1]
+# QUAL und QUAN in Konversions-Designs
+
+# load necessary libraries
 outer(1:30,1:30, "+")
 outer(1:30,1:30, "-")
 outer(1:30,1:30, "*")

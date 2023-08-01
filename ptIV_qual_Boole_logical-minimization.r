@@ -25,7 +25,7 @@
 # ptIV_qual_Boole_logical-minimization.r
 
 # location:
-# chap. 12.3 []
+# chap. 12 [12.3]
 # Typenbildung als Prinzip des Vergleichs mittels logischer Minimierung
 
 # load necessary libraries

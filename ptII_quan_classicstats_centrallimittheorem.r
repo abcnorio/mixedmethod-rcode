@@ -21,9 +21,12 @@
 
 
 
-#file: ptII_quan_classicstats_centrallimittheorem.r
-#location:
-#Exkurs ? zentraler Grenzwertsatz
+# file:
+# ptII_quan_classicstats_centrallimittheorem.r
+
+# location:
+# chap. 4 [4.5.8.3]
+# Exkurs --- zentraler Grenzwertsatz
 
 #load helper functions
 source("ptII_quan_classicstats_centrallimittheorem_helpfuncs.r")
