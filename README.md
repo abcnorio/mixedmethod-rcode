@@ -57,14 +57,23 @@ To facilitate the relationship of R script file and book chapter, the following 
 | --- | --- | --- | --- |
 | ADDON_ladyfisher_genfunc_bayesT.r |  |  |  |
 | ADDON_Lindley-Paradox.r |  |  |  |
-| DiM_Bretthorst_PG_calls.r |  |  |  |
-| DiM_Bretthorst_PG.r |  |  |  |
-| DiM_Bretthorst_UMS_calls.r |  |  |  |
-| DiM_Bretthorst_UMS.r |  |  |  |
-| EXT_bayesian2beta.r |  |  |  |
-| EXT_DBDA2E-utilities.R |  |  |  |
-| EXT_Jags-Ymet-XmetMulti-Mrobust.R |  |  |  |
-| ptI_sciencetheory_logic.r | 2 | 2.2 | Der deduktive Schluss |
+| DiM_Bretthorst_PG_calls.r | - | - | - |
+| DiM_Bretthorst_PG.r | - | - | general functions for various scripts |
+| DiM_Bretthorst_UMS_calls.r | - | - | - |
+| DiM_Bretthorst_UMS.r | - | - | general functions for various scripts |
+| **External functions** |  |  |  |
+| EXT_bayesian2beta.r | - | - | general functions for various scripts |
+| EXT_DBDA2E-utilities.R | - | - | general functions for various scripts |
+| EXT_Jags-Ymet-XmetMulti-Mrobust.R | - | - | general functions for various scripts |
+| **All parts** |  |  | |
+| ptall_generalfuncs_Bayes_Beta_determine.r | - | - | general functions for various scripts |
+| ptall_generalfuncs_Bayes_binomial-prop-test.r | - | - | general functions for various scripts |
+| ptall_generalfuncs_Bayes_binomial.r | - | - | general functions for various scripts |
+| ptall_generalfuncs_brob-integral.r | - | - | general functions for various scripts |
+| ptall_generalfuncs.r | - | - | general functions for various scripts |
+| **Part I** |  |  | **Scientific Theory** |
+| ptI_sciencetheory_logic.r | 2 | 2.2 | **Der deduktive Schluss** |
+| **Part II** |  |  | **Classical Statistics** |
 | ptII_quan_classicstats_Fisher_ladyteataste.r | 4 | 4.5.1.1 | Vom Tee trinken und Milch erkennen — ein Beispielexperiment nach Fisher |
 | ptII_quan_classicstats_N-P_powerfunc.r | 4 | 4.5.2.1 | Praktische Bedeutsamkeit im Kontext von statistischer Bedeutsamkeit |
 | ptII_quan_classicstats_N-P_stat-signif-isNOT-practsignif.r | 4 | 4.5.2.1 | Praktische Bedeutsamkeit im Kontext von statistischer Bedeutsamkeit |
@@ -111,6 +120,7 @@ To facilitate the relationship of R script file and book chapter, the following 
 | ptII_quan_classicstats_normaldist_residuals.r | 4 | 4.6.9.1 | Normal-Verteilung der Residuen |
 | ptII_quan_classicstats_outliers-and-influentialpoints_helpfuncs.r | 4 | 4.6.9.3 | Ausreisser und einflussreiche Datenpunkte |
 | ptII_quan_classicstats_outliers-and-influentialpoints.r | 4 | 4.6.9.3 | Ausreisser und einflussreiche Datenpunkte |
+| **Part II** |  |  | **Exploratory Data Analysis (EDA) sensu JW Tukey** |
 | ptII_quan_EDA_intro_overviewrobust_helpfuncs.r | 5 | 5.2.-5.3. | Typische Verfahren der EDA in R |
 | ptII_quan_EDA_intro_overviewrobust.r | 5 | 5.2.-5.3. | Typische Verfahren der EDA in R |
 | ptII_quan_EDA_case_German-states-population.r | 5 | 5.5.1 | population comparison of German states |
@@ -123,6 +133,7 @@ To facilitate the relationship of R script file and book chapter, the following 
 | ptII_quan_EDA_case_Spain_leadership-in-education.r | 5 | 5.5.5 | Führungsverhalten in Bildungskontexten |
 | ptII_quan_EDA_case_Chiro_heartrate-variability_helpfuncs.r | 5 | 5.5.6 | Ein Experiment zur Herzratenvariabilität |
 | ptII_quan_EDA_case_Chiro_heartrate-variability.r | 5 | 5.5.6 | Ein Experiment zur Herzratenvariabilität |
+| **Part II** |  |  | **Bayesian Statistics** |
 | ptII_quan_Bayes_Beta-distribution.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
 | ptII_quan_Bayes_find-Beta-distribution-shapeparams.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
 | ptII_quan_Bayes_Fisher_LadyBristol-Beta-disttribution.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
@@ -182,20 +193,18 @@ To facilitate the relationship of R script file and book chapter, the following 
 | ptII_quan_Bayes_PPC_model-check-graph.r | 6 | 6.7.4.5 | Graphische Begutachtung von Modellen im Dienste des Modellfittings |
 | ptII_quan_Bayes_case_wordcounts-PPC_helpfuncs.r | 6 | 6.7.4.6 | Forschungsbeispiel — Wortproduktion Humor |
 | ptII_quan_Bayes_case_wordcounts-PPC.r | 6 | 6.7.4.6 | Forschungsbeispiel — Wortproduktion Humor |
+| **Part III** |  |  | **Qualitative Data Analysis** |
 | ptIII_qual_code-paradigm_table-analysis.r | 9 | 9.4 | Tabellenanalysen nach Miles und Huberman |
 | ptIII_qual_quan-textanalysis.r | 10 | 10.1 | Fallbeispiel quantitative Textanalyse |
+| **Part IV** |  |  | **Qualitative Comparative Analysis** |
 | ptIV_qual_Boole_basics.r | 12 | 12.1 | Propädeutikum |
 | ptIV_qual_Boole_case_Krook_women-in-parliament.r | 12 | 12.11.1 | Die Repräsentativität von Frauen in Parlamenten |
 | ptIV_qual_Boole_case_Titanic_death-and-dying.r | 12 | 12.11.2 | Leben und Sterben auf der Titanic Teil II |
 | ptIV_qual_Boole_logical-minimization.r | 12 | 12.3 | Typenbildung als Prinzip des Vergleichs mittels logischer Minimierung |
 | ptIV_qual_Boole_case_school-success.r | 12 | 12.6 | Kriteriumsanalyse — positiver und negativer Ausgang |
 | ptIV_qual_Boole_fuzzy-logic.r | 12 | 12.7 | Fuzzy Logic |
+| **Part V** |  |  | **Mixed Methods** |
 | ptV_mixed_prime-numbers.r | 13 | 13.3.1 | QUAL und QUAN in Konversions-Designs |
-| ptall_generalfuncs_Bayes_Beta_determine.r |  |  | general functions for various scripts |
-| ptall_generalfuncs_Bayes_binomial-prop-test.r |  |  | general functions for various scripts |
-| ptall_generalfuncs_Bayes_binomial.r |  |  | general functions for various scripts |
-| ptall_generalfuncs_brob-integral.r |  |  | general functions for various scripts |
-| ptall_generalfuncs.r |  |  | general functions for various scripts |
 
 </details>
 
@@ -209,23 +218,23 @@ The following table contains condensed information about each script using some 
 | --- | --- | --- |------------------------------------------------------------------------------------------------------|
 | ADDON_ladyfisher_genfunc_bayesT.r |  |  | |
 | ADDON_Lindley-Paradox.r |  |  |  |
-| DiM_Bretthorst_PG.r |  |  | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after P Gregiory (2005) |
-| DiM_Bretthorst_PG_calls.r |  |  | example calls |
-| DiM_Bretthorst_UMS.r |  |  | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after UM Studer (1998) |
-| DiM_Bretthorst_UMS_calls.r |  |  | example calls |
+| DiM_Bretthorst_PG.r | - | - | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after P Gregiory (2005) |
+| DiM_Bretthorst_PG_calls.r | - | - | example calls |
+| DiM_Bretthorst_UMS.r | - | - | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after UM Studer (1998) |
+| DiM_Bretthorst_UMS_calls.r | - | - | example calls |
 | **External functions** |  |  |  |
-| EXT_bayesian2beta.r |  |  | exact Bayesian proportion test from Sverdlov, Ryeznik & Wu (2015) |
-| EXT_DBDA2E-utilities.R |  |  | from Kruschke (2014) DBDA 2nd ed., general functions |
-| EXT_Jags-Ymet-XmetMulti-Mrobust.R |  |  | from Kruschke (2014) DBDA 2nd ed., used for PPC and heterogenuous variances |
-| **all parts** |  |  | general functions |
-| ptall_generalfuncs.r |  |  | Cohen's d, descriptive statistics of all kinds in one table, Tukey's fivenum with labels, convert Aquad style tables to truth tables and v.v., print prime implicants from QCA objects, full distance matrix, optimal cut through a proximity matrix after Oldenbürger and plot it, plot prototypes in 2d + 3d, plot eigenvalues (MDS), correlation and p-values |
-| ptall_generalfuncs_Bayes_Beta_determine.r |  |  | determine and plot beta distribution values from three quantile points via optimization, role model: Coghlan (2017) |
-| ptall_generalfuncs_Bayes_binomial.r |  |  | functions to apply and plot prior probability functions for successes/ failures, calculate summary statistics for posterior, HDI, formula to calculate beta posterior via conjugation, plot prior, likelihood, posterior, updated prior and update therefor posterior, summary statistics |
-| ptall_generalfuncs_Bayes_binomial-prop-test.r |  |  | Bayesian proportion test (e.g. successes/ failures): calculate, summarize, and plot prior from successes/ failures, convert to beta disztribution values and v.v., update binomial prior with likelihood to beta (posterior) and plot, tweaked bayes.prop.test summary from BayesianFirstAid and plot theta_diff, MCMC plot, simulation from posterior, grid approximation via brute force, exact (binomial difference) tests (Evan Miller, Chris Stucchio, the approach by Sverdlov, Ryeznik, Wu (2015) from bayesian2beta.r in a tweaked form to work with log values or brob objects and plot results, numerical integration (Simpson rule) for brob objects, brute force comparison of rbetas vs. dbetas and plot it |
-| ptall_generalfuncs_brob-integral.r |  |  | useful functions for brob objects, convert a list to a vector, calculate the scalarproduct, numerical integration (Simpson rule), more numerical integration methods for brob objects can be found at https://github.com/abcnorio/R-largenum-integration |
-| **Part I** |  |  | Scientific Theory |
+| EXT_bayesian2beta.r | - | - | exact Bayesian proportion test from Sverdlov, Ryeznik & Wu (2015) |
+| EXT_DBDA2E-utilities.R | - | - | from Kruschke (2014) DBDA 2nd ed., general functions |
+| EXT_Jags-Ymet-XmetMulti-Mrobust.R | - | - | from Kruschke (2014) DBDA 2nd ed., used for PPC and heterogenuous variances |
+| **all parts** |  |  |  |
+| ptall_generalfuncs.r | - | - | Cohen's d, descriptive statistics of all kinds in one table, Tukey's fivenum with labels, convert Aquad style tables to truth tables and v.v., print prime implicants from QCA objects, full distance matrix, optimal cut through a proximity matrix after Oldenbürger and plot it, plot prototypes in 2d + 3d, plot eigenvalues (MDS), correlation and p-values |
+| ptall_generalfuncs_Bayes_Beta_determine.r | - | - | determine and plot beta distribution values from three quantile points via optimization, role model: Coghlan (2017) |
+| ptall_generalfuncs_Bayes_binomial.r | - | - | functions to apply and plot prior probability functions for successes/ failures, calculate summary statistics for posterior, HDI, formula to calculate beta posterior via conjugation, plot prior, likelihood, posterior, updated prior and update therefor posterior, summary statistics |
+| ptall_generalfuncs_Bayes_binomial-prop-test.r | - | - | Bayesian proportion test (e.g. successes/ failures): calculate, summarize, and plot prior from successes/ failures, convert to beta disztribution values and v.v., update binomial prior with likelihood to beta (posterior) and plot, tweaked bayes.prop.test summary from BayesianFirstAid and plot theta_diff, MCMC plot, simulation from posterior, grid approximation via brute force, exact (binomial difference) tests (Evan Miller, Chris Stucchio, the approach by Sverdlov, Ryeznik, Wu (2015) from bayesian2beta.r in a tweaked form to work with log values or brob objects and plot results, numerical integration (Simpson rule) for brob objects, brute force comparison of rbetas vs. dbetas and plot it |
+| ptall_generalfuncs_brob-integral.r | - | - | useful functions for brob objects, convert a list to a vector, calculate the scalarproduct, numerical integration (Simpson rule), more numerical integration methods for brob objects can be found at https://github.com/abcnorio/R-largenum-integration |
+| **Part I** |  |  | **Scientific Theory** |
 | ptI_sciencetheory_logic.r | 2 | 2.2 | simple true/ false statements |
-| **Part II** |  |  | Classical Statistics |
+| **Part II** |  |  | **Classical Statistics** |
 | ptII_quan_classicstats_Fisher_ladyteataste.r | 4 | 4.5.1.1 | Lady Bristol tea taste experiment by Fisher using his methods using hypergeometric distribution, fisher.test, and manual calculation using factorials |
 | ptII_quan_classicstats_N-P_powerfunc.r | 4 | 4.5.2.1 | calculate and plot power vs. effect sizes in accordance to different hypotheses |
 | ptII_quan_classicstats_N-P_stat-signif-isNOT-practsignif.r | 4 | 4.5.2.1 | different views on sample differences if population parameters are known |
@@ -272,7 +281,7 @@ The following table contains condensed information about each script using some 
 | ptII_quan_classicstats_normaldist_residuals.r | 4 | 4.6.9.1 | investigation of residuals from linear models for various characteristics (normality, skewness, kurtosis, various sample sizes |
 | ptII_quan_classicstats_outliers-and-influentialpoints.r | 4 | 4.6.9.3 | impact and consequences of influential points and outliers, calculate linear model, t-test, outlier test, correlation test, leverage plots |
 | ptII_quan_classicstats_outliers-and-influentialpoints_helpfuncs.r | 4 | 4.6.9.3 | function to plot outlier (with, without) via regression lines |
-| **Part II** |  |  | Exploratory Data Analysis (EDA) sensu JW Tukey |
+| **Part II** |  |  | **Exploratory Data Analysis (EDA) sensu JW Tukey** |
 | ptII_quan_EDA_intro_overviewrobust.r | 5 | 5.2.-5.3. | compare median vs. mean, show robust plots of data, apply lm vs. rlm on empirical data |
 | ptII_quan_EDA_intro_overviewrobust_helpfuncs.r | 5 | 5.2.-5.3. | function to plot residuals (lm vs. rlm), simulate and plot median/ mean from normal distribution |
 | ptII_quan_EDA_case_German-states-population.r | 5 | 5.5.1 | conversion to log values lead to straight lines using a real life example from German states population characteristics, compare to classical linear model |
@@ -285,7 +294,7 @@ The following table contains condensed information about each script using some 
 | ptII_quan_EDA_case_Spain_leadership-in-education_helpfuncs.r | 5 | 5.5.5 | tweaked version of heatmap from package heatmap.plus (not available in R v.4) |
 | ptII_quan_EDA_case_Chiro_heartrate-variability.r | 5 | 5.5.6 | experiment in chiropractice about heart rate variability using linear models without any significance test, learning from sample size characteristics, use histograms and interaction plots |
 | ptII_quan_EDA_case_Chiro_heartrate-variability_helpfuncs.r | 5 | 5.5.6 | function to plot interactions |
-| **Part II** |  |  | Bayesian Statistics |
+| **Part II** |  |  | **Bayesian Statistics** |
 | ptII_quan_Bayes_Beta-distribution.r | 6 | 6.12 | calculate beta posterior from prior and likelihood (conjugation, grid approximation), influence of priors, various shapes of beta |
 | ptII_quan_Bayes_find-Beta-distribution-shapeparams.r | 6 | 6.12 | determine beta distribution from three quantile points with/ without optimization |
 | ptII_quan_Bayes_Fisher_LadyBristol-Beta-disttribution.r | 6 | 6.12 | plot prior, likelihood, and posterior of the empirical data |
@@ -343,18 +352,18 @@ The following table contains condensed information about each script using some 
 | ptII_quan_Bayes_PPC_model-check-graph.r | 6 | 6.7.4.5 | demonstrate PPC for homogenous variances (yes/no), plot and test specific hypotheses (classical, Bayesian statistics with brms), treatment/ control group design, compare linear models |
 | ptII_quan_Bayes_case_wordcounts-PPC.r | 6 | 6.7.4.6 | perform analysis (e.g. with JAGS) and plots along with posterior predictive checks (PPC) incl. diagnostic MCMC plots, bootstrap using full cases or real values, exercise Kruschke (2014, chap 18.3) regarding heteroscedasticity (influence of un-/equal variances between groups) |
 | ptII_quan_Bayes_case_wordcounts-PPC_helpfuncs.r | 6 | 6.7.4.6 | functions to prepare and summarize MCMC chains and posteriors from Kruschke (2014) scripts to match requirements here for PPC |
-| **Part III** |  |  | Qualitative Data Analysis |
+| **Part III** |  |  | **Qualitative Data Analysis** |
 | ptIII_qual_code-paradigm_table-analysis.r | 9 | 9.4 | example for usage of expand.grid |
 | ptIII_qual_quan-textanalysis.r | 10 | 10.1 | prepare (e.g. removal of redundant parts, special characters, white space, punctuations, stop words and convert to lower cases, split text, word cloud, plot frequencies, KWIC, collocation, ...) and analyze text using packages stringi, SnowbalC, tm, magrittr, quanteda, corps2, etc., use wordstems, corpus inspection, ... |
+| **Part IV** |  |  | **Qualitative Comparative Analysis** |
 | ptIV_qual_Boole_basics.r | 12 | 12.1 | simple true/ false statements |
 | ptIV_qual_Boole_case_Krook_women-in-parliament.r | 12 | 12.11.1 | analyse data set from Krook (2010) using QCA, extract prime implicants, check for consistencies, prepare positive and negative outcome for general discussion| |
 | ptIV_qual_Boole_case_Titanic_death-and-dying.r | 12 | 12.11.2 | apply QCA on Titanic data set to investigate a minimal set for survival (yes/ no) |
 | ptIV_qual_Boole_logical-minimization.r | 12 | 12.3 | single case demonstration how Boolean minimization actually works |
 | ptIV_qual_Boole_case_school-success.r | 12 | 12.6 | artificial data set to demonstrate QCA for negative and positive outcome |
 | ptIV_qual_Boole_fuzzy-logic.r | 12 | 12.7 | simple plot to demonstrate what fuzzy logic is |
-| **Part IV** |  |  | Mixed Methods |
+| **Part V** |  |  | **Mixed Methods** |
 | ptV_mixed_prime-numbers.r | 13 | 13.3.1 | one-liner to get prime numbers using Euclidean mod division |
-
 
 </details>
 
