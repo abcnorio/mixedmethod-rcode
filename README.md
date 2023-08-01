@@ -209,7 +209,7 @@ The following table contains condensed information about each script using some 
 
 | Content | Script filename | chap | chapno |
 | --- | --- | --- | --- |
-|  | ADDON_ladyfisher_genfunc_bayesT.r |  |  |
+| xxxxxxxxxxxxxxxxxxxxxxxxxxxxx | ADDON_ladyfisher_genfunc_bayesT.r |  |  |
 |  | ADDON_Lindley-Paradox.r |  |  |
 | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after P Gregiory (2005) | DiM_Bretthorst_PG.r |  |  |
 | example calls | DiM_Bretthorst_PG_calls.r |  |  |
