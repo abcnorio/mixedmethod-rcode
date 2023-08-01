@@ -201,11 +201,14 @@ To facilitate the relationship of R script file and book chapter, the following 
 
 The following table contains condensed information about each script using some keywords. The files are clustered in accordance ot the topic and do not necessarily represent the order of appearance in the book.
 
+ ` 
+ 
 <details>
 
 <summary>Click here to see the table with a short description of the R code scripts</summary>
 
-| Script filename | chap | chapno | Content |
+| Script filename | Chapter | Chapter no. | Content |
+| ____ | __ | __ | _____________________ |
 | --- | --- | --- | --- |
 | ADDON_ladyfisher_genfunc_bayesT.r |  |  |  |
 | ADDON_Lindley-Paradox.r |  |  |  |
