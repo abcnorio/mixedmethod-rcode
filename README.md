@@ -30,7 +30,7 @@ This means we take the example filenames above and break them down to their part
 | `pt II` | part II [possible values: `part all`, `I`, `II`, `III`, `IV`, `V`] |
 | `quan` | quantitative [possible values: `generalfuncs`, `scientifictheory`, `quantitative`, `qualitative`] |
 | `Bayes` | Bayesian statistics [possible values: `classicstats`, `EDA`, `code-paradigm`, `quan-textanalysis`, `Boole`, `mixed`] |
-| `BayesFactors` | subtopic [various topics possible...] |
+| `BayesFactors` | subtopic [ various topics possible...] |
 | `dependence-on-N-sim` | topic discussed, here the dependence of the Bayes Factor from the sample size N by using simulation to demonstrate such a relationship |
 | `helpfuncs` [optional] | general term used for functions used in the scripts (in most cases the non-helpfuncs.r files do not contain R functions) |
 | `ptall_generalfuncs` | collection of functions of general usage which are not (just) data set specific |
@@ -191,11 +191,11 @@ To facilitate the relationship of R script file and book chapter, the following 
 | ptIV_qual_Boole_case_school-success.r | 12 | 12.6 | Kriteriumsanalyse — positiver und negativer Ausgang |
 | ptIV_qual_Boole_fuzzy-logic.r | 12 | 12.7 | Fuzzy Logic |
 | ptV_mixed_prime-numbers.r | 13 | 13.3.1 | QUAL und QUAN in Konversions-Designs |
-| ptall_generalfuncs_Bayes_Beta_determine.r | various | various | general functions for various scripts |
-| ptall_generalfuncs_Bayes_binomial-prop-test.r | various | various | general functions for various scripts |
-| ptall_generalfuncs_Bayes_binomial.r | various | various | general functions for various scripts |
-| ptall_generalfuncs_brob-integral.r | various | various | general functions for various scripts |
-| ptall_generalfuncs.r | various | various | general functions for various scripts |
+| ptall_generalfuncs_Bayes_Beta_determine.r |  |  | general functions for various scripts |
+| ptall_generalfuncs_Bayes_binomial-prop-test.r |  |  | general functions for various scripts |
+| ptall_generalfuncs_Bayes_binomial.r |  |  | general functions for various scripts |
+| ptall_generalfuncs_brob-integral.r |  |  | general functions for various scripts |
+| ptall_generalfuncs.r |  |  | general functions for various scripts |
 
 </details>
 
@@ -218,11 +218,11 @@ The following table contains condensed information about each script using some 
 | EXT_DBDA2E-utilities.R |  |  | from Kruschke (2014) DBDA 2nd ed., general functions |
 | EXT_Jags-Ymet-XmetMulti-Mrobust.R |  |  | from Kruschke (2014) DBDA 2nd ed., used for PPC and heterogenuous variances |
 | **all parts** |  |  | general functions |
-| ptall_generalfuncs.r | various | various | Cohen's d, descriptive statistics of all kinds in one table, Tukey's fivenum with labels, convert Aquad style tables to truth tables and v.v., print prime implicants from QCA objects, full distance matrix, optimal cut through a proximity matrix after Oldenbürger and plot it, plot prototypes in 2d + 3d, plot eigenvalues (MDS), correlation and p-values |
-| ptall_generalfuncs_Bayes_Beta_determine.r | various | various | determine and plot beta distribution values from three quantile points via optimization, role model: Coghlan (2017) |
-| ptall_generalfuncs_Bayes_binomial.r | various | various | functions to apply and plot prior probability functions for successes/ failures, calculate summary statistics for posterior, HDI, formula to calculate beta posterior via conjugation, plot prior, likelihood, posterior, updated prior and update therefor posterior, summary statistics |
-| ptall_generalfuncs_Bayes_binomial-prop-test.r | various | various | Bayesian proportion test (e.g. successes/ failures): calculate, summarize, and plot prior from successes/ failures, convert to beta disztribution values and v.v., update binomial prior with likelihood to beta (posterior) and plot, tweaked bayes.prop.test summary from BayesianFirstAid and plot theta_diff, MCMC plot, simulation from posterior, grid approximation via brute force, exact (binomial difference) tests (Evan Miller, Chris Stucchio, the approach by Sverdlov, Ryeznik, Wu (2015) from bayesian2beta.r in a tweaked form to work with log values or brob objects and plot results, numerical integration (Simpson rule) for brob objects, brute force comparison of rbetas vs. dbetas and plot it |
-| ptall_generalfuncs_brob-integral.r | various | various | useful functions for brob objects, convert a list to a vector, calculate the scalarproduct, numerical integration (Simpson rule), more numerical integration methods for brob objects can be found at https://github.com/abcnorio/R-largenum-integration |
+| ptall_generalfuncs.r |  |  | Cohen's d, descriptive statistics of all kinds in one table, Tukey's fivenum with labels, convert Aquad style tables to truth tables and v.v., print prime implicants from QCA objects, full distance matrix, optimal cut through a proximity matrix after Oldenbürger and plot it, plot prototypes in 2d + 3d, plot eigenvalues (MDS), correlation and p-values |
+| ptall_generalfuncs_Bayes_Beta_determine.r |  |  | determine and plot beta distribution values from three quantile points via optimization, role model: Coghlan (2017) |
+| ptall_generalfuncs_Bayes_binomial.r |  |  | functions to apply and plot prior probability functions for successes/ failures, calculate summary statistics for posterior, HDI, formula to calculate beta posterior via conjugation, plot prior, likelihood, posterior, updated prior and update therefor posterior, summary statistics |
+| ptall_generalfuncs_Bayes_binomial-prop-test.r |  |  | Bayesian proportion test (e.g. successes/ failures): calculate, summarize, and plot prior from successes/ failures, convert to beta disztribution values and v.v., update binomial prior with likelihood to beta (posterior) and plot, tweaked bayes.prop.test summary from BayesianFirstAid and plot theta_diff, MCMC plot, simulation from posterior, grid approximation via brute force, exact (binomial difference) tests (Evan Miller, Chris Stucchio, the approach by Sverdlov, Ryeznik, Wu (2015) from bayesian2beta.r in a tweaked form to work with log values or brob objects and plot results, numerical integration (Simpson rule) for brob objects, brute force comparison of rbetas vs. dbetas and plot it |
+| ptall_generalfuncs_brob-integral.r |  |  | useful functions for brob objects, convert a list to a vector, calculate the scalarproduct, numerical integration (Simpson rule), more numerical integration methods for brob objects can be found at https://github.com/abcnorio/R-largenum-integration |
 | **Part I** |  |  | Scientific Theory |
 | ptI_sciencetheory_logic.r | 2 | 2.2 | simple true/ false statements |
 | **Part II** |  |  | Classical Statistics |
