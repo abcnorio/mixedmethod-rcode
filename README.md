@@ -366,7 +366,7 @@ XXX
 <details>
 
 | Script filename | Content |
-| --- | --- | --- | --- |
+| --- | --- |
 | ADDON_ladyfisher_genfunc_bayesT.r |  |
 | ADDON_Lindley-Paradox.r |  |
 | DiM_Bretthorst_PG.r | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after P Gregiory (2005) |
