@@ -212,7 +212,7 @@ The following table contains condensed information about each script using some 
 
 | Scriptname | Content |
 | --- | --- |
-| DiM_Bretthorst_PG.r | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after P Gregiory (2005) |
+| DiM_Bretthorst_PG.r | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after P Gregory (2005) |
 | DiM_Bretthorst_PG_calls.r | example calls |
 | DiM_Bretthorst_UMS.r | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after UM Studer (1998) |
 | DiM_Bretthorst_UMS_calls.r | example calls |
