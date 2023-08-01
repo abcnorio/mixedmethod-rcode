@@ -53,9 +53,149 @@ To facilitate the relationship of R script file and book chapter, the following 
 
 <summary>Click here to see the table with a the matching of book chapter and R script filename</summary>
 
-| Book chapter | Chapter title | R script filename |
-| --- | --- | --- |
-| | | |
+| Filename | Chapter | Chapter no. | Chapter title |
+| --- | --- | --- | --- |
+| ADDON_ladyfisher_genfunc_bayesT.r |  |  |  |
+| ADDON_Lindley-Paradox.r |  |  |  |
+| DiM_Bretthorst_PG_calls.r |  |  |  |
+| DiM_Bretthorst_PG.r |  |  |  |
+| DiM_Bretthorst_UMS_calls.r |  |  |  |
+| DiM_Bretthorst_UMS.r |  |  |  |
+| EXT_bayesian2beta.r |  |  |  |
+| EXT_DBDA2E-utilities.R |  |  |  |
+| EXT_Jags-Ymet-XmetMulti-Mrobust.R |  |  |  |
+| ptI_sciencetheory_logic.r | 2 | 2.2 | Der deduktive Schluss |
+| ptII_quan_classicstats_Fisher_ladyteataste.r | 4 | 4.5.1.1 | Vom Tee trinken und Milch erkennen — ein Beispielexperiment nach Fisher |
+| ptII_quan_classicstats_N-P_powerfunc.r | 4 | 4.5.2.1 | Praktische Bedeutsamkeit im Kontext von statistischer Bedeutsamkeit |
+| ptII_quan_classicstats_N-P_stat-signif-isNOT-practsignif.r | 4 | 4.5.2.1 | Praktische Bedeutsamkeit im Kontext von statistischer Bedeutsamkeit |
+| ptII_quan_classicstats_GandC_type-S-M-error_helpfuncs.r | 4 | 4.5.2.2 | Richtung und Größe — zwei unterschätzte Fehlertypen |
+| ptII_quan_classicstats_GandC_type-S-M-error.r | 4 | 4.5.2.2 | Richtung und Größe — zwei unterschätzte Fehlertypen |
+| ptII_quan_classicstats_N-P_nulldist-hypotest_helpfuncs.r | 4 | 4.5.2.5 | Die Vollkostenrechnung |
+| ptII_quan_classicstats_N-P_nulldist-hypotest.r | 4 | 4.5.2.5 | Die Vollkostenrechnung |
+| ptII_quan_classicstats_N-P_confint_bayesboot.r | 4 | 4.5.2.6 | Konfidenzintervalle |
+| ptII_quan_classicstats_N-P_confint_errorbars.r | 4 | 4.5.2.6 | Konfidenzintervalle |
+| ptII_quan_classicstats_N-P_confint_helpfuncs.r | 4 | 4.5.2.6 | Konfidenzintervalle |
+| ptII_quan_classicstats_N-P_confint_p-t-value_helpfuncs.r | 4 | 4.5.2.6 | Konfidenzintervalle |
+| ptII_quan_classicstats_N-P_confint_p-t-value.r | 4 | 4.5.2.6 | Konfidenzintervalle |
+| ptII_quan_classicstats_N-P_confint-errorbars_helpfuncs.r | 4 | 4.5.2.6 | Konfidenzintervalle |
+| ptII_quan_classicstats_N-P_confint.r | 4 | 4.5.2.6 | Konfidenzintervalle |
+| ptII_quan_classicstats_N-P_simulation.r | 4 | 4.5.4 | Exkurs — Simulationen |
+| ptII_quan_classicstats_N-P_example-soccer-sim_helpfuncs.r | 4 | 4.5.4.1 | Fallbeispiel Simulation — Fussball Sammelbilder |
+| ptII_quan_classicstats_N-P_example-soccer-sim.r | 4 | 4.5.4.1 | Fallbeispiel Simulation — Fussball Sammelbilder |
+| ptII_quan_classicstats_N-P_SE-N-dep.r | 4 | 4.5.5 | Stichprobengröße |
+| ptII_quan_classicstats_nullritual.r | 4 | 4.5.7 | Der Ablauf eines statistischen Tests — das Nullritual |
+| ptII_quan_classicstats_NHST_nulldist.r | 4 | 4.5.8 | Die Wahrscheinlichkeit von Daten als Basis von Testentscheidungen |
+| ptII_quan_classicstats_pvalue-as-base.r | 4 | 4.5.8.1 | Die Berechnung des p-Wertes |
+| ptII_quan_classicstats_normal-vs-t.r | 4 | 4.5.8.2 | Zum Verhältnis von Normalverteilung und t-Verteilung |
+| ptII_quan_classicstats_centrallimittheorem_helpfuncs.r | 4 | 4.5.8.3 | Exkurs --- zentraler Grenzwertsatz |
+| ptII_quan_classicstats_centrallimittheorem.r | 4 | 4.5.8.3 | Exkurs --- zentraler Grenzwertsatz |
+| ptII_quan_classicstats_p-t-df-relationship.r | 4 | 4.5.9 | Erkenntnistheorie reloaded — klassische Statistik |
+| ptII_quan_classicstats_effectsizes_helpfuncs_sjstats.r | 4 | 4.6.10 | Effektstärken — Größe, Häufigkeit und Bezug zur Originalskala |
+| ptII_quan_classicstats_effectsizes_helpfuncs.r | 4 | 4.6.10 | Effektstärken — Größe, Häufigkeit und Bezug zur Originalskala |
+| ptII_quan_classicstats_effectsizes.r | 4 | 4.6.10 | Effektstärken — Größe, Häufigkeit und Bezug zur Originalskala |
+| ptII_quan_classicstats_Simpsonparadox_helpfuncs.r | 4 | 4.6.11.1 | Simpson Paradox |
+| ptII_quan_classicstats_Simpsonparadox.r | 4 | 4.6.11.1 | Simpson Paradox |
+| ptII_quan_classicstats_JeffreysLindleyparadox.r | 4 | 4.6.11.2 | Jeffreys-Lindley Paradox |
+| ptII_quan_classicstats_p-hacking-sim_helpfuncs.r | 4 | 4.6.2 | Auf der Suche nach Signifikanzen — unbewusste Forschungsintentionen und p-hacking |
+| ptII_quan_classicstats_p-hacking-sim.r | 4 | 4.6.2 | Auf der Suche nach Signifikanzen — unbewusste Forschungsintentionen und p-hacking |
+| ptII_quan_classicstats_dealingwithpower.r | 4 | 4.6.3 | Der Umgang mit Power |
+| ptII_quan_classicstats_R-index_z-curve_helpfuncs.r | 4 | 4.6.4.1 | R-Index |
+| ptII_quan_classicstats_R-index_z-curve.r | 4 | 4.6.4.1 | R-Index |
+| ptII_quan_classicstats_varianceestimation_helpfuncs.r | 4 | 4.6.5 | (Selbst-)Täuschungen |
+| ptII_quan_classicstats_varianceestimation.r | 4 | 4.6.5 | (Selbst-)Täuschungen |
+| ptII_quan_classicstats_randomization.r | 4 | 4.6.6 | Randomisierung |
+| ptII_quan_classicstats_missingdata.r | 4 | 4.6.7 | Fehlende Daten |
+| ptII_quan_classicstats_equivalentmethods_helpfuncs.r | 4 | 4.6.8.1 | Äquivalenz von Messverfahren und -methoden |
+| ptII_quan_classicstats_equivalentmethods.r | 4 | 4.6.8.1 | Äquivalenz von Messverfahren und -methoden |
+| ptII_quan_classicstats_variancehomogeneity.r | 4 | 4.6.8.2 | Varianzhomogenität (Homoskedastizität) |
+| ptII_quan_classicstats_normaldist_residuals.r | 4 | 4.6.9.1 | Normal-Verteilung der Residuen |
+| ptII_quan_classicstats_outliers-and-influentialpoints_helpfuncs.r | 4 | 4.6.9.3 | Ausreisser und einflussreiche Datenpunkte |
+| ptII_quan_classicstats_outliers-and-influentialpoints.r | 4 | 4.6.9.3 | Ausreisser und einflussreiche Datenpunkte |
+| ptII_quan_EDA_intro_overviewrobust_helpfuncs.r | 5 | 5.2.-5.3. | Typische Verfahren der EDA in R |
+| ptII_quan_EDA_intro_overviewrobust.r | 5 | 5.2.-5.3. | Typische Verfahren der EDA in R |
+| ptII_quan_EDA_case_German-states-population.r | 5 | 5.5.1 | population comparison of German states |
+| ptII_quan_EDA_case_Suisse-fertility_helpfuncs.r | 5 | 5.5.2 | Fruchtbarkeit und Fertilität |
+| ptII_quan_EDA_case_Suisse-fertility.r | 5 | 5.5.2 | Fruchtbarkeit und Fertilität |
+| ptII_quan_EDA_case_Anderson_iris-species-in-biology.r | 5 | 5.5.3 | Spezies unterscheiden in der Biologie |
+| ptII_quan_EDA_case_Titanic_death-and-dying_helpfuncs.r | 5 | 5.5.4.6 | Leben und Sterben auf der Titanic |
+| ptII_quan_EDA_case_Titanic_death-and-dying.r | 5 | 5.5.4.6 | Leben und Sterben auf der Titanic |
+| ptII_quan_EDA_case_Spain_leadership-in-education_helpfuncs.r | 5 | 5.5.5 | 5.5.5 Führungsverhalten in Bildungskontexten |
+| ptII_quan_EDA_case_Spain_leadership-in-education.r | 5 | 5.5.5 | Führungsverhalten in Bildungskontexten |
+| ptII_quan_EDA_case_Chiro_heartrate-variability_helpfuncs.r | 5 | 5.5.6 | Ein Experiment zur Herzratenvariabilität |
+| ptII_quan_EDA_case_Chiro_heartrate-variability.r | 5 | 5.5.6 | Ein Experiment zur Herzratenvariabilität |
+| ptII_quan_Bayes_Beta-distribution.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
+| ptII_quan_Bayes_find-Beta-distribution-shapeparams.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
+| ptII_quan_Bayes_Fisher_LadyBristol-Beta-disttribution.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
+| ptII_quan_Bayes_Gamma-distribution.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
+| ptII_quan_Bayes_regularization.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
+| ptII_quan_Bayes_Prior-Likeli-Post_relationship.r | 6 | 6.12.1 | Verhältnis Prior — Likelihood — Posterior |
+| ptII_quan_Bayes_MC-simulation_binom-norm.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
+| ptII_quan_Bayes_RandomWalk_helpfuncs.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
+| ptII_quan_Bayes_RandomWalk.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
+| ptII_quan_Bayes_simulate-pi_helpfuncs.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
+| ptII_quan_Bayes_simulate-pi.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
+| ptII_quan_simulate-pi_helpfuncs.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
+| ptII_quan_simulate-pi.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
+| ptII_quan_Bayes_problem-local-minima.r | 6 | 6.13.1.4 | Zusammenfassung MCMC-Algorithmus |
+| ptII_quan_Bayes_HMC_helpfuncs.r | 6 | 6.13.2.3.1 | Hamilton Monte Carlo im R |
+| ptII_quan_Bayes_HMC.r | 6 | 6.13.2.3.1 | Hamilton Monte Carlo im R |
+| ptII_quan_Bayes_MetropolisHastings_example-normdist.r | 6 | 6.13.4.1 | Der Metropolis-Hastings Algorithmus im R |
+| ptII_quan_Bayes_MH-Gibbs_example_helpfuncs.r | 6 | 6.13.4.1 | Der Metropolis-Hastings Algorithmus im R |
+| ptII_quan_Bayes_GibbsSampling_example-normdist.r | 6 | 6.13.4.2 | Der Gibbs Sample im R |
+| ptII_quan_Bayes_JAGS_example-norm.r | 6 | 6.13.4.3 | Gibbs-Sampling mit JAGS |
+| ptII_quan_Bayes_Fisher_LadyBristol-BUGS_helpfuncs.r | 6 | 6.13.5 | Fisher reloaded — mehr Tee |
+| ptII_quan_Bayes_Fisher_LadyBristol-BUGS.r | 6 | 6.13.5 | Fisher reloaded — mehr Tee |
+| ptII_quan_Bayes_MaximumEntropy_helpfuncs.r | 6 | 6.14 | Maximum Entropy |
+| ptII_quan_Bayes_MaximumEntropy.r | 6 | 6.14 | Maximum Entropy |
+| ptII_quan_Bayes_Entropy_KullbackLeibler_helpfuncs.r | 6 | 6.14.1 | „I, we, and nation“ — präsidiale Eigenwerbung |
+| ptII_quan_Bayes_Entropy_KullbackLeibler.r | 6 | 6.14.1 | „I, we, and nation“ — präsidiale Eigenwerbung |
+| ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice_helpfuncs.r | 6 | 6.14.3 | Der Klassiker — ist ein Würfel fair? |
+| ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice.r | 6 | 6.14.3 | Der Klassiker — ist ein Würfel fair? |
+| ptII_quan_Bayes_case_presidential-heights_helpfuncs.r | 6 | 6.15.1 | Präsidiale Höhenflüge |
+| ptII_quan_Bayes_case_presidential-heights.r | 6 | 6.15.1 | Präsidiale Höhenflüge |
+| ptII_quan_Bayes_case_startagain-successrates.r | 6 | 6.15.2 | Durchlaufquoten in der Drogensuchttherapie |
+| ptII_quan_Bayes_case_startagain-successrates-longterm.r | 6 | 6.15.2.1 | Langzeitevaluation (Durchlaufquoten) |
+| ptII_quan_Bayes_case_presidential-debates.r | 6 | 6.15.3 | „I, we, and nation“ — präsidiale Eigenwerbung Teil 2 |
+| ptII_quan_Bayes_intro-BayesTheorem_tea.r | 6 | 6.2.2.4 | [6.2.2 Fallbeispiel — noch ein Tee-Experiment] |
+| ptII_quan_Bayes_intro-BayesTheorem_medicaldiagnosis_helpfuncs.r | 6 | 6.2.3.4 | [6.2.3 Fallbeispiel — Medizindiagnostik] |
+| ptII_quan_Bayes_intro-BayesTheorem_medicaldiagnosis.r | 6 | 6.2.3.4 | [6.2.3 Fallbeispiel — Medizindiagnostik] |
+| ptII_quan_Bayes_intro-BayesTheorem_covid19-test.r | 6 | 6.2.4 | Fallbeispiel — Zur Zuverlässigkeit eines COVID-19 Tests |
+| ptII_quan_Bayes_posterior.r | 6 | 6.5.1 | Intuitives Verständnis von Wahrscheinlichkeit |
+| ptII_quan_Bayes_simple-estimation-mean-post_helpfuncs.r | 6 | 6.5.1 | Intuitives Verständnis von Wahrscheinlichkeit |
+| ptII_quan_Bayes_simple-estimation-mean-post.r | 6 | 6.5.1 | Intuitives Verständnis von Wahrscheinlichkeit |
+| ptII_quan_Bayes_BayesFactors_test-hypos.r | 6 | 6.7.1 | Bayes-Faktoren und Bayes-Hypothesentesten |
+| ptII_quan_Bayes_lossfun_startagain.r | 6 | 6.7.1.2 | Verlustfunktionen |
+| ptII_quan_Bayes_BayesFactors_dependence-on-N-sim_helpfuncs.r | 6 | 6.7.1.3 | Aktualität von Bayes-Faktoren |
+| ptII_quan_Bayes_BayesFactors_dependence-on-N-sim.r | 6 | 6.7.1.3 | Aktualität von Bayes-Faktoren |
+| ptII_quan_Bayes_case_exp-extra-sensual-perception.r | 6 | 6.7.1.4 | Hellsehen — in guter Grund für Nullhypothesentesten? |
+| ptII_quan_Bayes_Bem-study-aspects.r | 6 | 6.7.1.5 | Designkritik — die Studie von Bem |
+| ptII_quan_Bayes_BayesFactors_further-remarks.r | 6 | 6.7.1.6 | Bayes-Faktoren — und nun? |
+| ptII_quan_Bayes_information-criteria_helpfuncs.r | 6 | 6.7.2 | Informationskriterien |
+| ptII_quan_Bayes_information-criteria.r | 6 | 6.7.2 | Informationskriterien |
+| ptII_quan_Bayes_over-and-underfitting.r | 6 | 6.7.3 | Overfitting und Underfitting |
+| ptII_quan_Bayes_HDI_helpfuncs.r | 6 | 6.7.4.1 | Intervallschätzung |
+| ptII_quan_Bayes_HDI.r | 6 | 6.7.4.1 | Intervallschätzung |
+| ptII_quan_Bayes_ROPE-BayesFactor_helpfuncs.r | 6 | 6.7.4.2 | ROPE — region of practical equivalenceg |
+| ptII_quan_Bayes_ROPE-BayesFactor.r | 6 | 6.7.4.2 | ROPE — region of practical equivalenceg |
+| ptII_quan_Bayes_PPC_model-check_helpfuncs.r | 6 | 6.7.4.4 | Praxis — posterior predictive check |
+| ptII_quan_Bayes_PPC_model-check.r | 6 | 6.7.4.4 | Praxis — posterior predictive check |
+| ptII_quan_Bayes_PPC_model-check-graph.r | 6 | 6.7.4.5 | Graphische Begutachtung von Modellen im Dienste des Modellfittings |
+| ptII_quan_Bayes_case_wordcounts-PPC_helpfuncs.r | 6 | 6.7.4.6 | Forschungsbeispiel — Wortproduktion Humor |
+| ptII_quan_Bayes_case_wordcounts-PPC.r | 6 | 6.7.4.6 | Forschungsbeispiel — Wortproduktion Humor |
+| ptIII_qual_code-paradigm_table-analysis.r | 9 | 9.4 | Tabellenanalysen nach Miles und Huberman |
+| ptIII_qual_quan-textanalysis.r | 10 | 10.1 | Fallbeispiel quantitative Textanalyse |
+| ptIV_qual_Boole_basics.r | 12 | 12.1 | Propädeutikum |
+| ptIV_qual_Boole_case_Krook_women-in-parliament.r | 12 | 12.11.1 | Die Repräsentativität von Frauen in Parlamenten |
+| ptIV_qual_Boole_case_Titanic_death-and-dying.r | 12 | 12.11.2 | Leben und Sterben auf der Titanic Teil II |
+| ptIV_qual_Boole_logical-minimization.r | 12 | 12.3 | Typenbildung als Prinzip des Vergleichs mittels logischer Minimierung |
+| ptIV_qual_Boole_case_school-success.r | 12 | 12.6 | Kriteriumsanalyse — positiver und negativer Ausgang |
+| ptIV_qual_Boole_fuzzy-logic.r | 12 | 12.7 | Fuzzy Logic |
+| ptV_mixed_prime-numbers.r | 13 | 13.3.1 | QUAL und QUAN in Konversions-Designs |
+| ptall_generalfuncs_Bayes_Beta_determine.r | various | various | general functions for various scripts |
+| ptall_generalfuncs_Bayes_binomial-prop-test.r | various | various | general functions for various scripts |
+| ptall_generalfuncs_Bayes_binomial.r | various | various | general functions for various scripts |
+| ptall_generalfuncs_brob-integral.r | various | various | general functions for various scripts |
+| ptall_generalfuncs.r | various | various | general functions for various scripts |
 
 </details>
 
@@ -339,7 +479,6 @@ The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more rec
 - Kruschke, J (2014). _Doing Bayesian Data Analysis: A Tutorial with R, JAGS, and Stan. 2nd ed._ Academic Press.
 - McElreath, R (2015). _Statistical Rethinking. A Bayesian Course with Examples in R and Stan. 1st ed._ Chapman & Hall/ CRC Texts in Sstatistical Science.
 - Neal, RM (2011). Handbook of Markov Chain Monte Carlo._ Edited by S Brooks, A Gelman, G Jones, and X-L Meng. Chapman & Hall/ CRC Press.
-
 
 ## Citation
 
