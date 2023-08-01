@@ -206,7 +206,7 @@ The following table contains condensed information about each script using some 
 <summary>Click here to see the table with a short description of the R code scripts</summary>
 
 | Script | Chapter | Chapter no. | Content |
-| --- | --- | --- | --- |
+| --- | --- | --- |------------------------------------------------------------------------------------------------------|
 | ADDON_ladyfisher_genfunc_bayesT.r |  |  | |
 | ADDON_Lindley-Paradox.r |  |  |  |
 | DiM_Bretthorst_PG.r |  |  | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after P Gregiory (2005) |
@@ -437,14 +437,14 @@ The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more rec
 
 ## References
 
-- Bretthorst, GL (1993). On the difference in means. In: WT Grandy and PW Milonni (Eds.), _Physics & Probability Essays in honor of ET Jaynes_. Cambridge University Press, England.
+- Bretthorst, GL (1993). [On the difference in means](https://bayes.wustl.edu/glb/diff.pdf). In: WT Grandy and PW Milonni (Eds.), _Physics & Probability Essays in honor of ET Jaynes_. Cambridge University Press, England.
 - Coghlan, A (2017-11-07). [A little book of R for Bayesian Statistics. Release 0.1](https://a-little-book-of-r-for-bayesian-statistics.readthedocs.io/en/latest/src/bayesianstats.html)
 - Dobson, A (1990). _An Introduction to Generalized Linear Models._ Chapman & Hall/ CRC Texts in Sstatistical Science.
 - Gregory, P. (2005). _Bayesian logical data analysis for the physical sciences. A comparative approach with Mathematica support._ Cambridge University Press.
-- Krook, ML (2010). Women's Representation in Parliament: A Qualitative Comparative Analysis. _Political Studies_, _58_, p.886-908.
+- Krook, ML (2010). [Women's Representation in Parliament: A Qualitative Comparative Analysis.](http://mlkrook.org/pdf/Krook_PS_2010.pdf) _Political Studies_, _58_, p.886-908.
 - Kruschke, J (2014). _Doing Bayesian Data Analysis: A Tutorial with R, JAGS, and Stan. 2nd ed._ Academic Press.
 - McElreath, R (2015). _Statistical Rethinking. A Bayesian Course with Examples in R and Stan. 1st ed._ Chapman & Hall/ CRC Texts in Sstatistical Science.
-- Neal, RM (2011). Handbook of Markov Chain Monte Carlo._ Edited by S Brooks, A Gelman, G Jones, and X-L Meng. Chapman & Hall/ CRC Press.
+- Neal, RM (2011). [Handbook of Markov Chain Monte Carlo.](https://arxiv.org/pdf/1206.1901.pdf)_ Edited by S Brooks, A Gelman, G Jones, and X-L Meng. Chapman & Hall/ CRC Press.
 - Studer, U.M. (1998). _Verlangen, Süchtigkeit und Tiefensystemik. Fallstudie des Suchttherapiezentrums für Drogensüchtige start again in Männedorf und Zürich von 1992 bis 1998. Bericht an das Bundesamt für Justiz (BAJ)._ Zürich.
 
 ## Citation
