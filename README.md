@@ -207,9 +207,8 @@ The following table contains condensed information about each script using some 
 
 <summary>Click here to see the table with a short description of the R code scripts</summary>
 
-| Script | Chapter | Chapter no. | Content |
+| Script | Chapter | Chapter no. | <div style="width:400px">Content</div> |
 | --- | -- | -- | -------------- |
-|<img width=10/>|||<img width=500/>|
 | ADDON_ladyfisher_genfunc_bayesT.r |  |  |  |
 | ADDON_Lindley-Paradox.r |  |  |  |
 | DiM_Bretthorst_PG.r |  |  | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after P Gregiory (2005) |
