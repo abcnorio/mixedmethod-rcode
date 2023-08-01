@@ -2,7 +2,7 @@
 
 ## Resources and languages
 
-The Spanish version of the book is titled "XXX". Both books can be obtained freely from XXX. A Spanish version of this README.md can be found in [README-spa.md](./README-spa.md).
+The Spanish version of the book is titled "XXX". Both books can be obtained freely from XXX. A Spanish version of this README.md can be found in [README-spa](./README-spa.md).
 
 ## Overview
 
