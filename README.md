@@ -53,7 +53,7 @@ To facilitate the relationship of R script file and book chapter, the following 
 
 <summary>Click here to see the table with a the matching of book chapter and R script filename</summary>
 
-| Filename | Chapter | Chapter no. | Chapter title (German) |
+| Scriptname | Chap | SubChap | Chapter title (German) |
 | --- | --- | --- | --- |
 | ADDON_ladyfisher_genfunc_bayesT.r |  |  |  |
 | ADDON_Lindley-Paradox.r |  |  |  |
@@ -205,7 +205,7 @@ The following table contains condensed information about each script using some 
 
 <summary>Click here to see the table with a short description of the R code scripts</summary>
 
-| Script | No | subNo | Content |
+| Scriptname | Chap | SubChap | Content |
 | --- | --- | --- |------------------------------------------------------------------------------------------------------|
 | ADDON_ladyfisher_genfunc_bayesT.r |  |  | |
 | ADDON_Lindley-Paradox.r |  |  |  |
