@@ -91,7 +91,7 @@ prior.vs
 par(ask=TRUE)
 for(i in 1:dim(prior.vs)[1])
 {
-  bino.abs.res <- bino.abs(si=si, Ni=Ni, theta.prior=prior.vs[i,"theta.prior"],
+  bino.abs.res <- bino.abs.2(si=si, Ni=Ni, theta.prior=prior.vs[i,"theta.prior"],
                            nprior=prior.vs[i,"nprior"], graph=FALSE)
   v <- bino.abs.res$res
   beta.triplot(si, Ni, v, filling=FALSE)  
@@ -101,25 +101,25 @@ for(i in 1:dim(prior.vs)[1])
 # uniform prior
 theta.prior <- 0.5
 nprior <- 2
-bino.abs.res <- bino.abs(si=si, Ni=Ni, theta.prior=theta.prior, nprior=nprior, graph=FALSE)
+bino.abs.res <- bino.abs.2(si=si, Ni=Ni, theta.prior=theta.prior, nprior=nprior, graph=FALSE)
 v <- bino.abs.res$res
 beta.triplot(si, Ni, v, filling=FALSE)
 # less heavily informed prior, different than likelihood
 theta.prior <- 0.5
 nprior <- 5
-bino.abs.res <- bino.abs(si=si, Ni=Ni, theta.prior=theta.prior, nprior=nprior, graph=FALSE)
+bino.abs.res <- bino.abs.2(si=si, Ni=Ni, theta.prior=theta.prior, nprior=nprior, graph=FALSE)
 v <- bino.abs.res$res
 beta.triplot(si, Ni, v, filling=FALSE)
 # heavily informed prior, different than likelihood
 theta.prior <- 0.4
 nprior <- 15
-bino.abs.res <- bino.abs(si=si, Ni=Ni, theta.prior=theta.prior, nprior=nprior, graph=FALSE)
+bino.abs.res <- bino.abs.2(si=si, Ni=Ni, theta.prior=theta.prior, nprior=nprior, graph=FALSE)
 v <- bino.abs.res$res
 beta.triplot(si, Ni, v, filling=FALSE)
 # heavily informed prior, same as likelihood
 theta.prior <- 0.7
 nprior <- 30
-bino.abs.res <- bino.abs(si=si, Ni=Ni, theta.prior=theta.prior, nprior=nprior, graph=FALSE)
+bino.abs.res <- bino.abs.2(si=si, Ni=Ni, theta.prior=theta.prior, nprior=nprior, graph=FALSE)
 v <- bino.abs.res$res
 beta.triplot(si, Ni, v, filling=FALSE)
 

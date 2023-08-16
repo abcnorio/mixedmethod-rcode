@@ -434,5 +434,62 @@ return(OUTmcmc.MH.list)
 ########################## END OF FUNCTION
 
 
+###### Function to perform HMC sampler
+# R.M. Neal MCMC Handbook
+# basic model taken from here:
+# p.125
+HMC2.plus <- function(U, grad_U, epsilon, L, current_q, ...) 
+{
+  q = current_q
+  p = rnorm(length(q), 0, 1)
+  current_p = p
+  
+  p = p - epsilon * grad_U(q, ...)/2
+  
+  #qtraj <- matrix(NA, nrow = L + 1, ncol = length(q))
+  #ptraj <- qtraj
+  #qtraj[1, ] <- current_q
+  #ptraj[1, ] <- p
+  
+  for (i in 1:L) {
+    q = q + epsilon * p
+    if (i != L) {
+      p = p - epsilon * grad_U(q, ...)
+      #ptraj[i + 1, ] <- p
+    }
+    #qtraj[i + 1, ] <- q
+  }
+  p = p - epsilon * grad_U(q, ...)/2
+  #ptraj[L + 1, ] <- p
+  p = -p
+  
+  current_U = U(current_q, ...)
+  current_K = sum(current_p^2)/2
+  proposed_U = U(q, ...)
+  proposed_K = sum(p^2)/2
+  
+  H0 <- current_U + current_K
+  H1 <- proposed_U + proposed_K
+  
+  new_q <- q
+  accept <- 0
+  
+  if (runif(1) < exp(current_U - proposed_U + current_K - proposed_K)) {
+    new_q <- q
+    accept <- 1
+  }
+  else new_q <- current_q
+  #return(list(q = new_q, traj = qtraj, ptraj = ptraj, accept = accept, 
+  #            dH = H1 - H0))
+  return(list(q = new_q, accept = accept, dH = H1 - H0))
+}
+########################## END OF FUNCTION
 
 
+###### Function to calculate bivariate probability density function
+# N(x,mu,sigma) = 
+ND.pdf <- function(x, mu, sigmamat)
+{
+  (2*pi)^(-1) * det(sigmamat)^(-1/2) * exp(-1/2 * t(x-mu) %*% solve(sigmamat) %*% (x-mu))
+}
+########################## END OF FUNCTION

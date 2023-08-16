@@ -332,7 +332,7 @@ sigma2.prior <- 10
 sigma2.data <- 1
 nsim <- 1e3
 #use conjugate possibilities of normal distribution prior -> posterior
-post.vars <- mu.sigma2.post(y=y, mu.prior=mu.prior, sigma2.prior=sigma2.prior, sigma2.data=sigma2.data)
+post.vars <- mu.sigma2.post(y=y, mu.prior=mu.prior, sigma2.prior=sigma2.prior, sigma2.pop=sigma2.data)
 daten <- list(mu.prior=mu.prior, sigma2.prior=sigma2.prior, y=y, sigma2.data=sigma2.data,
               mu.post=post.vars[1], sigma2.post=post.vars[2])
 
@@ -429,7 +429,7 @@ ppc.dist.dens <- density(ppc.dist)
 
 #density empirical data
 y
-y.dens <- density(y)
+yd <- density(y)
 
 #ylim <- c(0,max(post.dist.dens$y)*fac)
 ylim <- c(0, max(post.dist.dens$y, ppc.dist.dens$y, y.dens$y)*fac)
@@ -462,7 +462,8 @@ mcmc.res <- MH.res[-c(1:rem),]
 #plot various ways
 par(oma=c(2,1,2,1), "cex.axis"=1, bty="l", mfrow=c(2,2))
 #
-BEST:::plotPost(mcmc.res[,"theta"], credMass=0.87, compVal=10, ROPE=c(8,9.5), showMode=TRUE, xlab=expression(theta), main="")
+BEST:::plotPost(mcmc.res[,"theta"], credMass=0.87, compVal=10, ROPE=c(8,9.5), showMode=TRUE, xlab=expression(theta), main="",
+                mainColor="skyblue", comparisonColor="darkgreen", ROPEColor="darkred")
 lines(density(mcmc.res[,"theta"]), col="violetred3", lwd=3, lty=2)
 #
 ylim <- range(mcmc.res[,"theta"])

@@ -380,7 +380,8 @@ bf0 <- contingencyTableBF(hell.tab, sampleType="indepMulti", fixedMargin="rows")
 iterations <- 1000
 bf0.samps <- contingencyTableBF(hell.tab, sampleType="indepMulti", fixedMargin="rows", posterior=TRUE, it=iterations)
 bf0.samps
-plot(bf0.samps, col="darkred", bty="l")
+summary(bf0.samps)
+coda:::plot.mcmc(bf0.samps, col="darkred", bty="l")
 
 # recap data
 hell.res
@@ -581,7 +582,7 @@ lmbf2.re <- recompute(lmbf2, iterations=5e+5)
 lmbf2.re
 chains <- posterior(lmbf2, iterations=10000)
 summary(chains)
-plot(chains, col="violetred3")
+coda:::plot.mcmc(chains, col="violetred3")
 
 1/anovabf0
 plot(anovabf0)
@@ -687,7 +688,8 @@ hell2.avobf1 <- anovaBF(subjsicher ~ treat*differ + trial.1 + Upn.1, data=hell2,
 hell2.avobf1
 hell2.avobf2 <- anovaBF(subjsicher ~ treat*differ, data=hell2)
 hell2.avobf2
-hell2.avobf3 <- anovaBF(subjsicher ~ trial , data=hell2, whichRandom=c("trial"))
+# does not work, we need a factor for a random factor
+hell2.avobf3 <- anovaBF(subjsicher ~ trial.1 , data=hell2, whichRandom=c("trial.1"))
 hell2.avobf3
 anovaBF(subjsicher ~ Upn.1 , data=hell2, whichRandom=c("Upn.1"))
 hell2.avobf4 <- anovaBF(subjsicher ~ treat + trial.1 + Upn.1, data=hell2, whichRandom=c("trial.1","Upn.1"))

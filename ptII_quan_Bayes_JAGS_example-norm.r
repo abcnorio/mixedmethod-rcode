@@ -148,6 +148,9 @@ summary(as.mcmc(samps[[1]][,"sigma2"]))
 par(oma=c(2,1,2,1), "cex.axis"=1, bty="l", mfrow=c(2,2))
 plotPost(samps[[1]][,"mu"], xlab=expression(mu))
 # from ptII_quan_Bayes_GibbsSampling_example-normdist.r
+# create "draw" values from posterior
+nsamps <- 1e5
+mc.res <- rnorm(n=nsamps, mean=mean(samps[[1]][,"mu"]), sd=mean(samps[[1]][,"sigma2"]))
 plotPost(mc.res, xlab=expression(mu))
 # sigma2
 plotPost(samps[[1]][,"sigma2"], xlab=expression(sigma))

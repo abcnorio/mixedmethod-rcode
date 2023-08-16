@@ -40,7 +40,7 @@ library(displayHTS)
 # load necessary helper functions
 source("ptall_generalfuncs.r")
 source("ptII_quan_classicstats_effectsizes_helpfuncs.r")
-
+source("ptII_quan_classicstats_effectsizes_helpfuncs_sjstats.r")
 
 # call function to relate N, pv and Cohen's d
 # without the same seed
@@ -167,7 +167,7 @@ wells.tab.p
 
 # identical
 wells.or <- wells.glm.OR.RR$OR[5,"OR"]
-wells.p0 <- well.glm.RR$P0
+wells.p0 <- wells.glm.OR.RR$P0#well.glm.RR$P0
 # from odds_to_rr.v2()
 rr1 <- wells.glm.OR.RR$RR["associationyes","RR"]
 # from or_to_rr()
@@ -176,9 +176,9 @@ rr2 <- or_to_rr( or=wells.or, p0=sum(wells.tab.p[2,]) )
 rr3 <- or_to_rr(or=wells.or, p0=wells.p0)
 
 # from or_to_rr()
-rr4 <- wells.or/(1 - p0 + (p0 * wells.or))
+rr4 <- wells.or/(1 - wells.p0 + (wells.p0 * wells.or))
 
 # the same?
-well.glm.RR$P0 == sum(wells.tab.p[2,])
+wells.glm.OR.RR$P0 == sum(wells.tab.p[2,])
 all.equal(rr1,rr2,rr3,rr4)
 

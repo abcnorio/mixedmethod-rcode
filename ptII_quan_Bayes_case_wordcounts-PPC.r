@@ -173,6 +173,8 @@ str(mcmc.dm2)
 
 # analysis
 # warning... creates a lot of plots
+# this won't work without direct X11 access below Linux (like e.g. rstudioserver)
+# no connetion to X11 display
 mcmc.diag.kruschke(model=mcmc.dm1, dats=diss.nona, xName=xName1, yName=yName1)
 mcmc.diag.kruschke(model=mcmc.dm2, dats=diss.model, xName=xName, yName=yName)
 mcmc.diag.kruschke(model=mcmc.dm2, dats=diss.model, xName=xName, yName=yName, PLOTmult=TRUE)
@@ -499,6 +501,8 @@ tail(Y_rep.mat.1)
 # library(grDevices)
 colo <- adjustcolor("blue", alpha.f=0.1)
 fac <- 1.35
+i <- 50 #arbitrary, see
+dim(Y_rep.mat.1)
 dxy <- density(Y_rep.mat.1[,i])
 ylim <- c(0,max(dxy$y)*fac)
 hist(Y_rep.mat.1, prob=TRUE, ylim=ylim, pre.plot=grid(), border="white", col="skyblue", xlab="Y_rep", breaks=25)
@@ -605,8 +609,8 @@ mean(Y_rep.s - muPred.s.rn > 0.1)
 mean(Y_rep.s - muPred.s.rn > 0.01)
 
 par(mfrow=c(2,1))
-plotPost(muPred.s.rn, credMass=0.87, showMode=TRUE, compVal=compval, ROPE=c(5.4,5.5), xlab=expression(paste(mu[pred])), ylab="Density")
-plotPost(Y_rep.s, credMass=0.87, showMode=TRUE, compVal=compval, ROPE=c(4.9,5.5), xlab=expression(paste(Y^rep)), ylab="Density")
+BEST:::plotPost(muPred.s.rn, credMass=0.87, showMode=TRUE, compVal=compval, ROPE=c(5.4,5.5), xlab=expression(paste(mu[pred])), ylab="Density")
+BEST:::plotPost(Y_rep.s, credMass=0.87, showMode=TRUE, compVal=compval, ROPE=c(4.9,5.5), xlab=expression(paste(Y^rep)), ylab="Density")
 
 
 
@@ -745,7 +749,7 @@ table(diss[,c("school","stype","schooltype")])
 # not run below this point
 
 # brms initial fit
-# library 'brms'
+# library(brms)
 
 # see BayesFactors and associated analyses on this data set
 
@@ -759,39 +763,44 @@ table(diss[,c("school","stype","schooltype")])
 # Bayesian ANOVA: Powerful inference with within-group sample size of 1
 # http://www.petrkeil.com/?p=2819
 
-diss.res01 <- brm(W.noSC ~ age + schooltype * sex, data=diss, family=gaussian(), save_all_pars=TRUE)
-diss.res0 <- brm(log(W.noSC) ~ age + schooltype * sex, data=diss, family=gaussian(), save_all_pars=TRUE)
+
+# OLD!! to save all parts of the model for further calculations
+# save_all_pars=TRUE
+# NOW:
+# save_pars=save_pars(all=TRUE)
+
+diss.res01 <- brm(W.noSC ~ age + schooltype * sex, data=diss, family=gaussian(), save_pars=save_pars(all=TRUE))
+diss.res0 <- brm(log(W.noSC) ~ age + schooltype * sex, data=diss, family=gaussian(), save_pars=save_pars(all=TRUE))
 
 # better fit (see Y_pred)
-diss.res <- brm(log(W.noSC) ~ log(age) + schooltype * sex, data=diss, family=gaussian(), save_all_pars=TRUE)
-diss.res.t1 <- brm(log(W.noSC) ~ log(age) + schooltype + sex, data=diss, family=gaussian(), save_all_pars=TRUE)
-diss.res.t2 <- brm(log(W.noSC) ~ schooltype + sex, data=diss, family=gaussian(), save_all_pars=TRUE)
-diss.res.t3 <- brm(log(W.noSC) ~ age + schooltype + sex, data=diss, family=gaussian(), save_all_pars=TRUE)
-diss.res.t4 <- brm(log(W.noSC) ~ log(age) + schooltype + sex, data=diss, family=student(), save_all_pars=TRUE)
-diss.res.t5 <- brm(log(W.noSC) ~ log(age) + age.cat + schooltype + sex, data=diss, family=student(), save_all_pars=TRUE)
-diss.res.t6 <- brm(log(W.noSC) ~ log(age) + age.cat + schooltype * sex, data=diss, family=student(), save_all_pars=TRUE)
-diss.res.t7 <- brm(log(W.noSC) ~ log(age) + age.cat1 + schooltype * sex, data=diss, family=student(), save_all_pars=TRUE)
-diss.res.t8 <- brm(log(W.noSC) ~ log(age) + age.cat1 + schooltype + sex, data=diss, family=student(), save_all_pars=TRUE)
-diss.res.t9 <- brm(bf(log(W.noSC) ~ log(age) + age.cat1 + schooltype + sex, sigma ~ 0 + schooltype + sex), data=diss, family=student(), save_all_pars=TRUE)
-diss.res.t10 <- brm(bf(log(W.noSC) ~ log(age) + age.cat1 + schooltype + sex, sigma ~ 0 + schooltype * sex), data=diss, family=student(), save_all_pars=TRUE)
+diss.res <- brm(log(W.noSC) ~ log(age) + schooltype * sex, data=diss, family=gaussian(), save_pars=save_pars(all=TRUE))
+diss.res.t1 <- brm(log(W.noSC) ~ log(age) + schooltype + sex, data=diss, family=gaussian(), save_pars=save_pars(all=TRUE))
+diss.res.t2 <- brm(log(W.noSC) ~ schooltype + sex, data=diss, family=gaussian(), save_pars=save_pars(all=TRUE))
+diss.res.t3 <- brm(log(W.noSC) ~ age + schooltype + sex, data=diss, family=gaussian(), save_pars=save_pars(all=TRUE))
+diss.res.t4 <- brm(log(W.noSC) ~ log(age) + schooltype + sex, data=diss, family=student(), save_pars=save_pars(all=TRUE))
+diss.res.t5 <- brm(log(W.noSC) ~ log(age) + age.cat + schooltype + sex, data=diss, family=student(), save_pars=save_pars(all=TRUE))
+diss.res.t6 <- brm(log(W.noSC) ~ log(age) + age.cat + schooltype * sex, data=diss, family=student(), save_pars=save_pars(all=TRUE))
+diss.res.t7 <- brm(log(W.noSC) ~ log(age) + age.cat1 + schooltype * sex, data=diss, family=student(), save_pars=save_pars(all=TRUE))
+diss.res.t8 <- brm(log(W.noSC) ~ log(age) + age.cat1 + schooltype + sex, data=diss, family=student(), save_pars=save_pars(all=TRUE))
+diss.res.t9 <- brm(bf(log(W.noSC) ~ log(age) + age.cat1 + schooltype + sex, sigma ~ 0 + schooltype + sex), data=diss, family=student(), save_pars=save_pars(all=TRUE))
+diss.res.t10 <- brm(bf(log(W.noSC) ~ log(age) + age.cat1 + schooltype + sex, sigma ~ 0 + schooltype * sex), data=diss, family=student(), save_pars=save_pars(all=TRUE))
 
 
 # best model?
-diss.res.t11 <- brm(bf(log(W.noSC) ~ log(age) + age.cat1 + stype + sex, sigma ~ 0 + stype * sex), data=diss, family=student(), save_all_pars=TRUE)
-diss.res.t11 <- brm(bf(W.noSC.log ~ age.log + age.cat + stype + sex, sigma ~ 0 + stype * sex), data=diss, family=student(), save_all_pars=TRUE)
+diss.res.t11 <- brm(bf(log(W.noSC) ~ log(age) + age.cat1 + stype + sex, sigma ~ 0 + stype * sex), data=diss, family=student(), save_pars=save_pars(all=TRUE))
+diss.res.t11 <- brm(bf(W.noSC.log ~ age.log + age.cat + stype + sex, sigma ~ 0 + stype * sex), data=diss, family=student(), save_pars=save_pars(all=TRUE))
 
 
-diss.res.t12.0 <- brm(bf(log(W.noSC) ~ log(age) + age.cat1 + stype + sex, sigma ~ 0 + stype + sex), data=diss, family=student(), save_all_pars=TRUE)
-diss.res.t12.1 <- brm(bf(W.noSC.log ~ age.log + age.cat + stype * sex, sigma ~ 0 + stype * sex), data=diss, family=student(), save_all_pars=TRUE)
-diss.res.t12.2 <- brm(bf(W.noSC.log ~ age.log + age.cat + stype * sex), data=diss, family=gaussian(), save_all_pars=TRUE)
+diss.res.t12.0 <- brm(bf(log(W.noSC) ~ log(age) + age.cat1 + stype + sex, sigma ~ 0 + stype + sex), data=diss, family=student(), save_pars=save_pars(all=TRUE))
+diss.res.t12.1 <- brm(bf(W.noSC.log ~ age.log + age.cat + stype * sex, sigma ~ 0 + stype * sex), data=diss, family=student(), save_pars=save_pars(all=TRUE))
+diss.res.t12.2 <- brm(bf(W.noSC.log ~ age.log + age.cat + stype * sex), data=diss, family=gaussian(), save_pars=save_pars(all=TRUE))
 
 
-diss.res.t13 <- brm(bf(log(W.noSC) ~ log(age) + age.cat1 + stype + sex, sigma ~ 0 + stype * sex), data=diss, family=lognormal(), save_all_pars=TRUE)
-diss.res.t14 <- brm(bf(W.noSC ~ age + age.cat1 + stype + sex, sigma ~ 0 + stype * sex), data=diss, family=lognormal(), save_all_pars=TRUE)
-
+diss.res.t13 <- brm(bf(log(W.noSC) ~ log(age) + age.cat1 + stype + sex, sigma ~ 0 + stype * sex), data=diss, family=lognormal(), save_pars=save_pars(all=TRUE))
+diss.res.t14 <- brm(bf(W.noSC ~ age + age.cat1 + stype + sex, sigma ~ 0 + stype * sex), data=diss, family=lognormal(), save_pars=save_pars(all=TRUE))
 
 #
-diss.res.t12 <- brm(bf(W.noSC.log ~ age.log + age.cat + stype + sex), data=diss, family=student(), save_all_pars=TRUE)
+diss.res.t12 <- brm(bf(W.noSC.log ~ age.log + age.cat + stype + sex), data=diss, family=student(), save_pars=save_pars(all=TRUE))
 summary(diss.res.t12)
 pp_check(diss.res.t12, nsamples=100)
 pp.t12 <- posterior_predict(diss.res.t12)
@@ -814,6 +823,7 @@ boxplot(W.noSC~sex*stype,data=diss)
 
 modelstoplot <- c(paste("diss.res.t",c(1:14),sep=""), paste("diss.res.12.",0:2,sep=""),"diss.res.S")
 modelstoplot
+# requires all models above to be calculated - requires time!
 for(i in modelstoplot)
 {
  par(ask=TRUE)
@@ -823,10 +833,8 @@ for(i in modelstoplot)
 }
 
 
-
-
 # schooltype verus stype ????
-diss.res.S <- brm(bf(log(W.noSC) ~ log(age) + schooltype * sex, sigma ~ 0 + schooltype*sex), data=diss, family=gaussian(), save_all_pars=TRUE)
+diss.res.S <- brm(bf(log(W.noSC) ~ log(age) + schooltype * sex, sigma ~ 0 + schooltype*sex), data=diss, family=gaussian(), save_pars=save_pars(all=TRUE))
 bayes_factor(diss.res, diss.res.S)
 bayes_factor(diss.res.t11, diss.res.S)
 # output:
@@ -834,23 +842,24 @@ bayes_factor(diss.res.t11, diss.res.S)
 
 
 # best model?
-diss.res.t11 <- brm(bf(log(W.noSC) ~ log(age) + age.cat1 + stype + sex, sigma ~ 0 + stype * sex), data=diss, family=student(), save_all_pars=TRUE)
-diss.res.t11 <- brm(bf(W.noSC.log ~ age.log + age.cat + stype + sex, sigma ~ 0 + stype * sex), data=diss, family=student(), save_all_pars=TRUE)
+diss.res.t11 <- brm(bf(log(W.noSC) ~ log(age) + age.cat1 + stype + sex, sigma ~ 0 + stype * sex), data=diss, family=student(), save_pars=save_pars(all=TRUE))
+#***
+diss.res.t11 <- brm(bf(W.noSC.log ~ age.log + age.cat + stype + sex, sigma ~ 0 + stype * sex), data=diss, family=student(), save_pars=save_pars(all=TRUE))
 
 
-# best mdoel? see above - t11.PRIORE
+# best model? see above - t11.PRIORE
 model.stan <- bf(log(W.noSC) ~ log(age) + age.cat1 + stype + sex, sigma ~ 0 + stype * sex)
 priors <- get_prior(model.stan, data=diss)
 priors
 priore <- c(
-	prior(normal(0,3), class=b),
+#	prior(normal(0,3), class=b), # remove because newer versions of brms complain about it
 	prior(normal(0,3), class=b, coef="age.cat120M25"),
 	prior(normal(0,3), class=b, coef="logage"),
 	prior(normal(0,3), class=b, coef="sexw"),
 	prior(normal(0,3), class=b, coef="stypeG"),
 	prior(normal(0,3), class=b, coef="stypeR"),
 	prior(student_t(3,5,10), class=Intercept),
-	prior(cauchy(0,3), class=b, dpar=sigma),
+#	prior(cauchy(0,3), class=b, dpar=sigma), # remove because newer versions of brms complain about it
 	prior(cauchy(0,3), class=b, coef="sexw", dpar=sigma),
 	prior(cauchy(0,3), class=b, coef="stypeB", dpar=sigma),
 	prior(cauchy(0,3), class=b, coef="stypeG", dpar=sigma),
@@ -861,10 +870,10 @@ priore <- c(
 priore
 
 # check priors
-make_stancode(model.stan, data=diss, family=student(), prior=priore, save_all_parts=TRUE)
+make_stancode(model.stan, data=diss, family=student(), prior=priore, save_pars=save_pars(all=TRUE))
 
 # run model
-diss.res.t11.pr1 <- brm(model.stan, data=diss, family=student(), prior=priore, save_all_pars=TRUE)
+diss.res.t11.pr1 <- brm(model.stan, data=diss, family=student(), prior=priore, save_pars=save_pars(all=TRUE))
 
 model.diss.t11 <- stancode(diss.res.t11)
 model.diss.t11
@@ -872,7 +881,7 @@ model.diss.t11
 # plot sigmas
 # TODO - arrange next to each other
 sigmas <- exp(posterior_samples(diss.res.t11, "^b_sigma_"))
-# ibrary 'ggplot2'
+# library(ggplot2)
 # does not look good (layout), would require new layout
 ggplot(stack(sigmas), aes(values)) + geom_density(aes(fill = ind))
 
@@ -886,42 +895,113 @@ bayes_factor(diss.res.t11, diss.res.t11.pr1)
 # Estimated Bayes factor in favor of bridge1 over bridge2: 27298732393.50789
 # =27'298'732'393.50789
 # just don't believe a BF, because it is "just" a change of expectation and not absolte result
+# due to versions of brms, OS, etc. those numbers differ(!)
 
 # summaries
 summary(diss.res.t11)
 summary(diss.res.t11.pr1)
 
 # compare models
-crits <- c("loo","waic","kfold","R2","marglik")
+crits <- c("loo","waic","kfold","bayes_R2", "loo_R2", "marglik") #"loo_subsample"
+diss.t11.ac <- add_criterion(diss.res.t11, criterion=crits)
+diss.t11.pr1.ac <- add_criterion(diss.res.t11.pr1, criterion=crits)
+
+######### NOTE!!!
+# older brms versions require different calls and store infos differently
+# IF something does not work, better do RTFM and adjust the code accordingly
+# to any possible changes in brms
+
+loo:::loo(diss.res.t11)
+loo:::loo(diss.res.t11.pr1)
+
+#1: Found 1 observations with a pareto_k > 0.7 in model 'diss.res.t11'. It is recommended to set 'moment_match = TRUE' in order to perform moment matching for problematic observations.  
+#3 (0.8%) p_waic estimates greater than 0.4. We recommend trying loo instead. 
+
+#1: Found 1 observations with a pareto_k > 0.7 in model 'diss.res.t11.pr1'. It is recommended to set 'moment_match = TRUE' in order to perform moment matching for problematic observations.  
+# (0.8%) p_waic estimates greater than 0.4. We recommend trying loo instead.
+diss.t11.ac
+diss.t11.pr1.ac
+
+loo:::loo(diss.res.t11, moment_match=TRUE)
+loo:::loo(diss.res.t11.pr1, moment_match=TRUE)
+
+loo:::waic(diss.res.t11)
+loo:::waic(diss.res.t11.pr1)
+
+loo:::kfold(diss.res.t11)
+loo:::kfold(diss.res.t11.pr1)
+
+brms:::bayes_R2.brmsfit(diss.res.t11)
+brms:::bayes_R2.brmsfit(diss.res.t11.pr1)
+
+t(summary(diss.t11.ac$criteria$loo_R2))
+t(summary(diss.t11.pr1.ac$criteria$loo_R2))
+  
+diss.t11.ac$criteria$marglik
+diss.t11.pr1.ac$criteria$marglik
+
+loo_compare(diss.t11.ac, diss.t11.pr1.ac, criterion="loo")
+loo_compare(diss.t11.ac, diss.t11.pr1.ac, criterion="waic")
+loo_compare(diss.t11.ac, diss.t11.pr1.ac, criterion="kfold")
+
+#does not work here
+#loo_subsample(diss.t11.ac)
+
+# OLD versions (calls)
+crits <- c("loo","waic","kfold","R2","loo_R2","marglik")
 diss.t11.ac <- add_criterion(diss.res.t11, criterion=crits, reloo=TRUE)
 diss.t11.pr1.ac <- add_criterion(diss.res.t11.pr1, criterion=crits, reloo=TRUE)
+
 # leave out observation 317 -> check it! (= LOO)
 
 # print out information criteria
-crits.print <- c("loo","waic","kfold","marglik")
+crits.print <- c("loo","waic","kfold","bayes_R2","marglik") #diss.t11.ac$criteria$bayes_R2
+# OLD
 for(i in crits.print) print(diss.t11.ac[[i]])
 for(i in crits.print) print(diss.t11.pr1.ac[[i]])
+# NEW
+for(i in crits.print) print(diss.t11.ac$criteria[[i]])
+for(i in crits.print) print(diss.t11.pr1.ac$criteria[[i]])
 
 # comparison plot
 par(mfrow=c(1,2))
-plot(diss.t11.ac$loo)
+
+# OLD
+plot(diss.t11.pr1.ac$loo)
 plot(diss.t11.pr1.ac$loo)
 
+# NEW
+plot(diss.t11.ac$criteria$loo)
+plot(diss.t11.pr1.ac$criteria$loo)
+
+# OLD
 # R^2
 R2 <- t(rbind(
-      c(summary(as.vector(diss.t11.ac$R2)),SD=sd(diss.t11.ac$R2),quantile(diss.t11.ac$R2)),
-      c(summary(as.vector(diss.t11.pr1.ac$R2)),SD=sd(diss.t11.pr1.ac$R2),quantile(diss.t11.pr1.ac$R2))
-	 ))
+      c(summary(as.vector(diss.t11.ac$R2)), SD=sd(diss.t11.ac$R2), quantile(diss.t11.ac$R2)),
+      c(summary(as.vector(diss.t11.pr1.ac$R2)), SD=sd(diss.t11.pr1.ac$R2), quantile(diss.t11.pr1.ac$R2))
+	    ))
 colnames(R2) <- c("R2|t11","R2|t11.pr1")
 R2 <- data.frame(R2,Ratio=R2[,1]/R2[,2])
 R2
-	 
+
+# NEW
+R2 <- t(rbind(
+  c( summary(as.vector(diss.t11.ac$criteria$bayes_R2)), SD=sd(diss.t11.ac$criteria$bayes_R2), quantile(diss.t11.ac$criteria$bayes_R2)),
+  c(summary(as.vector(diss.t11.pr1.ac$criteria$bayes_R2)), SD=sd(diss.t11.pr1.ac$criteria$bayes_R2), quantile(diss.t11.pr1.ac$criteria$bayes_R2))
+      ))
+colnames(R2) <- c("R2|t11","R2|t11.pr1")
+R2 <- data.frame(R2,Ratio=R2[,1]/R2[,2])
+R2
+
+
+# OLD
 # comparisons
 for(i in c("loo","waic","kfold"))
 {
  cat("\n",i,"\n")
  print(loo_compare(diss.t11.ac, diss.t11.pr1.ac, criterion=i))
 } 
+
 
 # R^2
 bayes_R2(diss.res.t11)
@@ -932,22 +1012,29 @@ brms:::loo_R2.brmsfit(diss.res.t11.pr1)
 brms:::loo_R2.brmsfit(diss.res.t11, pareto_k_ids(x, threshold=0.5))
 
 # diagnostic plots
+# OLD
 stanplot(diss.res.t11)
 stanplot(diss.res.t11.pr1)
+# NEW
+mcmc_plot(diss.res.t11)
+mcmc_plot(diss.res.t11.pr1)
 
 # ppc plots
 pp_check(diss.res.t11, type="scatter_avg_grouped", group="sex") + geom_abline(intercept=0, slope=1, color="red", lty=2)
 pp_check(diss.res.t11, type="scatter_avg_grouped", group="stype") + geom_abline(intercept=0, slope=1, color="red", lty=2)
+# OLD
 pp_check(diss.res.t11, type="scatter_avg_grouped", group="age.cat1") + geom_abline(intercept=0, slope=1, color="red", lty=2)
+# NEW
+pp_check(diss.res.t11, type="scatter_avg_grouped", group="age.cat") + geom_abline(intercept=0, slope=1, color="red", lty=2)
 
 pp_check(diss.res.t11, nsamples=30)
-
 pp_check(diss.res.t11.pr1, nsamples=30)
 
 pp_check(diss.res.t11, type = "error_hist", nsamples=30)
 pp_check(diss.res.t11, type = "scatter_avg", nsamples=30)
 pp_check(diss.res.t11, type = "stat_2d", nsamples=30)
 pp_check(diss.res.t11, type = "boxplot", nsamples=30)
+# OLD
 pp_check(diss.res.t11, type = "xyz")
 
 plot(diss.res.t11)
@@ -963,10 +1050,11 @@ with(diss,plot(jitter((W.noSC)),jitter(log(age))))
 with(diss,plot(jitter((W.noSC)),jitter((age))))
 
 par(mfrow=c(4,4))
-traceplot(as.mcmc(diss.res.t11))
+coda:::traceplot(as.mcmc(diss.res.t11))
 
 
 # not run
+?bayes_factor
 bayes_factor(diss.res, diss.res0)
 bayes_factor(diss.res, diss.res01)
 bayes_factor(diss.res, diss.res.t1) #no schooltype x sex interaction is better
@@ -1014,7 +1102,11 @@ which(!dat$Y %in% diss[,"W.noSC.log"])
 
 
 # A data frame (matrix or array) containing the posterior samples, with one column per parameter.
+# OLD
 diss.res.t11.post <- posterior_samples(diss.res.t11)
+# NEW
+diss.res.t11.post <- as_draws(diss.res.t11)
+
 str(diss.res.t11.post)
 head(diss.res.t11.post)
 names(diss.res.t11.post)
@@ -1040,8 +1132,8 @@ hist(diss.res.t11.pred[,"Estimate"])
 nutsp.t11 <- nuts_params(diss.res.t11)
 str(nutsp.t11)
 # plots
-mcmc_parcoord(as.array(diss.res.t11), np=nutsp.t11)
-mcmc_parcoord(mcmc.red, pars=colnames(mcmc.red[[1]])[-c(8,9)])
+bayesplot:::mcmc_parcoord(as.array(diss.res.t11), np=nutsp.t11)
+bayesplot:::mcmc_parcoord(mcmc.red, pars=colnames(mcmc.red[[1]])[-c(8,9)])
 # PPC
 yrep.diss.t11 <- predict(diss.res.t11, summary=FALSE)
 # from rstantools
@@ -1069,6 +1161,8 @@ xName
 yName
 
 # run rjags model
+# plot does not work under rstudioserver in the browser
+# requires direct X11 access below Linux
 mcmc.dm11 <- genMCMC( data=diss.model, xName=xName, yName=yName,
                      numSavedSteps=numSavedSteps, thinSteps=thinSteps, saveName=fileNameRoot )
 

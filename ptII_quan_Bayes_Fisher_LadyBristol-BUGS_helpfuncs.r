@@ -101,7 +101,7 @@ ladymuriel.BT <- function(pr1, pr2, si, Ni, prout=TRUE)
     if (!is.null(note)) 
       cat("\n", "NOTE: ", note, "\n\n", sep = "")
     else cat("\n")
-    invisible(x)    
+    invisible()    
   } else return(res)
 }
 # call:

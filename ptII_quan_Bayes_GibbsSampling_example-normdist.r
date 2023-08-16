@@ -83,7 +83,7 @@ mc.res <- rnorm(n=nsamps, mean=mu.sigma2.res[,"mu.post"], sd=mu.sigma2.res[,"s.p
 
 # plot
 par(oma=c(2,1,2,1), "cex.axis"=1, bty="l")
-BEST:::plotPost(mc.res, credMass=0.87, compVal=10, ROPE=c(9.5,10.5), showMode=TRUE, xlab=expression(mu), ylab="Density", main="")
+BEST:::plotPost(mc.res, credMass=0.87, compVal=10, ROPE=c(9.5,10.5), showMode=TRUE, xlab=expression(mu), ylab="Density", main="", mainColor="skyblue", comparisonColor="darkgreen", ROPEColor="darkred")
 lines(density(mc.res), lty=2, lwd=2, col="darkred")
 mtext("MC-Simulation from posterior", outer=TRUE, line=-1.2, cex=1.5, side=3)
 mtext("Normal values derived from analytical posterior", outer=TRUE, line=-2.5, cex=1, side=3)
@@ -161,6 +161,7 @@ r1
 r2 <- cor(mu[-c(1:n.burnin)],TAU[-c(1:n.burnin)])
 r2
 r1/r2
+
 
 plot.mcmc(mu, TAU)
 plot.mcmc.parts(mu,TAU)

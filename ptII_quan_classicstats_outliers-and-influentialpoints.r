@@ -50,7 +50,7 @@ weg21 <- c(21)
 # simple plots
 plot.outlier(a=a, b=b, weg=weg21)
 
-plot(a.LP, b.LP, col="steelblue", panel.first=grid(), pch=21, cex=1.4, bg="skyblue", bty="l", main="", xlab="a", ylab="b")
+plot(a, b, col="steelblue", panel.first=grid(), pch=21, cex=1.4, bg="skyblue", bty="l", main="", xlab="a", ylab="b")
 abline(lm(b~a),col="red", lty=1, lwd=2)
 #local regression
 lines(lowess(b~a),col="darkblue",lty=2,lwd=2)

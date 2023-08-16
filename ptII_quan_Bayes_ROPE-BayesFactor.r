@@ -417,7 +417,7 @@ plotAreaInROPE(mudiff.darwin, credMass=prob, compVal=compvalue, maxROPEradius=3,
 # raw data
 plotAreaInROPE(d2$cross-d2$self, credMass=prob, compVal=compvalue, maxROPEradius=10, main="raw")
 
-plotPost(mudiff.darwin, credMass=prob, compVal=compvalue, ROPE=c(1.4,3), showMode=TRUE, col="grey90", border="white", xlab=expression(theta[2]-theta[1]), ylab="Density", main=expression(paste(mu[diff])))
+BEST:::plotPost(mudiff.darwin, credMass=prob, compVal=compvalue, ROPE=c(1.4,3), showMode=TRUE, col="grey90", border="white", xlab=expression(theta[2]-theta[1]), ylab="Density", main=expression(paste(mu[diff])))
 lines(density(mudiff.darwin), col="violetred3", lwd=2, lty=2)
 
 plotPostPred(mcmc1)

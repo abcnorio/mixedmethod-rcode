@@ -431,50 +431,70 @@ bayes.prop.grid <- function(a1=a1, b1=b1, a2=a2, b2=b2, int.width=1e-3, start.se
 
 ### exact tests
 
+
 ###### function to calculate closed form Bayesian A/B Testing after Evan Miller
 ### closed form exact solution (Evan Miller)
 
 
-h <- function(a1, b1, a2, b2, loga=FALSE)
+h <- function(a1, b1, a2, b2, loga=FALSE, pr.out=FALSE)
 {
+  require(Brobdingnag)
   # PR(p_B=GR2 > P_A=GR1)
   
   ### closed form exact solution (Evan Miller)
-
+  
   # formula 6
   
   # important: if loga=TRUE
   # result is not subtracted from 1, ie. NOT DONE:
   # 1 - exp(h.hresult)
   
-  cat("\nBayesian A/B Testing - closed form after Evan Miller\nNOTE: Test works with PR(GR2 > GR1)\n\n")
+  if(pr.out) cat("\nBayesian A/B Testing - closed form after Evan Miller\nNOTE: Test works with PR(GR2 > GR1)\n\n")
   
-  ### SUB-FUNCTON
+  ### SUB-FUNCTONS
   h.part <- function(i, a1, b1, a2, b2)
   {
-    # beta(a1 + i, b1 + b2) / ( (b2 + i) * beta(1 + i, b2) * beta(a1, b1)
+    beta(a1 + i, b1 + b2) / ( (b2 + i) * beta(1 + i, b2) * beta(a1, b1) )
+  }
+  
+  h.part.l <- function(i, a1, b1, a2, b2)
+  {
     lbeta(a1 + i, b1 + b2) - ( log(b2 + i) + lbeta(1 + i, b2) + lbeta(a1, b1))
   }
-  ### END OF SUBFUNCTION
+  ### END OF SUBFUNCTIONS
   
-  h.probs <- vector(length=(a2-1) )
-  for(i in 0:(a2-1) )
-  {
-    h.probs[i] <- h.part(i=i, a1=a1, b1=b1, a2=a2, b2=b2)
-  }
+  
   if(loga==FALSE)
   {
-    res <- sum(exp(h.probs))
+    h.probs <- vector(length=(a2-1) )
+    for( i in 0:(a2-1) )
+    {
+      h.probs[i] <- h.part(i=i, a1=a1, b1=b1, a2=a2, b2=b2)
+    }
+    res <- sum(h.probs)
     return(res)
-  } else {
-    require(Brobdingnag)
-    h.prob <- brob(h.probs)
-    res <- sum(h.prob)
+  } else
+  {
+    h.probs <- vector(length=(a2-1) )
+    for( i in 0:(a2-1) )
+    {
+      h.probs[i] <- h.part.l(i=i, a1=a1, b1=b1, a2=a2, b2=b2)
+    }
+    res <- sum( brob(h.probs) )
     return(res)
   } 
 }
 ################################ END OF FUNCTION
 
+
+###### function to convert brob obj to nicer char (beware! no calculation possible anymore)
+brob2char <- function(brobobj, digi=4)
+{
+  num <- signif(brobobj@x, dig=digi)
+  signa <- ifelse(brobobj@positive, "+", "-")
+  paste(signa,"exp(",num,")",sep="")
+}
+################################ END OF FUNCTION
 
 
 #### loss function/ decision rule by Chris Stucchio
@@ -483,22 +503,22 @@ h <- function(a1, b1, a2, b2, loga=FALSE)
 # after the closed form Bayesian A/B Testing after Evan Miller
 bayes.prop.loss <- function(a1, b1, a2, b2, crit=0.05, loga=TRUE, pr.out=TRUE)
 {
-
-
-
-  
-  if(!loga)
+ 
+  if(loga==FALSE)
   {  
-    loss1 <- beta(a1 + 1, b1) / beta(a1, b1) * h(a1 + 1, b1, a2, b2)
-    loss2 <- beta(a2 + 1, b2) / beta(a2, b2) * h(a1, b1, a2 + 1, b2)
+    loss1 <- beta(a1 + 1, b1) / beta(a1, b1) * h(a1 + 1, b1, a2, b2, loga=FALSE)
+    loss2 <- beta(a2 + 1, b2) / beta(a2, b2) * h(a1, b1, a2 + 1, b2, loga=FALSE)
     # GR1 > GR2
     loss.diff <- loss2 - loss1
-  } else
+  } else if(loga==TRUE)
   {  
-    loss1 <- lbeta(a1 + 1, b1) - lbeta(a1, b1) + h(a1 + 1, b1, a2, b2)$h.prob.inv
-    loss2 <- lbeta(a2 + 1, b2) - lbeta(a2, b2) + h(a1, b1, a2 + 1, b2)$h.prob.inv
+    loss1.l <- brob( lbeta(a1 + 1, b1) - lbeta(a1, b1) ) * h(a1 + 1, b1, a2, b2, loga=TRUE)
+    loss2.l <- brob( lbeta(a2 + 1, b2) - lbeta(a2, b2) ) * h(a1, b1, a2 + 1, b2, loga=TRUE)
     # GR1 > GR2
-    loss.diff <- exp(loss2) - exp(loss1)
+    loss.diff.l <- loss2.l - loss1.l
+    loss1 <- brob2char(loss1.l)
+    loss2<- brob2char(loss2.l)
+    loss.diff <- brob2char(loss.diff.l)
   }  
   res <- data.frame(loga, loss1, loss2, loss.diff, crit, 1-crit, loss.diff < crit, check.names=FALSE)
   colnames(res) <- c("LOG", "loss GR1", "loss GR2", "loss [GR2-GR1]", "crit","credMass", "loss [GR2-GR1] < crit")
@@ -514,10 +534,76 @@ bayes.prop.loss <- function(a1, b1, a2, b2, crit=0.05, loga=TRUE, pr.out=TRUE)
 ################################ END OF FUNCTION
 
 
-### more exact test
-
 ### FOLLOWING FUNCTIONS ARE REPROGRAMMED BUT IN PRINCIPLE TAKEN FROM
 # Sverdlov, Ryeznik, Wu (2015)
+pdf.theta.diff <- function(theta, a1, b1, a2, b2, loga=FALSE)
+{
+  # pdf of theta difference = theta_2 - theta_1 < crit
+  # log and non-log
+  # theta=sek
+  
+  # log version
+  # require(appell)
+  require(tolerance)
+  # theta out of boundaries -1 < theta < 1
+  # if(theta < -1 | theta > 1) stop(paste("Failure!!! theta out of boundaries, should be: -1 < theta < 1, but theta = ", theta,sep=""))
+  
+  if(loga) {
+    # constant
+    A.l.const <- lbeta(a1, b1) + lbeta(a2, b2)
+    
+    # theta = 0
+    if(theta == 0) res <- log(1) - A.l.const + lbeta(a1 + a2 - 1, b1 + b2 - 1)
+    
+    # theta < 0
+    if(theta < 0) {
+      res <- log(1) - A.l.const + lbeta(a2, b1) + (b1 + b2 - 1)*log(-1 * theta) + (a2 + b1 - 1)*log(1 + theta) +
+        #log( abs(appellf1(a = b1, b1 = a1 + b1 + a2 + b2 - 2, b2 = 1 - a1, c = a2 + b1, x = 1 + theta, y = 1 - theta^2)$val) )
+        log( abs(F1(a = b1, b = a1 + b1 + a2 + b2 - 2, b.prime = 1 - a1, c = a2 + b1, x = 1 + theta, y = 1 - theta^2)) )
+      #F1(a = 3, b = 4, b.prime = 5, c = 13, x = 0.2, y = 0.4)
+    } 
+    
+    # theta > 0
+    if(theta > 0) {
+      res <- log(1) - A.l.const + lbeta(a1, b2) + (b1 + b2 - 1)*log(theta) + (a1 + b2 - 1)*log(1 - theta) +
+        #log( abs(appellf1(a = b2, b1 = a1 + b1 + a2 + b2 - 2 , b2 = 1 - a2, c = a1 + b2, x = 1 - theta, y = 1 - theta^2)$val) )      
+        log( abs(F1(a = b2, b = a1 + b1 + a2 + b2 - 2 , b.prime = 1 - a2, c = a1 + b2, x = 1 - theta, y = 1 - theta^2)) )      
+    }
+    attr(res,"scale") <- c("log")
+    
+  } else {
+    
+    # constant
+    A.const <- beta(a1, b1) * beta(a2, b2)
+    
+    # theta = 0
+    if(theta == 0) res <- 1 / A.const * beta(a1 + a2 - 1, b1 + b2 - 1)
+    
+    # theta < 0
+    if(theta < 0) {
+      res <- 1 / A.const * beta(a2, b1) * (-1 * theta)^(b1 + b2 - 1) * (1 + theta)^(a2 + b1 - 1) *
+        #     abs(appellf1(a = b1, b1 = a1 + b1 + a2 + b2 - 2, b2 = 1 - a1, c = a2 + b1, x = 1 + theta, y = 1 - theta^2)$val)
+        abs(F1(a = b1, b = a1 + b1 + a2 + b2 - 2, b.prime = 1 - a1, c = a2 + b1, x = 1 + theta, y = 1 - theta^2))
+    }
+    
+    # theta > 0
+    if(theta > 0) {
+      res <- 1 / A.const * beta(a1, b2) * (theta)^(b1 + b2 - 1) * (1 - theta)^(a1 + b2 - 1) *
+        #       abs(appellf1(a = b2, b1 = a1 + b1 + a2 + b2 - 2 , b2 = 1 - a2, c = a1 + b2, x = 1 - theta, y = 1 - theta^2)$val)
+        abs(F1(a = b2, b = a1 + b1 + a2 + b2 - 2 , b.prime = 1 - a2, c = a1 + b2, x = 1 - theta, y = 1 - theta^2))
+    }
+  }
+  
+  return(res)
+}
+# call:
+# pdf.theta.diff(theta=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, loga=FALSE)
+# exp(pdf.theta.diff(theta=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, loga=TRUE))
+# original paper version:
+# d2beta("DIFF", x = 0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2)
+################################ END OF FUNCTION 
+
+
 
 ### FUNCTION - old and do not use it anymore
 pdf.theta.diff.old <- function(theta, a1, b1, a2, b2, loga=FALSE)
@@ -586,6 +672,9 @@ pdf.theta.diff.old <- function(theta, a1, b1, a2, b2, loga=FALSE)
 # original paper version:
 # d2beta("DIFF", x = 0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2)
 ### END OF FUNCTION
+
+
+### more exact test
 
 
 ### FUNCTION
@@ -2402,68 +2491,9 @@ bino.ab.lik(17,23)
 rev.ab.lik(18,7)
 ########################## END OF FUNCTION
 
-###### function to calculate summary statistics
-#####
-bino.abs.2.OLD <- function(si, Ni, theta.prior=NULL, nprior=NULL, probs=c(0.69,0.95,0.99), rn="", graph=TRUE)
-{
-  # calculate ab values
-  # uniform prior
-  ab.prior <- bino.ab.prior(theta.prior=theta.prior, nprior=nprior)
-  ab.lik <- bino.ab.lik(si=si, Ni=Ni)
-  ab.post <- bino.ab.post(a.prior=ab.prior[["a"]], b.prior=ab.prior[["b"]], si=si, Ni=Ni)
-  ab.prior
-  ab.lik
-  ab.post
-  
-  # calculate summary statistics
-  prior.sum <- beta.summary(a=ab.prior[["a"]], b=ab.prior[["b"]])
-  lik.sum <- beta.summary(a=ab.lik[["a"]], b=ab.lik[["b"]])
-  post.sum <- beta.summary(a=ab.post[["a"]], b=ab.post[["b"]])
-  prior.sum
-  lik.sum
-  post.sum
-  
-  # res
-  res <- t(as.matrix(c(ab.prior, ab.lik, ab.post, prior.sum, lik.sum, post.sum)))
-  res <- c(ab.prior, ab.lik, ab.post, prior.sum, lik.sum, post.sum)
-  # dimnames(res)[[2]][1:18]
-  res <- t(data.frame(unlist(res)))
-  rownames(res) <- c("")
-  colnames(res) <- c("a.prior","b.prior","a.lik","b.lik","a.post","b.post",
-                     "a","b","mode.prior","mean.prior","sd.prior","var.prior",
-                     "a","b","mode.lik","mean.lik","sd.lik","var.lik",
-                     "a","b","mode.post","mean.post","sd.post","var.post")
-  res
-  
-  # calculate hdi intervals 
-  ab <- rbind(ab.prior, ab.lik, ab.post)
-  rownames(ab) <- c("prior","likelihood","post")
-  require(HDInterval)
-  hdis <- do.call("rbind", lapply(seq_along(probs), function(x)
-  {
-    apply(ab, 1, function(i)
-    {
-      a <- unlist(i["a"])
-      b <- unlist(i["b"])
-      hdi(qbeta, shape1=a, shape2=b, credMass=probs[x])
-    })
-  }
-  ))
-  hdis <- cbind(prob=rep(probs,each=2),hdis)
-  
-  if(graph) beta.triplot(si=si, Ni=Ni, v=res, multiplot=TRUE, rn=rn)
-  return(list(res=res,hdi=hdis))
-}
-# call:
-# si <- 23
-# Ni <- 27
-# theta.prior <- 0.5
-# nprior <- 2
-# bino.abs(si=si, Ni=Ni, theta.prior=theta.prior, nprior=nprior, graph=TRUE)
-########################## END OF FUNCTION
 
 ###### function to calculate summary statistics
-bino.abs.2 <- function(si, Ni,
+bino.abs <- function(si, Ni,
                        theta.prior=NULL, nprior=NULL,
                        a.prior=NULL, b.prior=NULL,
                        probs=c(0.69,0.95,0.99),

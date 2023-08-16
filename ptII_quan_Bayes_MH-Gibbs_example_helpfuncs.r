@@ -170,16 +170,20 @@ gibbs <- function(daten, tau1=1, nsim=1e+3, seed=1, thin=1e+3)
 
 
 ###### function to plot MCMC 
-plot.mcmc <- function(mus, taus, credMass=0.87, compValmu=10, compValtau=1, ROPEmu=c(8,9.5), ROPEtau=c(0.5,1))
+plot.mcmc <- function(mus, taus, credMass=0.87, compValmu=10, compValtau=1, ROPEmu=c(8,9.5), ROPEtau=c(0.5,1),
+                      mainColor="skyblue", comparisonColor="darkgreen", ROPEColor="darkred",
+                      ...)
 {
   # summarize MCMC/post plots
   mus.l <- length(mus)
   taus.l <- length(taus)
   require(BEST)
   par(oma=c(2,1,2,1), "cex.axis"=1, bty="l", mfrow=c(3,2))
-  BEST:::plotPost(mus, credMass=credMass, compVal=compValmu, ROPE=ROPEmu, showMode=TRUE, xlab=expression(mu), main="")
+  BEST:::plotPost(mus, credMass=credMass, compVal=compValmu, ROPE=ROPEmu, showMode=TRUE, xlab=expression(mu), main="",
+                  mainColor=mainColor, comparisonColor=comparisonColor, ROPEColor=ROPEColor)
   lines(density(mus), col="magenta3", lwd=3, lty=2)
-  BEST:::plotPost(taus, credMass=credMass, compVal=compValtau, ROPE=ROPEtau, showMode=TRUE, xlab=expression(tau), main="")
+  BEST:::plotPost(taus, credMass=credMass, compVal=compValtau, ROPE=ROPEtau, showMode=TRUE, xlab=expression(tau), main="",
+                  mainColor=mainColor, comparisonColor=comparisonColor, ROPEColor=ROPEColor)
   lines(density(taus), col="darkred", lwd=3, lty=2)
   plot(1:mus.l, mus, type="l", col="magenta3", bty="n", pre.plot=grid(), xlab="sim", main=expression(mu))
   plot(1:taus.l, taus, type="l", col="darkred", bty="n", pre.plot=grid(), xlab="sim", main=expression(tau))

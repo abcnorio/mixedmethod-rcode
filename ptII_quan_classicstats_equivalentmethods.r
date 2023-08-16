@@ -106,15 +106,14 @@ paur <- 0.8
 alpha <- 0.05
 # small d
 d <- 0.2
-dataTOSTpaired(data=xy, pairs=list(c(i1="x",i2="y")),
-               low_eqbound=-d, high_eqbound=d, alpha=alpha, desc=TRUE, plots=TRUE)
+
+dataTOSTpaired(data=xy, pair1="x",pair2="y", low_eqbound=-d, high_eqbound=d, alpha=alpha, desc=TRUE, plots=TRUE)
 powerTOSTpaired(alpha=alpha, statistical_power=paur, low_eqbound_dz=-d, high_eqbound_dz=d) 
 powerTOSTpaired(alpha=alpha, N=N, low_eqbound_dz=-d, high_eqbound_dz=d) 
 powerTOSTpaired(alpha=alpha, statistical_power=paur, N=N)
 # now with bigger d...
 d <- 0.7
-dataTOSTpaired(data=xy, pairs=list(c(i1="x",i2="y")),
-               low_eqbound=-d, high_eqbound=d, alpha=alpha, desc=TRUE, plots=TRUE)
+dataTOSTpaired(data=xy, pair1="x",pair2="y", low_eqbound=-d, high_eqbound=d, alpha=alpha, desc=TRUE, plots=TRUE)
 powerTOSTpaired(alpha=alpha, statistical_power=paur, low_eqbound_dz=-d, high_eqbound_dz=d) 
 powerTOSTpaired(alpha=alpha, N=N, low_eqbound_dz=-d, high_eqbound_dz=d) 
 powerTOSTpaired(alpha=alpha, statistical_power=paur, N=N)
@@ -253,16 +252,14 @@ alpha <- 0.05
 
 # small d
 d <- 0.2
-dataTOSTpaired(data=bland.altman.PEFR, pairs=list(c(i1="bigger.first",i2="smaller.first")),
-               low_eqbound=-d, high_eqbound=d, alpha=alpha, desc=TRUE, plots=TRUE)
+dataTOSTpaired(data=bland.altman.PEFR, pair1="bigger.first",pair2="smaller.first", low_eqbound=-d, high_eqbound=d, alpha=alpha, desc=TRUE, plots=TRUE)
 powerTOSTpaired(alpha=alpha, statistical_power=paur, low_eqbound_dz=-d, high_eqbound_dz=d) 
 powerTOSTpaired(alpha=alpha, N=N, low_eqbound_dz=-d, high_eqbound_dz=d) 
 powerTOSTpaired(alpha=alpha, statistical_power=paur, N=N)
 
 # now with bigger d...
 d <- 0.7
-dataTOSTpaired(data=bland.altman.PEFR, pairs=list(c(i1="bigger.first",i2="smaller.first")),
-               low_eqbound=-d, high_eqbound=d, alpha=alpha, desc=TRUE, plots=TRUE)
+dataTOSTpaired(data=bland.altman.PEFR, pair1="bigger.first",pair2="smaller.first", low_eqbound=-d, high_eqbound=d, alpha=alpha, desc=TRUE, plots=TRUE)
 powerTOSTpaired(alpha=alpha, statistical_power=paur, low_eqbound_dz=-d, high_eqbound_dz=d) 
 powerTOSTpaired(alpha=alpha, N=N, low_eqbound_dz=-d, high_eqbound_dz=d) 
 powerTOSTpaired(alpha=alpha, statistical_power=paur, N=N)			   

@@ -207,12 +207,12 @@ pv <- c(pv.stype,pv.sex)
 res <- sapply(pv, function(i) BF.calib(pv=i))
 colnames(res) <- signif(pv,dig)
 print(res, digits=3)
-BF.tp_base
 
 
 # minimal BF
 # library(pCalibrate)
 BF.tp_base <- tCalibrate(p=c(pv.stype, pv.sex), n=c(Ns.stype[1],Ns.stype[2]), type="two.sided",alternative="normal")
+BF.tp_base
 colnames(BF.tp_base) <- c("p_stype","p_sex")
 rownames(BF.tp_base) <- paste("N=",Ns.stype,sep="")
 BF.tp_base
@@ -222,8 +222,8 @@ BF.tp_base.s1 <- tCalibrate(p=c(pv.stype, pv.sex), n=sum(Ns.stype), type="two.si
 BF.tp_base.s1
 
 
-# library 'evidence'
-# library 'agridat'
+# library(evidence)
+# library(agridat)
 data(darwin)
 ?darwin
 # Darwin, C.R. 1876. The effects of cross and self fertilisation in the vegetable kingdom. John Murray, London.

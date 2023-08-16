@@ -70,12 +70,13 @@ sa.l <- dim(sa.all)
 sa.l
 res.bino.hdi.EXP <- res.bino.sum.EXP <- res.bino.hdi <- res.bino.sum <- res.sum <- res.hdi.BL  <- res.hdi.JC <- list()
 
+
 theta.prior <- 0.5
 nprior <- 2
 # calculate everything
 for(i in 1:sa.l[1])
 {
-  #print(i)
+  print(i)
   temp <- sN.post.su(Ni=sa.all[i,"N.cs"], si=sa.all[i,"s.cs"], rn=sa.all[i,"year"], printout=FALSE)
   res.sum[[i]] <- temp[["res"]]
   res.hdi.BL[[i]] <- temp[["hdi.BL"]]
@@ -90,11 +91,11 @@ for(i in 1:sa.l[1])
     temp.EXP <- bino.abs(si=sa.all[i,"s.cs"], Ni=sa.all[i,"N.cs"], theta.prior=theta.prior, nprior=nprior, rn=sa.all[i,"year"], graph=FALSE)
   } else
   {
-    theta.prior <- NULL
-    nprior <- NULL
+    #theta.prior <- NULL
+    #nprior <- NULL
     a.prior <- res.bino.sum.EXP[[i-1]][,"a.post"]
     b.prior <- res.bino.sum.EXP[[i-1]][,"b.post"]
-    temp.EXP <- bino.abs(si=sa.all[i,"s"], Ni=sa.all[i,"N"], a.prior=a.prior, b.prior=b.prior, rn=sa.all[i,"year"], graph=FALSE)
+    temp.EXP <- bino.abs(si=sa.all[i,"s"], Ni=sa.all[i,"N"], theta.prior=NULL, nprior=NULL, a.prior=a.prior, b.prior=b.prior, rn=sa.all[i,"year"], graph=FALSE)
   }  
   res.bino.sum.EXP[[i]] <- temp.EXP[["res"]]
   res.bino.hdi.EXP[[i]] <- temp.EXP[["hdi"]]  
@@ -144,15 +145,16 @@ rownames(sa.bino.hdi) <- 1:dim(sa.bino.hdi)[1]
 rownames(sa.bino.EXP) <- 1:dim(sa.bino.EXP)[1]
 rownames(sa.bino.hdi.EXP) <- 1:dim(sa.bino.hdi.EXP)[1]
 
+# onl yif required
 # write everything in tables...
-write.table(sa.all,"sa.all.csv",sep="\t",col.names=TRUE)
-write.table(sa.res,"sa.res.csv",sep="\t",col.names=TRUE)
-write.table(sa.hdi.BL,"sa.hdi.BL.csv",sep="\t",col.names=TRUE)
-write.table(sa.hdi.JC,"sa.hdi.JC.csv",sep="\t",col.names=TRUE)
-write.table(sa.bino,"sa.bino.csv",sep="\t",col.names=TRUE)
-write.table(sa.bino.hdi,"sa.bino.hdi.csv",sep="\t",col.names=TRUE)
-write.table(sa.bino.EXP,"sa.bino.EXP.csv",sep="\t",col.names=TRUE)
-write.table(sa.bino.hdi.EXP,"sa.bino.hdi.EXP.csv",sep="\t",col.names=TRUE)
+#write.table(sa.all,"sa.all.csv",sep="\t",col.names=TRUE)
+#write.table(sa.res,"sa.res.csv",sep="\t",col.names=TRUE)
+#write.table(sa.hdi.BL,"sa.hdi.BL.csv",sep="\t",col.names=TRUE)
+#write.table(sa.hdi.JC,"sa.hdi.JC.csv",sep="\t",col.names=TRUE)
+#write.table(sa.bino,"sa.bino.csv",sep="\t",col.names=TRUE)
+#write.table(sa.bino.hdi,"sa.bino.hdi.csv",sep="\t",col.names=TRUE)
+#write.table(sa.bino.EXP,"sa.bino.EXP.csv",sep="\t",col.names=TRUE)
+#write.table(sa.bino.hdi.EXP,"sa.bino.hdi.EXP.csv",sep="\t",col.names=TRUE)
 
 # demonstrate changes in prior, likelihood, posterior
 # start again data 1992-2017

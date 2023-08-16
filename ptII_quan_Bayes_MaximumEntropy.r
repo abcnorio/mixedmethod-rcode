@@ -147,6 +147,7 @@ H(p=p) < H1(e=2,base=2)
 
 # entropy and growing possibilities
 n <- 1:10
+k <- 3
 log2(choose(6,k))
 Hn <- log2(n)
 par(oma=c(2,1,1,1), "cex.axis"=1, bty="l")

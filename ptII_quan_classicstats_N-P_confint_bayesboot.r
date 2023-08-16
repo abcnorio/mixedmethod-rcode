@@ -239,16 +239,15 @@ print(t(apply(sim.diff.means2,2,quantile, probs=probs)), digits=digits)
 boot.ci(b.tv.res, conf=c(0.5,0.89,0.95),type = c("norm", "basic", "perc", "bca"))
 boot.ci(b.d.res, conf=c(0.5,0.89,0.95),type = c("norm", "basic", "perc", "bca"))
 summary(bb.tv.res)
-summary(bb.d.res)
+summary(bboot.d.res)
 
 # direct comparisons Bayes posterior distribution
 mean( bb.tv.res > 7)
 mean( bb.tv.res > 7 & bb.tv.res < 9.5)
-mean( bb.d.res > 0.8)
-mean( bb.d.res > 0.5)
-mean( bb.d.res > 0.2 & bb.d.res < 0.8)
+mean( bboot.d.res > 0.8)
+mean( bboot.d.res > 0.5)
+mean( bboot.d.res > 0.2 & bboot.d.res < 0.8)
 mean( bboot.d.res > 0.8 & bboot.d.res < 1.26)
-
 
 
 # comparison t-value and CI area

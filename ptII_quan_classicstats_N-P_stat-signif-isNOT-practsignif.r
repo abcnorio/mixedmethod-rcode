@@ -52,7 +52,7 @@ samp2 <- rnorm(n=n1, mean=mu2, sd=sigma)
 summary(samp1)
 summary(samp2)
 # check for identical d's based on different calcs of pooled sd
-cohensd(samp1,samp2, check=TRUE)
+cohensd(samp1,samp2, OUT=TRUE)
 t.test(samp1, samp2)
 
 # second sample, same parameters, n2 = 2*n1

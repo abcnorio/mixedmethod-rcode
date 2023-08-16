@@ -32,6 +32,8 @@ library(rhmc)
 library(numDeriv)
 library(bayesplot)
 library(coda)
+library(magrittr)
+library(hmclearn)
 library(mvtnorm)
 library(rethinking)
 library(car)
@@ -42,7 +44,7 @@ library(gear)
 
 # load helper functions
 source("ptII_quan_Bayes_HMC_helpfuncs.r")
-
+source("ptII_quan_Bayes_HMC_rethinking-upd_helpfuncs.r")
 
 # look at source code
 
@@ -126,7 +128,7 @@ bayesplot:::mcmc_dens_overlay(res.arr, pars=c("theta"))
 color_scheme_set("teal")
 bayesplot:::mcmc_violin(res.arr, pars=c("theta"), probs=c(0.1, 0.5, 0.9))
 
-# desriptive statistics
+# descriptive statistics
 # per chain
 str(unlist(hmc.res.arr.red[[1]]))
 hm.res.red.desc <- do.call("rbind", lapply(hmc.res.arr.red, function(x) summary(unlist(x))))
@@ -187,6 +189,8 @@ log_likelihood <- function(xs, theta)
 }
 log_likelihood(xs, theta)
 
+# library(magrittr)
+# for:  "%>%"
 log_likelihood <- function(xs, theta) {
   apply(xs, 1, function(x) dnorm(x[1], mean = theta[1], sd = theta[2], log = T) + 
           dnorm(x[2], mean = theta[3], sd = theta[4], log = T)) %>% sum()
@@ -195,7 +199,6 @@ log_likelihood(xs, theta)
 
 #The prior distributions are chosen to be:
 #p(μj)p(Σjj)=N(0,3),=Gamma(3,3),j=1,2.
-
 
 log_prior <- function(theta)
 {
@@ -206,180 +209,17 @@ log_prior <- function(theta)
 }
 log_prior(theta)
 
+
 log_posterior <- function(xs, theta)
 {
   log_likelihood(xs, theta) + log_prior(theta)
 }  
 log_posterior(xs,theta)
 
-log_posterior <- function(xs) 
-{
-  function(theta) 
-    log_likelihood(xs, theta) + log_prior(theta)
-}
-log_posterior(xs)
-
-
-metropolis_step <- function(theta, log_posterior, proposal) {
-  propTheta <- proposal(theta)
-  a <- log_posterior(propTheta) - log_posterior(theta)
-  u <- runif(1)
-  if (log(u) < a) {
-    propTheta
-  } else {
-    theta
-  }
-}
-
-f = function(x) log_posterior(xs,theta)
-hmc(f, init=theta, 1000, 10, 0.3, 0.1)
-
-metropolis <- function(theta, log_posterior, proposal, m) {
-  out = matrix(NA_real_, nrow = m, ncol = length(theta))
-  out[1, ] = theta
-  for (i in 2:m) {
-    out[i, ] <- metropolis_step(out[i-1, ], log_posterior, proposal)
-  }
-  out
-}
-
-proposal <- function(x) {
-  z = rnorm(4, sd = 0.05)
-  c(x[1] + z[1], x[2] * exp(z[2]),
-    x[3] + z[3], x[4] * exp(z[4]))
-}
-
-
-out = metropolis(theta, log_posterior(xs), proposal, 10000)
-
-str(out)
 
 
 
-numDeriv:::grad(log_posterior, 10)
-rhmc:::num_grad(log_posterior, 100)
-
-
-
-log_posterior(xs)
-rhmc:::num_grad(log_posterior,xs)
-
-
-##################
-
-
-xs <- bivarnorm.res
-dim(xs)
-theta <- c(mu1,s1,mu2,s2)
-names(theta) <- c("mu1","s1","mu2","s2")
-theta
-
-log_likelihood <- function(xs, theta=theta)
-{
-  sum( apply(xs, 1,
-             function(x) dnorm(x[1], mean=theta["mu1"], sd=theta["s1"], log=TRUE) + 
-               dnorm(x[2], mean=theta["mu2"], sd=theta["s2"], log=TRUE))
-  )
-}
-
-log_prior <- function(theta=theta, gammavs=c(shape=3,rate=3))
-{
-  dnorm(theta["mu1"], log=TRUE) +
-  dnorm(theta["mu2"], log=TRUE) + 
-  dgamma(theta["s1"], shape=gammavs[1], rate=gammavs[2], log=TRUE) + 
-  dgamma(theta["s2"], shape=gammavs[1], rate=gammavs[2], log=TRUE)
-}
-
-log_posterior <- function(xs)
-{  
-  function(theta)
-  {  
-    log_likelihood(xs, theta) + log_prior(theta)
-  }
-}  
-
-lp <- log_posterior(xs[1:2,])(theta)
-lp
-numDeriv:::grad()
-
-##########################
-
-head(mvtnorm:::dmvnorm(xs))
-
-
-
-
-# borrowed and taken from package "rhmc"
-rhmc:::hmc(f=log_posterior,
-           init=19,
-           numit=1000,
-           L=16,
-           eps=0.3,
-           mass=0.1)
-
-rhmc:::hmc <- function (f, init, numit, L, eps, mass) 
-{
-  d = length(init)
-  q = matrix(nrow = d, ncol = numit)
-  U = numeric(numit)
-  q[, 1] = init
-  U[1] = f(init)
-  ar = 0
-  for (i in 2:numit) {
-    p = rnorm(d, 0, sqrt(mass))
-    K = sum(p^2/(2 * mass))
-    prop = hamiltonian_dynamics(f, q[, i - 1], p, L, eps, 
-                                mass)
-    U_prop = f(prop$q)
-    K_prop = sum(prop$p^2/(2 * mass))
-    if (runif(1) < exp(K - K_prop + U[i - 1] - U_prop)) {
-      q[, i] = prop$q
-      U[i] = U_prop
-      ar = ar + 1
-    }
-    else {
-      q[, i] = q[, i - 1]
-      U[i] = U[i - 1]
-    }
-  }
-  list(chain = q, U = U, ar = ar/(numit - 1))
-}
-
-hamiltonian_dynamics <- function (U, q, p, L, eps, m) 
-{
-  p = p - 0.5 * eps * num_grad(U, q)
-  for (i in 1:(L - 1)) {
-    q = q + eps * p/m
-    p = p - eps * num_grad(U, q)
-  }
-  q = q + eps * p/m
-  p = p - 0.5 * eps * num_grad(U, q)
-  list(q = q, p = p)
-}
-
-x <- q[, i - 1]
-
-
-num_grad <- function (f, x) 
-{
-  d = length(x)
-  g = numeric(d)
-  for (i in 1:d) {
-    h = sqrt(.Machine$double.eps) * if (x[i] != 0) 
-      abs(x[i])
-    else 1e-08
-    xh = x[i] + h
-    dx = xh - x[i]
-    if (dx == 0) 
-      next
-    Xh = x
-    Xh[i] = xh
-    g[i] = (f(Xh) - f(x))/dx
-  }
-  g
-}
-##################
-
+#library(hmclearn)
 # Linear regression example
 set.seed(521)
 X <- cbind(1, matrix(rnorm(300), ncol=3))
@@ -406,78 +246,11 @@ str(f1_hmc)
 linear_posterior(theta.init,y,X) #res = 1 value
 g_linear_posterior(theta.init,y,X) #res = 5 values = 5 parameters (=length(theta.init))
 
-########################
-# R.M. Neal MCMC Handbook
-# basic model taken from here:
 
-# p.125
-
-HMC2 <- function (U, grad_U, epsilon, L, current_q, ...) 
-{
-  q = current_q
-  p = rnorm(length(q), 0, 1)
-  current_p = p
-  
-  p = p - epsilon * grad_U(q, ...)/2
-  
-  #qtraj <- matrix(NA, nrow = L + 1, ncol = length(q))
-  #ptraj <- qtraj
-  #qtraj[1, ] <- current_q
-  #ptraj[1, ] <- p
-  
-  for (i in 1:L) {
-    q = q + epsilon * p
-    if (i != L) {
-      p = p - epsilon * grad_U(q, ...)
-      #ptraj[i + 1, ] <- p
-    }
-    #qtraj[i + 1, ] <- q
-  }
-  p = p - epsilon * grad_U(q, ...)/2
-  #ptraj[L + 1, ] <- p
-  p = -p
-  
-  current_U = U(current_q, ...)
-  current_K = sum(current_p^2)/2
-  proposed_U = U(q, ...)
-  proposed_K = sum(p^2)/2
-  
-  H0 <- current_U + current_K
-  H1 <- proposed_U + proposed_K
-  
-  new_q <- q
-  accept <- 0
-  
-  if (runif(1) < exp(current_U - proposed_U + current_K - proposed_K)) {
-    new_q <- q
-    accept <- 1
-  }
-  else new_q <- current_q
-  #return(list(q = new_q, traj = qtraj, ptraj = ptraj, accept = accept, 
-  #            dH = H1 - H0))
-  return(list(q = new_q, accept = accept, dh = H1 - H0))
-}
-
-# HMC_2D_sample
-# sampler  
-n_samples <- n
-a <- rep(NA, n_samples)
-dH <- rep(NA, n_samples)
-post <- matrix(NA, nrow = n, ncol = 2)
-for (i in 1:n_samples) {
-  Q <- HMC2(U, U_gradient, epsilon = step, L = L, current_q = Q$q)
-  r <- min(abs(Q$dH), 1)
-  dH[i] <- Q$dH
-  a[i] <- Q$accept
-  if (a[i] == 1) {
-    post[i, ] <- Q$q
-  }
-}
 
 #############################################################
 # Kevin Shoemaker MH & MCMC
-
-
+# working example HMC
 #library(mvtnorm)
 seed <- 9988776
 set.seed(seed)
@@ -570,7 +343,7 @@ while(i <= nsamp)
   #}
   
   #p = p - epsilon * grad_U(q, ...)/2
-  p = p - epsilon * numDeriv:::grad(f=dmvnorm, x=q, sigma=sigmamat, log=TRUE) / 2
+  p = p - epsilon * numDeriv:::grad(f=mvtnorm:::dmvnorm, x=q, sigma=sigmamat, log=TRUE) / 2
   
   #qtraj <- matrix(NA, nrow = L + 1, ncol = length(q))
   #ptraj <- qtraj
@@ -583,23 +356,23 @@ while(i <= nsamp)
     q = q + epsilon * p
     if (ii != L) {
       #p = p - epsilon * grad_U(q, ...)
-      p = p - epsilon * numDeriv:::grad(f=dmvnorm, x=q, sigma=sigmamat, log=TRUE)
+      p = p - epsilon * numDeriv:::grad(f=mvtnorm:::dmvnorm, x=q, sigma=sigmamat, log=TRUE)
       #ptraj[i + 1, ] <- p
     }
     #qtraj[i + 1, ] <- q
   }
   
   #p = p - epsilon * grad_U(q, ...)/2
-  p = p - epsilon * numDeriv:::grad(f=dmvnorm, x=q, sigma=sigmamat, log=TRUE) / 2
+  p = p - epsilon * numDeriv:::grad(f=mvtnorm:::dmvnorm, x=q, sigma=sigmamat, log=TRUE) / 2
   
   #ptraj[L + 1, ] <- p
   p = -p
   
   #current_U = U(current_q, ...)
-  current_U = -dmvnorm(x=current_q, sigma=sigmamat, log=TRUE)
+  current_U = -mvtnorm:::dmvnorm(x=current_q, sigma=sigmamat, log=TRUE)
   current_K = sum(current_p^2)/2
   
-  proposed_U = -dmvnorm(x=q, sigma=sigmamat, log=TRUE)
+  proposed_U = -mvtnorm:::dmvnorm(x=q, sigma=sigmamat, log=TRUE)
   proposed_K = sum(p^2)/2
   
   H0 <- current_U + current_K
@@ -641,12 +414,14 @@ while(i <= nsamp)
 head(post)
 head(a)
 plot(post)
+hist(post, prob=TRUE)
+lines(density(post), col="darkred", lwd=2)
+#############################################################
 
-##########################
+
 
 
 #library(rethinking)
-
 seed <- 9988776
 seed <- 996 #with stepsize 0.03 bad example!
 set.seed(seed)
@@ -657,8 +432,8 @@ sigmamat
 #sigmamat <- matrix(c(4,2,2,3), ncol=2)
 #sigmamat
 
-grad_U <- function(q, ...) -numDeriv:::grad(f=dmvnorm, x=q, sigma=sigmamat, log=TRUE)
-U <- function(q, ...) -dmvnorm(x=q, sigma=sigmamat, log=TRUE)
+grad_U <- function(q, ...) -numDeriv:::grad(f=mvtnorm:::dmvnorm, x=q, sigma=sigmamat, log=TRUE)
+U <- function(q, ...) -mvtnorm:::dmvnorm(x=q, sigma=sigmamat, log=TRUE)
 
 L <- 11 #10
 #WRONG
@@ -679,30 +454,44 @@ Q
 nsamp <- 3e4 #1e4
 nsamp <- 3e3
 nsamp <- 3e3
-nsamp <- 1e3
+nsamp <- 1e3+1
 
-coln <- 2+1+1
-Qres <- as.data.frame(matrix(NA, nrow=nsamp, ncol=coln))
-colnames(Qres) <- c("q1","q2","a","dH")
-Qres[1,c(1:2)] <- Q$q
-head(Qres)
+post.qadH <- matrix(NA, nrow=nsamp, ncol=2+1+1)
+colnames(post.qadH) <- c("q1","q2","a","dH")
+dim(post.qadH)
+post.qadH[1,c("q1","q2")] <- unlist(Q)
+head(post.qadH)
 
-for (i in 1:nsamp)
+# just to see development
+for (i in 2:nsamp)
 {
-  # print(i)
-  Q <- HMC2(U, grad_U, epsilon=step, L=L, current_q=Q$q)
-  Qres[i,"dH"] <- Q$dH
-  Qres[i,"a"] <- Q$accept
-  if(Q$a == 1) Qres[i,c(1:2)] <- Q$q
+  print(i)
+  Q <- HMC2.plus(U, grad_U, epsilon=step, L=L, current_q=post.qadH[i-1,c("q1","q2")])
+  Q
+  post.qadH[i,"dH"] <- Q$dH
+  post.qadH[i,"a"] <- Q$accept
+  if(Q$accept == 1)
+  {
+    post.qadH[i,c("q1","q2")] <- unlist(Q$q) # accept = 1 -> update q1, q2
+  } else
+  {
+    post.qadH[i,] <- post.qadH[i-1,c("q1","q2")] # we don't change values of q1, q2 here
+  }
 }
 
-head(Qres)
-dim(Qres)
-apply(Qres,2,mean, na.rm=TRUE)
-cov(Qres[,c(1:2)], use="complete.obs")
-length(is.na(Qres[,"a"]))/dim(Qres)[1]
+# remove first line (not required, initial values or nothing)
+post.qadH <- post.qadH[-c(1),]
+# last Q
+Q
+head(post.qadH)
+tail(post.qadH)
+dim(post.qadH)
 
-post <- Qres[,c(1:2)]
+apply(post.qadH,2,mean, na.rm=TRUE)
+cov(post.qadH[,c("q1","q1")], use="complete.obs")
+length(is.na(post.qadH[,"a"]))/dim(post.qadH)[1]
+
+post <- post.qadH[,c(1:2)]
 ## example McElreath rethinking HMC_2D_sample
 #res <- HMC_2D_sample( n=1000 , U=U_funnel , U_gradient=U_funnel_gradient , 
 #                      step=0.2 , L=10 , ylab="v"  , adj_lvls=1/12 )
@@ -818,9 +607,9 @@ HMC <- function (U, grad_U, epsilon, L, current_q, ...)
 }
 
 
+
 ###
 #library(mvtnorm)
-nsamp <- 1e4
 
 rho <- 0.8
 sigmamat <- matrix(c(1,rho,rho,1),ncol=2)
@@ -841,13 +630,15 @@ postQ[1, ] <- c(0,0)
 HMC(U, grad_U, epsilon=step, L=L, current_q=Q$q)
 seed <- 9988776
 set.seed(seed)
+nsamp <- 3e4
+nsamp <- 3e3
+
 for (i in 1:nsamp)
 {
-  #print(i)
-  #  print(Q$q)
+  cat("i = ",i," | q = ",q,"\t",sep="")
   Q$q <- postQ[i, ] <- HMC(U, grad_U, epsilon=step, L=L, current_q=Q$q, sigmamat=sigmamat)
 }
-#######################
+
 apply(postQ,2,mean)
 apply(postQ,2,sd)
 cov(postQ)
@@ -861,14 +652,25 @@ plot(postQ)
 
 ############### BOOK CODE
 
+# the following oode contains loops that require a lot of computation time
+# doing it once should mean to save the result afterward for further analysis and plots
+# reload the results afterwards with load
+?save
+?load
 
+# a lot of those models just show differences in the parameter configurations, but require
+# due to the slow speed of the sampler a lot of time for calculations
+
+# NOTE:
+# another problem that may arise is that some functions/ parts of the script fail because other
+# packages ie. libraries are loaded and use a (slightly) different syntax. As a consequence
+# one should restart the R session which removes all loaded or attached packages and restart
+# just from the point on where one left it - then one has to load all missing packages required
+# for the code at this point
+# It's impossible to always resolve that completely.
+
+# example:
 # bivariate probability density function
-
-# N(x,mu,sigma) = 
-ND.pdf <- function(x, mu, sigmamat)
-{
-  (2*pi)^(-1) * det(sigmamat)^(-1/2) * exp(-1/2 * t(x-mu) %*% solve(sigmamat) %*% (x-mu))
-}
 
 # correlation
 rho <- 0.8
@@ -893,14 +695,16 @@ end_time <- Sys.time()
 end_time - start_time
 
 start_time <- Sys.time()
-dmvnorm(x,mean=mu,sigma=sigmamat)
+mvtnorm:::dmvnorm(x,mean=mu,sigma=sigmamat)
 end_time <- Sys.time()
 end_time - start_time
 
 # check gradient
-numDeriv:::grad(f=dmvnorm, x=x, mean=mu, sigma=sigmamat)
+numDeriv:::grad(f=mvtnorm:::dmvnorm, x=x, mean=mu, sigma=sigmamat)
 numDeriv:::grad(f=ND.pdf, x=x ,mu=mu, sigmamat=sigmamat)
+# does not work
 rhmc:::num_grad(f=ND.pdf, x=x, mu=mu, sigmamat=sigmamat)
+# we use this (tweaked version)
 num_grad2(f=ND.pdf, x=x, mu=mu, sigmamat=sigmamat)
 
 
@@ -912,9 +716,9 @@ seed <- 996 # with stepsize 0.03 bad example!
 
 # we define two functions for the HMC sampling
 # negative log likelihood for U
-U <- function(q, ...) -dmvnorm(x=q, sigma=sigmamat, log=TRUE)
+U <- function(q, ...) -mvtnorm:::dmvnorm(x=q, sigma=sigmamat, log=TRUE)
 # gradient of U by making use of grad() from numDeriv
-grad_U <- function(q, ...) -numDeriv:::grad(f=dmvnorm, x=q, sigma=sigmamat, log=TRUE)
+grad_U <- function(q, ...) -numDeriv:::grad(f=mvtnorm:::dmvnorm, x=q, sigma=sigmamat, log=TRUE)
 
 # number of leapfrogs
 L <- 11 #10
@@ -972,9 +776,15 @@ for(z in 1:nchains)
   
   OUTmcmc[[z]] <- Qres
 }
+# summary
+lapply(OUTmcmc, summary)
+OUTmcmc.fn <- lapply(OUTmcmc,function(x) apply(x,2,fivenum))
+OUTmcmc.fn
+
 
 ##########
 # start random number generator initial value
+seeds <- c(9988776, 996, 345, 321, 12399)
 
 # epsilon
 step <- 0.1
@@ -1209,7 +1019,6 @@ str(OUTmcmc.nonas.onlyqs)
 
 # convert to mcmc object and mcmc list to use coda library
 #library(coda)
-#OUTmcmc.list <- as.mcmc.list(lapply(OUTmcmc.nonas, mcmc))
 OUTmcmc.list <- as.mcmc.list(lapply(OUTmcmc.nonas.onlyqs, mcmc))
 summary(OUTmcmc.list)
 
@@ -1219,7 +1028,7 @@ options(digits=3)
 # descriptive statistics per chain
 str(OUTmcmc)
 str(OUTmcmc.nonas)
-
+str(OUTmcmc.nonas.onlyqs)
 
 
 MCMCout.desc.per.chain(OUTmcmc.nonas.onlyqs, nchoose=c(1,2))
@@ -1230,13 +1039,11 @@ lapply(mcmc.perchain.means, range)
 # descriptive statistics over all chains
 MCMCout.desc.all.chain(OUTmcmc.nonas.onlyqs)
 
-
 # covariance matrices per chain
 lapply(OUTmcmc.nonas.onlyqs, cov)
 
 # covariance matrices over all chains
 cov(do.call("rbind", OUTmcmc.nonas.onlyqs))
-
 
 # quantiles per chain
 quans <- c(0,0.05,0.1,0.25,0.5,0.75,0.87,0.9,0.95,0.99,1)
@@ -1250,29 +1057,39 @@ apply(do.call("rbind", OUTmcmc.nonas.onlyqs),2,quantile, probs=quans)
 # plot posteriors and chains
 
 
-# trace plot
-color_scheme_set("mix-blue-pink")
-bayesplot:::mcmc_trace(OUTmcmc.nonas)
+#############
+# just to make it easier and to avoid writing everything multiple taimes
+# beaware WHICH object is investigated!!!
+summary(OUTmcmc.list)
 
+OUTmcmc.list.nonas.onlyqs <- as.mcmc.list(lapply(OUTmcmc.nonas.onlyqs, mcmc))
+#OUTmcmc.list.nonas <- as.mcmc.list(lapply(OUTmcmc.nonas, mcmc)) # with more than qs
+
+
+# trace plot
+summary(OUTmcmc.list)
+color_scheme_set("mix-blue-pink")
+coda:::plot.mcmc(OUTmcmc.list)
+bayesplot:::mcmc_trace(OUTmcmc.list)
 # histogram per chain
-bayesplot:::mcmc_hist_by_chain(OUTmcmc.nonas)
+bayesplot:::mcmc_hist_by_chain(OUTmcmc.list)
 
 # histogram for all chains
 color_scheme_set("green")
-bayesplot:::mcmc_hist(OUTmcmc.nonas)
+bayesplot:::mcmc_hist(OUTmcmc.list)
 
 # density for all chains
 color_scheme_set("purple")
-bayesplot:::mcmc_dens(OUTmcmc.nonas)
+bayesplot:::mcmc_dens(OUTmcmc.list)
 
 # density lines for each chain
 color_scheme_set("blue")
-bayesplot:::mcmc_dens_overlay(OUTmcmc.nonas)
+bayesplot:::mcmc_dens_overlay(OUTmcmc.list)
 
 # violine plot
 color_scheme_set("teal")
 color_scheme_set("pink")
-bayesplot:::mcmc_violin(OUTmcmc.nonas, probs=c(0.1, 0.5, 0.9))
+bayesplot:::mcmc_violin(OUTmcmc.list, probs=c(0.1, 0.5, 0.9))
 
 
 # Gelman
@@ -1291,8 +1108,11 @@ geweke.OUTmcmc.list
 
 
 # Heidelberger-Welch
+sek <- c(28000:29918)
 str(OUTmcmc.list)
-out <- mcmc.list((lapply(OUTmcmc.list, function(x) mcmc(x[28000:29918,]) )))
+# does not work if we have not enough data!
+out <- mcmc.list((lapply(OUTmcmc.list, function(x) coda:::mcmc(x[sek,]) )))
+out <- mcmc.list((lapply(OUTmcmc.list, function(x) coda:::mcmc(x) )))
 str(out)
 heidel.diag(out, eps=0.1)
 
@@ -1344,10 +1164,15 @@ summary(OUTmcmc.list.plus1)
 heidelbergwelch.OUTmcmc.list.plus1 <- cbind(chain=rep(1:nchains,each=2),do.call("rbind",lapply(heidel.diag(OUTmcmc.list.plus1), function(x) x[1:2,1:6])))
 heidelbergwelch.OUTmcmc.list.plus1
 
-
 # Raftery-Lewis
+str(OUTmcmc.list)
+# may require larger sample size, see uutput
 raftery.diag(OUTmcmc.list)
-raftery.OUTmcmc.list <- cbind(chain=rep(1:nchains,each=2),do.call("rbind",lapply(raftery.diag(OUTmcmc.list), function(x) x$resmatrix)))
+# if the one before "fails", this won't work too
+# solution - increase sample size in accordance to what the statistic givs as an output
+raftery.OUTmcmc.list <- cbind(chain=rep(1:nchains,each=2),do.call("rbind",
+                                          lapply(raftery.diag(OUTmcmc.list),
+                                          function(x) x$resmatrix)))
 raftery.OUTmcmc.list
 
 
@@ -1467,18 +1292,91 @@ HMC_2D_sample(n=1000, U=U, U_gradient=grad_U, step=step, L=L, start=Qinitv, sigm
 # see NAs
 
 
+#######################
 
-# load huge dataset
+# load huge dataset (creation see above)
+# if not this data set is used, ommands may fail
 load(file="posty2_mu-0-0_rho08_steps003_L11_nchains5_nsamp3e4.RData")
 str(posty2)
 
 
+############
+OUTmcmc <- posty2
+nchains <- 5
+#posty2 nsamp 3e4 chains 5 step 0.03 L 11
+#posty3 nsamp 3e4 chains 5 step 0.1 L 11
+
+#posty4 nsamp 1e3 chains 20 step 0.03 L 11
+#posty5 nsamp 1e3 chains 20 step 0.1 L 11
+
+
+
+
+#k = 2; n=3; m = 4
+#array(NA, c(n,m,k))
+
+# inspect results
+str(OUTmcmc)
+
+# bayesplot package requires chains to be of the same length
+# so we delete all NA rows and delete from all chains
+# the same rows which therefor is a random delete
+# there may be a better way like sampling till the iterations
+# are fully complete with full valid observations
+# and delete then NAs so it comes out for all chains to have
+# the same number of rows (iterations) if cols (= vars)
+NA.IDs <- lapply(OUTmcmc, function(x) which(is.na(x), arr.ind=TRUE))
+NA.IDs
+#unlist(lapply(NA.IDs, length))
+NA.rowIDs <- unique(unlist(lapply(NA.IDs, function(x) x[,1])))
+NA.rowIDs
+NA.rowIDs.l <- length(NA.rowIDs)
+NA.rowIDs.l
+NA.rowIDs.diffs <- NA.rowIDs[2:NA.rowIDs.l]-NA.rowIDs[1:(NA.rowIDs.l-1)]
+
+
+#library(unikn)
+hist(NA.rowIDs.diffs, col=usecol(pal_bordeaux, n=6), main="Samples between NAs (= non-acceptance)", prob=TRUE, xlab="samples", ylab="prob")
+lines(density(NA.rowIDs.diffs), col="blue", lwd=2)
+
+c(summary(NA.rowIDs.diffs), sd=sd(NA.rowIDs.diffs))
+# rate a
+NA.rowIDs.l/nsamp
+
+OUTmcmc.nonas <- list()
+
+if(length(NA.rowIDs) > 0)
+{
+  for(i in 1:nchains)
+  {
+    #OUTmcmc.nonas[[i]] <- OUTmcmc[[i]][-NA.IDs[[i]][,1],c("q1","q2")]
+    OUTmcmc.nonas[[i]] <- OUTmcmc[[i]][-NA.rowIDs,c("q1","q2")]
+  } 
+} else OUTmcmc.nonas <- OUTmcmc
+
+lapply(OUTmcmc.nonas, function(x) which(is.na(x), arr.ind=TRUE))
+
+head(OUTmcmc.nonas[[1]])
+str(OUTmcmc.nonas)
+
+
+# remove burnins if required
+removeburnins <- FALSE
+dim(OUTmcmc.nonas[[1]])
+burnins <- 500
+OUTmcmc.nonas.noburnins <- lapply(OUTmcmc.nonas, function(x) x[-c(1:burnins),]) 
+dim(OUTmcmc.nonas.noburnins[[1]])
+if(removeburnins) OUTmcmc <- OUTmcmc.nonas.noburnins else OUTmcmc <- OUTmcmc.nonas
+
+
+# everything
+OUTmcmc.nonas.onlyqs <- OUTmcmc.nonas
+#######
 
 
 # development of mean and covariance
 
 #str( MCMCout.cumdesc.per.chain(OUTmcmc.nonas.onlyqs[[1]]) )
-
 MCMCout.cs.descs <- lapply(OUTmcmc.nonas.onlyqs, MCMCout.cumdesc.per.chain)
 str(MCMCout.cs.descs)
 
@@ -1507,11 +1405,14 @@ head(daten)
 # examples
 adj.limits(daten=MCMCout.cs.descs[[1]][[1]][,"q1"][outtake["start"]:outtake["end"]], comp.v=0)
 
+# correlation # arbitrary
+rho <- 0.8
 adj.limits(daten=MCMCout.cs.descs[[1]][[2]][outtake["start"]:outtake["end"]], comp.v=rho)
 
+# arbitrary, see above creation of the dataset!
+mu <- c(1,1)
 
 par(mfrow=c(2,2))
-mu
 ylimits <- adj.limits(daten=MCMCout.cs.descs[[1]][[1]][,"q1"][outtake["start"]:outtake["end"]], comp.v=mu[1])
 plot(outtake["start"]:outtake["end"],
      MCMCout.cs.descs[[1]][[1]][,"q1"][outtake["start"]:outtake["end"]],
@@ -1574,6 +1475,10 @@ q1q2.length <- lengs[1]/length(mu)
 cov.length <- lengs[2]
 q1q2.length
 cov.length
+
+
+# related to posty2 dataset
+nsamp <- dim(posty2[[1]])[1]
 
 # take only part of the MCMC chain
 #q1, q2
@@ -1686,6 +1591,11 @@ lines(outtake["start"]:outtake["end"],
 # main title
 # outer margins
 
+# see creation of posty2 data set above
+# compare with BAD starting values
+step <- 0.03
+L <- 11
+
 mtext("HMC simulation (bivariate normal distribution)", side=3, line=1.2, cex=2, outer=TRUE)
 subtitletext <- paste("nsamp=",nsamp," | chains=",nchains," | epsilon=",step," | L=",L,sep="")
 subtitletext
@@ -1693,7 +1603,8 @@ mtext(subtitletext, side=3, line=-0.5, cex=1.2, outer=TRUE)
 
 
 # investigate dH
-dH.list <- lapply(OUTmcmc, function(x) x[,"dH"])
+temp <- posty2
+dH.list <- lapply(temp, function(x) x[,"dH"])
 str(dH.list)
 colos.r <- rainbow(nchains)
 plot(dH.list[[i]], type="l", bty="n",pre.plot=grid(),
@@ -1707,15 +1618,19 @@ do.call("rbind", lapply(dH.list, function(x) c(summary(x),sd=sd(x),var=var(x))))
 ###### comparison with Metropolis Hastings
 # 9988776
 # 996
-seeds
+seeds <- c(9988776, 996, 345, 321, 12399)
 set.seed(seeds[1])
+
+# sigma matrix based on rho / correlation
+sigmamat <- matrix(c(1,rho,rho,1),ncol=2)
 
 # no neg log like HMC!
 U.MH <- function(q, ...) mvtnorm:::dmvnorm(x=q, mean=c(0,0), sigma=sigmamat, log=TRUE)
 U.MH(q=c(0.5,0.5))
 
 nsamp <- 3e4
-
+nsamp <- 3e3
+nsamp <- 3e2
 
 OUTmcmc.MH.list <- bivarsim.MH2(U=U.MH, seeds=seeds)
 str(OUTmcmc.MH.list)
@@ -1806,8 +1721,8 @@ colnams <- c("q1","q2")
 # theoretical mean
 mu <- c(0,0)
 # empirical mean and covariance matrix
-Xbar <- apply(post,2,mean)
-S <- cov(post)
+Xbar <- apply(post.MH,2,mean)
+S <- cov(post.MH)
 plot(NULL, xlim=limits[,1], ylim=limits[,2], pre.plot=grid(), bty="n", xlab=colnams[1], ylab=colnams[2])
 points(post.MH, col="blue", bg="yellow", pch=21, cex=0.7)
 # draw ellipse based on empirical values
@@ -1819,20 +1734,37 @@ mtext("Bivariate normal distribution (MH simulation)", side=3, cex=2)
 
 # Heidelberger-Welch Test
 NA.IDs.MH <- which(is.na(post.MH))
-heidel.diag(post.MH[-NA.IDs.MH])
-heidel.eps.det(post.MH[-NA.IDs.MH])
+if(length(NA.IDs.MH) > 0)
+{
+  post.MH.nonas <- post.MH[-NA.IDs.MH]
+} else
+{
+  post.MH.nonas <- post.MH
+}
+# if no NAs
+heidel.diag(post.MH.nonas)
+heidel.eps.det(post.MH.nonas)
 # repeat wird post.MH + 1
-heidel.diag(post.MH[-NA.IDs.MH] + 1)
+heidel.diag(post.MH.nonas + 1)
 # use plotPost from BEST
-BEST:::plotPost(post.MH[-NA.IDs.MH], xlab="quantile", ROPE=c(-0.5,0.5), compVal=0, credMass=0.87)
-lines(density(post.MH[-NA.IDs.MH]), col="magenta", lwd=3, lty=2)
-HDInterval::hdi(post.MH[-NA.IDs.MH], credMass=0.87)
+
+head(post.MH.nonas)
+norows <- dim(post.MH.nonas)[2]
+
+for(i in 1:norows)
+{
+  BEST:::plotPost(post.MH.nonas[,i], xlab=paste("quantile [q",i,"]",sep=""), ROPE=c(-0.5,0.5), compVal=0, credMass=0.87)
+  lines(density(post.MH.nonas[,i]), col="magenta", lwd=3, lty=2)
+  HDInterval::hdi(post.MH.nonas[,i], credMass=0.87)
+}
+
+
 
 
 ######## NOT RUN below this point
+# 3D plot
+# COMPILE WITH OPENGL
 require(rgl)
-
-
 
 jet.colors <- colorRampPalette( c("green", "skyblue", "orange", "yellow") ) 
 pal <- jet.colors(100)
@@ -1842,7 +1774,9 @@ y <- x
 
 x <- sort(post.MH[,1])
 y <- sort(post.MH[,2])
-func <- function(x,y) dmvnorm(data.frame(x,y),mean=c(0,0), sigma=sigmamat)
+# old dmvnorm
+# mean=c(0,0)
+func <- function(x,y) mixtools:::dmvnorm(data.frame(x,y),mu=c(0,0), sigma=sigmamat)
 z <- outer(x,y,func)
 #persp3d(x,y,z,col=pal[col.ind])
 

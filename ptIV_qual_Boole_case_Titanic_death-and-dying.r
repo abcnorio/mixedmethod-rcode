@@ -137,8 +137,7 @@ t.EIs <- paste(t.mini$essential, collapse=" + ")
 t.EIs
 strsplit(t.EIs," + ", fixed=TRUE)
 
-# newer version
-# library(venn)
+# doesn't work, too many parameters, too complicated
 venn(t.mini)
 venn(t.mini, ilabels=TRUE, zcolor="style")
 

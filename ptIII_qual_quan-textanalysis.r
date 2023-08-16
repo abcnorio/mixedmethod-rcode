@@ -33,6 +33,9 @@ library("tm")
 library("SnowballC")
 library("wordcloud")
 library("RColorBrewer")
+library("stringi")
+library("magrittr")
+library("qdap")
 
 # read text
 stextnam <- c("Bewerbungsbrief_BK_sa.txt")
@@ -147,7 +150,7 @@ stext.red.wonly
 
 
 # not used
-library(qdap)
+#library(qdap)
 read.transcript("Bewerbungsbrief_BK_sa.txt")
 # end of not used
 
@@ -178,6 +181,7 @@ set.seed(1234)
 stext.split.wfreq <- table(tolower(stext.split))
 stext.split.wfreq
 # plot
+dev.off()
 wordcloud(words=names(stext.split.wfreq),
           freq=stext.split.wfreq,
           min.freq=1, max.words=200,
@@ -189,6 +193,7 @@ wordcloud(words=names(stext.split.wfreq),
 stext.cut.wfreqtab <- table(unlist(stext.cut))
 stext.cut.wfreqtab
 # plot
+dev.off()
 wordcloud(words=names(stext.cut.wfreqtab),
           freq=stext.cut.wfreqtab,
           min.freq=1, random.order=FALSE, rot.per=0.35, 
@@ -196,6 +201,8 @@ wordcloud(words=names(stext.cut.wfreqtab),
 
 
 # plot word freqs
+# be aware to remove other packages if they offer the same function names (!)
+library(quanteda)
 stext.tkized <- tokens(stext.split,
        what="word",
        remove_numbers=TRUE,

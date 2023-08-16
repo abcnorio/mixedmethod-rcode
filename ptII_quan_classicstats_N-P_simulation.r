@@ -37,6 +37,14 @@ sim <- function(N1, N2, mu1, mu2, sd1, sd2)
  x2 <- rnorm(N2, mean=mu2, sd=sd2)
  mean(x1) - mean(x2)
 }
+
+# arbitrary values
+N1 <- 34
+N2 <- 28
+mu1 <- 1.4
+mu2 <- 1.8
+sd1 <- 0.8
+sd2 <- 0.9
 boot.means <- replicate(trials, sim(N1=N1, N2=N2, mu1=mu1, mu2=mu2, sd1=sd1, sd2=sd2))
 summary(boot.means)
 
@@ -61,8 +69,4 @@ set.seed(seed)
 trials <- 1e+6
 boot.means1 <- replicate(trials, sim(N1=N1, N2=N2, mu1=mu1, mu2=mu2, sd1=sd1, sd2=sd2))
 abs(1-(mu1-mu2)/mean(boot.means1))
-
-# not run
-boot.means2 <- replicate(trials, mean(sample(sim.diff.means[,"DiM"], size=length(sim.diff.means[,"DiM"]), replace=TRUE)))
-abs(1-mean(boot.means1)/mean(boot.means2))
 

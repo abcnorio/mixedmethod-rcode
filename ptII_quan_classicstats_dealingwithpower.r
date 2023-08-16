@@ -34,6 +34,8 @@ library(lme4)
 library(simr)
 library(longpower)
 
+# if Rv4 functions are mixed with older major
+if(R.version["major"] == 3) library(backports)
 
 # test for power
 power.t.test(n=30, delta=1.1, sd=2.9, sig.level=0.01, power=NULL, type="paired", alternative="two.sided")
@@ -108,12 +110,31 @@ summary(m2)
 anova(m2)
 plot(m2)
 
+
+# essential because deparse1 got with R v4 some functions required here
+# using backports https://rdrr.io/cran/backports/man/deparse1.html
+# source https://github.com/r-lib/backports
+library(backports)
+# get function from namespace instead of possibly getting
+# implementation shipped with recent R versions:
+bp_deparse1 = getFromNamespace("deparse1", "backports")
+#bp_deparse1(quote(`foo bar`))
+
 # best model
 # nachw ~ poly(zeitn,2) + gru + (zeitn-1|subject) + (1|subject) + (1|grpzugeh)
 doTest(m2, fcompare(~ poly(zeitn,2)))
+
 # failed to converge
-#doTest(m2, fcompare(~ gru))
+doTest(m2, fcompare(~ gru))
+doTest(m2, fixed("gru"))
+
+# failed to give out a p-value
 doTest(m2, fcompare(~ poly(zeitn,2) + gru))
+# no convergence
+doTest(m2, fixed("poly(zeitn, 2)"))
+
+# note - if models fail to converge in most cases the model is not good
+# which means it requires a better model
 
 doTest(m2, rcompare(~ (1|subject)))
 doTest(m2, rcompare(~ (1|grpzugeh)))

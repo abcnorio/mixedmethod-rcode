@@ -75,7 +75,8 @@ gm1 <- glmer(cbind(incidence, size-incidence) ~ period + (1|herd), data=cbpp, fa
 gm1.exIC <- exIC(gm1)
 
 
-# excerpt from exIC()
+# DO NOT RUN THIS CODE BELOW
+# it is an excerpt from exIC()
 cat(paste(format(names(res), width = 17L, justify = "right"),  #15L
           format(res, digits = digits, nsmall=2), sep = " = "), sep = "\n")
 if(!is.null(NOTE)) cat("\n", "NOTE: ", NOTE, "\n\n", sep = "")

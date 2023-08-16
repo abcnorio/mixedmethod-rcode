@@ -168,7 +168,7 @@ table(embarked)
 table(survived)
 table(sibsp)
 table(parch)
-table(sibsp.parch)
+table(sibsp,parch)
 table(fulltitle)
 describes(data.frame(age,fare))
 # end of not run
@@ -818,7 +818,8 @@ hist.titanic(daten=fare.p, TITLE="Titanic dataset", SUB="fare (separated by surv
 hist.titanic(daten=fare.p[fare.p <150], TITLE="Titanic dataset", SUB="fare (separated by surviving status)", xaxtext="fare.p (0 < fare < 150)")
 hist.titanic(daten=fare.p[fare.p <100], TITLE="Titanic dataset", SUB="fare (separated by surviving status)", xaxtext="fare.p (0 < fare < 100)")
 
- 
+dev.off()
+
 # mosaicplot survivor and gender and class
 TITLE <- c("Titanic and surviving...")
 SUB <- c("Influence of sex")
@@ -827,36 +828,42 @@ mcolos <- c("greenyellow","orange","darkred","violetred2","olivedrab")
 mosaicplot(~ sex + survived, color=mcolos, las=1, main="", sub="")
 mtext(TITLE, 3, line=2, cex=1.5)
 mtext(SUB, 3, line=.7, cex=1.1)
- 
+dev.off()
+
 SUB <- c("Influence of class")
 mosaicplot(~ pclass + survived, color=mcolos, las=1, main="", sub="")
 mtext(TITLE, 3, line=2, cex=1.5)
 mtext(SUB, 3, line=.7, cex=1.1)
- 
+dev.off()
+
 SUB <- c("Influence of sex + class")
 mosaicplot(~ sex + pclass + survived, color=mcolos, shade=TRUE, las=1, main="", sub="")
 mtext(TITLE, 3, line=2, cex=1.5)
 mtext(SUB, 3, line=.7, cex=1.1)
+dev.off()
 
 mosaic(~ sex + pclass + survived, color=mcolos, shade=TRUE, legend=TRUE, las=1, main="", sub="")
-mtext(TITLE, 3, line=2, cex=1.5)
-mtext(SUB, 1, line=1.7, cex=1.1)
+# does not work here
+#mtext(TITLE, 3, line=2, cex=1.5)
+#mtext(SUB, 1, line=1.7, cex=1.1)
+dev.off()
 
 ftable(sex, pclass, survived)
 assoc(ftable(sex, pclass, survived) , color=mcolos, shade=TRUE, legend=TRUE, las=1, main=TITLE, sub=SUB)
 
 SUB <- c("Influence of family size")
 mosaic(table(famsize.adj,survived), shade=TRUE, legend=TRUE)
-mtext(TITLE, 3, line=2, cex=1.5)
-mtext(SUB, 1, line=1.7, cex=1.1)
+#mtext(TITLE, 3, line=2, cex=1.5)
+#mtext(SUB, 1, line=1.7, cex=1.1)
+dev.off()
 
 mosaic(table(sex,child,survived,pclass), shade=TRUE, legend=TRUE)
 mosaic(table(pclass,sex,child,survived), shade=TRUE, legend=TRUE)
 
 SUB <- c("Influence of sex and class")
 mosaic(~sex+pclass, data=table(pclass,sex,child,survived), shade=TRUE, legend=TRUE)
-mtext(TITLE, 3, line=2, cex=1.5)
-mtext(SUB, 1, line=1.7, cex=1.1)
+#mtext(TITLE, 3, line=2, cex=1.5)
+#mtext(SUB, 1, line=1.7, cex=1.1)
 
 mastertable
 mosaic(~ pclass + sex.FM + child.AC + survived, data=mastertable, shade=TRUE, legend=TRUE)
@@ -1065,7 +1072,7 @@ barplot(table(sex, survived))
 
 # with best prediction according to different predictors of the tree forrest (rpart)
 # Large families not good for Survival jasonm
- https://www.kaggleusercontent.com/kf/109040/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..stYun0XEzhQ8IV1WEZ5_yw.jkZ4Oe-waV-QVa1nNOGRiUL56QzEJ0DpArW8qBU-60EAcvg4ZBuuPP-W_b-nbSDgdpeOxrbDW4ACOxWJnD0FW287NaxsJyBjWH86EXlUm4qPQ1USvRitodmc7HT2McuHXSDlebOjfppfYLWIhfoWhGXmxiAV0QUGg4jNkxOpHQQ.DHQgGAhH7au7lB1JBuPtnA/output.html
+# https://www.kaggleusercontent.com/kf/109040/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..stYun0XEzhQ8IV1WEZ5_yw.jkZ4Oe-waV-QVa1nNOGRiUL56QzEJ0DpArW8qBU-60EAcvg4ZBuuPP-W_b-nbSDgdpeOxrbDW4ACOxWJnD0FW287NaxsJyBjWH86EXlUm4qPQ1USvRitodmc7HT2McuHXSDlebOjfppfYLWIhfoWhGXmxiAV0QUGg4jNkxOpHQQ.DHQgGAhH7au7lB1JBuPtnA/output.html
 # formula 	measured accuracy
 # 1. Survived ~ Age + Sex 	0.845
 # 2. Survived ~ Age + Sex + Pclass 	0.838
@@ -1237,8 +1244,8 @@ aggregate(survived.num ~ child.num + sex.num, FUN=length)
 aggregate(survived.num ~ child.num + sex.num, FUN=function(x) sum(x)/length(x))
 
 aggregate(age ~ survived + sex + child, FUN=function(x) sum(x)/length(x))
-aggregate(survived ~ age.bin1, FUN=function(x) sum(x)/length(x))
-aggregate(survived ~ age.bin1 + sex, FUN=function(x) sum(x)/length(x))
+aggregate(survived ~ age.bin.1, FUN=function(x) sum(x)/length(x))
+aggregate(survived ~ age.bin.1 + sex, FUN=function(x) sum(x)/length(x))
 
 # tab <- aggregate(survived ~ age.bin + sex + pclass, FUN=function(x) sum(x)/length(x))
 # overall survival rate

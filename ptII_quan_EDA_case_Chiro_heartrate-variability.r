@@ -67,13 +67,27 @@ corrgram(daten.analy, lower.panel="panel.ellipse", upper.panel="panel.pie", diag
           col.regions=colorRampPalette(pal), main="Corrgram", order=FALSE)
 
 
+
+#### NOT RUN
 # Cohens delta
+cohensd2 <- function(x,y,n1=0,n2=0)
+{
+## Cohens d
+ n1 <- length(x)
+ n2 <- length(y)
+ spooled <- sqrt( ((n1-1)*var(x) + (n2-1)*var(y)) / (n1+n2-2) )
+ d <- (mean(x)-mean(y))/spooled
+# Glass delta
+# y must be control group!!!
+ delta <- (mean(x)-mean(y))/sd(y)
+ return(data.frame(cohensd=d,glassd=delta))
+}
 # group1 = treatment
 # group2 = control
 # d ~ treatment - control = diff from perspective of treatment
 comps.trti <- combn(length(levels(gd)),2) # each 2er comparisons
 comps.trti <- t(comps.trti)
-cd.treattime <- list()
+cd.treattime1 <- list()
 compnameN <- names(table(gd))
 comparisons <- vector()
 for(i in 1:nrow(comps.trti))
@@ -87,18 +101,64 @@ for(i in 1:nrow(comps.trti))
  tmp <- unlist(lapply(seq_along(v1.all),function(x)
  {
   # perspective >>> Cohens d: v2 - v1 = treat - control
-  cohensd(v1.all[,x], v2.all[,x])[2]  
+  # d = x-y
+  # comparison is col-2 (treat) minus col-1 (contol)
+  # so    x = x = treat = v2
+  # and   y = y = control = v1
+  cohensd2(x=v2.all[,x], y=v1.all[,x])[2]  
  }
  ))
- cd.treattime[[i]] <- tmp
+ cd.treattime1[[i]] <- tmp
  comparisons[i] <- compname
 }
+cd.treattime1 <- (do.call("rbind",cd.treattime1))
+colnames(cd.treattime1) <- c(cnams)
+rownames(cd.treattime1) <- comparisons
+cd.treattime1
+#### END OF NOT RUN
+
+
+
+# Diffs MEAN and SD
+
+#Cohens delta
+#group1=treatment
+#group2=control
+#d ~ treatment - control = diff from perspective of treatment = group_1
+cohensd <- function(mean1,var1,mean2,var2,n1,n2)
+{
+  spooled <- sqrt( ((n1-1)*var1 + (n2-1)*var2) / (n1+n2-2) )
+  d <- (mean1-mean2)/spooled
+  return(d)
+}
+
+MW.trti <- with(daten.analy, aggregate(daten.analy[,cnams], data.frame(gd), mean))
+VAR.trti <- with(daten.analy, aggregate(daten.analy[,cnams], data.frame(gd), var))
+SD.trti <- with(daten.analy, aggregate(daten.analy[,cnams], data.frame(gd), sd))
+LE.trti <- with(daten.analy, aggregate(daten.analy[,cnams], data.frame(gd), length))
+comps.trti <- combn(length(levels(gd)),2) # each 2er comparisons
+comps.trti <- t(comps.trti)
+cd.treattime <- list()
+
+for(i in 1:nrow(comps.trti))
+{
+  compname <- paste(MW.trti[comps.trti[i,2],"gd"],"-minus-",MW.trti[comps.trti[i,1],"gd"],sep="")
+  
+  tmp <- cohensd(mean1=MW.trti[comps.trti[i,2],cnams],
+                 var1=VAR.trti[comps.trti[i,2],cnams],
+                 n1=LE.trti[comps.trti[i,2],cnams],
+                 mean2=MW.trti[comps.trti[i,1],cnams],
+                 var2=VAR.trti[comps.trti[i,1],cnams],
+                 n2=LE.trti[comps.trti[i,1],cnams])
+  
+  cd.treattime[[i]] <- data.frame(comp=compname,tmp, check.names=FALSE)
+}
 cd.treattime <- (do.call("rbind",cd.treattime))
-colnames(cd.treattime) <- c(cnams)
-rownames(cd.treattime) <- comparisons
+rownames(cd.treattime) <- cd.treattime[,"comp"]
+cd.treattime <- cd.treattime[,2:5]
 cd.treattime
- 
- 
+
+
 # age x sex structure distribution
 table(sex,age)
 # library 'vcd'

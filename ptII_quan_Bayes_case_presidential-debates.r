@@ -203,7 +203,7 @@ theta.prob.equal / (1 - theta.prob.equal)
 # some arbitrary values
 res <- bayes.prop.mcmc(a1=4, b1=8, a2=3, b2=6, n.mcmc=1e+4, nchains=4, credMass=0.95)
 str(res)
-plot(as.mcmc(res$mcmc), col="darkred")
+coda:::plot.mcmc(as.mcmc(res$mcmc), col="darkred")
 
 
 # Jeffrey's prior
@@ -626,6 +626,7 @@ h.res <- h(a1=a1, b1=b1, a2=a2, b2=b2)
 h.res
 # log version
 h.res.log <- h(a1=a1, b1=b1, a2=a2, b2=b2, loga=TRUE)
+str(h.res.log)
 h.res.log
 as.numeric(h.res.log)
 
@@ -668,17 +669,37 @@ pROPE.equal / h.res.inv
 
 ###### decision rule Bayesian A/B Testing after Chris Stucchio
 
+#### loss function/ decision rule by Chris Stucchio
 
+pres <- t(matrix(c(16,101,91, 32,131,88), nrow=2, byrow=TRUE,dimnames=list(c("Bush","Kerry"),c("nation","I","we"))))
+pres.2x2 <- rbind(pres["I",],pres["nation",]+pres["we",])
+rownames(pres.2x2) <- c("I","we/nation")
 
+pres.2x2
+pres.1x4 <- as.vector(pres.2x2)
+names(pres.1x4) <- c("a1","b1","a2","b2")
+pres.1x4
+a1 <- pres.1x4["a1"]
+b1 <- pres.1x4["b1"]
+a2 <- pres.1x4["a2"]
+b2 <- pres.1x4["b2"]
+
+a1
+b1
+a2
+b2
 
 # [theta2 - theta1] < crit (Test)
 credMass <- 0.99
-res <- bayes.prop.loss(a1=a1, b1=b1, a2=a2, b2=b2, crit=1-credMass)
+res <- bayes.prop.loss(a1=a1, b1=b1, a2=a2, b2=b2, crit=1-credMass, loga=FALSE, pr.out=FALSE)
+res
+#library(Brobdingnag)
+bayes.prop.loss(a1=a1, b1=b1, a2=a2, b2=b2, crit=1-credMass, loga=TRUE, pr.out=FALSE)
 # change criteria
 credMass <- 0.1
-res <- bayes.prop.loss(a1=a1, b1=b1, a2=a2, b2=b2, crit=1-credMass)
+res <- bayes.prop.loss(a1=a1, b1=b1, a2=a2, b2=b2, crit=1-credMass, loga=FALSE)
 credMass <- 0.22
-res <- bayes.prop.loss(a1=a1, b1=b1, a2=a2, b2=b2, crit=1-credMass)
+res <- bayes.prop.loss(a1=a1, b1=b1, a2=a2, b2=b2, crit=1-credMass, loga=FALSE)
 
 # table TRUE vs. FALSE
 loss.v <- res[,4]
@@ -766,22 +787,29 @@ mean(bf.diff)
 # original function from paper
 source("bayesian2beta.r")
 
+
+
 # comparison with original paper versions:
 d2beta("DIFF", x=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2)
 #[1] 1.402381
 pdf.theta.diff(theta=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, loga=FALSE)
 #[1] 1.402381
+exp( pdf.theta.diff(theta=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, loga=TRUE) )
+
 pdfthetadiff.1 <- pdf.theta.diff(theta=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, loga=TRUE)
 pdfthetadiff.1
 exp(pdfthetadiff.1)
-#Inf
-pdfthetadiff.2 <- pdf.theta.diff(theta=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, loga=TRUE, sL=1/10000,sH=1-1/10000)
+pdf.theta.diff(theta=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, loga=FALSE)
+#sL=1/10000,sH=1-1/10000)
+pdfthetadiff.2 <- pdf.theta.diff(theta=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, loga=TRUE)
 pdfthetadiff.2
+pdf.theta.diff.MULT(theta=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, loga=TRUE, sL=1/10000,sH=1-1/10000)
 # sL/sH +/- 1/10000
 #[1] 0.3515413
 exp(pdfthetadiff.2)
 #[1] 1.421256
-pdfthetadiff.2 <- pdf.theta.diff(theta=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, loga=TRUE, sL=0,sH=1-1/9175)
+pdf.theta.diff.MULT(theta=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, loga=TRUE, sL=0,sH=1-1/9175)
+pdfthetadiff.2 <- pdf.theta.diff(theta=0.5, a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, loga=TRUE)
 pdfthetadiff.2
 # sH- 1/9175
 #[1] 0.3381657
@@ -834,7 +862,7 @@ CI.DIFF.inv.cdf(a1 = 1/3+0, b1 = 1/3+5-0, a2 = 1/3+2, b2 = 1/3+5-2, alph=0.05, t
 # end of not run
 
 
-
+### ONLY WINDOWS R v.3
 ### dynamically load old R function BECAUSE not available in recent R version
 dyn.load("appell/libs/i386/appell.dll")
 # replace f21_sub by „f21_sub“ (with quotation marks)
@@ -850,6 +878,7 @@ results <- .Fortran("f1", a = a, b1 = b1, b2 = b2, c = c, x = x,
 
 ################ BOOK
 
+source("ptall_generalfuncs_brob-integral.r")
 # values from paper
 a1 <- 1/3+7
 b1 <- 1/3+12-7
@@ -872,7 +901,7 @@ bf.N <- 10e6
 bf.res1 <- rbeta(n=bf.N, shape1=a1, shape2=b1)
 bf.res2 <- rbeta(n=bf.N, shape1=a2, shape2=b2)
 bf.diff <- bf.res2 - bf.res1
-plotPost(bf.diff, credMass=0.87, ROPE=c(-0.5,0.5), xlab="theta difference", showMode=TRUE, col="skyblue", border="white", compVal=0.5)
+BEST:::plotPost(bf.diff, credMass=0.87, ROPE=c(-0.5,0.5), xlab="theta difference", showMode=TRUE, col="skyblue", border="white", compVal=0.5)
 
 # MAP exact
 theta.res.exp <- theta.res$post$differ$pdf
@@ -938,7 +967,7 @@ bf.N <- 10e6
 bf.res1 <- rbeta(n=bf.N, shape1=a1, shape2=b1)
 bf.res2 <- rbeta(n=bf.N, shape1=a2, shape2=b2)
 bf.diff <- bf.res2 - bf.res1
-plotPost(bf.diff, credMass=0.87, ROPE=c(-0.25,0.25), xlab="theta difference", showMode=TRUE, col="skyblue", border="white", compVal=0.2)
+BEST:::plotPost(bf.diff, credMass=0.87, ROPE=c(-0.25,0.25), xlab="theta difference", showMode=TRUE, col="skyblue", border="white", compVal=0.2)
 
 # MAP exact
 theta.res.exp <- theta.res$post$differ$pdf
@@ -1102,6 +1131,17 @@ abline(v=bf.diff.dens$x[bf.diff.dens$y == max(bf.diff.dens$y)], lty=3)
 
 ################ NOT RELEVANT FOR BOOK
 # create only simpson rule values and use them later
+low <- -1
+hi <- 1
+thetadiff.l <- 100
+sekk <-seq(low,hi,length=thetadiff.l)
+sekk.l <- length(sekk)
+sekk
+
+F2.brob.list <- list()
+orig.list <- list()
+pdf.list <- list()
+pdf.list.nonlog <- list()
 for(i in 1:sekk.l)
 {
   theta <- sekk[i]
@@ -1119,6 +1159,7 @@ for(i in 1:sekk.l)
                             #res1=brob gammas
                             #res2=simpsonrule.brob.2 list
   )
+  # non-finite values
   orig.list[[i]] <- try( tolerance:::F1(a = b1, b = a1 + b1 + a2 + b2 - 2,
                                         b.prime = 1 - a1,
                                         c = a2 + b1,
@@ -1127,10 +1168,12 @@ for(i in 1:sekk.l)
   )
   )
 }
+unlist(F2.brob.list)
 
 # LOG version create only simpson rule values and use them later
 loga <- TRUE
-loga <- FALSE
+loga <- FALSE #here in case of non-finite values
+pdf.list.nonlog <- list()
 for(i in 1:sekk.l)
 {
   #test <- try( pdf.theta.diff.MULT(theta=sek.pdf.diff[i],
@@ -1155,7 +1198,7 @@ for(i in 1:sekk.l)
   )
 }  
 
-### non-log
+### in case of non-log result
 str(pdf.list.nonlog)
 length(pdf.list.nonlog)
 str(pdf.list.nonlog[[1]])
@@ -1175,6 +1218,7 @@ plot(sekk, pdf.num.nonlog, type="l", bty="n", pre.plot=grid(), col="darkred")
 
 ### log
 # MAP
+pdf.num <- unlist(pdf.list.nonlog) # we just use the non-log version but one can save log values in a nother vector and label it accordingly
 MAP.ID <- which(pdf.num == max(pdf.num))
 MAP.Xct <- data.frame(sekk, pdf.num)[MAP.ID,]
 MAP.Xct
@@ -1360,6 +1404,19 @@ plot.bayes.prop.test.Xct(res=Xprop.res, a1=a1, b1=b1, a2=a2, b2=b2,
 ################ END FOR BOOK
 
 
+
+############### NOTE
+# for the following code one has to jump up and down to get proper
+# initial values for the loops to calculate this or that
+# sometimes it is necessary to jump up and down to repeat a calculation
+# on the log scale or not
+# don't expect the rest of the script to work line-by-line downards,
+# it requires a certain attention
+# this was done to save some space and not to repeat every small step
+# and blow the script more up as it is already the case
+#
+# some parts of the following code is more development and not meant
+# to be just applied
 ################ NOT RUN
 
 library(rgl)
@@ -1395,6 +1452,9 @@ xlim2 <- c(-1,1)
 par(mfrow=c(2,2), mar=c(2,2,7,2), oma=c(4,2,2,2), "cex.axis"=0.8)
 # LOG
 # exact
+mapID <- which(pdf.num.log == max(pdf.num.log))
+max(pdf.num.log)
+MAP <- sekk[mapID]
 plot(sekk, pdf.num.log, col="darkred", bty="n", type="l", pre.plot=grid(), main="exact (brob = log)", xlim=xlim1)
 abline(v=MAP.bf, col="blue", lty=2, lwd=2)
 abline(v=MAP, col="red", lty=2, lwd=2)
@@ -1531,7 +1591,9 @@ orig.list <- list()
 pdf.list <- list()
 
 pdf.list.nonlog <- list()
-sekk <- seq(-1,1,length=1000)
+sek.l <- 1e2
+sek.l <- 1e3
+sekk <- seq(-1,1,length=sek.l)
 sekk.l <- length(sekk)
 sekk
 #
