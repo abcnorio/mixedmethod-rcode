@@ -442,8 +442,8 @@ The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more rec
 - Coghlan, A (2017-11-07). [A little book of R for Bayesian Statistics. Release 0.1](https://a-little-book-of-r-for-bayesian-statistics.readthedocs.io/en/latest/src/bayesianstats.html)
 - Dobson, A (1990). _An Introduction to Generalized Linear Models._ Chapman & Hall/ CRC Texts in Sstatistical Science.
 - Gregory, P. (2005). _Bayesian logical data analysis for the physical sciences. A comparative approach with Mathematica support._ Cambridge University Press. [Mathematica code](https://www.cambridge.org/nl/academic/subjects/statistics-probability/statistics-physical-sciences-and-engineering/bayesian-logical-data-analysis-physical-sciences-comparative-approach-mathematica-support)
-- Guertler, L (2005). _Die Rekonstruktion von Innensicht und Aussensicht humorvollen Handelns in Schule und Erwachsenenbildung. Die Bewältigung der Katastrophe —Vipassanā-Meditation und Humor_. Berlin: Logos.
-- Huber, AA (2007). _Wechselseitiges Lehren und Lernen (WELL) als spezielle Formen Kooperativen Lernens._ Berlin: Logos.
+- Guertler, L (2005). _Die Rekonstruktion von Innensicht und Aussensicht humorvollen Handelns in Schule und Erwachsenenbildung. Die Bewältigung der Katastrophe —Vipassanā-Meditation und Humor_. Berlin: Logos. [Book page](https://www.logos-verlag.de/cgi-bin/engbuchmid?isbn=1094&lng=deu&id=)
+- Huber, AA (2007). _Wechselseitiges Lehren und Lernen (WELL) als spezielle Formen Kooperativen Lernens._ Berlin: Logos. [Book page](https://www.logos-verlag.de/cgi-bin/engbuchmid?isbn=1502&lng=deu&id=)
 - Huber, GL, Guertler, L & Gento, S (2018). _La aportación de la estadística exploratoria al análisis de datos cualitativos._ In: _Perspectiva Educacional. Formación de Profesores_, 57(1), S. 50–69.
 - Krook, ML (2010). [Women's Representation in Parliament: A Qualitative Comparative Analysis.](http://mlkrook.org/pdf/Krook_PS_2010.pdf) _Political Studies_, _58_, p.886-908.
 - Kruschke, J (2014). _Doing Bayesian Data Analysis: A Tutorial with R, JAGS, and Stan. 2nd ed._ Academic Press. [Book page](https://sites.google.com/site/doingbayesiandataanalysis/)
@@ -455,7 +455,7 @@ The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more rec
 
 If you ever refer to any part of the R code, please cite it as:
 
-Guertler, L (2023). R code supplement to Guertler & Huber (2023). *Objektive Ansichten und subjektive Analysen. Qual, Quan und Logik.* R code published on [Github](https://github.com/abcnorio/mixedmethod-rcode) and [OSDN](https://osdn.net/projects/mixedmethod-rcode).
+Guertler, L (2023). _R code supplement_ to Guertler & Huber (2023). Objektive Ansichten und subjektive Analysen. Qual, Quan und Logik. R code published on [Github](https://github.com/abcnorio/mixedmethod-rcode) and [OSDN](https://osdn.net/projects/mixedmethod-rcode).
 
 ## Disclaimer
 
