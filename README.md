@@ -10,7 +10,7 @@ The book's main topic covers mixed methodology especially if it comes to data an
 
 ## Background
 
-The book deals with mixed methodology (quantitative, qualitative, and Boolean logic) and is published in 2023 freely on various open library platforms like [OSF](osf.io/69gfz) or [AQUAD](https://www.aquad.de). The statistical part covers classical statistics (Fisher, Neyman-Pearson), exploratory data analysis sensu JW Tukey, as well as Bayesian statistics. The Boolean logic is used for implicant analysis of qualitative comparative analysis. The qualitative part covers quantitative as well as qualitative textanalysis. The latter uses coding paradigm and sequential analysis originating from Objective Hermeneutics sensu Oevermann and colleagues and is the only analyses for which R code really does not make any sense. However, copmuter-assisted sequential analysis is available in the free QDA software [AQUAD][https://www.aquad.de).
+The book deals with mixed methodology (quantitative, qualitative, and Boolean logic) and is published in 2023 freely on various open library platforms like [OSF](osf.io/69gfz) or [AQUAD](https://www.aquad.de). The statistical part covers classical statistics (Fisher, Neyman-Pearson), exploratory data analysis sensu JW Tukey, as well as Bayesian statistics. The Boolean logic is used for implicant analysis of qualitative comparative analysis. The qualitative part covers quantitative as well as qualitative textanalysis. The latter uses coding paradigm and sequential analysis originating from Objective Hermeneutics sensu Oevermann and colleagues and is the only analyses for which R code really does not make any sense. However, copmuter-assisted sequential analysis is available in the free QDA software [AQUAD](https://www.aquad.de).
 
 ## Run the R code
 
@@ -49,7 +49,7 @@ To facilitate the relationship of R script file and book chapter, the following 
 
 <details>
 
-<summary>Click here to see the table with a the matching of R script filename, book chapter, and (German) chapter title</summary>
+<summary>Click **here** to see the table with a the matching of R script filename, book chapter, and the (German) chapter title</summary>
 
 | Scriptname | Chap | SubChap | Chapter title (German) |
 | --- | --- | --- | --- |
@@ -208,7 +208,7 @@ The following table contains condensed information about each script using some 
 
 <details>
 
-<summary>Click here to see the table with a short description of the R scripts</summary>
+<summary>Click **here** to see the table with a short description of the R scripts</summary>
 
 | Scriptname | Content |
 | --- | --- |
@@ -363,7 +363,7 @@ The following table contains condensed information about each script using some 
 
 ## Links in the R code
 
-It is impossible to write any R code without external role models and code taken, borrowed, learned, etc. from other people. To give respect to that fact and the associated authors and to allow to deepen this or that understanding of R or any other topic of the sript, at some selected points the scripts contain URLs to external webpages that may be interesting for the reader or for the practice of R. We cannot guarantee that those links still exist, because the internet changes too fast. They did when the scripts were written.
+It is impossible to write any R code without external role models and code taken, borrowed, learned, etc. from other people. To give respect to that fact and the associated authors and to allow to deepen this or that understanding of R or any other topic of the script, at some selected points the scripts contain URLs to external webpages that may be interesting for the reader or for the practice of R. We cannot guarantee that those links still exist, because the internet changes too fast. They did when the scripts were written.
 
 ## Data sets
 
@@ -371,18 +371,18 @@ Due to legal and licence issues not all data sets discussed in the book can be p
 
 | Dataset | Description |
 | --- | --- |
-| `AAH` | data from a research study about collaborative learning (Huber, 2007) |
-| `LG` | data from a research study about the usage of word counts (Guertler, 2005) and a small experiment about clairvoyance to demonstrate something that does not show any kind of empirical effect (unpublished) |
+| `AAH` | data from a research study about collaborative learning (Huber 2007) |
+| `LG` | data from a research study about the usage of word counts (Guertler 2005) and a small experiment about clairvoyance to demonstrate something that does not show any kind of empirical effect (unpublished) |
 | `school_success` | logical table about school success (fictional data created just for demonstration) |
 | `Spain-edu` | data from a Spanish research study on leadership in education (Huber, Guertler & Gento 2018) |
-| `startagain_appl-letter-addiction` | application letter for a treatment place in drug therapy rehabilitation written from detox in psychiatry (originally sent via fax, names and places are fully anonymized, s.a. Studer, 1998) |
+| `startagain_appl-letter-addiction` | application letter for a treatment place in drug therapy rehabilitation written from detox in psychiatry (originally sent via fax, names and places are fully anonymized, s.a. Studer 1998) |
 | `startagain_successrates` | success rates to pass through a drug rehabilitation program in the Suisse drug therapy center *start again* between 1992-2017 |
 | `Titanic_survivors` | well-known data of the passangers of the Titanic along with some of their characteristics |
 | `wikipedia_presidential-heights` | data from wikipedia about the relationship of body heights of US presidential candidates and later winners (presidents) |
 
 ## External data sets
 
-As mentioned above some data sets used are taken directly from R like the **bupa** data set or the one from Dobson (1990) about **plant weight data**, the famous **iris** data set, etc. (see book for further references). Other sets like **crime data** are from external sources (e.g. UCLA) and others are not published due to a missing license required for public access (e.g. data about the **chiropractice research study** or about **women in parliament** by ML Krook 2010).
+As mentioned above some data sets used are taken directly from R like the **bupa** data set or the one from Dobson (1990) about **plant weight data**, the famous **iris** data set, etc. (see book for further references). Other sets like **crime data** are from external sources (e.g. UCLA) and others are not published due to a missing license required for public access (e.g. data about **women in parliament** by Krook 2010).
 
 ## External R code
 
@@ -392,7 +392,7 @@ Some R code was not taken from R packages but various locations on the net. From
 - `DBDA2E-utilities.R` and `Jags-Ymet-XmetMulti-Mrobust.R` (Kruschke, J (2014). _Doing Bayesian Data Analysis. 2nd ed._ Academic Press.) The scripts can be downloaded for free on the author's [book page](https://sites.google.com/site/doingbayesiandataanalysis/software-installation)
 - package `BayesianFirstAid` ([Bååth](https://github.com/rasmusab/bayesian_first_aid))
 
-The corresponding `*.r` file contains URL from where to download the external R script. Download and just place the file(s) in the main folder. Do not change the filename to avoid any error while loading it and if the download creates a different filename, use the one outlined above. External R code is used in the following way as (parts of) R functions:
+The corresponding `*.r` file contains the URL from where you can download the external R script(s). Download and just place the file(s) in the main folder. Do not change the filename to avoid any error while loading it and if the download creates a different filename, use the one outlined above. External R code is used in the following way as (parts of) R functions:
 
 - R packages and R functions that are modified to meet our needs here (e.g. some functions went missing from one R version to the next one like code from [heatmap.plus](https://github.com/cran/heatmap.plus), [sjstats](https://github.com/strengejacke/sjstats), [rhmc](https://github.com/cran/rhmc), ...).
 - Some R code (e.g. from [Bolstad](https://github.com/cran/Bolstad)) was slightly changed due to bugs in the original code at that time. That may be different now ie. the bug is fixed, but it was not at the time when the R scripts were written.
@@ -414,9 +414,7 @@ All R scripts were written and tested under R v3.4/ v3.6. They should run with l
 
 ## R libraries
 
-Many scripts require external R packages and external libraries installed on the operation system (Linux, ...), espicially if it comes to compilation in the context of Bayesian linear models with package brms. Sometimes they require especially under Linux the compilation of libraries. Such compilations under Linux should be done directly by running R from the commandline and **not** (**never!**) via using some GUI like RStudio (esp. this one!), because a lot of experiences showed that the compilation tends to break and fails out of unknown reasons if such a GUI was used. Compilation directly via R on the commandline works pretty well as long as the necessary (development) libraries are installed on the system. If a library on the OS is missing, R tells you normally what is missing and gives a hint how to install it (e.g. using apt). Afterwards, the GUI can be used again without any hazzle. Under windows, most libraries do not require any compilation. If compiled packages or packages installed from the commandline and not via the OS package system (using debs/ rpms/ etc.) should be made available for all local users, start R as root and install then packages via the commandline.
-
-If future time permits the scripts will be updated to work with R v4.
+Many scripts require external R packages and external libraries installed on the operation system (Linux, ...), espicially if it comes to compilation in the context of Bayesian linear models with the Bayes package brms. Sometimes they require especially under Linux the compilation of libraries. Such compilations under Linux should be done directly by running R from the commandline and **not** (**never!**) via using some GUI like RStudio (esp. this one!), because a lot of experiences showed that the compilation tends to break and fails out of unknown reasons if such a GUI was used. Compilation directly via R on the commandline works pretty well as long as the necessary (development) libraries are installed on the system. If a library on the OS is missing, R tells you normally what is missing and gives a hint how to install it (e.g. using apt). Afterwards, the GUI can be used again without any hazzle. Under windows, most libraries do not require any compilation. Compiled packages or packages installed from the commandline and not via the OS package system (using debs/ rpms/ etc.) can be made available for all local users. To accomplish that start R as root and install all required packages manually via the commandline.
 
 ## Errors in the R code
 
@@ -457,7 +455,7 @@ The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more rec
 
 If you ever refer to any part of the R code, please cite it as:
 
-Guertler, Leo (2023). R code supplement to Guertler & Huber (2023). *Objektive Ansichten und subjektive Analysen. Qual, Quan und Logik.* R code published on [Github](https://github.com/abcnorio/mixedmethod-rcode) and [OSDN](https://osdn.net/projects/mixedmethod-rcode).
+Guertler, L (2023). R code supplement to Guertler & Huber (2023). *Objektive Ansichten und subjektive Analysen. Qual, Quan und Logik.* R code published on [Github](https://github.com/abcnorio/mixedmethod-rcode) and [OSDN](https://osdn.net/projects/mixedmethod-rcode).
 
 ## Disclaimer
 
