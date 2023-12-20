@@ -1,8 +1,8 @@
-﻿# R code supplement to the book "Objektive Ansichten und subjektive Analysen. Qual, Quan und Logik" written by Gürtler & Huber (2023)
+﻿# R code supplement to the book "Objektive Ansichten und subjektive Analysen. Qual, Quan und Logik" written by Guertler & Huber (2023)
 
 ## Resources and languages
 
-The Spanish version of the book is titled "XXX". Both books can be obtained freely from [OSF](osf.io/69gfz) or [AQUAD][https://www.aquad.de). A Spanish version of this README.md can be found in [README-spa](./README-spa.md).
+The Spanish version of the book is titled "XXX". Both books can be obtained freely from [OSF](osf.io/69gfz) or [AQUAD](https://www.aquad.de). A Spanish version of this README.md can be found in [README-spa](./README-spa.md).
 
 ## Overview
 
@@ -10,7 +10,7 @@ The book's main topic covers mixed methodology especially if it comes to data an
 
 ## Background
 
-The book deals with mixed methodology (quantitative, qualitative, and Boolean logic) and is published in 2023 freely on various open library platforms like [OSF](osf.io/69gfz) or [AQUAD][https://www.aquad.de). The statistical part covers classical statistics (Fisher, Neyman-Pearson), exploratory data analysis sensu JW Tukey, as well as Bayesian statistics. The Boolean logic is used for implicant analysis of qualitative comparative analysis. The qualitative part covers quantitative as well as qualitative textanalysis. The latter uses coding paradigm and sequential analysis originating from Objective Hermeneutics sensu Oevermann and colleagues and is the only analyses for which R code really does not make any sense. However, copmuter-assisted sequential analysis is available in the free QDA software [AQUAD][https://www.aquad.de).
+The book deals with mixed methodology (quantitative, qualitative, and Boolean logic) and is published in 2023 freely on various open library platforms like [OSF](osf.io/69gfz) or [AQUAD](https://www.aquad.de). The statistical part covers classical statistics (Fisher, Neyman-Pearson), exploratory data analysis sensu JW Tukey, as well as Bayesian statistics. The Boolean logic is used for implicant analysis of qualitative comparative analysis. The qualitative part covers quantitative as well as qualitative textanalysis. The latter uses coding paradigm and sequential analysis originating from Objective Hermeneutics sensu Oevermann and colleagues and is the only analyses for which R code really does not make any sense. However, copmuter-assisted sequential analysis is available in the free QDA software [AQUAD][https://www.aquad.de).
 
 ## Run the R code
 
@@ -372,9 +372,9 @@ Due to legal and licence issues not all data sets discussed in the book can be p
 | Dataset | Description |
 | --- | --- |
 | `AAH` | data from a research study about collaborative learning (Huber, 2007) |
-| `LG` | data from a research study about the usage of word counts (Gürtler, 2005) and a small experiment about clairvoyance to demonstrate something that does not show any kind of empirical effect (unpublished) |
+| `LG` | data from a research study about the usage of word counts (Guertler, 2005) and a small experiment about clairvoyance to demonstrate something that does not show any kind of empirical effect (unpublished) |
 | `school_success` | logical table about school success (fictional data created just for demonstration) |
-| `Spain-edu` | data from a Spanish research study on leadership in education (Huber, Gürtler & Gento 2018) |
+| `Spain-edu` | data from a Spanish research study on leadership in education (Huber, Guertler & Gento 2018) |
 | `startagain_appl-letter-addiction` | application letter for a treatment place in drug therapy rehabilitation written from detox in psychiatry (originally sent via fax, names and places are fully anonymized, s.a. Studer, 1998) |
 | `startagain_successrates` | success rates to pass through a drug rehabilitation program in the Suisse drug therapy center *start again* between 1992-2017 |
 | `Titanic_survivors` | well-known data of the passangers of the Titanic along with some of their characteristics |
@@ -443,10 +443,10 @@ The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more rec
 - Bretthorst, GL (1993). [On the difference in means](https://bayes.wustl.edu/glb/diff.pdf). In: WT Grandy and PW Milonni (Eds.), _Physics & Probability Essays in honor of ET Jaynes_. Cambridge University Press, England.
 - Coghlan, A (2017-11-07). [A little book of R for Bayesian Statistics. Release 0.1](https://a-little-book-of-r-for-bayesian-statistics.readthedocs.io/en/latest/src/bayesianstats.html)
 - Dobson, A (1990). _An Introduction to Generalized Linear Models._ Chapman & Hall/ CRC Texts in Sstatistical Science.
-- Gregory, P. (2005). _Bayesian logical data analysis for the physical sciences. A comparative approach with Mathematica support._ Cambridge University Press.
-- Gürtler, L (2005). _Die Rekonstruktion von Innensicht und Aussensicht humorvollen Handelns in Schule und Erwachsenenbildung. Die Bewältigung der Katastrophe —Vipassanā-Meditation und Humor_. Berlin: Logos.
+- Gregory, P. (2005). _Bayesian logical data analysis for the physical sciences. A comparative approach with Mathematica support._ Cambridge University Press. [Mathematica code](https://www.cambridge.org/nl/academic/subjects/statistics-probability/statistics-physical-sciences-and-engineering/bayesian-logical-data-analysis-physical-sciences-comparative-approach-mathematica-support)
+- Guertler, L (2005). _Die Rekonstruktion von Innensicht und Aussensicht humorvollen Handelns in Schule und Erwachsenenbildung. Die Bewältigung der Katastrophe —Vipassanā-Meditation und Humor_. Berlin: Logos.
 - Huber, AA (2007). _Wechselseitiges Lehren und Lernen (WELL) als spezielle Formen Kooperativen Lernens._ Berlin: Logos.
-- Huber, GL, Gürtler, L & Gento, S (2018). _La aportación de la estadística exploratoria al análisis de datos cualitativos._ In: _Perspectiva Educacional. Formación de Profesores_, 57(1), S. 50–69.
+- Huber, GL, Guertler, L & Gento, S (2018). _La aportación de la estadística exploratoria al análisis de datos cualitativos._ In: _Perspectiva Educacional. Formación de Profesores_, 57(1), S. 50–69.
 - Krook, ML (2010). [Women's Representation in Parliament: A Qualitative Comparative Analysis.](http://mlkrook.org/pdf/Krook_PS_2010.pdf) _Political Studies_, _58_, p.886-908.
 - Kruschke, J (2014). _Doing Bayesian Data Analysis: A Tutorial with R, JAGS, and Stan. 2nd ed._ Academic Press. [Book page](https://sites.google.com/site/doingbayesiandataanalysis/)
 - McElreath, R (2015). _Statistical Rethinking. A Bayesian Course with Examples in R and Stan. 1st ed._ Chapman & Hall/ CRC Texts in Sstatistical Science. [Book page](https://xcelab.net/rm/statistical-rethinking/)
@@ -457,7 +457,7 @@ The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more rec
 
 If you ever refer to any part of the R code, please cite it as:
 
-Gürtler, Leo (2023). R code supplement to Gürtler & Huber (2023). *Objektive Ansichten und subjektive Analysen. Qual, Quan und Logik.* R code published on [Github](https://github.com/abcnorio/mixedmethod-rcode) and [OSDN](https://osdn.net/projects/mixedmethod-rcode).
+Guertler, Leo (2023). R code supplement to Guertler & Huber (2023). *Objektive Ansichten und subjektive Analysen. Qual, Quan und Logik.* R code published on [Github](https://github.com/abcnorio/mixedmethod-rcode) and [OSDN](https://osdn.net/projects/mixedmethod-rcode).
 
 ## Disclaimer
 
