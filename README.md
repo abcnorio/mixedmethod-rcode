@@ -49,7 +49,7 @@ To facilitate the relationship of R script file and book chapter, the following 
 
 <details>
 
-<summary>Click **here** to see the table with a the matching of R script filename, book chapter, and the (German) chapter title</summary>
+<summary>Click here to see the table with a the matching of R script filename, book chapter, and the (German) chapter title</summary>
 
 | Scriptname | Chap | SubChap | Chapter title (German) |
 | --- | --- | --- | --- |
@@ -208,7 +208,7 @@ The following table contains condensed information about each script using some 
 
 <details>
 
-<summary>Click **here** to see the table with a short description of the R scripts</summary>
+<summary>Click here to see the table with a short description of the R scripts</summary>
 
 | Scriptname | Content |
 | --- | --- |
@@ -433,7 +433,7 @@ One data set (application letter for a treatment place in a drug addiction rehab
 ## Licenses and Credits
 
 The R code is licensed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html). Please feel free to use, modify or share the code if it is helpful for you.
-The functions taken from other packages have their own license. Details can be found in the license file of cited and referenced packages and scripts.
+The functions taken from other packages have their own licenses. Details can be found in the license file of cited and referenced packages and scripts.
 The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more recent version of AQUAD8 can be found freely on the [AQUAD 8](https://www.aqua.de) webpage.
 
 ## References
