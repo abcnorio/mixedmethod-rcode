@@ -388,17 +388,17 @@ As mentioned above some data sets used are taken directly from R like the **bupa
 
 Some R code was not taken from R packages but various locations on the net. From that selection some scripts were also tweaked to fit to our needs here. Such incidents are noted in the R scripts at each place where an external script was used or tweaked. Mostly, those scripts originate from:
 
-- `bayesian2beta.r` (Sverdlov O, Ryeznik Y & Wu S. (2015). Exact Bayesian Inference Comparing Binomial Proportions, With Application to Proof-of-Concept Clinical Trials. _Therapeutic Innovation & Regulatory Science_, _49_(1), p.163-174.) It can downloaded for free as [supplemenatary material](https://link.springer.com/article/10.1177/2168479014547420#SecESM1)
+- `bayesian2beta.r` (Sverdlov O, Ryeznik Y & Wu S. (2015). Exact Bayesian Inference Comparing Binomial Proportions, With Application to Proof-of-Concept Clinical Trials. _Therapeutic Innovation & Regulatory Science_, _49_(1), p.163-174.) It can downloaded for free as [supplementary material](https://link.springer.com/article/10.1177/2168479014547420#SecESM1)
 - `DBDA2E-utilities.R` and `Jags-Ymet-XmetMulti-Mrobust.R` (Kruschke, J (2014). _Doing Bayesian Data Analysis. 2nd ed._ Academic Press.) The scripts can be downloaded for free on the author's [book page](https://sites.google.com/site/doingbayesiandataanalysis/software-installation)
 - package `BayesianFirstAid` ([Bååth](https://github.com/rasmusab/bayesian_first_aid))
 
-The corresponding `*.r` file contains from the URL where to download the R script if it is not conainted here. Download and just place them in the main folder. Do not change the filename to avoid any error while loading it. External R code is used in the following way as (parts of) R functions:
+The corresponding `*.r` file contains URL from where to download the external R script. Download and just place the file(s) in the main folder. Do not change the filename to avoid any error while loading it and if the download creates a different filename, use the one outlined above. External R code is used in the following way as (parts of) R functions:
 
 - R packages and R functions that are modified to meet our needs here (e.g. some functions went missing from one R version to the next one like code from [heatmap.plus](https://github.com/cran/heatmap.plus), [sjstats](https://github.com/strengejacke/sjstats), [rhmc](https://github.com/cran/rhmc), ...).
 - Some R code (e.g. from [Bolstad](https://github.com/cran/Bolstad)) was slightly changed due to bugs in the original code at that time. That may be different now ie. the bug is fixed, but it was not at the time when the R scripts were written.
-- Some other code just follows papers and can be seen as an implementation of forumla and algorithms (e.g. about p-hacking, z-curves, etc.). This is referenced en detail in the book itself.
+- Some other R code just follows papers and can be seen as an implementation of formula and algorithms (e.g. about p-hacking, z-curves, etc.). This is referenced en detail in the book itself.
 
-From time to time some code is put in sections like
+From time to time some R code is put in sections like
 
 ```
 ### not run
@@ -410,7 +410,7 @@ Such R code is optional or sometimes not fully related to the book or just gives
 
 ## R version
 
-All R scripts were written and tested under R v3.4/ v3.6. They should run with later versions of R as well. However, sometimes packages are not maintained anymore and then they are dropped from the official R repository or something changes so heavily in a package that previous functions either do not exist anymore or at least not in the way they should and are used here. This happens when object names, internal structures, etc. become obsolete. Therefor, one can create a virtual machine or a docker engine, install R v3.4/ v3.6 and everything should run fine independent from using Linux or Windows. All scripts were developed under Linux, but also tested under win7 und should run with win10 or win11. In future we will provide a docker file + image that can be used to run the code via the free RStudio server. Those who are interested can send a note to get the most recent version of the docker file which is still under development. The book contains at the end a list of all the R libraries and their versions. However, most things should just work out of the box, the notes above refer to special cases of certain libraries required and later removed from the R repo because the package maintainers of those packages did not update to more recent R versions.
+All R scripts were written and tested under R v3.4/ v3.6. They should run with later versions of R >= v4 as well. However, sometimes packages are not maintained anymore and then they are dropped from the official R repository or something changes so heavily in a package that previous functions either do not exist anymore or at least not in the way they should and are used here. This happens when object names, internal structures, etc. become obsolete. Therefor, one can create a virtual machine or a docker engine, install R v3.4/ v3.6 and everything should run fine independent from using Linux or Windows. All scripts were developed under Linux, but also tested under win7 und should run with win10 or win11. In future we will provide a docker file + image that can be used to run the code via the free RStudio server. Those who are interested can send a note to get the most recent version of the docker file which is still under development. The book contains at the end a list of all the R libraries and their versions. However, most things should just work out of the box, the notes above refer to special cases of certain libraries required and later removed from the R repo because the package maintainers of those packages did not update to more recent R versions.
 
 ## R libraries
 
@@ -424,18 +424,18 @@ If one finds a bug please contact us with a short and clear example so we can tr
 
 ## Usage of the R code
 
-Important is to understand that sometimes due to demonstration goals the code is not perfect and is revised a few lines later or it is done differently. Not every break of the script is a bug, sometimes it is a feature of the book. Those incidents are therefor no (serious) bugs but intentional for educational purposes to show that things evolve and do not happen accidentially. Statistical work means (ideally!) slow and steady progress towards a goal that sometimes even changes. In general, the R code is adjusted to the tasks (e.g. data sets) and the specific topics of the book and its chapters. It's not an R package and does not try to be so. The R code does not fulfill the requirements of traditional R packages like being useful as a universal library. Nevertheless, some of the functions may be helpful in various changing contexts and can be used independently from the book, the datasets, etc.
+Important is to understand that sometimes to demonstrate or explorate a topic the R code is not perfect and is revised a few lines later or it is done differently. _Not every break of the script is a bug_, sometimes it is a feature of the book. Those incidents are therefor no (serious) bugs but intentionally made for educational purposes to show that things evolve and do not happen accidentially. Statistical work means (ideally!) slow and steady progress towards a goal that sometimes even changes. In general, the R code is adjusted to the tasks (e.g. data sets) and the specific topics of the book and its chapters. It's not some kind general R package and does not try to be so. The R code does not fulfill the requirements of traditional R packages like being useful as a universal library. Nevertheless, some of the functions may be helpful in various changing contexts and can be used independently from the book, the datasets, etc.
 
 If you find something useful, change it according to your needs. We do the same.
 
 ## AQUAD 7 files
 
-One data set (application letter for a treatment place in a drug addiction rehabilitation center) is taken from qualitative data analysis along with the windows binary from [AQUAD 7](https://www.aquad.de), a free and open source QDA software. The folder AQUAD7 contains all working files along with the older AQUAD7 binary version that was originally used for the analysis. AQUAD is now on v8.
+One data set (application letter for a treatment place in a drug addiction rehabilitation center) is taken from qualitative data analysis along with the windows binary from [AQUAD 7](https://www.aquad.de), a free and open source QDA software written an maintained by GL Huber. The folder AQUAD7 contains all working files along with the older AQUAD7 binary version that was originally used for the analysis. AQUAD is now on v8.
 
 ## Licenses and Credits
 
 The R code is licensed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html). Please feel free to use, modify or share the code if it is helpful for you.
-The functions taken from other packages have their own license. Details can be found in the license file of cited and references packages and scripts.
+The functions taken from other packages have their own license. Details can be found in the license file of cited and referenced packages and scripts.
 The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more recent version of AQUAD8 can be found freely on the [AQUAD 8](https://www.aqua.de) webpage.
 
 ## References
@@ -448,8 +448,8 @@ The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more rec
 - Huber, AA (2007). _Wechselseitiges Lehren und Lernen (WELL) als spezielle Formen Kooperativen Lernens._ Berlin: Logos.
 - Huber, GL, Gürtler, L & Gento, S (2018). _La aportación de la estadística exploratoria al análisis de datos cualitativos._ In: _Perspectiva Educacional. Formación de Profesores_, 57(1), S. 50–69.
 - Krook, ML (2010). [Women's Representation in Parliament: A Qualitative Comparative Analysis.](http://mlkrook.org/pdf/Krook_PS_2010.pdf) _Political Studies_, _58_, p.886-908.
-- Kruschke, J (2014). _Doing Bayesian Data Analysis: A Tutorial with R, JAGS, and Stan. 2nd ed._ Academic Press.
-- McElreath, R (2015). _Statistical Rethinking. A Bayesian Course with Examples in R and Stan. 1st ed._ Chapman & Hall/ CRC Texts in Sstatistical Science.
+- Kruschke, J (2014). _Doing Bayesian Data Analysis: A Tutorial with R, JAGS, and Stan. 2nd ed._ Academic Press. [Book page](https://sites.google.com/site/doingbayesiandataanalysis/)
+- McElreath, R (2015). _Statistical Rethinking. A Bayesian Course with Examples in R and Stan. 1st ed._ Chapman & Hall/ CRC Texts in Sstatistical Science. [Book page](https://xcelab.net/rm/statistical-rethinking/)
 - Neal, RM (2011). [Handbook of Markov Chain Monte Carlo.](https://arxiv.org/pdf/1206.1901.pdf)_ Edited by S Brooks, A Gelman, G Jones, and X-L Meng. Chapman & Hall/ CRC Press.
 - Studer, U.M. (1998). _[Verlangen, Süchtigkeit und Tiefensystemik. Fallstudie des Suchttherapiezentrums für Drogensüchtige start again in Männedorf und Zürich von 1992 bis 1998. Bericht an das Bundesamt für Justiz (BAJ)](https://www.bj.admin.ch/dam/data/bj/sicherheit/smv/modellversuche/evaluationsberichte/37.pdf)._ Zürich.
 
