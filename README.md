@@ -1,4 +1,4 @@
-﻿# R code supplement to the book "Objektive Ansichten und subjektive Analysen. Qual, Quan und Logik" written by Guertler & Huber (2023)
+﻿# R code supplement to the book "Mixed Methods --- quantitativ, qualitativ, explorativ und logisch in Theorie und Anwendung. Objektive Ansichten und subjektive Analysen." written by Guertler & Huber (2023)
 
 ## Resources and languages
 
@@ -455,7 +455,7 @@ The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more rec
 
 If you ever refer to any part of the R code, please cite it as:
 
-Guertler, L (2023). _R code supplement_ to Guertler & Huber (2023). Objektive Ansichten und subjektive Analysen. Qual, Quan und Logik. R code published on [Github](https://github.com/abcnorio/mixedmethod-rcode) and [OSDN](https://osdn.net/projects/mixedmethod-rcode).
+Guertler, L (2023). _R code supplement_ to Guertler & Huber (2023). Mixed Methods --- quantitativ, qualitativ, explorativ und logisch in Theorie und Anwendung. Objektive Ansichten und subjektive Analysen. R code published on [Github](https://github.com/abcnorio/mixedmethod-rcode) and [OSDN](https://osdn.net/projects/mixedmethod-rcode).
 
 ## Disclaimer
 

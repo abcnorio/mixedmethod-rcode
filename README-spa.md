@@ -1,75 +1,75 @@
-﻿# R code supplement to the book "Subjektive Betrachtungen und objektive Ansichten. Qual, Quan und Logik" written by Gürtler & Huber (2023)
+﻿# Suplemento en código R al libro "Combinación de Métodos - CUAL, CUAN Y LÓGICA. Puntos de vista objetivos y observaciones subjetivas". Escrito por Guertler & Huber (2023).
 
-## Resources and languages
+## Recursos e idiomas
 
-The German version of the book is titled "Subjektive Betrachtungen und objektive Ansichten. Qual, Quan und Logik". Both books can be obtained freely from XXX. An English version of this README.md can be found in [README.md](./README.md).
+La versión española del libro se titula "Combinación de Métodos - CUAL, CUAN Y LÓGICA. Puntos de vista objetivos y observaciones subjetivas". Ambos libros pueden obtenerse gratuitamente en OSF o AQUAD. Una versión en español de este README.md puede encontrarse en README-spaXXX.
 
-## Overview
+## Visión general
 
-The book's main topic covers mixed methodology especially if it comes to data analysis. Although the book is written in German (original language) and translated to Spanish, the R code can be used without any German language skills. The notes and comments in the scripts are written in English. The code itself is not organized as an R package and that's not the intention here. However, some functions may be useful for this or that purpose. Comments here and there in the scripts should help to understand the main aim if the book is neither available or cannot be understood.
+El tema principal del libro es la metodología mixta, especialmente en lo que se refiere al análisis de datos. Aunque el libro está escrito en alemán (idioma original) y traducido al español, el código R se puede utilizar sin conocimientos de alemán. Las notas y comentarios en los guiones están escritos en inglés. El código en sí no está organizado como un paquete R y esa no es la intención aquí. Sin embargo, algunas funciones pueden ser útiles para tal o cual propósito. Los comentarios aquí y allá en los scripts deberían ayudar a entender el objetivo principal si el libro no está disponible o no se puede entender.
 
-## Background
+## Antecedentes
 
-The book deals with mixed methodology (quantitative, qualitative, and Boolean logic) and will be published in 2023 freely on some open library platform. The statistical part covers classical statistics (Fisher, Neyman-Pearson), exploratory data analysis sensu JW Tukey, as well as Bayesian statistics. The Boolean logic is used for implicant analysis of qualitative comparative analysis. The qualitative part covers quantitative as well as qualitative textanalysis. The latter uses coding paradigm and sequential analysis originating from Objective Hermeneutics sensu Oevermann and colleagues.
+El libro trata de metodología mixta (cuantitativa, cualitativa y lógica booleana) y se publica en 2023 libremente en varias plataformas de bibliotecas abiertas como OSF o AQUAD. La parte estadística abarca la estadística clásica (Fisher, Neyman-Pearson), el análisis exploratorio de datos sensu J.W. Tukey, así como la estadística bayesiana. La lógica booleana se utiliza para el análisis implícito del análisis comparativo cualitativo. La parte cualitativa abarca tanto el análisis cuantitativo como el cualitativo de textos. Este último utiliza el paradigma de codificación y análisis secuencial procedente de la Hermenéutica Objetiva sensu Oevermann y colegas y es el único análisis para el que el código R realmente no tiene ningún sentido. Sin embargo, el análisis secuencial asistido por ordenador está disponible en el software gratuito QDA AQUAD.
 
-## Run the R code
+## Ejecutar el código R
 
-Either use a GUI like RStudio, R-Commander, JGR, Emacs with ESS, Deducer, Eclipse StatET, RKWard, Rattle or Tinn-R. Use what suits you.
+Utilice una GUI como RStudio, R-Commander, JGR, Emacs con ESS, Deducer, Eclipse StatET, RKWard, Rattle o Tinn-R. Utilice lo que más le convenga. Normalmente usamos RStudio (escritorio, servidor) pero nunca instalamos librerías de R a través de la GUI (ver comentarios más abajo).
 
-## Filenames
+## Nombres de archivos
 
-The files work in the following manner so that most files are directly related to a chapter of the book and a specific task or data set (see table below).
+Los archivos funcionan de la siguiente manera, de modo que la mayoría de los archivos están directamente relacionados con un capítulo del libro y una tarea o conjunto de datos específicos (véase la tabla siguiente).
 
 - `ptII_quan_Bayes_BayesFactors_dependence-on-N-sim.r`
 - `ptII_quan_Bayes_BayesFactors_dependence-on-N-sim_helpfuncs.r`
 
-This means we take the example filenames above and break them down to their parts, e.g.:
+Esto significa que tomamos los nombres de archivo de ejemplo anteriores y los descomponemos en sus partes, por ejemplo
 
 | Filename part | Description |
 | --- | --- |
-| `pt II` | part II [possible values: `part all`, `I`, `II`, `III`, `IV`, `V`] |
-| `quan` | quantitative [possible values: `generalfuncs`, `scientifictheory`, `quantitative`, `qualitative`] |
-| `Bayes` | Bayesian statistics [possible values: `classicstats`, `EDA`, `code-paradigm`, `quan-textanalysis`, `Boole`, `mixed`] |
-| `BayesFactors` | subtopic [ various topics possible...] |
-| `dependence-on-N-sim` | topic discussed, here the dependence of the Bayes Factor from the sample size N by using simulation to demonstrate such a relationship |
-| `helpfuncs` [optional] | general term used for functions used in the scripts (in most cases the non-helpfuncs.r files do not contain R functions) |
-| `ptall_generalfuncs` | collection of functions of general usage which are not (just) data set specific |
+| `pt II` | parte II [valores posibles: parte todo, I, II, III, IV, V] |
+| `quan` | cuantitativo [valores posibles: generalfuncs, scientifictheory, quantitative, qualitative] |
+| `Bayes` | Estadística bayesiana [valores posibles: classicstats, EDA, code-paradigm, quan-textanalysis, Boole, mixed] |
+| `BayesFactors` | subtema [varios temas posibles...] |
+| `dependence-on-N-sim` | tema discutido, aquí la dependencia del Factor de Bayes del tamaño de la muestra N usando simulación para demostrar tal relación |
+| `helpfuncs` [optional] | término general utilizado para las funciones utilizadas en los scripts (en la mayoría de los casos los archivos no-helpfuncs.r no contienen funciones R) |
+| `ptall_generalfuncs` | colección de funciones de uso general que no son (sólo) específicas del conjunto de datos |
 
-Some rare files do not follow that filename pattern:
+Algunos archivos raros no siguen ese patrón de nombre de archivo:
 
-| Scriptname | Description |
+| Scriptname | Descripción |
 | --- | --- |
-| `DiM_Bretthorst_PG.r` | R implementation of the paper "Difference in means" from GL Bretthorst 1993 (an analytical Bayesian solution to the Behrens-Fisher problem) modelled after Gregory 2005 |
-| `DiM_Bretthorst_UMS.r` | same as above but an implementation ater UM Studer (1998) |
-| `model.txt` | Lady Bristol BUGS model to reproduce the exact Fisher test based on the original data from the 'Lady tea experiment' (with fixed margin totals for rows and cols) |
+| `DiM_Bretthorst_PG.r` | Implementación en R del artículo "Difference in means" de G.L. Bretthorst 1993 (una solución bayesiana analítica al problema Behrens-Fisher) modelada según Gregory, 2005 |
+| `DiM_Bretthorst_UMS.r` | Igual que el anterior pero una implementación de UM Studer (1998) |
+| `model.txt` | Modelo Lady Bristol BUGS para reproducir la prueba exacta de Fisher basada en los datos originales del "experimento Lady tea" (con totales de márgenes fijos para filas y columnas) |
 
-For the Bretthorst approach there is a dedicated repo at https://github.com/abcnorio/diffinmeans which updated and enhanced code.
+Para el enfoque Bretthorst hay un repositorio dedicado en diffinmeans con código R actualizado y mejorado.
 
-To facilitate the relationship of R script file and book chapter, the following table contains the match of chapter and R script. It is ordered in accordance to book chapters.
+Para facilitar la relación entre el archivo R script y el capítulo del libro, la siguiente tabla contiene la correspondencia entre el capítulo y el R script. Está ordenada de acuerdo con los capítulos del libro.
 
 <details>
 
-<summary>Click here to see the table with a the matching of R script filename, book chapter, and (German) chapter title</summary>
+<summary>Haga clic aquí para ver la tabla con la correspondencia entre el nombre del archivo de script R, el capítulo del libro y el título del capítulo (en alemán).</summary>
 
 | Scriptname | Chap | SubChap | Chapter title (German) |
 | --- | --- | --- | --- |
-| DiM_Bretthorst_PG_calls.r | - | - | - |
-| DiM_Bretthorst_PG.r | - | - | general functions for various scripts |
-| DiM_Bretthorst_UMS_calls.r | - | - | - |
-| DiM_Bretthorst_UMS.r | - | - | general functions for various scripts |
+| DiM_Bretthorst_PG.r | - | - | general functions |
+| DiM_Bretthorst_PG_calls.r | - | - | example calls |
+| DiM_Bretthorst_UMS.r | - | - | general functions |
+| DiM_Bretthorst_UMS_calls.r | - | - | example calls |
 | **External functions** |  |  |  |
-| EXT_bayesian2beta.r | - | - | general functions for various scripts |
-| EXT_DBDA2E-utilities.R | - | - | general functions for various scripts |
-| EXT_Jags-Ymet-XmetMulti-Mrobust.R | - | - | general functions for various scripts |
+| EXT_bayesian2beta.r | - | - | general functions |
+| EXT_DBDA2E-utilities.R | - | - | general functions |
+| EXT_Jags-Ymet-XmetMulti-Mrobust.R | - | - | general functions |
 | **All parts** |  |  | |
-| ptall_generalfuncs_Bayes_Beta_determine.r | - | - | general functions for various scripts |
-| ptall_generalfuncs_Bayes_binomial-prop-test.r | - | - | general functions for various scripts |
-| ptall_generalfuncs_Bayes_binomial.r | - | - | general functions for various scripts |
-| ptall_generalfuncs_brob-integral.r | - | - | general functions for various scripts |
-| ptall_generalfuncs.r | - | - | general functions for various scripts |
-| **Part I** |  |  | **Scientific Theory** |
+| ptall_generalfuncs_Bayes_Beta_determine.r | - | - | general functions |
+| ptall_generalfuncs_Bayes_binomial-prop-test.r | - | - | general functions |
+| ptall_generalfuncs_Bayes_binomial.r | - | - | general functions |
+| ptall_generalfuncs_brob-integral.r | - | - | general functions |
+| ptall_generalfuncs.r | - | - | general functions |
+| **Part I - Scientific Theory** |  |  | |
 | ptI_sciencetheory_logic.r | 2 | 2.2 | **Der deduktive Schluss** |
-| **Part II** |  |  | **Classical Statistics** |
+| **Part II - Classical Statistics** |  |  | |
 | ptII_quan_classicstats_Fisher_ladyteataste.r | 4 | 4.5.1.1 | Vom Tee trinken und Milch erkennen — ein Beispielexperiment nach Fisher |
 | ptII_quan_classicstats_N-P_powerfunc.r | 4 | 4.5.2.1 | Praktische Bedeutsamkeit im Kontext von statistischer Bedeutsamkeit |
 | ptII_quan_classicstats_N-P_stat-signif-isNOT-practsignif.r | 4 | 4.5.2.1 | Praktische Bedeutsamkeit im Kontext von statistischer Bedeutsamkeit |
@@ -116,7 +116,7 @@ To facilitate the relationship of R script file and book chapter, the following 
 | ptII_quan_classicstats_normaldist_residuals.r | 4 | 4.6.9.1 | Normal-Verteilung der Residuen |
 | ptII_quan_classicstats_outliers-and-influentialpoints_helpfuncs.r | 4 | 4.6.9.3 | Ausreisser und einflussreiche Datenpunkte |
 | ptII_quan_classicstats_outliers-and-influentialpoints.r | 4 | 4.6.9.3 | Ausreisser und einflussreiche Datenpunkte |
-| **Part II** |  |  | **Exploratory Data Analysis (EDA) sensu JW Tukey** |
+| **Part II - Exploratory Data Analysis (EDA) sensu Tukey** |  |  |  |
 | ptII_quan_EDA_intro_overviewrobust_helpfuncs.r | 5 | 5.2.-5.3. | Typische Verfahren der EDA in R |
 | ptII_quan_EDA_intro_overviewrobust.r | 5 | 5.2.-5.3. | Typische Verfahren der EDA in R |
 | ptII_quan_EDA_case_German-states-population.r | 5 | 5.5.1 | population comparison of German states |
@@ -129,7 +129,7 @@ To facilitate the relationship of R script file and book chapter, the following 
 | ptII_quan_EDA_case_Spain_leadership-in-education.r | 5 | 5.5.5 | Führungsverhalten in Bildungskontexten |
 | ptII_quan_EDA_case_Chiro_heartrate-variability_helpfuncs.r | 5 | 5.5.6 | Ein Experiment zur Herzratenvariabilität |
 | ptII_quan_EDA_case_Chiro_heartrate-variability.r | 5 | 5.5.6 | Ein Experiment zur Herzratenvariabilität |
-| **Part II** |  |  | **Bayesian Statistics** |
+| **Part II - Bayesian Statistics** |  |  | |
 | ptII_quan_Bayes_Beta-distribution.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
 | ptII_quan_Bayes_find-Beta-distribution-shapeparams.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
 | ptII_quan_Bayes_Fisher_LadyBristol-Beta-disttribution.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
@@ -189,22 +189,22 @@ To facilitate the relationship of R script file and book chapter, the following 
 | ptII_quan_Bayes_PPC_model-check-graph.r | 6 | 6.7.4.5 | Graphische Begutachtung von Modellen im Dienste des Modellfittings |
 | ptII_quan_Bayes_case_wordcounts-PPC_helpfuncs.r | 6 | 6.7.4.6 | Forschungsbeispiel — Wortproduktion Humor |
 | ptII_quan_Bayes_case_wordcounts-PPC.r | 6 | 6.7.4.6 | Forschungsbeispiel — Wortproduktion Humor |
-| **Part III** |  |  | **Qualitative Data Analysis** |
+| **Part III - Qualitative Data Analysis** |  |  | |
 | ptIII_qual_code-paradigm_table-analysis.r | 9 | 9.4 | Tabellenanalysen nach Miles und Huberman |
 | ptIII_qual_quan-textanalysis.r | 10 | 10.1 | Fallbeispiel quantitative Textanalyse |
-| **Part IV** |  |  | **Qualitative Comparative Analysis** |
+| **Part IV - Qualitative Comparative Analysis** |  |  | |
 | ptIV_qual_Boole_basics.r | 12 | 12.1 | Propädeutikum |
 | ptIV_qual_Boole_case_Krook_women-in-parliament.r | 12 | 12.11.1 | Die Repräsentativität von Frauen in Parlamenten |
 | ptIV_qual_Boole_case_Titanic_death-and-dying.r | 12 | 12.11.2 | Leben und Sterben auf der Titanic Teil II |
 | ptIV_qual_Boole_logical-minimization.r | 12 | 12.3 | Typenbildung als Prinzip des Vergleichs mittels logischer Minimierung |
 | ptIV_qual_Boole_case_school-success.r | 12 | 12.6 | Kriteriumsanalyse — positiver und negativer Ausgang |
 | ptIV_qual_Boole_fuzzy-logic.r | 12 | 12.7 | Fuzzy Logic |
-| **Part V** |  |  | **Mixed Methods** |
+| **Part V - Mixed Methods** |  |  | |
 | ptV_mixed_prime-numbers.r | 13 | 13.3.1 | QUAL und QUAN in Konversions-Designs |
 
 </details>
 
-The following table contains condensed information about each script using some keywords. The files are clustered in accordance ot the topic and do not necessarily represent the order of appearance in the book.
+La siguiente tabla contiene información condensada sobre cada script usando algunas palabras clave. Los archivos están agrupados de acuerdo con el tema y no representan necesariamente el orden de aparición en el libro.
 
 <details>
 
@@ -212,7 +212,7 @@ The following table contains condensed information about each script using some 
 
 | Scriptname | Content |
 | --- | --- |
-| DiM_Bretthorst_PG.r | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after P Gregiory (2005) |
+| DiM_Bretthorst_PG.r | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after P Gregory (2005) |
 | DiM_Bretthorst_PG_calls.r | example calls |
 | DiM_Bretthorst_UMS.r | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after UM Studer (1998) |
 | DiM_Bretthorst_UMS_calls.r | example calls |
@@ -220,15 +220,15 @@ The following table contains condensed information about each script using some 
 | EXT_bayesian2beta.r | exact Bayesian proportion test from Sverdlov, Ryeznik & Wu (2015) |
 | EXT_DBDA2E-utilities.R | from Kruschke (2014) DBDA 2nd ed., general functions |
 | EXT_Jags-Ymet-XmetMulti-Mrobust.R | from Kruschke (2014) DBDA 2nd ed., used for PPC and heterogenuous variances |
-| **all parts** | |
+| **All parts** | |
 | ptall_generalfuncs.r | Cohen's d, descriptive statistics of all kinds in one table, Tukey's fivenum with labels, convert Aquad style tables to truth tables and v.v., print prime implicants from QCA objects, full distance matrix, optimal cut through a proximity matrix after Oldenbürger and plot it, plot prototypes in 2d + 3d, plot eigenvalues (MDS), correlation and p-values |
 | ptall_generalfuncs_Bayes_Beta_determine.r | determine and plot beta distribution values from three quantile points via optimization, role model: Coghlan (2017) |
 | ptall_generalfuncs_Bayes_binomial.r | functions to apply and plot prior probability functions for successes/ failures, calculate summary statistics for posterior, HDI, formula to calculate beta posterior via conjugation, plot prior, likelihood, posterior, updated prior and update therefor posterior, summary statistics |
 | ptall_generalfuncs_Bayes_binomial-prop-test.r | Bayesian proportion test (e.g. successes/ failures): calculate, summarize, and plot prior from successes/ failures, convert to beta disztribution values and v.v., update binomial prior with likelihood to beta (posterior) and plot, tweaked bayes.prop.test summary from BayesianFirstAid and plot theta_diff, MCMC plot, simulation from posterior, grid approximation via brute force, exact (binomial difference) tests (Evan Miller, Chris Stucchio, the approach by Sverdlov, Ryeznik, Wu (2015) from bayesian2beta.r in a tweaked form to work with log values or brob objects and plot results, numerical integration (Simpson rule) for brob objects, brute force comparison of rbetas vs. dbetas and plot it |
 | ptall_generalfuncs_brob-integral.r | useful functions for brob objects, convert a list to a vector, calculate the scalarproduct, numerical integration (Simpson rule), more numerical integration methods for brob objects can be found at https://github.com/abcnorio/R-largenum-integration |
-| **Part I** | **Scientific Theory** |
+| **Part I - Scientific Theory** | |
 | ptI_sciencetheory_logic.r | chap. 2.2 - simple true/ false statements |
-| **Part II** | **Classical Statistics** |
+| **Part II - Classical Statistics** | |
 | ptII_quan_classicstats_Fisher_ladyteataste.r |  chap. 4.5.1.1 - Lady Bristol tea taste experiment by Fisher using his methods using hypergeometric distribution, fisher.test, and manual calculation using factorials |
 | ptII_quan_classicstats_N-P_powerfunc.r | chap. 4.5.2.1 - calculate and plot power vs. effect sizes in accordance to different hypotheses |
 | ptII_quan_classicstats_N-P_stat-signif-isNOT-practsignif.r | chap. 4.5.2.1 - different views on sample differences if population parameters are known |
@@ -275,7 +275,7 @@ The following table contains condensed information about each script using some 
 | ptII_quan_classicstats_normaldist_residuals.r | chap. 4.6.9.1 - investigation of residuals from linear models for various characteristics (normality, skewness, kurtosis, various sample sizes |
 | ptII_quan_classicstats_outliers-and-influentialpoints.r | chap. 4.6.9.3 - impact and consequences of influential points and outliers, calculate linear model, t-test, outlier test, correlation test, leverage plots |
 | ptII_quan_classicstats_outliers-and-influentialpoints_helpfuncs.r | chap. 4.6.9.3 - function to plot outlier (with, without) via regression lines |
-| **Part II** | **Exploratory Data Analysis (EDA) sensu JW Tukey** |
+| **Part II - Exploratory Data Analysis** | |
 | ptII_quan_EDA_intro_overviewrobust.r | chap. 5.2.-5.3. - compare median vs. mean, show robust plots of data, apply lm vs. rlm on empirical data |
 | ptII_quan_EDA_intro_overviewrobust_helpfuncs.r | chap. 5.2.-5.3. - function to plot residuals (lm vs. rlm), simulate and plot median/ mean from normal distribution |
 | ptII_quan_EDA_case_German-states-population.r | chap. 5.5.1 - conversion to log values lead to straight lines using a real life example from German states population characteristics, compare to classical linear model |
@@ -288,7 +288,7 @@ The following table contains condensed information about each script using some 
 | ptII_quan_EDA_case_Spain_leadership-in-education_helpfuncs.r | chap. 5.5.5 - tweaked version of heatmap from package heatmap.plus (not available in R v.4) |
 | ptII_quan_EDA_case_Chiro_heartrate-variability.r | chap. 5.5.6 - experiment in chiropractice about heart rate variability using linear models without any significance test, learning from sample size characteristics, use histograms and interaction plots |
 | ptII_quan_EDA_case_Chiro_heartrate-variability_helpfuncs.r | chap. 5.5.6 - function to plot interactions |
-| **Part II** | **Bayesian Statistics** |
+| **Part II - Bayesian Statistics** | |
 | ptII_quan_Bayes_Beta-distribution.r | chap. 6.12 - calculate beta posterior from prior and likelihood (conjugation, grid approximation), influence of priors, various shapes of beta |
 | ptII_quan_Bayes_find-Beta-distribution-shapeparams.r | chap. 6.12 - determine beta distribution from three quantile points with/ without optimization |
 | ptII_quan_Bayes_Fisher_LadyBristol-Beta-disttribution.r | chap. 6.12 - plot prior, likelihood, and posterior of the empirical data |
@@ -308,7 +308,7 @@ The following table contains condensed information about each script using some 
 | ptII_quan_Bayes_GibbsSampling_example-normdist.r | chap. 6.13.4.2 - simulate mean posterior via Gibbs sampling, analyze posterior |
 | ptII_quan_Bayes_JAGS_example-norm.r | chap. 6.13.4.3 - simulate mean of a normal distribution using JAGS, investigate MCMC, compare with package Bolstad |
 | ptII_quan_Bayes_Fisher_LadyBristol-BUGS.r | chap. 6.13.5 - analyze Lady Bristol's tea data with classical and Bayesian methods (analytical solution and MCMC with JAGS, package BEST, BUGS) |
-|  ptII_quan_Bayes_Fisher_LadyBristol-BUGS_helpfuncs.r | chap. 6.13.5 - function to analyze Lady Bristol experiment with Bayes Theorem, plot successes/ failures, HDI, MAP, and run BUGs model with package RBugs from R |
+| ptII_quan_Bayes_Fisher_LadyBristol-BUGS_helpfuncs.r | chap. 6.13.5 - function to analyze Lady Bristol experiment with Bayes Theorem, plot successes/ failures, HDI, MAP, and run BUGs model with package RBugs from R |
 | ptII_quan_Bayes_MaximumEntropy.r | chap. 6.14 - calculate and plot Boltzmann/ Shannon entropy using a (not-so-fair/ fair) coin and dice |
 | ptII_quan_Bayes_MaximumEntropy_helpfuncs.r | chap. 6.14 - functions to reproduce Jaynes' (1962) analyses, entropy simulation after McElreath (2015, p.277) |
 | ptII_quan_Bayes_Entropy_KullbackLeibler.r | chap. 6.14.1 - apply entropy functions on word counts |
@@ -346,10 +346,10 @@ The following table contains condensed information about each script using some 
 | ptII_quan_Bayes_PPC_model-check-graph.r | chap. 6.7.4.5 - demonstrate PPC for homogenous variances (yes/no), plot and test specific hypotheses (classical, Bayesian statistics with brms), treatment/ control group design, compare linear models |
 | ptII_quan_Bayes_case_wordcounts-PPC.r | chap. 6.7.4.6 - perform analysis (e.g. with JAGS) and plots along with posterior predictive checks (PPC) incl. diagnostic MCMC plots, bootstrap using full cases or real values, exercise Kruschke (2014, chap 18.3) regarding heteroscedasticity (influence of un-/equal variances between groups) |
 | ptII_quan_Bayes_case_wordcounts-PPC_helpfuncs.r | chap. 6.7.4.6 - functions to prepare and summarize MCMC chains and posteriors from Kruschke (2014) scripts to match requirements here for PPC |
-| **Part III** | **Qualitative Data Analysis** |
+| **Part III - Qualitative Data Analysis** | |
 | ptIII_qual_code-paradigm_table-analysis.r | chap. 9.4 - example for usage of expand.grid |
 | ptIII_qual_quan-textanalysis.r | chap. 10.1 - prepare (e.g. removal of redundant parts, special characters, white space, punctuations, stop words and convert to lower cases, split text, word cloud, plot frequencies, KWIC, collocation, ...) and analyze text using packages stringi, SnowbalC, tm, magrittr, quanteda, corps2, etc., use wordstems, corpus inspection, ... |
-| **Part IV** | **Qualitative Comparative Analysis** |
+| **Part IV - Qualitative Comparative Analysis** | |
 | ptIV_qual_Boole_basics.r | chap. 12.1 - simple true/ false statements |
 | ptIV_qual_Boole_case_Krook_women-in-parliament.r | chap. 12.11.1 - analyse data set from Krook (2010) using QCA, extract prime implicants, check for consistencies, prepare positive and negative outcome for general discussion| |
 | ptIV_qual_Boole_case_Titanic_death-and-dying.r | chap. 12.11.2 - apply QCA on Titanic data set to investigate a minimal set for survival (yes/ no) |
@@ -361,44 +361,45 @@ The following table contains condensed information about each script using some 
 
 </details>
 
-## Links in the R code
+## Enlaces en el código R
 
-It is impossible to write any R code without external role models and code taken, borrowed, learned, etc. from other people. To give respect to that fact and to allow to deepen this or that understanding of R or any other topic of the sript, at some selected points the scripts contain URLs to external webpages that may be interesting for the reader or for the practice of R. We cannot guarantee that those links still exist, because the internet changes too fast. They did when the scripts were written.
+Es imposible escribir cualquier código R sin modelos externos y código tomado, prestado, aprendido, etc. de otras personas. Para dar respeto a ese hecho y a los autores asociados y permitir profundizar en tal o cual comprensión de R o de cualquier otro tema del script, en algunos puntos seleccionados los scripts contienen URLs a páginas web externas que pueden ser interesantes para el lector o para la práctica de R. No podemos garantizar que esos enlaces sigan existiendo, porque el internet cambia demasiado rápido. Lo hacían cuando se escribieron los scripts.
 
-## Data sets
+## Conjuntos de datos
 
-Due to legal and licence issues not all data sets discussed in the book can be published here as well. Data sets should be located in the same folder as the E script to load them. Quite some data sets are taken from R and therefor included in R. The following data sets are added in the following folders below 'data' of this repository:
+Debido a cuestiones legales y de licencia, no todos los conjuntos de datos tratados en el libro pueden publicarse también aquí. Los conjuntos de datos deben estar ubicados en la misma carpeta que los scripts de R para cargarlos correctamente. Algunos conjuntos de datos se toman directamente de R y por lo tanto ya están incluidos en R. Los siguientes conjuntos de datos se añaden externamente y se encuentran en las siguientes carpetas debajo de 'data' de este repositorio:
 
-| Dataset | Description |
+| Conjunto de datos | Descripción |
 | --- | --- |
-| `AAH` | data from a research study about collaborative learning |
-| `LG` | data from a research study about the usage of word counts and a small experiment about clairvoyance to demonstrate something that does not show any kind of empirical effect |
-| `school_success` | logical table about school success (fictional data created just for demonstration) |
-| `Spain-edu` | data from a Spanish research study on leadership in education |
-| `startagain_appl-letter-addiction` | application letter for a treatment place in drug therapy rehabilitation written from detox in psychiatry (originally sent via fax, names and places are fully anonymized) |
-| `startagain_successrates` | success rates to pass through a drug rehabilitation program in the Suisse drug therapy center *start again* between 1992-2017 |
-| `Titanic_survivors` | well-known data of the passangers of the Titanic along with some of their characteristics |
-| `wikipedia_presidential-heights` | data from wikipedia about the relationship of body height of US presidential candidates and later winners (presidents) |
+| `AAH` | Datos de un estudio de investigación sobre el aprendizaje colaborativo (Huber 2007). |
+| `LG` | Datos de un estudio de investigación sobre el uso del recuento de palabras (Guertler 2005) y un pequeño experimento sobre la clarivi-dencia para demostrar algo que no muestra ningún tipo de efecto empírico (sin publicar). |
+| `school_success` | Tabla lógica sobre el éxito escolar (datos ficticios creados sólo para demostración) |
+| `Spain-edu` | Datos de una investigación española sobre liderazgo en educación (Huber, Guertler & Gento 2018)
+startagain_appl-letter |
+| `startagain_appl-letter-addiction` | Carta de solicitud de adicción para una plaza de tratamiento en rehabilitación farmacoterapéutica escrita desde desintoxicación en psiquiatría (originalmente enviada por fax, los nombres y lugares están totalmente anonimizados, véase Studer 1998) |
+| `startagain_successrates` | Tasas de éxito para pasar a través de un programa de rehabilitación de drogas en el centro de terapia de drogas Suisse empezar de nuevo entre 1992-2017 |
+| `Titanic_survivors` | Datos conocidos de los pasajeros del Titanic junto con algunas de sus características |
+| `wikipedia_presidential-heights` | Datos de wikipedia sobre la relación de las alturas corporales de los candidatos a la presidencia de EE.UU. y los ganadores posteriores (presidentes) |
 
-## External data sets
+## Conjuntos de datos externos
 
-As mentioned above some data sets used are taken directly from R like the **bupa** data set or the one from A Dobson (1990) about **plant weight data**, the famous **iris** data set, etc. (see book for further references). Other set like **crime data** are from external sources (e.g. UCLA) and others are not published due to a missing license required for public access (e.g. data about the **chiropractice research study** or about **women in parliament** by ML Krook 2010).
+Como se ha mencionado anteriormente, algunos conjuntos de datos utilizados se toman directamente de R, como el conjunto de datos de **bupa** o el de Dobson (1990) sobre datos de **peso de plantas**, el famoso conjunto de datos de **iris**, etc. (véase el libro para más referencias). Otros conjuntos, como los datos sobre **delincuencia**, proceden de fuentes externas (por ejemplo, UCLA) y otros no están publicados debido a la falta de una licencia necesaria para el acceso público (por ejemplo, los datos sobre **mujeres en el parlamento** de Krook 2010).
 
-## External R code
+## Código R externo
 
-Some R code was not taken from R packages but various locations on the net. From that selection some scripts were also tweaked to fit to our needs here. Such incidents are noted in the R scripts at each place where an external script was used or tweaked. Mostly, those scripts originate from:
+Parte del código R no se tomó de paquetes R, sino de diversos lugares de la red. A partir de esa selección, algunos scripts se modificaron para adaptarlos a nuestras necesidades. Estos incidentes se señalan en los scripts de R en cada lugar donde se utilizó o modificó un script externo. En su mayoría, esos scripts se originan en:
 
-- `bayesian2beta.r` (Sverdlov O, Ryeznik Y & Wu S. (2015). Exact Bayesian Inference Comparing Binomial Proportions, With Application to Proof-of-Concept Clinical Trials. _Therapeutic Innovation & Regulatory Science_, _49_(1), p.163-174.)
-- `DBDA2E-utilities.R` and `Jags-Ymet-XmetMulti-Mrobust.R` (Kruschke, J (2014). _Doing Bayesian Data Analysis. 2nd ed._ Academic Press.)
-- package `BayesianFirstAid` ([Bååth, R](https://github.com/rasmusab/bayesian_first_aid))
+- `bayesian2beta.r` (Sverdlov O, Ryeznik Y & Wu S. (2015). Exact Bayesian Inference Comparing Binomial Proportions, With Application to Proof-of-Concept Clinical Trials. _Therapeutic Innovation & Regulatory Science_, _49_(1), p.163-174.) Puede descargarse gratuitamente como [material complementario](https://link.springer.com/article/10.1177/2168479014547420#SecESM1)
+- `DBDA2E-utilities.R` and `Jags-Ymet-XmetMulti-Mrobust.R` (Kruschke, J (2014). _Doing Bayesian Data Analysis. 2nd ed._ Academic Press.) Los scripts pueden descargarse gratuitamente en [la página del libro](https://sites.google.com/site/doingbayesiandataanalysis/software-installation) del autor
+- El paquete `BayesianFirstAid` ([Bååth](https://github.com/rasmusab/bayesian_first_aid))
 
-The corresponding `*.r` file contains from the URL where to download the R script if it is not conainted here. Download and just place them in the main folder. Do not change the filename to avoid any error while loading it. External R code is used in the following way as (parts of) R functions:
+El archivo *.r correspondiente contiene la URL desde la que puede descargar los scripts R externos. Descárguelo y coloque el/los archivo(s) en la carpeta principal. No cambie el nombre del archivo para evitar cualquier error al cargarlo y si la descarga crea un nombre de archivo diferente, utilice el indicado anteriormente. El código R externo se utiliza de la siguiente manera como (partes de) funciones R:
 
-- R packages and R functions that are modified to meet our needs here (e.g. some functions went missing from one R version to the next one like code from [heatmap.plus](https://github.com/cran/heatmap.plus), [sjstats](https://github.com/strengejacke/sjstats), [rhmc](https://github.com/cran/rhmc), ...).
-- Some R code (e.g. from [Bolstad](https://github.com/cran/Bolstad)) was slightly changed due to bugs in the original code at that time. That may be different now ie. the bug is fixed, but it was not at the time when the R scripts were written.
-- Some other code just follows papers and can be seen as an implementation of forumla and algorithms (e.g. about p-hacking, z-curves, etc.). This is referenced en detail in the book itself.
+- Paquetes de R y funciones de R que se modifican para satisfacer nuestras necesidades aquí (por ejemplo, algunas funciones desaparecieron de una versión de R a la siguiente como el código de [heatmap.plus](https://github.com/cran/heatmap.plus),  [sjstats](https://github.com/strengejacke/sjstats), [rhmc](https://github.com/cran/rhmc), ...).
+- Algunos códigos de R (por ejemplo, de [Bolstad](https://github.com/cran/Bolstad)) se modificaron ligeramente debido a errores en el código original en ese momento. Esto puede ser diferente ahora, es decir, el error está corregido, pero no lo estaba en el momento en que se escribieron los scripts R.
+- Algunos otros códigos de R simplemente siguen artículos y pueden considerarse como una implementación de fórmulas y algoritmos (por ejemplo, sobre p-hacking, curvas z, etc.). Esto se menciona con detalle en el propio libro.
 
-From time to time some code is put in sections like
+De vez en cuando se pone algo de código R en secciones como
 
 ```
 ### not run
@@ -406,60 +407,60 @@ From time to time some code is put in sections like
 ### end of not run
 ```
 
-Such R code is optional or sometimes not fully related to the book or just gives another (maybe even redundant) perspective. This happens e.g. while investigating the Titanic survival characteristics with a lot of plots and tables. Too many perspectives, so one has to focus on a few spots.
+Este código R es opcional o a veces no está totalmente relacionado con el libro o simplemente ofrece otra perspectiva (tal vez incluso redundante). Esto ocurre, por ejemplo, al investigar las características de supervivencia del Titanic con un montón de gráficos y tablas. Demasiadas perspectivas, así que uno tiene que centrarse en unos pocos puntos.
 
-## R version
+## Versión R
 
-All R scripts were written and tested under R v3.4/ v3.6. "In theory" they should run with later versions of R as well. However, sometimes packages are not maintained anymore and then they are dropped from the official R repository or something changes so heavily in a package that previous functions either do not exist anymore or at least not in the way they should and are used here. Therefor, one can create a virtual machine or a docker engine, install R v3.4/ v3.6 and everything should run fine independent from using Linux or Windows. All scripts were developed under Linux, but also tested under win7.
+Todos los scripts de R fueron escritos y probados con R v3.4/ v3.6. Deberían funcionar con versiones posteriores de R. Deberían funcionar también con versiones posteriores de R >= v4. Sin embargo, a veces los paquetes ya no se mantienen y luego son eliminados del repositorio oficial de R o algo cambia tan fuertemente en un paquete que las funciones anteriores ya no existen o al menos no en la forma en que deberían y se utilizan aquí. Esto ocurre cuando los nombres de los objetos, las estructuras internas, etc. quedan obsoletos. Por lo tanto, uno puede crear una máquina virtual o un motor docker, instalar R v3.4/ v3.6 y todo debería funcionar bien independientemente de usar Linux o Windows. Todos los scripts fueron desarrollados bajo Linux, pero también probados bajo win7 y deberían funcionar con win10 o win11. En el futuro vamos a proporcionar un archivo docker + imagen que se puede utilizar para ejecutar el código a través del servidor RStudio libre. Aquellos que estén interesados pueden enviar una nota para obtener la versión más reciente del archivo docker que todavía está en desarrollo. El libro contiene al final una lista de todas las bibliotecas de R y sus versiones. Sin embargo, la mayoría de las cosas deberían funcionar sin más, las notas anteriores se refieren a casos especiales de ciertas librerías requeridas y posteriormente eliminadas del repositorio de R porque los mantenedores de esos paquetes no actualizaron a versiones más recientes de R.
 
-## R libraries
+## Bibliotecas R
 
-Many scripts require external R packages and external libraries installed on the operation system (Linux, ...), espicially if it comes to compilation in the context of Bayesian linear models with package brms. Sometimes they require especially under Linux the compilation of libraries. Such compilations under Linux should be done directly by running R from the commandline and **not** (**never!**) via using some GUI like RStudio (esp. this one!), because a lot of experiences showed that the compilation tends to break and fails out of unknown reasons if such a GUI was used. Compilation directly via R on the commandline works pretty well as long as the necessary (development) libraries are installed on the system. Afterwards the GUI can be used again without any hazzle. Under windows, most libraries do not require any compilation. If compiled packages or packages installed from the commandline and not via the OS package system (using debs/ rpms/ etc.) should be made available for all local users, start R as root and install then packages via the commandline.
+Muchos scripts requieren paquetes R externos y bibliotecas externas instaladas en el sistema operativo (Linux, ...), especialmente si se trata de compilación en el contexto de modelos lineales bayesianos con el paquete Bayes brms. A veces requieren, especialmente en Linux, la compilación de bibliotecas. Tales compilaciones en Linux deben hacerse directamente ejecutando R desde la línea de comandos y no (¡nunca!) mediante el uso de alguna GUI como RStudio (¡especialmente esta!), porque muchas experiencias mostraron que la compilación tiende a romperse y falla por razones desconocidas si se utiliza una GUI. La compilación directa vía R en la línea de comandos funciona bastante bien siempre y cuando las librerías (de desarrollo) necesarias estén instaladas en el sistema. Si falta una librería en el sistema operativo, R nos dice normalmente qué es lo que falta y te da una pista de cómo instalarla (por ejemplo, usando apt). Después, la GUI se puede utilizar de nuevo sin ningún problema. En Windows, la mayoría de las bibliotecas no requieren compilación. Los paquetes compilados o instalados desde la línea de comandos y no a través del sistema de paquetes del SO (usando debs/ rpms/ etc.) pueden estar disponibles para todos los usuarios locales. Para lograrlo, inicie R como root e instale todos los paquetes necesarios manualmente a través de la línea de comandos.
 
-If future time permits the scripts will be updated to work with R v4.
+## Errores en el código de R
 
-## Errors in the R code
+Si uno encuentra un error, por favor, contáctenos con un ejemplo corto y claro para que podamos intentar reproducirlo y corregir el error.
 
-If one finds a bug please contact us with a short and clear example so we can try to reproduce it and fix the error.
+## Uso del código R
 
-## Usage of the R code
+Es importante entender que a veces para demostrar o explorar un tema el código R no es perfecto y se revisa unas líneas más tarde o se hace de otra manera. No todas las interrupciones del script son errores, a veces son características del libro. Esos incidentes no son por tanto bugs (serios) sino hechos intencionadamente con fines educativos para mostrar que las cosas evolucionan y no ocurren accidentalmente. El trabajo estadístico significa (¡idealmente!) un progreso lento y constante hacia un objetivo que a veces incluso cambia. En general, el código R se ajusta a las tareas (por ejemplo, conjuntos de datos) y a los temas específicos del libro y sus capítulos. No es una especie de paquete general de R y no intenta serlo. El código R no cumple los requisitos de los paquetes R tradicionales, como ser útil como biblioteca universal. No obstante, algunas de las funciones pueden ser útiles en diversos contextos cambiantes y pueden utilizarse independientemente del libro, los conjuntos de datos, etc.
 
-Important is to understand that sometimes due to demonstration goals the code is not perfect and is revised a few lines later or it is done differently. Not every break of the script is a bug, sometimes it is a feature of the book. Those incidents are therefor no (serious) bugs but intentional for educational purposes to show that things evolve and do not happen accidentially. Statistical work means (ideally!) slow and steady progress towards a goal that sometimes even changes. In general, the R code is adjusted to the tasks (e.g. data sets) and the specific topics of the book and its chapters. It's not an R package and does not try to be so. The R code does not fulfill the requirements of traditional R packages like being useful as a universal library. Nevertheless, some of the functions may be helpful in various changing contexts and can be used independently from the book, the datasets, etc.
+Si encuentra algo útil, modifíquelo según sus necesidades. Nosotros hacemos lo mismo.
 
-If you find something useful, change it according to your needs. We do the same.
+## Archivos AQUAD 7
 
-## AQUAD 7 files
+Un conjunto de datos (carta de solicitud de una plaza de tratamiento en un centro de rehabilitación de drogodependientes) se toma del análisis cualitativo de datos junto con el binario de Windows de AQUAD 7, un software QDA gratuito y de código abierto escrito y mantenido por G.L. Huber. La carpeta AQUAD7 contiene todos los archivos de trabajo junto con la versión binaria AQUAD7 más antigua que se utilizó originalmente para el análisis. AQUAD está ahora en la v8.
 
-One data set (application letter for a treatment place in a drug addiction rehabilitation center) is taken from qualitative data analysis along with the windows binary from [AQUAD 7](https://www.aquad.de), a free and open source QDA software. The folder AQUAD7 contains all working files along with the older AQUAD7 binary version that was originally used for the analysis. AQUAD is now on v8.
+## Licencias y créditos
 
-## Licenses and Credits
+El código R está licenciado bajo [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html). Por favor, siéntase libre de usar, modificar o compartir el código si le resulta útil.
+Las funciones tomadas de otros paquetes tienen sus propias licencias. Los detalles pueden encontrarse en el archivo de licencia de los paquetes y scripts citados y referenciados.
+El binario AQUAD7 aquad7_170117.exe tiene una (C) de G.L. Huber (2017). La versión más reciente de [AQUAD 8](https://www.aqua.de) se puede encontrar también libremente en la página web de AQUAD.
 
-The R code is licensed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html). Please feel free to use, modify or share the code if it is helpful for you.
-The functions taken from other packages have their own license. Details can be found in the license file of cited and references packages and scripts.
-The AQUAD7 binary `aquad7_170117.exe` has a (C) by GL Huber (2017). The more recent version of AQUAD8 can be found freely on the [AQUAD 8](https://www.aqua.de) webpage.
-
-## References
+## Referencias
 
 - Bretthorst, GL (1993). [On the difference in means](https://bayes.wustl.edu/glb/diff.pdf). In: WT Grandy and PW Milonni (Eds.), _Physics & Probability Essays in honor of ET Jaynes_. Cambridge University Press, England.
 - Coghlan, A (2017-11-07). [A little book of R for Bayesian Statistics. Release 0.1](https://a-little-book-of-r-for-bayesian-statistics.readthedocs.io/en/latest/src/bayesianstats.html)
 - Dobson, A (1990). _An Introduction to Generalized Linear Models._ Chapman & Hall/ CRC Texts in Sstatistical Science.
-- Gregory, P. (2005). _Bayesian logical data analysis for the physical sciences. A comparative approach with Mathematica support._ Cambridge University Press.
+- Gregory, P. (2005). _Bayesian logical data analysis for the physical sciences. A comparative approach with Mathematica support._ Cambridge University Press. [Mathematica code](https://www.cambridge.org/nl/academic/subjects/statistics-probability/statistics-physical-sciences-and-engineering/bayesian-logical-data-analysis-physical-sciences-comparative-approach-mathematica-support)
+- Guertler, L (2005). _Die Rekonstruktion von Innensicht und Aussensicht humorvollen Handelns in Schule und Erwachsenenbildung. Die Bewältigung der Katastrophe —Vipassanā-Meditation und Humor_. Berlin: Logos. [Book page](https://www.logos-verlag.de/cgi-bin/engbuchmid?isbn=1094&lng=deu&id=)
+- Huber, AA (2007). _Wechselseitiges Lehren und Lernen (WELL) als spezielle Formen Kooperativen Lernens._ Berlin: Logos. [Book page](https://www.logos-verlag.de/cgi-bin/engbuchmid?isbn=1502&lng=deu&id=)
+- Huber, GL, Guertler, L & Gento, S (2018). _La aportación de la estadística exploratoria al análisis de datos cualitativos._ In: _Perspectiva Educacional. Formación de Profesores_, 57(1), S. 50–69.
 - Krook, ML (2010). [Women's Representation in Parliament: A Qualitative Comparative Analysis.](http://mlkrook.org/pdf/Krook_PS_2010.pdf) _Political Studies_, _58_, p.886-908.
-- Kruschke, J (2014). _Doing Bayesian Data Analysis: A Tutorial with R, JAGS, and Stan. 2nd ed._ Academic Press.
-- McElreath, R (2015). _Statistical Rethinking. A Bayesian Course with Examples in R and Stan. 1st ed._ Chapman & Hall/ CRC Texts in Sstatistical Science.
+- Kruschke, J (2014). _Doing Bayesian Data Analysis: A Tutorial with R, JAGS, and Stan. 2nd ed._ Academic Press. [Book page](https://sites.google.com/site/doingbayesiandataanalysis/)
+- McElreath, R (2015). _Statistical Rethinking. A Bayesian Course with Examples in R and Stan. 1st ed._ Chapman & Hall/ CRC Texts in Sstatistical Science. [Book page](https://xcelab.net/rm/statistical-rethinking/)
 - Neal, RM (2011). [Handbook of Markov Chain Monte Carlo.](https://arxiv.org/pdf/1206.1901.pdf)_ Edited by S Brooks, A Gelman, G Jones, and X-L Meng. Chapman & Hall/ CRC Press.
-- Studer, U.M. (1998). _Verlangen, Süchtigkeit und Tiefensystemik. Fallstudie des Suchttherapiezentrums für Drogensüchtige start again in Männedorf und Zürich von 1992 bis 1998. Bericht an das Bundesamt für Justiz (BAJ)._ Zürich.
+- Studer, U.M. (1998). _[Verlangen, Süchtigkeit und Tiefensystemik. Fallstudie des Suchttherapiezentrums für Drogensüchtige start again in Männedorf und Zürich von 1992 bis 1998. Bericht an das Bundesamt für Justiz (BAJ)](https://www.bj.admin.ch/dam/data/bj/sicherheit/smv/modellversuche/evaluationsberichte/37.pdf)._ Zürich.
 
-## Citation
+## Cita
 
-If you ever refer to any part of the R code, please cite it as:
+Si alguna vez hace referencia a cualquier parte del código R, por favor cítelo como:
 
-Gürtler, Leo (2023). R code supplement for Gürtler & Huber (2023). *Subjektive Betrachtungen und objektive Ansichten. Qual, Quan und Logik.* R code published on [Github](https://github.com/abcnorio/mixedmethod-rcode) and [OSDN](https://osdn.net/projects/mixedmethod-rcode).
+Guertler, L (2023). R code supplement to Guertler & Huber (2023). Mixed Methods --- quantitativ, qualitativ, explorativ und logisch in Theorie und Anwendung. Objektive Ansichten und subjektive Analysen (Combinación de Métodos - CUAL, CUAN Y LÓGICA. Puntos de vista objetivos y observaciones subjetivas). Código R publicado en [Github](https://github.com/abcnorio/mixedmethod-rcode) y [OSDN](https://osdn.net/projects/mixedmethod-rcode).
 
-## Disclaimer
+## Descargo de responsabilidad
 
-Although all R scripts were tested heavily under varying conditions, we cannot rule out any possible errors. So we do not guarantee anything but to advice that users should use their common sense along with their intelligence and experience whether a result makes sense and is done properly or not. Some R code and examples make only sense in combination with the book, because the few notes in the code are not sufficient. However, it is provided "as is".
-Thus - use common sense to compare results with expectations. NO WARRANTY of any kind is involved here. There is no guarantee that the software is free of error or consistent with any standards or even meets your requirements. Do not use the software or rely on it to solve problems if incorrect results may lead to hurting or injurying living beings of any kind or if it can lead to loss of property or any other possible damage to the world, living beings, non-living material or society as such. If you use the software in such a manner, you are on your own and it is your own risk.
-
+Aunque todos los scripts de R se probaron exhaustivamente en diversas condiciones, no podemos descartar posibles errores. Por lo tanto, no garantizamos nada, sino que aconsejamos a los usuarios que utilicen su sentido común junto con su inteligencia y experiencia para saber si un resultado tiene sentido y está bien hecho o no. Algunos códigos y ejemplos de R sólo tienen sentido en combinación con el libro, porque las pocas notas del código no son suficientes. Sin embargo, se proporciona "tal cual".
+Por lo tanto, utilice el sentido común para comparar los resultados con las expectativas. Aquí no hay GARANTÍA de ningún tipo. No hay garantía de que el software esté libre de errores o sea coherente con cualquier norma o incluso cumpla sus requisitos. No utilice el software ni confíe en él para resolver problemas si los resultados incorrectos pueden llevar a herir o dañar a seres vivos de cualquier tipo o si pueden llevar a la pérdida de bienes o a cualquier otro posible daño al mundo, a los seres vivos, a la materia no viva o a la sociedad como tal. Si utiliza el software de tal manera, lo hará por su cuenta y riesgo.
 
 
