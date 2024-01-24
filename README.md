@@ -2,7 +2,7 @@
 
 ## Resources and languages
 
-The Spanish version of the book is titled "XXX". Both books can be obtained freely from [OSF](osf.io/69gfz) or [AQUAD](https://www.aquad.de). A Spanish version of this README.md can be found in [README-spa](./README-spa.md).
+The Spanish version of the book is titled "Combinación de Métodos - CUAL, CUAN Y LÓGICA. Puntos de vista objetivos y observaciones subjetivas". Both books can be obtained freely from [OSF](osf.io/69gfz) and [AQUAD](https://www.aquad.de). A Spanish version of this README.md can be found in [README-spa](./README-spa.md).
 
 ## Overview
 
