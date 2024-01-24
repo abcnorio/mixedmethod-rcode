@@ -2,7 +2,7 @@
 
 ## Resources and languages
 
-The Spanish version of the book is titled "Combinación de Métodos - CUAL, CUAN Y LÓGICA. Puntos de vista objetivos y observaciones subjetivas". Both books can be obtained freely from [OSF](osf.io/69gfz) and [AQUAD](https://www.aquad.de). A Spanish version of this Readme can be found in [README-spa](./README-spa.md).
+The Spanish version of the book is titled "Combinación de Métodos - CUAL, CUAN Y LÓGICA. Puntos de vista objetivos y observaciones subjetivas". Both books can be obtained freely from [OSF](https://osf.io/69gfz) and [AQUAD](https://www.aquad.de). A Spanish version of this Readme can be found in [README-spa](./README-spa.md).
 
 ## Overview
 
@@ -10,7 +10,7 @@ The book's main topic covers mixed methodology especially if it comes to data an
 
 ## Background
 
-The book deals with mixed methodology (quantitative, qualitative, and Boolean logic) and is published in 2023 freely on various open library platforms like [OSF](osf.io/69gfz) or [AQUAD](https://www.aquad.de). The statistical part covers classical statistics (Fisher, Neyman-Pearson), exploratory data analysis sensu JW Tukey, as well as Bayesian statistics. The Boolean logic is used for implicant analysis of qualitative comparative analysis. The qualitative part covers quantitative as well as qualitative textanalysis. The latter uses coding paradigm and sequential analysis originating from Objective Hermeneutics sensu Oevermann and colleagues and is the only analyses for which R code really does not make any sense. However, copmuter-assisted sequential analysis is available in the free QDA software [AQUAD](https://www.aquad.de).
+The book deals with mixed methodology (quantitative, qualitative, and Boolean logic) and is published in 2023 freely on various open library platforms like [OSF](https://osf.io/69gfz) or [AQUAD](https://www.aquad.de). The statistical part covers classical statistics (Fisher, Neyman-Pearson), exploratory data analysis sensu JW Tukey, as well as Bayesian statistics. The Boolean logic is used for implicant analysis of qualitative comparative analysis. The qualitative part covers quantitative as well as qualitative textanalysis. The latter uses coding paradigm and sequential analysis originating from Objective Hermeneutics sensu Oevermann and colleagues and is the only analyses for which R code really does not make any sense. However, copmuter-assisted sequential analysis is available in the free QDA software [AQUAD](https://www.aquad.de).
 
 ## Run the R code
 
