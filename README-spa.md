@@ -429,7 +429,7 @@ Si encuentra algo útil, modifíquelo según sus necesidades. Nosotros hacemos l
 
 ## Archivos AQUAD 7
 
-Un conjunto de datos (carta de solicitud de una plaza de tratamiento en un centro de rehabilitación de drogodependientes) se toma del análisis cualitativo de datos junto con el binario de Windows de AQUAD 7, un software QDA gratuito y de código abierto escrito y mantenido por G.L. Huber. La carpeta AQUAD7 contiene todos los archivos de trabajo junto con la versión binaria AQUAD7 más antigua que se utilizó originalmente para el análisis. AQUAD está ahora en la v8.
+Un conjunto de datos (carta de solicitud de una plaza de tratamiento en un centro de rehabilitación de drogodependientes) se toma del análisis cualitativo de datos junto con el binario de Windows de [AQUAD 7](https://www.aquad.de), un software QDA gratuito y de código abierto escrito y mantenido por G.L. Huber. La carpeta AQUAD7 contiene todos los archivos de trabajo junto con la versión binaria AQUAD7 más antigua que se utilizó originalmente para el análisis. AQUAD está ahora en la v8.
 
 ## Licencias y créditos
 
