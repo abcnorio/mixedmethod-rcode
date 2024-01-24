@@ -2,7 +2,7 @@
 
 ## Recursos e idiomas
 
-La versión española del libro se titula "Combinación de Métodos - CUAL, CUAN Y LÓGICA. Puntos de vista objetivos y observaciones subjetivas". Ambos libros pueden obtenerse gratuitamente en OSF o AQUAD. Una versión en español de este README.md puede encontrarse en README-spaXXX.
+La versión española del libro se titula "Combinación de Métodos - CUAL, CUAN Y LÓGICA. Puntos de vista objetivos y observaciones subjetivas". Ambos libros pueden obtenerse gratuitamente en OSF o AQUAD.
 
 ## Visión general
 
