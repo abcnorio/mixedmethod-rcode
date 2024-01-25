@@ -51,156 +51,156 @@ Para facilitar la relación entre el archivo R script y el capítulo del libro, 
 
 <summary>Haga clic aquí para ver la tabla con la correspondencia entre el nombre del archivo de script R, el capítulo del libro y el título del capítulo (en alemán).</summary>
 
-| Scriptname | Chap | SubChap | Chapter title (German) |
+| Nombre del script | Cáp. | SubCáp. | Título del Cápitulo |
 | --- | --- | --- | --- |
-| DiM_Bretthorst_PG.r | - | - | general functions |
-| DiM_Bretthorst_PG_calls.r | - | - | example calls |
-| DiM_Bretthorst_UMS.r | - | - | general functions |
-| DiM_Bretthorst_UMS_calls.r | - | - | example calls |
-| **External functions** |  |  |  |
-| EXT_bayesian2beta.r | - | - | general functions |
-| EXT_DBDA2E-utilities.R | - | - | general functions |
-| EXT_Jags-Ymet-XmetMulti-Mrobust.R | - | - | general functions |
-| **All parts** |  |  | |
-| ptall_generalfuncs_Bayes_Beta_determine.r | - | - | general functions |
-| ptall_generalfuncs_Bayes_binomial-prop-test.r | - | - | general functions |
-| ptall_generalfuncs_Bayes_binomial.r | - | - | general functions |
-| ptall_generalfuncs_brob-integral.r | - | - | general functions |
-| ptall_generalfuncs.r | - | - | general functions |
-| **Part I - Scientific Theory** |  |  | |
-| ptI_sciencetheory_logic.r | 2 | 2.2 | **Der deduktive Schluss** |
-| **Part II - Classical Statistics** |  |  | |
-| ptII_quan_classicstats_Fisher_ladyteataste.r | 4 | 4.5.1.1 | Vom Tee trinken und Milch erkennen — ein Beispielexperiment nach Fisher |
-| ptII_quan_classicstats_N-P_powerfunc.r | 4 | 4.5.2.1 | Praktische Bedeutsamkeit im Kontext von statistischer Bedeutsamkeit |
-| ptII_quan_classicstats_N-P_stat-signif-isNOT-practsignif.r | 4 | 4.5.2.1 | Praktische Bedeutsamkeit im Kontext von statistischer Bedeutsamkeit |
-| ptII_quan_classicstats_GandC_type-S-M-error_helpfuncs.r | 4 | 4.5.2.2 | Richtung und Größe — zwei unterschätzte Fehlertypen |
-| ptII_quan_classicstats_GandC_type-S-M-error.r | 4 | 4.5.2.2 | Richtung und Größe — zwei unterschätzte Fehlertypen |
-| ptII_quan_classicstats_N-P_nulldist-hypotest_helpfuncs.r | 4 | 4.5.2.5 | Die Vollkostenrechnung |
-| ptII_quan_classicstats_N-P_nulldist-hypotest.r | 4 | 4.5.2.5 | Die Vollkostenrechnung |
-| ptII_quan_classicstats_N-P_confint_bayesboot.r | 4 | 4.5.2.6 | Konfidenzintervalle |
-| ptII_quan_classicstats_N-P_confint_errorbars.r | 4 | 4.5.2.6 | Konfidenzintervalle |
-| ptII_quan_classicstats_N-P_confint_helpfuncs.r | 4 | 4.5.2.6 | Konfidenzintervalle |
-| ptII_quan_classicstats_N-P_confint_p-t-value_helpfuncs.r | 4 | 4.5.2.6 | Konfidenzintervalle |
-| ptII_quan_classicstats_N-P_confint_p-t-value.r | 4 | 4.5.2.6 | Konfidenzintervalle |
-| ptII_quan_classicstats_N-P_confint-errorbars_helpfuncs.r | 4 | 4.5.2.6 | Konfidenzintervalle |
-| ptII_quan_classicstats_N-P_confint.r | 4 | 4.5.2.6 | Konfidenzintervalle |
-| ptII_quan_classicstats_N-P_simulation.r | 4 | 4.5.4 | Exkurs — Simulationen |
-| ptII_quan_classicstats_N-P_example-soccer-sim_helpfuncs.r | 4 | 4.5.4.1 | Fallbeispiel Simulation — Fussball Sammelbilder |
-| ptII_quan_classicstats_N-P_example-soccer-sim.r | 4 | 4.5.4.1 | Fallbeispiel Simulation — Fussball Sammelbilder |
-| ptII_quan_classicstats_N-P_SE-N-dep.r | 4 | 4.5.5 | Stichprobengröße |
-| ptII_quan_classicstats_nullritual.r | 4 | 4.5.7 | Der Ablauf eines statistischen Tests — das Nullritual |
-| ptII_quan_classicstats_NHST_nulldist.r | 4 | 4.5.8 | Die Wahrscheinlichkeit von Daten als Basis von Testentscheidungen |
-| ptII_quan_classicstats_pvalue-as-base.r | 4 | 4.5.8.1 | Die Berechnung des p-Wertes |
-| ptII_quan_classicstats_normal-vs-t.r | 4 | 4.5.8.2 | Zum Verhältnis von Normalverteilung und t-Verteilung |
-| ptII_quan_classicstats_centrallimittheorem_helpfuncs.r | 4 | 4.5.8.3 | Exkurs --- zentraler Grenzwertsatz |
-| ptII_quan_classicstats_centrallimittheorem.r | 4 | 4.5.8.3 | Exkurs --- zentraler Grenzwertsatz |
-| ptII_quan_classicstats_p-t-df-relationship.r | 4 | 4.5.9 | Erkenntnistheorie reloaded — klassische Statistik |
-| ptII_quan_classicstats_effectsizes_helpfuncs_sjstats.r | 4 | 4.6.10 | Effektstärken — Größe, Häufigkeit und Bezug zur Originalskala |
-| ptII_quan_classicstats_effectsizes_helpfuncs.r | 4 | 4.6.10 | Effektstärken — Größe, Häufigkeit und Bezug zur Originalskala |
-| ptII_quan_classicstats_effectsizes.r | 4 | 4.6.10 | Effektstärken — Größe, Häufigkeit und Bezug zur Originalskala |
-| ptII_quan_classicstats_Simpsonparadox_helpfuncs.r | 4 | 4.6.11.1 | Simpson Paradox |
-| ptII_quan_classicstats_Simpsonparadox.r | 4 | 4.6.11.1 | Simpson Paradox |
-| ptII_quan_classicstats_JeffreysLindleyparadox.r | 4 | 4.6.11.2 | Jeffreys-Lindley Paradox |
-| ptII_quan_classicstats_p-hacking-sim_helpfuncs.r | 4 | 4.6.2 | Auf der Suche nach Signifikanzen — unbewusste Forschungsintentionen und p-hacking |
-| ptII_quan_classicstats_p-hacking-sim.r | 4 | 4.6.2 | Auf der Suche nach Signifikanzen — unbewusste Forschungsintentionen und p-hacking |
-| ptII_quan_classicstats_dealingwithpower.r | 4 | 4.6.3 | Der Umgang mit Power |
-| ptII_quan_classicstats_R-index_z-curve_helpfuncs.r | 4 | 4.6.4.1 | R-Index |
-| ptII_quan_classicstats_R-index_z-curve.r | 4 | 4.6.4.1 | R-Index |
-| ptII_quan_classicstats_varianceestimation_helpfuncs.r | 4 | 4.6.5 | (Selbst-)Täuschungen |
-| ptII_quan_classicstats_varianceestimation.r | 4 | 4.6.5 | (Selbst-)Täuschungen |
-| ptII_quan_classicstats_randomization.r | 4 | 4.6.6 | Randomisierung |
-| ptII_quan_classicstats_missingdata.r | 4 | 4.6.7 | Fehlende Daten |
-| ptII_quan_classicstats_equivalentmethods_helpfuncs.r | 4 | 4.6.8.1 | Äquivalenz von Messverfahren und -methoden |
-| ptII_quan_classicstats_equivalentmethods.r | 4 | 4.6.8.1 | Äquivalenz von Messverfahren und -methoden |
-| ptII_quan_classicstats_variancehomogeneity.r | 4 | 4.6.8.2 | Varianzhomogenität (Homoskedastizität) |
-| ptII_quan_classicstats_normaldist_residuals.r | 4 | 4.6.9.1 | Normal-Verteilung der Residuen |
-| ptII_quan_classicstats_outliers-and-influentialpoints_helpfuncs.r | 4 | 4.6.9.3 | Ausreisser und einflussreiche Datenpunkte |
-| ptII_quan_classicstats_outliers-and-influentialpoints.r | 4 | 4.6.9.3 | Ausreisser und einflussreiche Datenpunkte |
-| **Part II - Exploratory Data Analysis (EDA) sensu Tukey** |  |  |  |
-| ptII_quan_EDA_intro_overviewrobust_helpfuncs.r | 5 | 5.2.-5.3. | Typische Verfahren der EDA in R |
-| ptII_quan_EDA_intro_overviewrobust.r | 5 | 5.2.-5.3. | Typische Verfahren der EDA in R |
-| ptII_quan_EDA_case_German-states-population.r | 5 | 5.5.1 | population comparison of German states |
-| ptII_quan_EDA_case_Suisse-fertility_helpfuncs.r | 5 | 5.5.2 | Fruchtbarkeit und Fertilität |
-| ptII_quan_EDA_case_Suisse-fertility.r | 5 | 5.5.2 | Fruchtbarkeit und Fertilität |
-| ptII_quan_EDA_case_Anderson_iris-species-in-biology.r | 5 | 5.5.3 | Spezies unterscheiden in der Biologie |
-| ptII_quan_EDA_case_Titanic_death-and-dying_helpfuncs.r | 5 | 5.5.4.6 | Leben und Sterben auf der Titanic |
-| ptII_quan_EDA_case_Titanic_death-and-dying.r | 5 | 5.5.4.6 | Leben und Sterben auf der Titanic |
-| ptII_quan_EDA_case_Spain_leadership-in-education_helpfuncs.r | 5 | 5.5.5 | 5.5.5 Führungsverhalten in Bildungskontexten |
-| ptII_quan_EDA_case_Spain_leadership-in-education.r | 5 | 5.5.5 | Führungsverhalten in Bildungskontexten |
-| ptII_quan_EDA_case_Chiro_heartrate-variability_helpfuncs.r | 5 | 5.5.6 | Ein Experiment zur Herzratenvariabilität |
-| ptII_quan_EDA_case_Chiro_heartrate-variability.r | 5 | 5.5.6 | Ein Experiment zur Herzratenvariabilität |
-| **Part II - Bayesian Statistics** |  |  | |
+| DiM_Bretthorst_PG.r | - | - | funciones generales |
+| DiM_Bretthorst_PG_calls.r | - | - | ejemplos de llamadas |
+| DiM_Bretthorst_UMS.r | - | - | funciones generales |
+| DiM_Bretthorst_UMS_calls.r | - | - | ejemplos de llamadas |
+| **Funciones externales** |  |  |  |
+| EXT_bayesian2beta.r | - | - | funciones generales |
+| EXT_DBDA2E-utilities.R | - | - | funciones generales |
+| EXT_Jags-Ymet-XmetMulti-Mrobust.R | - | - | funciones generales |
+| **Todas partes** |  |  | |
+| ptall_generalfuncs_Bayes_Beta_determine.r | - | - | funciones generales |
+| ptall_generalfuncs_Bayes_binomial-prop-test.r | - | - | funciones generales |
+| ptall_generalfuncs_Bayes_binomial.r | - | - | funciones generales |
+| ptall_generalfuncs_brob-integral.r | - | - | funciones generales |
+| ptall_generalfuncs.r | - | - | funciones generales |
+| **Parte I - Teoría científica** |  |  | |
+| ptI_sciencetheory_logic.r | 2 | 2.2 | **La conclusión deductiva** |
+| **Parte II - Estadística clásica** |  |  | |
+| ptII_quan_classicstats_Fisher_ladyteataste.r | 4 | 4.3.2.1 | Beber té y reconocer la leche — un ejemplo de experimento según Fisher |
+| ptII_quan_classicstats_N-P_powerfunc.r | 4 | 4.3.3.1 | Relevancia práctica en el contexto de la relevancia estadística |
+| ptII_quan_classicstats_N-P_stat-signif-isNOT-practsignif.r | 4 | 4.3.3.1 | Relevancia práctica en el contexto de la relevancia estadística |
+| ptII_quan_classicstats_GandC_type-S-M-error_helpfuncs.r | 4 | 4.3.3.2 | Dirección y tamaño: dos tipos de error subestimados |
+| ptII_quan_classicstats_GandC_type-S-M-error.r | 4 | 4.3.2.2 | Dirección y tamaño: dos tipos de error subestimados |
+| ptII_quan_classicstats_N-P_nulldist-hypotest_helpfuncs.r | 4 | 4.3.3.5 | Contabilidad de costes totales |
+| ptII_quan_classicstats_N-P_nulldist-hypotest.r | 4 | 4.3.3.5 | Contabilidad de costes totales |
+| ptII_quan_classicstats_N-P_confint_bayesboot.r | 4 | 4.3.3.6 | Intervalos de confianza |
+| ptII_quan_classicstats_N-P_confint_errorbars.r | 4 | 4.3.3.6 | Intervalos de confianza |
+| ptII_quan_classicstats_N-P_confint_helpfuncs.r | 4 | 4.3.3.6 | Intervalos de confianza |
+| ptII_quan_classicstats_N-P_confint_p-t-value_helpfuncs.r | 4 | 4.3.3.6 | Intervalos de confianza |
+| ptII_quan_classicstats_N-P_confint_p-t-value.r | 4 | 4.3.3.6 | Intervalos de confianza |
+| ptII_quan_classicstats_N-P_confint-errorbars_helpfuncs.r | 4 | 4.3.3.6 | Intervalos de confianza |
+| ptII_quan_classicstats_N-P_confint.r | 4 | 4.3.3.6 | Intervalos de confianza |
+| ptII_quan_classicstats_N-P_simulation.r | 4 | 4.3.5 | Excursus - Simulaciones |
+| ptII_quan_classicstats_N-P_example-soccer-sim_helpfuncs.r | 4 | 4.3.5.1 | Simulación de caso - Coleccionables de fútbol |
+| ptII_quan_classicstats_N-P_example-soccer-sim.r | 4 | 4.3.5.1 | Simulación de caso - Coleccionables de fútbol |
+| ptII_quan_classicstats_N-P_SE-N-dep.r | 4 | 4.3.6 | Tamaño de la muestra |
+| ptII_quan_classicstats_nullritual.r | 4 | 4.3.8 | El procedimiento de una prueba estadística: el ritual nulo |
+| ptII_quan_classicstats_NHST_nulldist.r | 4 | 4.3.9 | La probabilidad de los datos como base de las decisiones sobre las pruebas |
+| ptII_quan_classicstats_pvalue-as-base.r | 4 | 4.3.9.1 | Cálculo del valor p |
+| ptII_quan_classicstats_normal-vs-t.r | 4 | 4.3.9.2 | Sobre la relación entre la distribución normal y la distribución t |
+| ptII_quan_classicstats_centrallimittheorem_helpfuncs.r | 4 | 4.3.9.3 |  Excursus --- Teorema del límite central |
+| ptII_quan_classicstats_centrallimittheorem.r | 4 | 4.3.9.3 | Excursus --- Teorema del límite central |
+| ptII_quan_classicstats_p-t-df-relationship.r | 4 | 4.3.10 | Epistemología recargada: la estadística clásica |
+| ptII_quan_classicstats_effectsizes_helpfuncs_sjstats.r | 4 | 4.4.13 | Tamaño del efecto, frecuencia y relación con la escala original |
+| ptII_quan_classicstats_effectsizes_helpfuncs.r | 4 | 4.4.13 | Tamaño del efecto, frecuencia y relación con la escala original |
+| ptII_quan_classicstats_effectsizes.r | 4 | 4.4.13 | Tamaño del efecto, frecuencia y relación con la escala original |
+| ptII_quan_classicstats_Simpsonparadox_helpfuncs.r | 4 | 4.4.14.1 | La paradoja de Simpson |
+| ptII_quan_classicstats_Simpsonparadox.r | 4 | 4.4.14.1 | La paradoja de Simpson |
+| ptII_quan_classicstats_JeffreysLindleyparadox.r | 4 | 4.4.14.2 | La paradoja de Jeffreys-Lindley |
+| ptII_quan_classicstats_p-hacking-sim_helpfuncs.r | 4 | 4.4.2 | En busca de significados - intenciones de investigación inconscientes y p-hacking |
+| ptII_quan_classicstats_p-hacking-sim.r | 4 | 4.4.2 | En busca de significados - intenciones de investigación inconscientes y p-hacking |
+| ptII_quan_classicstats_dealingwithpower.r | 4 | 4.4.3 | La gestión del poder |
+| ptII_quan_classicstats_R-index_z-curve_helpfuncs.r | 4 | 4.4.3.1 | R-Índice |
+| ptII_quan_classicstats_R-index_z-curve.r | 4 | 4.4.3.1 | R-Índice |
+| ptII_quan_classicstats_varianceestimation_helpfuncs.r | 4 | 4.4.5 | (auto-)engaños |
+| ptII_quan_classicstats_varianceestimation.r | 4 | 4.4.5 | (auto-)engaños |
+| ptII_quan_classicstats_randomization.r | 4 | 4.4.7 | Aleatorización |
+| ptII_quan_classicstats_missingdata.r | 4 | 4.4.8 | Datos faltantes |
+| ptII_quan_classicstats_equivalentmethods_helpfuncs.r | 4 | 4.4.9.1 | Equivalencia de procedimientos y métodos de medición |
+| ptII_quan_classicstats_equivalentmethods.r | 4 | 4.4.9.1 | Equivalencia de procedimientos y métodos de medición |
+| ptII_quan_classicstats_normaldist_residuals.r | 4 | 4.4.10 | Distribución normal de los residuos |
+| ptII_quan_classicstats_variancehomogeneity.r | 4 | 4.4.11 | Homogeneidad de la varianza (homocedasticidad) |
+| ptII_quan_classicstats_outliers-and-influentialpoints_helpfuncs.r | 4 | 4.4.12 | Valores atípicos y datos influyentes |
+| ptII_quan_classicstats_outliers-and-influentialpoints.r | 4 | 4.4.12 | Valores atípicos y datos influyentes |
+| **Parte II - Análisis Exploratorio de Datos(AED) sensu Tukey** |  |  |  |
+| ptII_quan_EDA_intro_overviewrobust_helpfuncs.r | 5 | 5.2 | Procedimientos AED típicos en R |
+| ptII_quan_EDA_intro_overviewrobust.r | 5 | 5.2 | Procedimientos AED típicos en R |
+| ptII_quan_EDA_case_German-states-population.r | 5 | 5.5.1 | La población en una comparación de los estados federales de Alemania |
+| ptII_quan_EDA_case_Suisse-fertility_helpfuncs.r | 5 | 5.5.2 | Fecundidad y fertilidad |
+| ptII_quan_EDA_case_Suisse-fertility.r | 5 | 5.5.2 | Fecundidad y fertilidad |
+| ptII_quan_EDA_case_Anderson_iris-species-in-biology.r | 5 | 5.5.3 |  Distinción de especies en biología |
+| ptII_quan_EDA_case_Titanic_death-and-dying_helpfuncs.r | 5 | 5.5.4 | Vivir y morir a bordo del Titanic |
+| ptII_quan_EDA_case_Titanic_death-and-dying.r | 5 | 5.5.4 | Vivir y morir a bordo del Titanic |
+| ptII_quan_EDA_case_Spain_leadership-in-education_helpfuncs.r | 5 | 5.5.5 | 5.5.5 Liderazgo en contextos educativos |
+| ptII_quan_EDA_case_Spain_leadership-in-education.r | 5 | 5.5.5 | Liderazgo en contextos educativos |
+| ptII_quan_EDA_case_Chiro_heartrate-variability_helpfuncs.r | 5 | 5.5.6 | Un experimento sobre la variabilidad del ritmo cardíaco |
+| ptII_quan_EDA_case_Chiro_heartrate-variability.r | 5 | 5.5.6 | Un experimento sobre la variabilidad del ritmo cardíaco |
+| **Parte II - Estadística bayesiana** |  |  | |
 | ptII_quan_Bayes_Beta-distribution.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
-| ptII_quan_Bayes_find-Beta-distribution-shapeparams.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
-| ptII_quan_Bayes_Fisher_LadyBristol-Beta-disttribution.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
-| ptII_quan_Bayes_Gamma-distribution.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
-| ptII_quan_Bayes_regularization.r | 6 | 6.12 | Die Wahl priorer Verteilungen |
-| ptII_quan_Bayes_Prior-Likeli-Post_relationship.r | 6 | 6.12.1 | Verhältnis Prior — Likelihood — Posterior |
-| ptII_quan_Bayes_MC-simulation_binom-norm.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
-| ptII_quan_Bayes_RandomWalk_helpfuncs.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
-| ptII_quan_Bayes_RandomWalk.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
-| ptII_quan_Bayes_simulate-pi_helpfuncs.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
-| ptII_quan_Bayes_simulate-pi.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
-| ptII_quan_simulate-pi_helpfuncs.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
-| ptII_quan_simulate-pi.r | 6 | 6.13 | Marko Chain Monte Carlo Simulationen — MCMC |
-| ptII_quan_Bayes_problem-local-minima.r | 6 | 6.13.1.4 | Zusammenfassung MCMC-Algorithmus |
-| ptII_quan_Bayes_HMC_helpfuncs.r | 6 | 6.13.2.3.1 | Hamilton Monte Carlo im R |
-| ptII_quan_Bayes_HMC.r | 6 | 6.13.2.3.1 | Hamilton Monte Carlo im R |
-| ptII_quan_Bayes_MetropolisHastings_example-normdist.r | 6 | 6.13.4.1 | Der Metropolis-Hastings Algorithmus im R |
-| ptII_quan_Bayes_MH-Gibbs_example_helpfuncs.r | 6 | 6.13.4.1 | Der Metropolis-Hastings Algorithmus im R |
-| ptII_quan_Bayes_GibbsSampling_example-normdist.r | 6 | 6.13.4.2 | Der Gibbs Sample im R |
-| ptII_quan_Bayes_JAGS_example-norm.r | 6 | 6.13.4.3 | Gibbs-Sampling mit JAGS |
-| ptII_quan_Bayes_Fisher_LadyBristol-BUGS_helpfuncs.r | 6 | 6.13.5 | Fisher reloaded — mehr Tee |
-| ptII_quan_Bayes_Fisher_LadyBristol-BUGS.r | 6 | 6.13.5 | Fisher reloaded — mehr Tee |
-| ptII_quan_Bayes_MaximumEntropy_helpfuncs.r | 6 | 6.14 | Maximum Entropy |
-| ptII_quan_Bayes_MaximumEntropy.r | 6 | 6.14 | Maximum Entropy |
-| ptII_quan_Bayes_Entropy_KullbackLeibler_helpfuncs.r | 6 | 6.14.1 | „I, we, and nation“ — präsidiale Eigenwerbung |
-| ptII_quan_Bayes_Entropy_KullbackLeibler.r | 6 | 6.14.1 | „I, we, and nation“ — präsidiale Eigenwerbung |
-| ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice_helpfuncs.r | 6 | 6.14.3 | Der Klassiker — ist ein Würfel fair? |
-| ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice.r | 6 | 6.14.3 | Der Klassiker — ist ein Würfel fair? |
-| ptII_quan_Bayes_case_presidential-heights_helpfuncs.r | 6 | 6.15.1 | Präsidiale Höhenflüge |
-| ptII_quan_Bayes_case_presidential-heights.r | 6 | 6.15.1 | Präsidiale Höhenflüge |
-| ptII_quan_Bayes_case_startagain-successrates.r | 6 | 6.15.2 | Durchlaufquoten in der Drogensuchttherapie |
-| ptII_quan_Bayes_case_startagain-successrates-longterm.r | 6 | 6.15.2.1 | Langzeitevaluation (Durchlaufquoten) |
-| ptII_quan_Bayes_case_presidential-debates.r | 6 | 6.15.3 | „I, we, and nation“ — präsidiale Eigenwerbung Teil 2 |
-| ptII_quan_Bayes_intro-BayesTheorem_tea.r | 6 | 6.2.2.4 | [6.2.2 Fallbeispiel — noch ein Tee-Experiment] |
-| ptII_quan_Bayes_intro-BayesTheorem_medicaldiagnosis_helpfuncs.r | 6 | 6.2.3.4 | [6.2.3 Fallbeispiel — Medizindiagnostik] |
-| ptII_quan_Bayes_intro-BayesTheorem_medicaldiagnosis.r | 6 | 6.2.3.4 | [6.2.3 Fallbeispiel — Medizindiagnostik] |
-| ptII_quan_Bayes_intro-BayesTheorem_covid19-test.r | 6 | 6.2.4 | Fallbeispiel — Zur Zuverlässigkeit eines COVID-19 Tests |
-| ptII_quan_Bayes_posterior.r | 6 | 6.5.1 | Intuitives Verständnis von Wahrscheinlichkeit |
-| ptII_quan_Bayes_simple-estimation-mean-post_helpfuncs.r | 6 | 6.5.1 | Intuitives Verständnis von Wahrscheinlichkeit |
-| ptII_quan_Bayes_simple-estimation-mean-post.r | 6 | 6.5.1 | Intuitives Verständnis von Wahrscheinlichkeit |
-| ptII_quan_Bayes_BayesFactors_test-hypos.r | 6 | 6.7.1 | Bayes-Faktoren und Bayes-Hypothesentesten |
-| ptII_quan_Bayes_lossfun_startagain.r | 6 | 6.7.1.2 | Verlustfunktionen |
-| ptII_quan_Bayes_BayesFactors_dependence-on-N-sim_helpfuncs.r | 6 | 6.7.1.3 | Aktualität von Bayes-Faktoren |
-| ptII_quan_Bayes_BayesFactors_dependence-on-N-sim.r | 6 | 6.7.1.3 | Aktualität von Bayes-Faktoren |
-| ptII_quan_Bayes_case_exp-extra-sensual-perception.r | 6 | 6.7.1.4 | Hellsehen — in guter Grund für Nullhypothesentesten? |
-| ptII_quan_Bayes_Bem-study-aspects.r | 6 | 6.7.1.5 | Designkritik — die Studie von Bem |
-| ptII_quan_Bayes_BayesFactors_further-remarks.r | 6 | 6.7.1.6 | Bayes-Faktoren — und nun? |
-| ptII_quan_Bayes_information-criteria_helpfuncs.r | 6 | 6.7.2 | Informationskriterien |
-| ptII_quan_Bayes_information-criteria.r | 6 | 6.7.2 | Informationskriterien |
-| ptII_quan_Bayes_over-and-underfitting.r | 6 | 6.7.3 | Overfitting und Underfitting |
-| ptII_quan_Bayes_HDI_helpfuncs.r | 6 | 6.7.4.1 | Intervallschätzung |
-| ptII_quan_Bayes_HDI.r | 6 | 6.7.4.1 | Intervallschätzung |
-| ptII_quan_Bayes_ROPE-BayesFactor_helpfuncs.r | 6 | 6.7.4.2 | ROPE — region of practical equivalenceg |
-| ptII_quan_Bayes_ROPE-BayesFactor.r | 6 | 6.7.4.2 | ROPE — region of practical equivalenceg |
-| ptII_quan_Bayes_PPC_model-check_helpfuncs.r | 6 | 6.7.4.4 | Praxis — posterior predictive check |
-| ptII_quan_Bayes_PPC_model-check.r | 6 | 6.7.4.4 | Praxis — posterior predictive check |
-| ptII_quan_Bayes_PPC_model-check-graph.r | 6 | 6.7.4.5 | Graphische Begutachtung von Modellen im Dienste des Modellfittings |
-| ptII_quan_Bayes_case_wordcounts-PPC_helpfuncs.r | 6 | 6.7.4.6 | Forschungsbeispiel — Wortproduktion Humor |
-| ptII_quan_Bayes_case_wordcounts-PPC.r | 6 | 6.7.4.6 | Forschungsbeispiel — Wortproduktion Humor |
-| **Part III - Qualitative Data Analysis** |  |  | |
-| ptIII_qual_code-paradigm_table-analysis.r | 9 | 9.4 | Tabellenanalysen nach Miles und Huberman |
-| ptIII_qual_quan-textanalysis.r | 10 | 10.1 | Fallbeispiel quantitative Textanalyse |
-| **Part IV - Qualitative Comparative Analysis** |  |  | |
-| ptIV_qual_Boole_basics.r | 12 | 12.1 | Propädeutikum |
-| ptIV_qual_Boole_case_Krook_women-in-parliament.r | 12 | 12.11.1 | Die Repräsentativität von Frauen in Parlamenten |
-| ptIV_qual_Boole_case_Titanic_death-and-dying.r | 12 | 12.11.2 | Leben und Sterben auf der Titanic Teil II |
-| ptIV_qual_Boole_logical-minimization.r | 12 | 12.3 | Typenbildung als Prinzip des Vergleichs mittels logischer Minimierung |
-| ptIV_qual_Boole_case_school-success.r | 12 | 12.6 | Kriteriumsanalyse — positiver und negativer Ausgang |
-| ptIV_qual_Boole_fuzzy-logic.r | 12 | 12.7 | Fuzzy Logic |
-| **Part V - Mixed Methods** |  |  | |
-| ptV_mixed_prime-numbers.r | 13 | 13.3.1 | QUAL und QUAN in Konversions-Designs |
+| ptII_quan_Bayes_find-Beta-distribution-shapeparams.r | 6 | 6.12 | Elección de distribuciones a priori |
+| ptII_quan_Bayes_Fisher_LadyBristol-Beta-disttribution.r | 6 | 6.12 | Elección de distribuciones a priori |
+| ptII_quan_Bayes_Gamma-distribution.r | 6 | 6.12 | Elección de distribuciones a priori |
+| ptII_quan_Bayes_regularization.r | 6 | 6.12 | Elección de distribuciones a priori |
+| ptII_quan_Bayes_Prior-Likeli-Post_relationship.r | 6 | 6.12.2 |  Relación Prior-Likelihood-Posterior |
+| ptII_quan_Bayes_MC-simulation_binom-norm.r | 6 | 6.13 | Simulaciones Markov Chain Monte Carlo – MCMC |
+| ptII_quan_Bayes_RandomWalk_helpfuncs.r | 6 | 6.13 | Simulaciones Markov Chain Monte Carlo – MCMC |
+| ptII_quan_Bayes_RandomWalk.r | 6 | 6.13 | Simulaciones Markov Chain Monte Carlo – MCMC |
+| ptII_quan_Bayes_simulate-pi_helpfuncs.r | 6 | 6.13 | Simulaciones Markov Chain Monte Carlo – MCMC |
+| ptII_quan_Bayes_simulate-pi.r | 6 | 6.13 | Simulaciones Markov Chain Monte Carlo – MCMC |
+| ptII_quan_simulate-pi_helpfuncs.r | 6 | 6.13 | Simulaciones Markov Chain Monte Carlo – MCMC |
+| ptII_quan_simulate-pi.r | 6 | 6.13 | Simulaciones Markov Chain Monte Carlo – MCMC |
+| ptII_quan_Bayes_problem-local-minima.r | 6 | 6.13.1.4 | Resumen de los algoritmos MCMC |
+| ptII_quan_Bayes_GibbsSampling_example-normdist.r | 6 | 6.13.2.2 | Muestreo de Gibbs en R |
+| ptII_quan_Bayes_JAGS_example-norm.r | 6 | 6.13.2.2.1 | Muestreo de Gibbs en JAGS |
+| ptII_quan_Bayes_HMC_helpfuncs.r | 6 | 6.13.2.3.1 | Hamilton Monte Carlo en R |
+| ptII_quan_Bayes_HMC.r | 6 | 6.13.2.3.1 | Hamilton Monte Carlo en R |
+| ptII_quan_Bayes_MetropolisHastings_example-normdist.r | 6 | 6.13.4.1 | El algoritmo Metropolis-Hastings en R |
+| ptII_quan_Bayes_MH-Gibbs_example_helpfuncs.r | 6 | 6.13.4.1 | El algoritmo Metropolis-Hastings en R |
+| ptII_quan_Bayes_Fisher_LadyBristol-BUGS_helpfuncs.r | 6 | 6.13.5 | Fisher reloaded — más té |
+| ptII_quan_Bayes_Fisher_LadyBristol-BUGS.r | 6 | 6.13.5 | Fisher reloaded — más té |
+| ptII_quan_Bayes_MaximumEntropy_helpfuncs.r | 6 | 6.14 | Entropía máxima |
+| ptII_quan_Bayes_MaximumEntropy.r | 6 | 6.14 | Entropía máxima |
+| ptII_quan_Bayes_Entropy_KullbackLeibler_helpfuncs.r | 6 | 6.14.3 | Estudio de caso: "Yo, nosotros y la nación" – autoanuncio presidencial |
+| ptII_quan_Bayes_Entropy_KullbackLeibler.r | 6 | 6.14.3 | Estudio de caso: "Yo, nosotros y la nación" – autoanuncio presidencial |
+| ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice_helpfuncs.r | 6 | 6.14.5 | El clásico: ¿es justo un dado? |
+| ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice.r | 6 | 6.14.5 | El clásico: ¿es justo un dado? |
+| ptII_quan_Bayes_case_presidential-heights_helpfuncs.r | 6 | 6.15.1 | Alturas de presidentes |
+| ptII_quan_Bayes_case_presidential-heights.r | 6 | 6.15.1 | Alturas de presidentes |
+| ptII_quan_Bayes_case_startagain-successrates.r | 6 | 6.15.2 | Índices de aprobados en el tratamiento de drogodepencia |
+| ptII_quan_Bayes_case_startagain-successrates-longterm.r | 6 | 6.15.2.1 | Evaluación a largo plazo (Índices de aprobados) |
+| ptII_quan_Bayes_case_presidential-debates.r | 6 | 6.15.3 | "Yo, nosotros y la nación" - autoanuncio presidencial parte 2 |
+| ptII_quan_Bayes_intro-BayesTheorem_tea.r | 6 | 6.2.2.4 | [6.2.2 Ejejmplo de caso — un experimento más de té] |
+| ptII_quan_Bayes_intro-BayesTheorem_medicaldiagnosis_helpfuncs.r | 6 | 6.2.3.4 | [6.2.3 Ejejmplo de caso — diagnóstico médico] |
+| ptII_quan_Bayes_intro-BayesTheorem_medicaldiagnosis.r | 6 | 6.2.3.4 | [6.2.3 Ejejmplo de caso — diagnóstico médico] |
+| ptII_quan_Bayes_intro-BayesTheorem_covid19-test.r | 6 | 6.2.4 | Ejejmplo de caso — Fiabilidad de una prueba COVID-19 |
+| ptII_quan_Bayes_posterior.r | 6 | 6.6.1 | Comprensión intuitiva de la probabilidad |
+| ptII_quan_Bayes_simple-estimation-mean-post_helpfuncs.r | 6 | 6.6.1 | Comprensión intuitiva de la probabilidad |
+| ptII_quan_Bayes_simple-estimation-mean-post.r | 6 | 6.6.1 | Comprensión intuitiva de la probabilidad |
+| ptII_quan_Bayes_BayesFactors_test-hypos.r | 6 | 6.8.1 | Factores de Bayes y prueba de hipótesis de Bayes |
+| ptII_quan_Bayes_lossfun_startagain.r | 6 | 6.8.1.2 | Funciones de pérdida |
+| ptII_quan_Bayes_BayesFactors_dependence-on-N-sim_helpfuncs.r | 6 | 6.8.1.4 | Actualidad de los factores de Bayes |
+| ptII_quan_Bayes_BayesFactors_dependence-on-N-sim.r | 6 | 6.8.1.4 | Actualidad de los factores de Bayes |
+| ptII_quan_Bayes_case_exp-extra-sensual-perception.r | 6 | 6.8.1.5 | Ejemplo de investigación: ¿la clarividencia? |
+| ptII_quan_Bayes_Bem-study-aspects.r | 6 | 6.8.1.6 | Crítica al diseño: el estudio de Bem |
+| ptII_quan_Bayes_BayesFactors_further-remarks.r | 6 | 6.8.1.7 | Factores de Bayes, ¿y ahora? |
+| ptII_quan_Bayes_information-criteria_helpfuncs.r | 6 | 6.8.2 | Criterios de información |
+| ptII_quan_Bayes_information-criteria.r | 6 | 6.8.2 | Criterios de información |
+| ptII_quan_Bayes_over-and-underfitting.r | 6 | 6.8.3 | Sobreajuste y subajuste |
+| ptII_quan_Bayes_HDI_helpfuncs.r | 6 | 6.8.4.1 | Estimación bayesiana por intervalos |
+| ptII_quan_Bayes_HDI.r | 6 | 6.8.4.1 | Estimación bayesiana por intervalos |
+| ptII_quan_Bayes_ROPE-BayesFactor_helpfuncs.r | 6 | 6.8.4.2 | ROPE — region of practical equivalence |
+| ptII_quan_Bayes_ROPE-BayesFactor.r | 6 | 6.8.4.2 | ROPE — region of practical equivalence |
+| ptII_quan_Bayes_PPC_model-check_helpfuncs.r | 6 | 6.8.4.4 | Comprobaciones predictivas posteriores |
+| ptII_quan_Bayes_PPC_model-check.r | 6 | 6.8.4.4 | Comprobaciones predictivas posteriores |
+| ptII_quan_Bayes_PPC_model-check-graph.r | 6 | 6.8.4.5 | Evaluación gráfica de modelos |
+| ptII_quan_Bayes_case_wordcounts-PPC_helpfuncs.r | 6 | 6.8.4.6 | Estudio de caso – humor y la producción de palabras |
+| ptII_quan_Bayes_case_wordcounts-PPC.r | 6 | 6.8.4.6 | Estudio de caso – humor y la producción de palabras |
+| **Parte III - Análisis de Datos Cualitativos** |  |  | |
+| ptIII_qual_code-paradigm_table-analysis.r | 9 | 9.4 | Análisis de tablas según Miles y Huberman |
+| ptIII_qual_quan-textanalysis.r | 10 | 10.1 | Estudio de caso – análisis cuantitativo de textos |
+| **Parte IV - Análisis cualitativo comparativo** |  |  | |
+| ptIV_qual_Boole_basics.r | 12 | 12.1 | Propedéutica |
+| ptIV_qual_Boole_case_Krook_women-in-parliament.r | 12 | 12.11.1 | Sobre la representatividad de las mujeres en los parlamentos |
+| ptIV_qual_Boole_case_Titanic_death-and-dying.r | 12 | 12.11.2 | Vivir y morir en el Titanic — Parte II |
+| ptIV_qual_Boole_logical-minimization.r | 12 | 12.3 | La formación de tipos como principio de comparación via la minimización lógica |
+| ptIV_qual_Boole_case_school-success.r | 12 | 12.6 | Análisis de criterios - resultado positivo y negativo |
+| ptIV_qual_Boole_fuzzy-logic.r | 12 | 12.7 | Fuzzy Logic/Lógica difusa |
+| **Parte V - Métodos mixtos** |  |  | |
+| ptV_mixed_prime-numbers.r | 13 | 13.3.1 | CUAL y CUAN en los diseños de conversión |
 
 </details>
 
@@ -210,154 +210,154 @@ La siguiente tabla contiene información condensada sobre cada script usando alg
 
 <summary>Click here to see the table with a short description of the R scripts</summary>
 
-| Scriptname | Content |
+| Nombre de script | Contenido |
 | --- | --- |
-| DiM_Bretthorst_PG.r | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after P Gregory (2005) |
-| DiM_Bretthorst_PG_calls.r | example calls |
-| DiM_Bretthorst_UMS.r | Bretthorst (1993) difference in means, analytical solution, with package Brobdingnag for very large numbers, implementation after UM Studer (1998) |
-| DiM_Bretthorst_UMS_calls.r | example calls |
-| **External functions** |  |
-| EXT_bayesian2beta.r | exact Bayesian proportion test from Sverdlov, Ryeznik & Wu (2015) |
-| EXT_DBDA2E-utilities.R | from Kruschke (2014) DBDA 2nd ed., general functions |
-| EXT_Jags-Ymet-XmetMulti-Mrobust.R | from Kruschke (2014) DBDA 2nd ed., used for PPC and heterogenuous variances |
-| **All parts** | |
-| ptall_generalfuncs.r | Cohen's d, descriptive statistics of all kinds in one table, Tukey's fivenum with labels, convert Aquad style tables to truth tables and v.v., print prime implicants from QCA objects, full distance matrix, optimal cut through a proximity matrix after Oldenbürger and plot it, plot prototypes in 2d + 3d, plot eigenvalues (MDS), correlation and p-values |
-| ptall_generalfuncs_Bayes_Beta_determine.r | determine and plot beta distribution values from three quantile points via optimization, role model: Coghlan (2017) |
-| ptall_generalfuncs_Bayes_binomial.r | functions to apply and plot prior probability functions for successes/ failures, calculate summary statistics for posterior, HDI, formula to calculate beta posterior via conjugation, plot prior, likelihood, posterior, updated prior and update therefor posterior, summary statistics |
-| ptall_generalfuncs_Bayes_binomial-prop-test.r | Bayesian proportion test (e.g. successes/ failures): calculate, summarize, and plot prior from successes/ failures, convert to beta disztribution values and v.v., update binomial prior with likelihood to beta (posterior) and plot, tweaked bayes.prop.test summary from BayesianFirstAid and plot theta_diff, MCMC plot, simulation from posterior, grid approximation via brute force, exact (binomial difference) tests (Evan Miller, Chris Stucchio, the approach by Sverdlov, Ryeznik, Wu (2015) from bayesian2beta.r in a tweaked form to work with log values or brob objects and plot results, numerical integration (Simpson rule) for brob objects, brute force comparison of rbetas vs. dbetas and plot it |
-| ptall_generalfuncs_brob-integral.r | useful functions for brob objects, convert a list to a vector, calculate the scalarproduct, numerical integration (Simpson rule), more numerical integration methods for brob objects can be found at https://github.com/abcnorio/R-largenum-integration |
-| **Part I - Scientific Theory** | |
-| ptI_sciencetheory_logic.r | chap. 2.2 - simple true/ false statements |
-| **Part II - Classical Statistics** | |
-| ptII_quan_classicstats_Fisher_ladyteataste.r |  chap. 4.5.1.1 - Lady Bristol tea taste experiment by Fisher using his methods using hypergeometric distribution, fisher.test, and manual calculation using factorials |
-| ptII_quan_classicstats_N-P_powerfunc.r | chap. 4.5.2.1 - calculate and plot power vs. effect sizes in accordance to different hypotheses |
-| ptII_quan_classicstats_N-P_stat-signif-isNOT-practsignif.r | chap. 4.5.2.1 - different views on sample differences if population parameters are known |
-| ptII_quan_classicstats_GandC_type-S-M-error.r | chap. 4.5.2.2 - reproduce Gelman & Carlin (2014), retrodesign power analysis |
-| ptII_quan_classicstats_GandC_type-S-M-error_helpfuncs.r | chap. 4.5.2.2 - plot effect size and power for retrodesign after Gelman & Carlin (2014), plot sample distribution under H_0 and hypothesis of true effect size |
-| ptII_quan_classicstats_N-P_nulldist-hypotest.r | chap. 4.5.2.5 - plot H_0, H_1 for one- and two-sided tests |
-| ptII_quan_classicstats_N-P_nulldist-hypotest_helpfuncs.r | chap. 4.5.2.5 - functions to plot H_0, H_1 for hypothesis directions: two-sided, less, greater, and plot alpha and beta error rates for t-distributed densities |
-| ptII_quan_classicstats_N-P_confint.r | chap. 4.5.2.6 - working and simulating confidence intervals (CI) |
-| ptII_quan_classicstats_N-P_confint_bayesboot.r | chap. 4.5.2.6 - bootstrap CIs and other statistics via simulation, simulate difference in means, use Bayesian bootstrap |
-| ptII_quan_classicstats_N-P_confint_errorbars.r | chap. 4.5.2.6 - CI evolution in relation to varying sample sizes |
-| ptII_quan_classicstats_N-P_confint_helpfuncs.r | chap. 4.5.2.6 - calculate CI for mean, difference in means, and plot them |
-| ptII_quan_classicstats_N-P_confint_p-t-value.r | chap. 4.5.2.6 - simulate t-test with p- and t-values |
-| ptII_quan_classicstats_N-P_confint_p-t-value_helpfuncs.r | chap. 4.5.2.6 - simulate t-tests, compare with Cohen's d |
-| ptII_quan_classicstats_N-P_confint-errorbars_helpfuncs.r | chap. 4.5.2.6 - change of CIs along with error bars, calculate covered CIs |
-| ptII_quan_classicstats_N-P_simulation.r | chap. 4.5.4 - simulation 'difference in means' via replicate |
-| ptII_quan_classicstats_N-P_example-soccer-sim.r | chap. 4.5.4.1 - simulate an empirical real run of how to get all cards of a soccer card album |
-| ptII_quan_classicstats_N-P_example-soccer-sim_helpfuncs.r | chap. 4.5.4.1 - simulate how many cards are still to go using chance and not commone sense like card exchange, etc. |
-| ptII_quan_classicstats_N-P_SE-N-dep.r | chap. 4.5.5 - dependence of sample size characteristics via simulated data (N, SE, t-value, Cohen's d, ...) |
-| ptII_quan_classicstats_nullritual.r | chap. 4.5.7 - all the non-sense around the Null ritual ie. the NHST procedure |
-| ptII_quan_classicstats_NHST_nulldist.r | chap. 4.5.8 - plot NHST decision making using acceptance/ rejection regions, alpha and beta error rates |
-| ptII_quan_classicstats_pvalue-as-base.r | chap. 4.5.8.1 - differences of normal vs. mixed normal distribution in accordance to plot and statistics, simulation H_0 |
-| ptII_quan_classicstats_normal-vs-t.r | chap. 4.5.8.2 - relationship of normal and t distribution |
-| ptII_quan_classicstats_centrallimittheorem.r | chap. 4.5.8.3 - simulate central limit theorem (CLT) und varying conditions |
-| ptII_quan_classicstats_centrallimittheorem_helpfuncs.r | chap. 4.5.8.3 - basic functions to simulate CLT |
-| ptII_quan_classicstats_p-t-df-relationship.r | chap. 4.5.9 - relationship of N, t-, and p-value, simulate with same seed, growing sample sizes, constant t-value, and post-hoc power simulation |
-| ptII_quan_classicstats_effectsizes.r | chap. 4.6.10 - relate N, p-value, Cohens' d, odds ratio, and risk ratio with each other graphically |
-| ptII_quan_classicstats_effectsizes_helpfuncs.r | chap. 4.6.10 - function to relate N, p-value, and Cohen's d |
-| ptII_quan_classicstats_effectsizes_helpfuncs_sjstats.r | chap. 4.6.10 - taken and twekaed from package sjtats as it disappeared from the package, convert odds ratio to risk ratio |
-| ptII_quan_classicstats_Simpsonparadox.r | chap. 4.6.11.1 - investigate Simpson Paradox with classical UCB admission data set using plots, tables, corrected base rates, and glmer model, simulate Simpson Paradox data and detect sub-groups with Simpsons from package Simpsons |
-| ptII_quan_classicstats_Simpsonparadox_helpfuncs.r | chap. 4.6.11.1 - function to plot two groups to detect Simpson Paradox |
-| ptII_quan_classicstats_JeffreysLindleyparadox.r | chap. 4.6.11.2 - Jeffrey's-Lindley's paradox with data examples |
-| ptII_quan_classicstats_p-hacking-sim.r | chap. 4.6.2 - simulate p-hacking with varying sample sizes for standard alpha error rates, comparison with a priori power analysis, and plot results |
-| ptII_quan_classicstats_p-hacking-sim_helpfuncs.r | chap. 4.6.2 - function to simulate linear model with sim from package arm as well as p-hacking methods |
-| ptII_quan_classicstats_dealingwithpower.r | chap. 4.6.3 - calculate, simulate, and plot power under varying models |
-| ptII_quan_classicstats_R-index_z-curve.r | chap. 4.6.4.1 - apply R-Index and TIVA after Schimmack and colleagues, e.g. on Bem's clairvoyance study and calculate z-curve |
-| ptII_quan_classicstats_R-index_z-curve_helpfuncs.r | chap. 4.6.4.1 - function to calculate R-Index, p-values for R-Index, Test of Insufficient Variance (TIVA) after Schimmack and colleagues |
-| ptII_quan_classicstats_varianceestimation.r | chap. 4.6.5 - apply function to calculate variance estimation |
-| ptII_quan_classicstats_varianceestimation_helpfuncs.r | chap. 4.6.5 - function to calculate variance estimation if sigma is known or unknown and plot it |
-| ptII_quan_classicstats_randomization.r | chap. 4.6.6 - apply different randomization strategies to create samples |
-| ptII_quan_classicstats_missingdata.r | chap. 4.6.7 - handling missing data and associated changes with and without imputation methods, comparison of methods of imputation with each other and with brms (Bayesian linear model) |
-| ptII_quan_classicstats_equivalentmethods.r | chap. 4.6.8.1 - comparison with Bland-Altman stats and plot (mean-diff plot), TOST from package TOSTER, Pitman-Morgan Test, tests from packages BayesFactor, BEST, usage of implementation of GL Bretthorst (1993) 'On the difference in mean', using e.g. original data from Bland-Altman |
-| ptII_quan_classicstats_equivalentmethods_helpfuncs.r | chap. 4.6.8.1 - mean-difference plot after Tukey (equals Bland-Altman plot) |
-| ptII_quan_classicstats_variancehomogeneity.r | chap. 4.6.8.2 - determine variance homogeneity via various tests (Levene, Breusch-Pagan, non-constant error variance, Cook and Weisberg, Koenker's studentized version of test statistic) |
-| ptII_quan_classicstats_normaldist_residuals.r | chap. 4.6.9.1 - investigation of residuals from linear models for various characteristics (normality, skewness, kurtosis, various sample sizes |
-| ptII_quan_classicstats_outliers-and-influentialpoints.r | chap. 4.6.9.3 - impact and consequences of influential points and outliers, calculate linear model, t-test, outlier test, correlation test, leverage plots |
-| ptII_quan_classicstats_outliers-and-influentialpoints_helpfuncs.r | chap. 4.6.9.3 - function to plot outlier (with, without) via regression lines |
-| **Part II - Exploratory Data Analysis** | |
-| ptII_quan_EDA_intro_overviewrobust.r | chap. 5.2.-5.3. - compare median vs. mean, show robust plots of data, apply lm vs. rlm on empirical data |
-| ptII_quan_EDA_intro_overviewrobust_helpfuncs.r | chap. 5.2.-5.3. - function to plot residuals (lm vs. rlm), simulate and plot median/ mean from normal distribution |
-| ptII_quan_EDA_case_German-states-population.r | chap. 5.5.1 - conversion to log values lead to straight lines using a real life example from German states population characteristics, compare to classical linear model |
-| ptII_quan_EDA_case_Suisse-fertility.r | chap. 5.5.2 - analyzing fertility in Swuisse between Catholics (yes, no, something else) using only descriptive plots and correlations, use subgroups to understand data |
-| ptII_quan_EDA_case_Suisse-fertility_helpfuncs.r | chap. 5.5.2 - function to plot two variables with a continuous index |
-| ptII_quan_EDA_case_Anderson_iris-species-in-biology.r | chap. 5.5.3 - investigate the famous iris data with pairs, lda, and tables |
-| ptII_quan_EDA_case_Titanic_death-and-dying.r | chap. 5.5.4.6 - use only descriptive statistics, tables, and plots to investigate the survivors' characteristics of the Titanic and how to survive and why, answer certain questions about the conditions of surviving or dying during the Titanic catastrophe |
-| ptII_quan_EDA_case_Titanic_death-and-dying_helpfuncs.r | chap. 5.5.4.6 - function to plot densities for various subgroups |
-| ptII_quan_EDA_case_Spain_leadership-in-education.r | chap. 5.5.5 - analyze data on leadership in Spain (educational context) with distance methods (HCA, MDS), prototype analysis, heatmap, corrgram, levelplot, and simple descriptive plots |
-| ptII_quan_EDA_case_Spain_leadership-in-education_helpfuncs.r | chap. 5.5.5 - tweaked version of heatmap from package heatmap.plus (not available in R v.4) |
-| ptII_quan_EDA_case_Chiro_heartrate-variability.r | chap. 5.5.6 - experiment in chiropractice about heart rate variability using linear models without any significance test, learning from sample size characteristics, use histograms and interaction plots |
-| ptII_quan_EDA_case_Chiro_heartrate-variability_helpfuncs.r | chap. 5.5.6 - function to plot interactions |
-| **Part II - Bayesian Statistics** | |
-| ptII_quan_Bayes_Beta-distribution.r | chap. 6.12 - calculate beta posterior from prior and likelihood (conjugation, grid approximation), influence of priors, various shapes of beta |
-| ptII_quan_Bayes_find-Beta-distribution-shapeparams.r | chap. 6.12 - determine beta distribution from three quantile points with/ without optimization |
-| ptII_quan_Bayes_Fisher_LadyBristol-Beta-disttribution.r | chap. 6.12 - plot prior, likelihood, and posterior of the empirical data |
-| ptII_quan_Bayes_Gamma-distribution.r | chap. 6.12 - display Gamma function for different parameters |
-| ptII_quan_Bayes_regularization.r | chap. 6.12 - different priors (normal with different sigmas, Cauchy, uniform) |
-| ptII_quan_Bayes_Prior-Likeli-Post_relationship.r | chap. 6.12.1 - display how prior and likelihood shape the posterior, see different influences on posterior |
-| ptII_quan_Bayes_MC-simulation_binom-norm.r | chap. 6.13 - simulate binormial and normal distributions |
-| ptII_quan_Bayes_RandomWalk.r | chap. 6.13 -  calculate and plot a random walk as 2d + 3d |
-| ptII_quan_Bayes_RandomWalk_helpfuncs.r | chap. 6.13 - function to calculate a simple random walk |
-| ptII_quan_Bayes_simulate-pi.r | chap. 6.13 - apply pi simulation for varying sample sizes |
-| ptII_quan_Bayes_simulate-pi_helpfuncs.r | chap. 6.13 - simple function to calculate pi and plot it (inefficient, but works) |
-| ptII_quan_Bayes_problem-local-minima.r | chap. 6.13.1.4 - local minima using Himmelblau's function, plot in 3d |
-| ptII_quan_Bayes_HMC.r | chap. 6.13.2.3.1 - apply Hamilton Monte Carlo (HMC) algorithm, plot and investigate (bivariate normal distribution), use packages hmclearn, rethinking, and bayesplot as well as the basic HMC algorithm (Neal, 2011, chap. 5), analyze MCMC chains via plots and typical diagnostics (e.g. Gelman, Heidelberger-Welch, effective sample size, remove burn-in, ... ), compare with MH algorithm |
-| ptII_quan_Bayes_HMC_helpfuncs.r | chap. 6.13.2.3.1 - functions to simulate bivariate normal distribution (rnorm, mvrnorm), calculate gradient for HMC algorithm, simulate bivariate normal distribution via HMC after McElreath (2015), describe MCMC chains: Heidelberger-Welche diagnostics, describe development of mean and covariance, adjust limits to let a comparison value appear on a posterior plot, and simulate bivariate normal distribution via MH algorithm |
-| ptII_quan_Bayes_MetropolisHastings_example-normdist.r | chap. 6.13.4.1 - simulate mean of normal distribution with Metropolis-Hastings (MH) algorithm, investigate MCMC chains using package coda, apply on empirical data, investigate acceptance/ rejection rates, compare MCMC chains, posterior predictive distribution and plots |
-| ptII_quan_Bayes_MH-Gibbs_example_helpfuncs.r | chap. 6.13.4.1 - functions to perform MH algorithm to simulate normal distribution based on empirical data, priors, Gibbs sampler, plot MCMC and its parts, normal posterior predictive distribution |
-| ptII_quan_Bayes_GibbsSampling_example-normdist.r | chap. 6.13.4.2 - simulate mean posterior via Gibbs sampling, analyze posterior |
-| ptII_quan_Bayes_JAGS_example-norm.r | chap. 6.13.4.3 - simulate mean of a normal distribution using JAGS, investigate MCMC, compare with package Bolstad |
-| ptII_quan_Bayes_Fisher_LadyBristol-BUGS.r | chap. 6.13.5 - analyze Lady Bristol's tea data with classical and Bayesian methods (analytical solution and MCMC with JAGS, package BEST, BUGS) |
-| ptII_quan_Bayes_Fisher_LadyBristol-BUGS_helpfuncs.r | chap. 6.13.5 - function to analyze Lady Bristol experiment with Bayes Theorem, plot successes/ failures, HDI, MAP, and run BUGs model with package RBugs from R |
-| ptII_quan_Bayes_MaximumEntropy.r | chap. 6.14 - calculate and plot Boltzmann/ Shannon entropy using a (not-so-fair/ fair) coin and dice |
-| ptII_quan_Bayes_MaximumEntropy_helpfuncs.r | chap. 6.14 - functions to reproduce Jaynes' (1962) analyses, entropy simulation after McElreath (2015, p.277) |
-| ptII_quan_Bayes_Entropy_KullbackLeibler.r | chap. 6.14.1 - apply entropy functions on word counts |
-| ptII_quan_Bayes_Entropy_KullbackLeibler_helpfuncs.r | chap. 6.14.1 - functions to calculate H (Shannon entropy) from counts and priors or Kullback-Leibler distance| |
-| ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice.r | chap. 6.14.3 - perform and plot Jaynes' (1962) analysis on a (fair?) dice |
-| ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice_helpfuncs.r | chap. 6.14.3 - functions to calculate entropy of a fair or not-so-fair coin and simulate a dice |
-| ptII_quan_Bayes_case_presidential-heights.r | chap. 6.15.1 - prepare dataset, remove NAs, EDA plots, classical vs. Bayesian statistics with Bayesian binomial test, MCMC diagnostics, test difference in means via classical and Bayesian solution incl. HDI, ROPE, bayesboot, plot results |
-| ptII_quan_Bayes_case_presidential-heights_helpfuncs.r | chap. 6.15.1 - tweaked function of bayes.binom.test from package BayesianFirstAid, function to calculate posterior OR/RR |
-| ptII_quan_Bayes_case_startagain-successrates.r | chap. 6.15.2 - compare developments and extreme cases of successes/ failures and resulting posterior probs |
-| ptII_quan_Bayes_case_startagain-successrates-longterm.r | chap. 6.15.2.1 - show that long-term analysis over all years vs. sequential analysis per year (prior becomes posterior becomes prior, etc.) leads exactly to the same concluding results within the Bayesian approach |
-| ptII_quan_Bayes_case_presidential-debates.r | chap. 6.15.3 - frequentist, chi-square, power, JAGS, posterior odds, plots, MCMC brute force variants, test and plot hypotheses, grid approximation, exact tests, MAP, 2d + 3d plots of theta values over intgral, comparison of methods, using tweaked functions from appell, tolerance, bayesian2beta.r, comparison with package BayesFactor and Bretthorst approach| |
-| ptII_quan_Bayes_intro-BayesTheorem_tea.r | chap. 6.2.2.4 - simple application of Bayes Theorem, using discrete values, and shift from prior knowledge to posterior to prior, etc. ie. update Bayes Theorem with new information |
-| ptII_quan_Bayes_intro-BayesTheorem_medicaldiagnosis.r | chap. 6.2.3.4 - apply Bayes Theorem on medical tests using prevalence (of a disease in population), sensitivity (1-false_positives), and specifity (1-false_negatives) |
-| ptII_quan_Bayes_intro-BayesTheorem_medicaldiagnosis_helpfuncs.r | chap. 6.2.3.4 - function to apply Bayes Theorem for medical tests using prevalence p(A), sensitivity p(B|A), and specifitiy p(not-B|not-A)| |
-| ptII_quan_Bayes_intro-BayesTheorem_covid19-test.r | chap. 6.2.4 - calculate probability of a covid-19 test in relation to population characteristics |
-| ptII_quan_Bayes_posterior.r | chap. 6.5.1 - analyse posterior and MCMC chains (convergence), apply on empirical data set |
-| ptII_quan_Bayes_simple-estimation-mean-post.r | chap. 6.5.1 - posterior distribution of a mean with different informed priors using package Bolstad |
-| ptII_quan_Bayes_simple-estimation-mean-post_helpfuncs.r | chap. 6.5.1 - function to plot mean posterior with prior and likelihood, tweaked normgcp from package Bolstadt (bug fix) |
-| ptII_quan_Bayes_BayesFactors_test-hypos.r | chap. 6.7.1 - empirical example from Kruschke's remarks (BFs are not enough to interpret results), better is to use priors and posterior probs, example: huge BF but roughly same parameters of the linear model, BF only caused by different priors |
-| ptII_quan_Bayes_lossfun_startagain.r | chap. 6.7.1.2 - show loss function in the context of an empirical example (success rates in drug therapy) to draw conclusions for actual work |
-| ptII_quan_Bayes_BayesFactors_dependence-on-N-sim.r | chap. 6.7.1.3 - compare and simulate Bayes Factors (BFs) for various sample sizes, t-values, determine minimal BF with different approaches |
-| ptII_quan_Bayes_BayesFactors_dependence-on-N-sim_helpfuncs.r | chap. 6.7.1.3 - function to simulate BFs in relation to N, convert p-values to BFs, relate p-values and sample sizes |
-| ptII_quan_Bayes_case_exp-extra-sensual-perception.r | chap. 6.7.1.4 - function to calculate t-test with BF, then prepare, describe, analyze empirical data using methods for binomial data and difference in means (classical and Bayesian solution), anova with repeated measurement vs. brms |
-| ptII_quan_Bayes_Bem-study-aspects.r | chap. 6.7.1.5 - some artificial but meaningful calculations along with a very critical discussion of the theoretical background and design of the Bem study on clairvoyanca |
-| ptII_quan_Bayes_BayesFactors_further-remarks.r | chap. 6.7.1.6 - apply BFs in the context of EDA plots, t-tests, Cohen's d, linear models, and a real full Bayesian approach with brms, and other criteria (Bayes R^2, loo, waic, kfold), different results if a categorial variable is made continuous (ie. converted back to its natural original state like categorial age) |
-| ptII_quan_Bayes_information-criteria.r | chap. 6.7.2 - apply function to get information criteria from a linear model (empirical example) |
-| ptII_quan_Bayes_information-criteria_helpfuncs.r | chap. 6.7.2 - function to calculate and extract information criteria from linear models |
-| ptII_quan_Bayes_over-and-underfitting.r | chap. 6.7.3 - examples to show under- and overfitting incl. polynomials, use Kullback-Leibler (KL) divergence between probs |
-| ptII_quan_Bayes_HDI.r | chap. 6.7.4.1 - plot HDI and CI for various data sets to demonstrate the qualitative difference of those interval types |
-| ptII_quan_Bayes_HDI_helpfuncs.r | chap. 6.7.4.1 - function to plot HDI vs. symmetric CI |
-| ptII_quan_Bayes_ROPE-BayesFactor.r | chap. 6.7.4.2 - show importance of ROPE vs. simple clear-cut for decision-making (difference in means). plot with HDI, Bayesian binomial test for various values, priors, and hypotheses, priors and their influence on BFs, apply on empirical data, apply and plot with package BEST, analyze MCMC and posterior probs |
-| ptII_quan_Bayes_ROPE-BayesFactor_helpfuncs.r | chap. 6.7.4.2 - function to demonstrate change in BF due to prior believes |
-| ptII_quan_Bayes_PPC_model-check.r | chap. 6.7.4.4 - simulate PPC via JAGS using successes/ failures and plot it |
-| ptII_quan_Bayes_PPC_model-check_helpfuncs.r | chap. 6.7.4.4 - function to calulate one-/two-sided test (PPC) |
-| ptII_quan_Bayes_PPC_model-check-graph.r | chap. 6.7.4.5 - demonstrate PPC for homogenous variances (yes/no), plot and test specific hypotheses (classical, Bayesian statistics with brms), treatment/ control group design, compare linear models |
-| ptII_quan_Bayes_case_wordcounts-PPC.r | chap. 6.7.4.6 - perform analysis (e.g. with JAGS) and plots along with posterior predictive checks (PPC) incl. diagnostic MCMC plots, bootstrap using full cases or real values, exercise Kruschke (2014, chap 18.3) regarding heteroscedasticity (influence of un-/equal variances between groups) |
-| ptII_quan_Bayes_case_wordcounts-PPC_helpfuncs.r | chap. 6.7.4.6 - functions to prepare and summarize MCMC chains and posteriors from Kruschke (2014) scripts to match requirements here for PPC |
-| **Part III - Qualitative Data Analysis** | |
-| ptIII_qual_code-paradigm_table-analysis.r | chap. 9.4 - example for usage of expand.grid |
-| ptIII_qual_quan-textanalysis.r | chap. 10.1 - prepare (e.g. removal of redundant parts, special characters, white space, punctuations, stop words and convert to lower cases, split text, word cloud, plot frequencies, KWIC, collocation, ...) and analyze text using packages stringi, SnowbalC, tm, magrittr, quanteda, corps2, etc., use wordstems, corpus inspection, ... |
-| **Part IV - Qualitative Comparative Analysis** | |
-| ptIV_qual_Boole_basics.r | chap. 12.1 - simple true/ false statements |
-| ptIV_qual_Boole_case_Krook_women-in-parliament.r | chap. 12.11.1 - analyse data set from Krook (2010) using QCA, extract prime implicants, check for consistencies, prepare positive and negative outcome for general discussion| |
-| ptIV_qual_Boole_case_Titanic_death-and-dying.r | chap. 12.11.2 - apply QCA on Titanic data set to investigate a minimal set for survival (yes/ no) |
-| ptIV_qual_Boole_logical-minimization.r | chap. 12.3 - single case demonstration how Boolean minimization actually works |
-| ptIV_qual_Boole_case_school-success.r | chap. 12.6 - artificial data set to demonstrate QCA for negative and positive outcome |
-| ptIV_qual_Boole_fuzzy-logic.r | chap. 12.7 - simple plot to demonstrate what fuzzy logic is |
-| **Part V** | **Mixed Methods** |
-| ptV_mixed_prime-numbers.r | chap. 13.3.1 - one-liner to get prime numbers using Euclidean mod division |
+| DiM_Bretthorst_PG.r | Bretthorst (1993) diferencia de medias, solución analítica, con el paquete Brobdingnag para números muy grandes, implementación según P Gregory (2005) |
+| DiM_Bretthorst_PG_calls.r | Ejemplos de llamada |
+| DiM_Bretthorst_UMS.r | Bretthorst (1993) diferencia de medias, solución analítica, con el paquete Brobdingnag para números muy grandes, implementación según UM Studer (1998) |
+| DiM_Bretthorst_UMS_calls.r | Ejemplos de llamada |
+| **Funciones externales** |  |
+| EXT_bayesian2beta.r | prueba de proporción bayesiana exacta de Sverdlov, Ryeznik & Wu (2015) |
+| EXT_DBDA2E-utilities.R | de Kruschke (2014) DBDA 2. ed., funciones generales |
+| EXT_Jags-Ymet-XmetMulti-Mrobust.R | de Kruschke (2014) DBDA 2. ed., aplicado para PPC y varianzas heterogeneas |
+| **Todas partes** | |
+| ptall_generalfuncs.r | d de Cohen, estadísticas descriptivas de todo tipo en una tabla, fivenum de Tukey con etiquetas, convertir tablas de estilo Aquad en tablas de verdad y v.v., imprimir implicantes primos de objetos QCA, matriz de distancia completa, corte óptimo a través de una matriz de proximidad según Oldenbürger y trazarla, trazar prototipos en 2d + 3d, trazar valores propios (MDS), correlación y valores p. |
+| ptall_generalfuncs_Bayes_Beta_determine.r | determinar y trazar los valores de la distribución beta a partir de tres puntos cuantílicos mediante optimización, modelo de roles: Coghlan (2017) |
+| ptall_generalfuncs_Bayes_binomial.r | funciones para aplicar y trazar funciones de probabilidad a priori para éxitos/fracasos, calcular estadísticas resumidas para la probabilidad a posteriori, IDH, fórmula para calcular la probabilidad a posteriori beta mediante conjugación, trazar probabilidad a priori, Likelihood, probabilidad a posteriori, probabilidad a priori actualizada y actualización de la probabilidad a posteriori, estadísticas resumidas |
+| ptall_generalfuncs_Bayes_binomial-prop-test.r | Prueba de proporción bayesiana (por ejemplo, éxitos/fracasos): calcular, resumir y trazar la prioridad de éxitos/fracasos, convertir a valores de distribución beta y v.v., actualizar la prioridad binomial con probabilidad a beta (posterior) y trazar, resumen bayes.prop.test ajustado de BayesianFirstAid y trazar theta_diff, trazar MCMC, simulación desde posterior, aproximación de cuadrícula mediante fuerza bruta, pruebas exactas (diferencia binomial) (Evan Miller, Chris Stucchio, el enfoque de Sverdlov, Ryeznik, Wu (2015) de bayesian2beta.r en una forma ajustada para trabajar con valores logarítmicos u objetos brob y trazar los resultados, integración numérica (regla de Simpson) para objetos brob, comparación por fuerza bruta de rbetas frente a dbetas y trazarla. |
+| ptall_generalfuncs_brob-integral.r | funciones útiles para objetos brob, convertir una lista en un vector, calcular el producto escalar, integración numérica (regla de Simpson), se pueden encontrar más métodos de integración numérica para objetos brob en https://github.com/abcnorio/R-largenum-integration |
+| **Parte I - Teoría científica** | |
+| ptI_sciencetheory_logic.r | cáp. 2.2 - afirmaciones simples verdadero/falso |
+| **Parte II - Estadística clásica** | |
+| ptII_quan_classicstats_Fisher_ladyteataste.r |  cáp. 4.5.1.1 - Experimento del sabor del té Lady Bristol de Fisher utilizando sus métodos de distribución hipergeométrica, fisher.test, y cálculo manual mediante factoriales. |
+| ptII_quan_classicstats_N-P_powerfunc.r | cáp. 4.5.2.1 - calcular y representar gráficamente la potencia frente al tamaño de los efectos en función de diferentes hipótesis |
+| ptII_quan_classicstats_N-P_stat-signif-isNOT-practsignif.r | cáp. 4.5.2.1 - diferentes puntos de vista sobre las diferencias de las muestras si se conocen los parámetros de la población |
+| ptII_quan_classicstats_GandC_type-S-M-error.r | cáp. 4.5.2.2 - reproducir Gelman y Carlin (2014), análisis de potencia de retrodiseño |
+| ptII_quan_classicstats_GandC_type-S-M-error_helpfuncs.r | cáp. 4.5.2.2 - trazar el tamaño del efecto y la potencia para el retrodiseño según Gelman y Carlin (2014), trazar la distribución de la muestra bajo H_0 y la hipótesis del verdadero tamaño del efecto. |
+| ptII_quan_classicstats_N-P_nulldist-hypotest.r | cáp. 4.3.3.5 - trazar H_0, H_1 para pruebas unilaterales y bilaterales |
+| ptII_quan_classicstats_N-P_nulldist-hypotest_helpfuncs.r | cáp. 4.3.3.5 - funciones para trazar H_0, H_1 para direcciones de hipótesis: bilateral, menor, mayor, y trazar tasas de error alfa y beta para densidades distribuidas t |
+| ptII_quan_classicstats_N-P_confint.r | cáp. 4.5.2.6 - trabajar y simular intervalos de confianza (IC) |
+| ptII_quan_classicstats_N-P_confint_bayesboot.r | cáp. 4.5.2.6 - bootstrap CIs y otros estadísticos mediante simulación, simular diferencia de medias, utilizar bootstrap bayesiano |
+| ptII_quan_classicstats_N-P_confint_errorbars.r | cáp. 4.5.2.6 - Evolución del IC en función del tamaño de las muestras |
+| ptII_quan_classicstats_N-P_confint_helpfuncs.r | cáp. 4.5.2.6 - calcular el IC de la media, la diferencia de medias y representarlos gráficamente |
+| ptII_quan_classicstats_N-P_confint_p-t-value.r | cáp. 4.5.2.6 - simular la prueba t con valores p y t |
+| ptII_quan_classicstats_N-P_confint_p-t-value_helpfuncs.r | cáp. 4.5.2.6 - simular pruebas t, comparar con la d de Cohen |
+| ptII_quan_classicstats_N-P_confint-errorbars_helpfuncs.r | cáp. 4.5.2.6 - cambio de los IC junto con las barras de error, calcular los IC cubiertos |
+| ptII_quan_classicstats_N-P_simulation.r | cáp. 4.5.4 - simulación "diferencia de medias" mediante réplica |
+| ptII_quan_classicstats_N-P_example-soccer-sim.r | cáp. 4.5.4.1 - simular una ejecución real empírica de cómo conseguir todas las cartas de un álbum de cromos de fútbol |
+| ptII_quan_classicstats_N-P_example-soccer-sim_helpfuncs.r | cáp. 4.5.4.1 - simular cuantas cartas faltan por salir utilizando el azar y no el sentido común como el intercambio de cartas, etc. |
+| ptII_quan_classicstats_N-P_SE-N-dep.r | cáp. 4.5.5 - dependencia de las características del tamaño de la muestra mediante datos simulados (N, SE, valor t, d de Cohen, ...) |
+| ptII_quan_classicstats_nullritual.r | cáp. 4.5.7 - todo el sinsentido en torno al ritual Nulo, es decir, el procedimiento NHST |
+| ptII_quan_classicstats_NHST_nulldist.r | cáp. 4.5.8 - trazar la toma de decisiones NHST utilizando regiones de aceptación/rechazo, tasas de error alfa y beta |
+| ptII_quan_classicstats_pvalue-as-base.r | cáp. 4.5.8.1 - diferencias de la distribución normal frente a la normal mixta según el gráfico y los estadísticos, simulación H_0 |
+| ptII_quan_classicstats_normal-vs-t.r | cáp. 4.5.8.2 - relación de las distribuciones normal y t |
+| ptII_quan_classicstats_centrallimittheorem.r | cáp. 4.5.8.3 - simular el teorema central del límite (CLT) en condiciones variables |
+| ptII_quan_classicstats_centrallimittheorem_helpfuncs.r | cáp. 4.5.8.3 - funciones básicas para simular CLT |
+| ptII_quan_classicstats_p-t-df-relationship.r | cáp. 4.5.9 - relación de N, t- y p-valor, simular con la misma semilla, tamaños de muestra crecientes, t-valor constante y simulación de potencia post-hoc. |
+| ptII_quan_classicstats_effectsizes.r | cáp. 4.6.10 - relacionar gráficamente entre sí N, p-valor, d de Cohen, odds ratio y risk ratio |
+| ptII_quan_classicstats_effectsizes_helpfuncs.r | cáp. 4.6.10 - para relacionar N, p-valor y d de Cohen |
+| ptII_quan_classicstats_effectsizes_helpfuncs_sjstats.r | cáp. 4.6.10 - tomado y retocado del paquete sjtats ya que desapareció del paquete, convertir odds ratio a risk ratio |
+| ptII_quan_classicstats_Simpsonparadox.r | cáp. 4.6.11.1 - investigar la paradoja de Simpson con el conjunto de datos de admisión clásico de UCB utilizando gráficos, tablas, tasas base corregidas y el modelo glmer, simular los datos de la paradoja de Simpson y detectar subgrupos con Simpsons del paquete Simpsons |
+| ptII_quan_classicstats_Simpsonparadox_helpfuncs.r | cáp. 4.6.11.1 - función para trazar dos grupos y detectar la paradoja de Simpson |
+| ptII_quan_classicstats_JeffreysLindleyparadox.r | cáp. 4.6.11.2 - Paradoja de Jeffrey-Lindley con ejemplos de datos |
+| ptII_quan_classicstats_p-hacking-sim.r | cáp. 4.6.2 - simulación de p-hacking con tamaños de muestra variables para tasas de error alfa estándar, comparación con análisis de potencia a priori y representación gráfica de los resultados |
+| ptII_quan_classicstats_p-hacking-sim_helpfuncs.r | cáp. 4.6.2 - función para simular el modelo lineal con sim del paquete arm así como métodos p-hacking |
+| ptII_quan_classicstats_dealingwithpower.r | cáp. 4.6.3 - calcular, simular y representar gráficamente la potencia en distintos modelos |
+| ptII_quan_classicstats_R-index_z-curve.r | cáp. 4.6.4.1 - aplicar R-Index y TIVA según Schimmack y colegas, por ejemplo, en el estudio de clarividencia de Bem y calcular la curva z |
+| ptII_quan_classicstats_R-index_z-curve_helpfuncs.r | cáp. 4.6.4.1 - función para calcular el índice R, valores p para el índice R, prueba de varianza insuficiente (TIVA) según Schimmack y colegas |
+| ptII_quan_classicstats_varianceestimation.r | cáp. 4.6.5 - aplicar la función para calcular la estimación de la varianza |
+| ptII_quan_classicstats_varianceestimation_helpfuncs.r | cáp. 4.6.5 - función para calcular la estimación de la varianza si sigma es conocida o desconocida y representarla gráficamente |
+| ptII_quan_classicstats_randomization.r | cáp. 4.6.6 - aplicar diferentes estrategias de aleatorización para crear muestras |
+| ptII_quan_classicstats_missingdata.r | cáp. 4.6.7 - tratamiento de datos ausentes y cambios asociados con y sin métodos de imputación, comparación de métodos de imputación entre sí y con brms (modelo lineal bayesiano) |
+| ptII_quan_classicstats_equivalentmethods.r | cáp. 4.6.8.1 - comparación con las estadísticas y el gráfico de Bland-Altman (gráfico de diferencia de medias), TOST del paquete TOSTER, Pitman-Morgan Test, pruebas de los paquetes BayesFactor, BEST, uso de la implementación de GL Bretthorst (1993) "On the difference in mean", utilizando, por ejemplo, los datos originales de Bland-Altman |
+| ptII_quan_classicstats_equivalentmethods_helpfuncs.r | cáp. 4.6.8.1 - gráfico de diferencia de medias según Tukey (equivalente al gráfico de Bland-Altman) |
+| ptII_quan_classicstats_variancehomogeneity.r | cáp. 4.6.8.2 - determinar la homogeneidad de la varianza mediante diversas pruebas (Levene, Breusch-Pagan, varianza de error no constante, Cook y Weisberg, versión de la prueba estadística de Koenker) |
+| ptII_quan_classicstats_normaldist_residuals.r | cáp. 4.6.9.1 - investigación de residuos de modelos lineales para diversas características (normalidad, asimetría, curtosis, diversos tamaños de muestra |
+| ptII_quan_classicstats_outliers-and-influentialpoints.r | cáp. 4.6.9.3 - impacto y consecuencias de los puntos influyentes y los valores atípicos, cálculo del modelo lineal, prueba t, prueba de valores atípicos, prueba de correlación, gráficos de apalancamiento |
+| ptII_quan_classicstats_outliers-and-influentialpoints_helpfuncs.r | cáp. 4.6.9.3 - función para trazar valores atípicos (con, sin) mediante líneas de regresión |
+| **Parte II - Análisis Exploratorio de Datos** | |
+| ptII_quan_EDA_intro_overviewrobust.r | cáp. 5.2.-5.3. - comparar mediana vs. media, mostrar gráficos robustos de datos, aplicar lm vs. rlm a datos empíricos |
+| ptII_quan_EDA_intro_overviewrobust_helpfuncs.r | cáp. 5.2.-5.3. - función para trazar los residuos (lm frente a rlm), simular y trazar la mediana/media de una distribución normal |
+| ptII_quan_EDA_case_German-states-population.r | cáp. 5.5.1 - la conversión a valores logarítmicos conduce a líneas rectas utilizando un ejemplo de la vida real a partir de las características de la población de los estados alemanes, en comparación con el modelo lineal clásico |
+| ptII_quan_EDA_case_Suisse-fertility.r | cáp. 5.5.2 - analizar la fecundidad en Suiza entre católicos (sí, no, algo más) utilizando sólo gráficos descriptivos y correlaciones, utilizar subgrupos para comprender los datos |
+| ptII_quan_EDA_case_Suisse-fertility_helpfuncs.r | cáp. 5.5.2 - función para trazar dos variables con un índice continuo |
+| ptII_quan_EDA_case_Anderson_iris-species-in-biology.r | cáp. 5.5.3 - investigar los famosos datos del iris con pares, lda y tablas |
+| ptII_quan_EDA_case_Titanic_death-and-dying.r | cáp. 5.5.4.6 - utilizar sólo estadísticas descriptivas, tablas y gráficos para investigar las características de los supervivientes del Titanic y cómo sobrevivir y por qué, responder a ciertas preguntas sobre las condiciones de sobrevivir o morir durante la catástrofe del Titanic |
+| ptII_quan_EDA_case_Titanic_death-and-dying_helpfuncs.r | cáp. 5.5.4.6 - función para trazar las densidades de varios subgrupos |
+| ptII_quan_EDA_case_Spain_leadership-in-education.r | cáp. 5.5.5 - analizar datos sobre liderazgo en España (contexto educativo) con métodos a distancia (HCA, MDS), análisis de prototipos, heatmap, corrgram, levelplot, y gráficos descriptivos simples |
+| ptII_quan_EDA_case_Spain_leadership-in-education_helpfuncs.r | cáp. 5.5.5 - versión modificada de heatmap del paquete heatmap.plus (no disponible en R v.4) |
+| ptII_quan_EDA_case_Chiro_heartrate-variability.r | cáp. 5.5.6 - experimento en quiropráctica sobre la variabilidad de la frecuencia cardiaca utilizando modelos lineales sin ninguna prueba de significación, aprendiendo de las características del tamaño de la muestra, utilizando histogramas y gráficos de interacción |
+| ptII_quan_EDA_case_Chiro_heartrate-variability_helpfuncs.r | cáp. 5.5.6 - función para trazar interacciones |
+| **Parte II - Estadísticas bayesianas** | |
+| ptII_quan_Bayes_Beta-distribution.r | cáp. 6.12 - cálculo de la beta posterior a partir de la prior y la Likelihood (conjugación, aproximación reticular), influencia de las priors, diferentes formas de beta |
+| ptII_quan_Bayes_find-Beta-distribution-shapeparams.r | cáp. 6.12 - determinar la distribución beta a partir de tres puntos cuantílicos con/sin optimización |
+| ptII_quan_Bayes_Fisher_LadyBristol-Beta-disttribution.r | cáp. 6.12 - trazar la prior, la Likelihood y la posterior de los datos empíricos |
+| ptII_quan_Bayes_Gamma-distribution.r | cáp. 6.12 - visualizar la función Gamma para diferentes parámetros |
+| ptII_quan_Bayes_regularization.r | cáp. 6.12 - diferentes priors (normal con diferentes sigmas, Cauchy, uniforme) |
+| ptII_quan_Bayes_Prior-Likeli-Post_relationship.r | cáp. 6.12.1 - mostrar cómo la priori y la Likelihood dan forma a la posterior, ver las diferentes influencias en la probabilidad a posteriori |
+| ptII_quan_Bayes_MC-simulation_binom-norm.r | cáp. 6.13 - simular distribuciones binormales y normales |
+| ptII_quan_Bayes_RandomWalk.r | cáp. 6.13 -  calcular y trazar un paseo aleatorio como 2d + 3d |
+| ptII_quan_Bayes_RandomWalk_helpfuncs.r | cáp. 6.13 - una función para calcular un paseo aleatorio simple |
+| ptII_quan_Bayes_simulate-pi.r | cáp. 6.13 - aplicar la simulación pi para tamaños de muestra variables |
+| ptII_quan_Bayes_simulate-pi_helpfuncs.r | cáp. 6.13 - función simple para calcular pi y trazarlo (ineficiente, pero funciona) |
+| ptII_quan_Bayes_problem-local-minima.r | cáp. 6.13.1.4 - mínimos locales mediante la función de Himmelblau, trazado en 3d |
+| ptII_quan_Bayes_HMC.r | cáp. 6.13.2.3.1 - aplicar el algoritmo Hamilton Monte Carlo (HMC), trazar e investigar (distribución normal bivariante), utilizar los paquetes hmclearn, rethinking y bayesplot, así como el algoritmo básico HMC (Neal, 2011, cáp. 5), analizar las cadenas MCMC mediante trazados y diagnósticos típicos (por ejemplo, Gelman, Heidelberger-Welch, tamaño efectivo de la muestra, eliminar burn-in, .... ), comparar con el algoritmo MH |
+| ptII_quan_Bayes_HMC_helpfuncs.r | cáp. 6.13.2.3.1 - funciones para simular la distribución normal bivariante (rnorm, mvrnorm), calcular el gradiente para el algoritmo HMC, simular la distribución normal bivariante mediante HMC según McElreath (2015), describir las cadenas MCMC: Diagnóstico de Heidelberger-Welche, describir el desarrollo de la media y la covarianza, ajustar los límites para que aparezca un valor de comparación en un gráfico posterior y simular la distribución normal bivariante mediante el algoritmo MH. |
+| ptII_quan_Bayes_MetropolisHastings_example-normdist.r | cáp. 6.13.4.1 - simular la media de la distribución normal con el algoritmo Metropolis-Hastings (MH), investigar las cadenas MCMC utilizando el paquete coda, aplicar sobre datos empíricos, investigar las tasas de aceptación/rechazo, comparar las cadenas MCMC, la distribución predictiva posterior y los gráficos |
+| ptII_quan_Bayes_MH-Gibbs_example_helpfuncs.r | cáp. 6.13.4.1 - funciones para realizar el algoritmo MH para simular la distribución normal basada en datos empíricos, priors, Gibbs sampler, plot MCMC y sus partes, distribución predictiva posterior normal |
+| ptII_quan_Bayes_GibbsSampling_example-normdist.r | cáp. 6.13.4.2 - simular la media posterior mediante muestreo de Gibbs, analizar la posterior |
+| ptII_quan_Bayes_JAGS_example-norm.r | cáp. 6.13.4.3 - simular la media de una distribución normal utilizando JAGS, investigar MCMC, comparar con el paquete Bolstad |
+| ptII_quan_Bayes_Fisher_LadyBristol-BUGS.r | cáp. 6.13.5 - analizar los datos del té de Lady Bristol con métodos clásicos y bayesianos (solución analítica y MCMC con JAGS, paquete BEST, BUGS) |
+| ptII_quan_Bayes_Fisher_LadyBristol-BUGS_helpfuncs.r | cáp. 6.13.5 - función para analizar el experimento Lady Bristol con el Teorema de Bayes, trazar éxitos/fracasos, IDH, MAP, y ejecutar el modelo BUGs con el paquete RBugs de R |
+| ptII_quan_Bayes_MaximumEntropy.r | cáp. 6.14 - calcular y trazar la entropía de Boltzmann/Shannon utilizando una moneda y un dado (no tan justos/justos) |
+| ptII_quan_Bayes_MaximumEntropy_helpfuncs.r | cáp. 6.14 - funciones para reproducir los análisis de Jaynes (1962), simulación de entropía según McElreath (2015, p.277) |
+| ptII_quan_Bayes_Entropy_KullbackLeibler.r | cáp. 6.14.1 - aplicar funciones de entropía al recuento de palabras |
+| ptII_quan_Bayes_Entropy_KullbackLeibler_helpfuncs.r | cáp. 6.14.1 - funciones para calcular H (entropía de Shannon) a partir de recuentos y priors o distancia de Kullback-Leibler |
+| ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice.r | cáp. 6.14.3 - realizar y trazar el análisis de Jaynes (1962) en un dado (¿justo?) |
+| ptII_quan_Bayes_MaximumEntropy_Jaynes-fair-dice_helpfuncs.r | cáp. 6.14.3 - funciones para calcular la entropía de una moneda justa o no tan justa y simular un dado |
+| ptII_quan_Bayes_case_presidential-heights.r | cáp. 6.15.1 - preparación del conjunto de datos, eliminación de NA, gráficos EDA, estadística clásica frente a bayesiana con prueba binomial bayesiana, diagnósticos MCMC, prueba de diferencia de medias mediante solución clásica y bayesiana incl. HDI, ROPE, bayesboot, trazado de resultados |
+| ptII_quan_Bayes_case_presidential-heights_helpfuncs.r | cáp. 6.15.1 - función retocada de bayes.binom.test del paquete BayesianFirstAid, función para calcular OR/RR posterior | 
+| ptII_quan_Bayes_case_startagain-successrates.r | cáp. 6.15.2 - comparar desarrollos y casos extremos de éxitos/fracasos y probs posteriores resultantes | 
+| ptII_quan_Bayes_case_startagain-successrates-longterm.r | cáp. 6.15.2.1 - demuestre que el análisis a largo plazo de todos los años frente al análisis secuencial por año (lo anterior se convierte en lo posterior se convierte en lo anterior, etc.) conduce exactamente a los mismos resultados concluyentes dentro del enfoque bayesiano | 
+| ptII_quan_Bayes_case_presidential-debates.r | cáp. 6.15.3 - frequentist, chi-cuadrado, potencia, JAGS, probabilidades posteriores, gráficos, variantes de fuerza bruta MCMC, prueba y gráfico de hipótesis, aproximación de cuadrícula, pruebas exactas, MAP, gráficos 2d + 3d de valores theta sobre intgral, comparación de métodos, uso de funciones ajustadas de appell, tolerancia, bayesian2beta.r, comparación con el paquete BayesFactor y la aproximación de Bretthorst |
+| ptII_quan_Bayes_intro-BayesTheorem_tea.r | cáp. 6.2.2.4 - aplicación sencilla del Teorema de Bayes, utilizando valores discretos, y paso del conocimiento previo al posterior al previo, etc. es decir, actualización del Teorema de Bayes con nueva información |
+| ptII_quan_Bayes_intro-BayesTheorem_medicaldiagnosis.r | cáp. 6.2.3.4 - aplicar el Teorema de Bayes a las pruebas médicas utilizando la prevalencia (de una enfermedad en la población), la sensibilidad (1-falso_positivo) y la especificidad (1-falso_negativo) |
+| ptII_quan_Bayes_intro-BayesTheorem_medicaldiagnosis_helpfuncs.r | cáp. 6.2.3.4 - función para aplicar el Teorema de Bayes a las pruebas médicas utilizando la prevalencia p(A), la sensibilidad p(B|A) y la especificidad p(no-B|no-A). |
+| ptII_quan_Bayes_intro-BayesTheorem_covid19-test.r | cáp. 6.2.4 - calcular la probabilidad de una prueba covid-19 en relación con las características de la población |
+| ptII_quan_Bayes_posterior.r | cáp. 6.5.1 - análisis de las cadenas posteriores y MCMC (convergencia), aplicación a un conjunto de datos empíricos |
+| ptII_quan_Bayes_simple-estimation-mean-post.r | cáp. 6.5.1 - distribución posterior de una media con diferentes priores informados utilizando el paquete Bolstad |
+| ptII_quan_Bayes_simple-estimation-mean-post_helpfuncs.r | cáp. 6.5.1 - una función para trazar la media posterior con prior y likelihood, ajustado normgcp del paquete Bolstadt (corrección de errores) |
+| ptII_quan_Bayes_BayesFactors_test-hypos.r | cáp. 6.7.1 - ejemplo empírico de las observaciones de Kruschke (los BF no bastan para interpretar los resultados), es mejor utilizar las probabilidades a priori y a posteriori, ejemplo: BF enorme pero aproximadamente los mismos parámetros del modelo lineal, BF sólo causado por diferentes priores. |
+| ptII_quan_Bayes_lossfun_startagain.r | cáp. 6.7.1.2 - mostrar la función de pérdida en el contexto de un ejemplo empírico (tasas de éxito en terapia antidrogas) para extraer conclusiones para el trabajo real |
+| ptII_quan_Bayes_BayesFactors_dependence-on-N-sim.r | cáp. 6.7.1.3 - comparar y simular los Factores de Bayes (FB) para distintos tamaños de muestra, valores t, determinar el FB mínimo con distintos enfoques |
+| ptII_quan_Bayes_BayesFactors_dependence-on-N-sim_helpfuncs.r | cáp. 6.7.1.3 - una función para simular BF en relación con N, convertir valores p en BF, relacionar valores p y tamaños de muestra |
+| ptII_quan_Bayes_case_exp-extra-sensual-perception.r | cáp. 6.7.1.4 - función para calcular la prueba t con BF, luego preparar, describir, analizar datos empíricos utilizando métodos para datos binomiales y diferencia de medias (solución clásica y bayesiana), anova con medida repetida vs. brms |
+| ptII_quan_Bayes_Bem-study-aspects.r | cáp. 6.7.1.5 - algunos cálculos artificiales pero significativos junto con una discusión muy crítica de los antecedentes teóricos y el diseño del estudio de Bem sobre la clarividencia. |
+| ptII_quan_Bayes_BayesFactors_further-remarks.r | cáp. 6.7.1.6 - aplicar FBs en el contexto de gráficos EDA, pruebas t, d de Cohen, modelos lineales, y un enfoque bayesiano completo real con brms, y otros criterios (Bayes R^2, loo, waic, kfold), resultados diferentes si una variable categorial se hace continua (es decir, convertida de nuevo a su estado original natural como la edad categorial). |
+| ptII_quan_Bayes_information-criteria.r | cáp. 6.7.2 - aplicar función para obtener criterios de información de un modelo lineal (ejemplo empírico) |
+| ptII_quan_Bayes_information-criteria_helpfuncs.r | cáp. 6.7.2 - función para calcular y extraer criterios de información de modelos lineales |
+| ptII_quan_Bayes_over-and-underfitting.r | cáp. 6.7.3 - ejemplos de ajuste insuficiente y excesivo, incluidos polinomios, uso de la divergencia de Kullback-Leibler (KL) entre probs |
+| ptII_quan_Bayes_HDI.r | cáp. 6.7.4.1 - representar gráficamente el IDH y el IC de varios conjuntos de datos para demostrar la diferencia cualitativa de esos tipos de intervalo |
+| ptII_quan_Bayes_HDI_helpfuncs.r | cáp. 6.7.4.1 - función para representar el IDH frente al IC simétrico |
+| ptII_quan_Bayes_ROPE-BayesFactor.r | cáp. 6.7.4.2 - mostrar la importancia de ROPE vs. simple claro para la toma de decisiones (diferencia de medias). graficar con IDH, prueba binomial bayesiana para varios valores, priors, e hipótesis, priors y su influencia en BFs, aplicar en datos empíricos, aplicar y graficar con paquete BEST, analizar MCMC y probs posteriores |
+| ptII_quan_Bayes_ROPE-BayesFactor_helpfuncs.r | cáp. 6.7.4.2 - función para demostrar el cambio en FB debido a las creencias previas |
+| ptII_quan_Bayes_PPC_model-check.r | cáp. 6.7.4.4 - simular la PPC mediante JAGS utilizando éxitos/ fracasos y representarla gráficamente |
+| ptII_quan_Bayes_PPC_model-check_helpfuncs.r | cáp. 6.7.4.4 - función para calcular la prueba uni-/bilateral (PPC) |
+| ptII_quan_Bayes_PPC_model-check-graph.r | cáp. 6.7.4.5 - demostrar PPC para varianzas homogéneas (sí/no), trazar y probar hipótesis específicas (estadística clásica, bayesiana con brms), diseño de grupos de tratamiento/control, comparar modelos lineales |
+| ptII_quan_Bayes_case_wordcounts-PPC.r | cáp. 6.7.4.6 - realizar análisis (por ejemplo, con JAGS) y gráficos junto con comprobaciones predictivas posteriores (PPC), incluidos gráficos MCMC de diagnóstico, bootstrap utilizando casos completos o valores reales, ejercicio Kruschke (2014, cap. 18.3) en relación con la heteroscedasticidad (influencia de varianzas desiguales entre grupos) |
+| ptII_quan_Bayes_case_wordcounts-PPC_helpfuncs.r | cáp. 6.7.4.6 - funciones para preparar y resumir cadenas MCMC y posteriors de guiones de Kruschke (2014) para que coincidan con los requisitos aquí para PPC. |
+| **Parte III - Análisis de Datos Cualitativos** | |
+| ptIII_qual_code-paradigm_table-analysis.r | cáp. 9.4 - ejemplo de uso de expand.grid |
+| ptIII_qual_quan-textanalysis.r | cáp. 10.1 - preparar (por ejemplo, eliminación de partes redundantes, caracteres especiales, espacios en blanco, puntuaciones, stop words y conversión a minúsculas, división de texto, nube de palabras, trazado de frecuencias, KWIC, colocación, ...) y analizar el texto utilizando los paquetes stringi, SnowbalC, tm, magrittr, quanteda, corps2, etc., utilizar wordstems, inspección de corpus, ... |
+| **Parte IV - Análisis Cualitativo Comparativo (QCA)** | |
+| ptIV_qual_Boole_basics.r | cáp. 12.1 - afirmaciones simples verdadero/falso |
+| ptIV_qual_Boole_case_Krook_women-in-parliament.r | cáp. 12.11.1 - analizar el conjunto de datos de Krook (2010) mediante QCA, extraer los principales implicantes, comprobar la coherencia, preparar los resultados positivos y negativos para la discusión general. |
+| ptIV_qual_Boole_case_Titanic_death-and-dying.r | cáp. 12.11.2 - aplicar el QCA al conjunto de datos del Titanic para investigar un conjunto mínimo de supervivencia (sí/no) |
+| ptIV_qual_Boole_logical-minimization.r | cáp. 12.3 - demostración de caso único de cómo funciona realmente la minimización booleana |
+| ptIV_qual_Boole_case_school-success.r | cáp. 12.6 - conjunto de datos artificiales para demostrar el QCA para resultados negativos y positivos |
+| ptIV_qual_Boole_fuzzy-logic.r | cáp. 12.7 - gráfico sencillo para demostrar qué es la lógica difusa |
+| **Parte V** | **Métodos Mixtos** |
+| ptV_mixed_prime-numbers.r | cáp. 13.3.1 - una sola línea para obtener números primos usando la división mod euclidiana |
 
 </details>
 
