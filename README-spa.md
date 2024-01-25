@@ -2,7 +2,7 @@
 
 ## Recursos e idiomas
 
-La versión española del libro se titula "Combinación de Métodos - CUAL, CUAN Y LÓGICA. Puntos de vista objetivos y observaciones subjetivas". Ambos libros pueden obtenerse gratuitamente en [OSF](https://osf.io/69gfz) o [AQUAD](https://www.aquad.de.
+La versión española del libro se titula "Combinación de Métodos - CUAL, CUAN Y LÓGICA. Puntos de vista objetivos y observaciones subjetivas". Ambos libros pueden obtenerse gratuitamente en [OSF](https://osf.io/69gfz) o [AQUAD](https://www.aquad.de).
 
 ## Visión general
 
@@ -10,7 +10,7 @@ El tema principal del libro es la metodología mixta, especialmente en lo que se
 
 ## Antecedentes
 
-El libro trata de metodología mixta (cuantitativa, cualitativa y lógica booleana) y se publica en 2023 libremente en varias plataformas de bibliotecas abiertas como [OSF](https://osf.io/69gfz) o [AQUAD](https://www.aquad.de. La parte estadística abarca la estadística clásica (Fisher, Neyman-Pearson), el análisis exploratorio de datos sensu J.W. Tukey, así como la estadística bayesiana. La lógica booleana se utiliza para el análisis implícito del análisis comparativo cualitativo. La parte cualitativa abarca tanto el análisis cuantitativo como el cualitativo de textos. Este último utiliza el paradigma de codificación y análisis secuencial procedente de la Hermenéutica Objetiva sensu Oevermann y colegas y es el único análisis para el que el código R realmente no tiene ningún sentido. Sin embargo, el análisis secuencial asistido por ordenador está disponible en el software gratuito QDA [AQUAD](https://www.aquad.de.
+El libro trata de metodología mixta (cuantitativa, cualitativa y lógica booleana) y se publica en 2023 libremente en varias plataformas de bibliotecas abiertas como [OSF](https://osf.io/69gfz) o [AQUAD](https://www.aquad.de). La parte estadística abarca la estadística clásica (Fisher, Neyman-Pearson), el análisis exploratorio de datos sensu J.W. Tukey, así como la estadística bayesiana. La lógica booleana se utiliza para el análisis implícito del análisis comparativo cualitativo. La parte cualitativa abarca tanto el análisis cuantitativo como el cualitativo de textos. Este último utiliza el paradigma de codificación y análisis secuencial procedente de la Hermenéutica Objetiva sensu Oevermann y colegas y es el único análisis para el que el código R realmente no tiene ningún sentido. Sin embargo, el análisis secuencial asistido por ordenador está disponible en el software gratuito QDA [AQUAD](https://www.aquad.de).
 
 ## Ejecutar el código R
 
