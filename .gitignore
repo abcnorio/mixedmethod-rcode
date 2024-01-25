@@ -65,7 +65,9 @@ helper-functions-external*
 #AQUAD7/
 
 # R files not to be uploaded
-check-http.R
+check-http.*
+FILES*
+TEMP*
 
 # all files that end with
 *~
